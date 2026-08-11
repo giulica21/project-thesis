@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/c:\\Users\\giuli\\Desktop\\BA_Titelseite_LaTeX\\meineArbeit.aux": true,
+        "**/c:\\Users\\giuli\\Desktop\\BA_Titelseite_LaTeX\\meineArbeit.log": true,
+        "**/c:\\Users\\giuli\\Desktop\\BA_Titelseite_LaTeX\\meineArbeit.gz": true,
+        "**/c:\\Users\\giuli\\Desktop\\BA_Titelseite_LaTeX\\meineArbeit.out": true
+    }
+}

@@ -1,0 +1,124 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{arxiv:1507.02515}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ef62a0f9ed6d3e9fa842a27adee35df8}{%
+           family={Carbery},
+           familyi={C\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{fullhash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{fullhashraw}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{bibnamehash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{authorbibnamehash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{authornamehash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{authorfullhash}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \strng{authorfullhashraw}{ef62a0f9ed6d3e9fa842a27adee35df8}
+      \field{labelalpha}{Car15}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.CA}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Remark on reverse Littlewood-Paley, restriction and Kakeya}
+      \field{year}{2015}
+      \verb{eprint}
+      \verb 1507.02515
+      \endverb
+    \endentry
+    \entry{More_Math_into_Latex}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b4f3ce6a97ea5d974f0e9354c6daacfa}{%
+           family={Grätzer},
+           familyi={G\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{fullhash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{fullhashraw}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{bibnamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{authorbibnamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{authornamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{authorfullhash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \strng{authorfullhashraw}{b4f3ce6a97ea5d974f0e9354c6daacfa}
+      \field{labelalpha}{Grä16}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5}
+      \field{isbn}{978-3-319-23796-1}
+      \field{title}{More Math Into LaTeX}
+      \field{year}{2016}
+      \field{pages}{XXX\bibrangessep 609}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1007/978-3-319-23796-1
+      \endverb
+    \endentry
+    \entry{MR1232192}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1e432a4cd42a48f08962229276035a77}{%
+           family={Stein},
+           familyi={S\bibinitperiod},
+           given={Elias\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Princeton, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{1e432a4cd42a48f08962229276035a77}
+      \strng{fullhash}{1e432a4cd42a48f08962229276035a77}
+      \strng{fullhashraw}{1e432a4cd42a48f08962229276035a77}
+      \strng{bibnamehash}{1e432a4cd42a48f08962229276035a77}
+      \strng{authorbibnamehash}{1e432a4cd42a48f08962229276035a77}
+      \strng{authornamehash}{1e432a4cd42a48f08962229276035a77}
+      \strng{authorfullhash}{1e432a4cd42a48f08962229276035a77}
+      \strng{authorfullhashraw}{1e432a4cd42a48f08962229276035a77}
+      \field{labelalpha}{Ste93}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-691-03216-5}
+      \field{note}{With the assistance of Timothy S. Murphy, Monographs in Harmonic Analysis, III}
+      \field{series}{Princeton Mathematical Series}
+      \field{title}{Harmonic analysis: real-variable methods, orthogonality, and oscillatory integrals}
+      \field{volume}{43}
+      \field{year}{1993}
+      \field{pages}{xiv+695}
+      \range{pages}{-1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

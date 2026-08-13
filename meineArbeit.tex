@@ -104,12 +104,30 @@ and consequences (as spectral types).
 
 
 \subsection{The Anderson Model}
-In the first section the Anderson model is introduced as a discrete Schroedinger operator called Hamiltonian. 
+In the first section the Anderson model is introduced as a discrete Schroedinger operator called \textit{Hamiltonian}: 
+\[
+H_\omega = - \Delta + \lambda V_\omega.
+\]
 This operator acts on the Hilbert space 
 \[
 l^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
-with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$.
+with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$. 
+
+\textbf{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
+For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
+\[
+- \Delta u(x) = - \sum_{{k \in \mathbb{Z}^d}, |x-k|=1} u(x)- u(k),  \quad k \in \mathbb{Z}^d
+\]
+where $|x-k|$ is the graph difference in $\mathbb{Z}^d$.
+The descrete Laplacian is per definiton bounded and consequently self-adjoint [for proofs see Appendix A].
+Just as the continuum Laplacian the Fourier trnasform blah blah blah.
+\\ the spectrum is absolutely continuous and as similarity with the continuus laplacian, it has plane waves as generalized eigenfunctions.
+\vspace{0.5 cm}
+
+\textbf{The potential term}
+
+
 
 
 

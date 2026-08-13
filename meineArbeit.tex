@@ -54,9 +54,10 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[style=alphabetic]{biblatex}
 \addbibresource{Literatur.bib}
+\usepackage{setspace}
 
 \begin{document}
-
+\setstretch{1.15}
 \maketitle
 
 \section*{Zusammenfassung}
@@ -73,14 +74,43 @@ Dieses Dokument spiegelt den Stand von 2021 wider; wenn Sie es im Jahr 2030 oder
 \tableofcontents
 
 \clearpage
-\section{Einrichtung Ihres \TeX-Systems}
-\subsection{Installation}
-Sie benötigen eine aktuelle Version von \TeX Live.
-Alle gängigen Linux-Distri\-bu\-ti\-onen stellen dafür Pakete bereit.
-Für andere Betriebssysteme ist \TeX Live unter
-\url{https://www.tug.org/texlive/}
-erhältlich.
-Bei der Installation von \TeX Live lassen sich verschiedene Bestandteile auswählen; wenn Sie unsicher sind, was Sie brauchen, können Sie alles installieren.
+\section{Introduction}
+The Anderson localization model was introduced by the physicist P.W. Anderson in 1958 to
+explain the quantum mechanical effects of disorder in materials. Anderson
+discusses the behaviour of electrons in dirty crystals, which is the quantum mechanical analougue of a random walk in a random environment.
+The model considers a d-dimensional grid, in which each site represents an atom. From an heuristical point of view, we also consider electrons
+that jump from atom to atom and are subject to an external random potential, which influences their
+motion in the material.
+When these particles cannot jump , it indicates the absence of
+quantum transport.This phenomenon is called Anderson localisation. This model deals with conditions for which the electrons
+stay trapped in a specific region and don’t generate electric conduction, defining an insulator.  This is
+in sharp contrast to the behaviour in ideal crystals, which are always conductors. \\
+Anderson's work, and that of N.F.Mott and J.H. van Vleck, won the 1977 physics Nobel prize for "their fundamental theoretical
+investigations of the electronic structure of magnetic and disordered systems". Since then, the study of random operators has become an important field of 
+mathematical physics, which has led to a tremendous amount of research activity and many mathematical results. 
+\\
+The two important methods to prove Anderson localization are the \textit{multiscale analysis method} (MSA), developed by Froehlich and Spencer [] in 1983, and the 
+\textit{ fractional moment method} (FMM) by Aizenmann and Molchanov in 1993. We will deal with the second one, which is more elementary 
+and gives stronger results on \textit{dynamical localization} [Chapter 2.2]. \\
+
+\vspace{2cm}
+\textbf{structure of the thesis}\\
+\vspace{2 cm}
+
+\textbf{Prerequisites}\\
+It is useful to have some familiarity with measure theory, basic probabilistic concepts such as indipendence and continuous distributions,
+and foundations of the theory of linear operators in Hilbert spaces, up to the spectral theorem for self adjoint operators 
+and consequences (as spectral types). 
+
+
+\subsection{The Anderson Model}
+In the first section the Anderson model is introduced as a discrete Schroedinger operator called Hamiltonian. 
+This operator acts on the Hilbert space 
+\begin{center}
+    $l^2( \mathbb{Z})$
+\end{center}
+
+
 
 \subsection{Dokumentation}
 Die Distribution \TeX Live beinhaltet Dokumentation für alle darin enthaltenen Pakete.

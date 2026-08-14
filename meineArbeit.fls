@@ -229,7 +229,6 @@ INPUT .\meineArbeit.toc
 INPUT .\meineArbeit.toc
 INPUT meineArbeit.toc
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1095.tfm
-INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
 OUTPUT meineArbeit.toc
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1095.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
@@ -242,25 +241,17 @@ INPUT .\Screenshot (326).png
 INPUT .\Screenshot (326).png
 INPUT .\Screenshot (326).png
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
-INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
-INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1095.tfm
 INPUT meineArbeit.aux
 INPUT .\meineArbeit.out
 INPUT .\meineArbeit.out
 INPUT meineArbeit.run.xml
 OUTPUT meineArbeit.run.xml
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk

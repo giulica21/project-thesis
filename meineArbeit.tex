@@ -165,7 +165,7 @@ potrebbe essere un'idea anche scrivere una piccola parentesi sulla differenza de
 
 
 \clearpage
-\section{localisation properties}
+\section{Localisation properties}
 We understood what localisation means from an heuristical point of view. Mathematically, it can be described
 from spectral and dynamical properties. 
 \subsection{spectral localisation}
@@ -193,100 +193,52 @@ from spectral and dynamical properties.
 \begin{theorem}
     If H shows dynamical localisation in an interval I, then it has pure point spectrum in I
 \end{theorem}
-
-
-
-\subsection{\texttt{amsmath}}
-Stellt nummerierte Umgebungen für Gleichungen bereit, wie z.B.
-\begin{equation}
-\label{eq:1}
-F = ma.
-\end{equation}
-Wenn Sie auf das Display \eqref{eq:1} später verweisen wollen, müssen Sie ihm mit dem Befehl \verb|\label| einen Namen zuweisen, auf den Sie dann mit dem Befehl \verb|\eqref| verweisen können.
-Ähnliches (mit \verb|\ref| statt \verb|\eqref|) ist für Kapitel, wie z.B.\ Kapitel~\ref{sec:pakete}, und Sätze, wie z.B.\ Satz~\ref{thm:Cauchy-Schwarz}, möglich.
-
-\subsection{\texttt{amssymb}}
-Definiert wichtige Symbole, wie z.B. $\mathbb{R}$ mit dem Befehl \verb|\mathbb{R}|.
-
-\subsection{\texttt{amsthm}}
-Stellt den Befehl \verb|\newtheorem| bereit, der benutzt wird um Umgebungen für Sätze, Definitionen, und Ähnliches zu definieren.
-Hier einige Beispiele.
-
-\begin{definition}
-Ein \emph{metrischer Raum} besteht aus einer Menge $M$ und einer Abbildung $d : M \times M \to \mathbb{R}_{\geq 0}$, genannt \emph{Metrik}, sodass für alle $x,y,z\in M$ gilt
-\begin{enumerate}
-\item $x=y \iff d(x,y)=0$,
-\item $d(x,y)=d(y,x)$ (Symmetrie),
-\item $d(x,z) \leq d(x,y)+d(y,z)$ (Subadditivität oder Dreiecksungleichung).
-\end{enumerate}
-\end{definition}
-
-\begin{theorem}[Cauchy--Schwarz-Ungleichung]
-\label{thm:Cauchy-Schwarz}
-Sei $H$ ein Hilbertraum und $v,w \in H$.
-Dann gilt
-\[
-\abs{ \langle v,w \rangle }
-\leq
-\norm{v} \norm{w}.
-\]
-\end{theorem}
 \begin{proof}
-Wenn der Beweis mit einer Gleichung endet, können Sie \verb|\qedhere| verwenden, um das Symbol für Beweisende auf der gleichen Zeile anzuzeigen.
-\end{proof}
-\begin{remark}
-Diese Bemerkung ist nicht nötig um den Rest des Textes zu verstehen.
-\end{remark}
-
-\begin{proof}[Beweis von Satz~\ref{thm:Cauchy-Schwarz}]
-Wenn zwischen der Aussage eines Satzes und dem Beweis noch etwas steht, sollte man explizit sagen, was man gerade beweisen will.
+    \dots
 \end{proof}
 
-\subsection{\texttt{fontenc}}
-\TeX\ ist ein sehr altes System und benutzt standardmäßig Rasterschriftarten.
-Dieses Paket mit der Option \verb|T1| ersetzt sie durch Vektorschriftarten.
-
-\subsection{\texttt{inputenc}}
-\TeX\ ist ein sehr altes System und akzeptiert standardmäßig nur ASCII-Eingabe.
-Dieses Paket mit der Option \verb|utf8| erlaubt Unicode-Eingabe, bietet also insbesondere Unterstützung für Umlaute und andere Akzente.
-
-\subsection{\texttt{hyperref}}
-Erzeugt klickbare Hyperlinks innerhalb des Dokuments bei Benutzung von \verb|\ref| und  \verb|\eqref| und ins Internet mit \verb|\url| und \verb|\href|.
-
-\subsection{\texttt{biblatex}}
-Formatiert die Bibliographie aus Daten, die in einer \verb|.bib|-Datei vorliegen.
-Die Datei muss mit \verb|\addbibresource| eingebunden werden.
-Die Bibliographie wird mit dem Befehl \verb|\printbibliography| gesetzt.
-Es ist ein Zwischenschritt mit dem Programm \verb|biber| notwendig, der von Qualitäts-Editoren automatisch ausgeführt wird; Details entnehmen Sie der Paket-Dokumentation.
-
-Bibliographische Daten in dem passenden Format finden Sie in \emph{Math\-Sci\-Net} (\url{https://mathscinet.ams.org/}) oder \emph{zbMATH} (\url{https://zbmath.org/}).
-Wenn Sie eine Veröffentlichung, die Sie zitieren wollen, dort nicht finden, wie z.B.\ \cite{arxiv:1507.02515}, können Sie den Eintrag von Hand ausfüllen, oder Sie benutzen einen \verb|.bib|-Manager, wie z.B.\ \emph{KBibTeX} (dieser hat den Vorteil einer eingebauten MathSciNet-Suche).
-
-Wenn Sie aus einem Buch zitieren, benennen Sie immer den relevanten Abschnitt, also z.B.\ \cite[Satz III.2.2]{MR1232192} oder zumindest \cite[p.\ 107]{MR1232192} (die Seitenzahl-Variante ist schlechter, da eher von der Ausgabe abhängig), und nicht einfach \cite{MR1232192}.
-In diesem Beispiel ersparen Sie \emph{jedem} Leser Ihrer Arbeit den Aufwand, in einem 700-seitigen Buch etwas Bestimmtes zu suchen.
 
 \clearpage
-\section{Optionale Pakete}
-Die hier vorgestellten Pakete decken Aufgaben ab, die sich nicht in jeder Arbeit stellen, aber häufig genug vorkommen dürften, um sie an dieser Stelle erwähnenswert zu machen.
+\section{SAW representation}
 
-\subsection{\texttt{mathtools}}
-Vereinfacht häufige Formatierungsaufgaben, wie z.B.\ Einrückung von Gleichungen in der \verb|align|-Umgebung mit dem Befehl \verb|\MoveEqLeft| oder hübsche Formatierung von Klammern, Beträgen, Normen, inneren Produkten, etc.\ mit dem Befehl \verb|\DeclarePairedDelimiter|.
+\subsection{The green function}
+\subsection{SAW Definitions}
 
-\subsection{\texttt{tikz}}
-Das umfangreiche Paket zur Erstellung von zweidimensionalen Grafiken aller Art.
 
-\subsection{\texttt{tikz-cd}}
-Eine auf \verb|tikz| aufbauende Lösung zur Erstellung von kommutativen Diagrammen.
-Komfortabler und flexibler als alle früheren Lösungen.
+\subsection{SAW representation of G }
+\begin{itemize}
+    \item Theorem of the representation
+    \begin{enumerate}
+        \item first prove that $G(x,y) = G(x,x) \sum{G(x_1,y)}$
+        \item then the represantion with the $R_N$
+    \end{enumerate}
+    \item put figure of the grid ant the different paths
+\end{itemize}
 
-Mit \emph{Quiver} (\url{https://q.uiver.app/}) existiert eine WYSIWYG-Ober\-fläche zur Erstellung von \verb|tikz-cd|-Diagrammen.
+\clearpage
+\section{The Fractional moments method}
+\begin{lemma}
+    (a priori bound)
+\end{lemma}
+\subsection{First localisation criteria}
+\begin{theorem}
+    first important theorem
+\end{theorem}
 
-\subsection{\texttt{graphicx}}
-Einbindung externer Grafiken.
-Empfehlenswerte Formate sind PDF (für Vektorgrafiken), PNG (für Rastergrafiken), oder JPG (für Fotos).
+\subsubsection{Proof without SAW}
+\subsubsection{Proof with SAW}
+\subsection{From fractional moments to dynamical localisation}
+\begin{proposition}
+    \[
+    |\Im z| \mathbb{E}\left( |G(x,y;z)|^2\right) \leq C_1\mathbb{E}\left( |G(x,y;z)|^s\right) 
+    \]
+\end{proposition}
+\begin{theorem}
+    Theorem final
+\end{theorem}
 
-\subsection{\texttt{booktabs}}
-Schönere Tabellen.
+
+
 
 \clearpage
 \addcontentsline{toc}{section}{Literatur}

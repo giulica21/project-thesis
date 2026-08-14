@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  14 AUG 2026 09:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  14 AUG 2026 18:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -674,61 +674,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 139.
 
 [4]
-<Screenshot (326).png, id=172, 618.81187pt x 375.65344pt>
+<Screenshot (326).png, id=147, 618.81187pt x 375.65344pt>
 File: Screenshot (326).png Graphic file (type png)
 <use Screenshot (326).png>
 Package pdftex.def Info: Screenshot (326).png  used on input line 161.
 (pdftex.def)             Requested size: 251.9989pt x 152.97568pt.
- [5 <./Screenshot (326).png>]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 199.
+ [5 <./Screenshot (326).png>] [6
 
+] [7
 
-LaTeX Warning: Reference `sec:pakete' on page 6 undefined on input line 206.
+] [8
 
-[6
+]
 
-] [7]
-Overfull \hbox (10.64275pt too wide) in paragraph at lines 257--261
-\T1/cmr/m/n/10.95 auto-mat-isch aus-ge-führt wird; De-tails ent-neh-men Sie der Paket-Dokumentation. 
- []
+LaTeX Warning: Empty bibliography on input line 245.
 
-[8]
-Overfull \hbox (10.43614pt too wide) in paragraph at lines 273--274
-\T1/cmr/m/n/10.95 Vereinfacht häufige Form-atier-ung-saufgaben, wie z.B. Ein-rück-ung von Gleichun-
- []
-
-[9
-
-] [10
-
-] (meineArbeit.aux)
+(meineArbeit.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `meineArbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 2A9739FC467CE1882FDBB0117E322ECC;3124.
+(rerunfilecheck)             Checksum: F0954CD2B10ADC3A320355895ED94E59;3406.
 Package logreq Info: Writing requests to 'meineArbeit.run.xml'.
 \openout1 = `meineArbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19316 strings out of 467501
- 339100 string characters out of 5408550
- 1196099 words of memory out of 5000000
- 48286 multiletter control sequences out of 15000+600000
- 643092 words of font info for 74 fonts, out of 8000000 for 9000
+ 19066 strings out of 467501
+ 334065 string characters out of 5408550
+ 1193884 words of memory out of 5000000
+ 48049 multiletter control sequences out of 15000+600000
+ 641789 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,6n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (12 pages, 413499 bytes).
+ <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on meineArbeit.pdf (10 pages, 371361 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 206 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 564 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

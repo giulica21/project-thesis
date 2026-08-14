@@ -48,40 +48,6 @@
       \verb 1507.02515
       \endverb
     \endentry
-    \entry{More_Math_into_Latex}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=b4f3ce6a97ea5d974f0e9354c6daacfa}{%
-           family={Grätzer},
-           familyi={G\bibinitperiod},
-           given={George},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer International Publishing}%
-      }
-      \strng{namehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{fullhash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{fullhashraw}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{bibnamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{authorbibnamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{authornamehash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{authorfullhash}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \strng{authorfullhashraw}{b4f3ce6a97ea5d974f0e9354c6daacfa}
-      \field{labelalpha}{Grä16}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{5}
-      \field{isbn}{978-3-319-23796-1}
-      \field{title}{More Math Into LaTeX}
-      \field{year}{2016}
-      \field{pages}{XXX\bibrangessep 609}
-      \range{pages}{2}
-      \verb{doi}
-      \verb 10.1007/978-3-319-23796-1
-      \endverb
-    \endentry
     \entry{MR1232192}{book}{}{}
       \name{author}{1}{}{%
         {{hash=1e432a4cd42a48f08962229276035a77}{%

@@ -34,12 +34,12 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \theoremstyle{plain}
-\newtheorem{theorem}{Satz}
+\newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Korollar}
+\newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{remark}
-\newtheorem{remark}[theorem]{Bemerkung}
+\newtheorem{remark}[theorem]{Remark}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \numberwithin{equation}{section}
@@ -55,6 +55,7 @@
 \usepackage[style=alphabetic]{biblatex}
 \addbibresource{Literatur.bib}
 \usepackage{setspace}
+\usepackage{graphicx}
 
 \begin{document}
 \setstretch{1.15}
@@ -90,7 +91,7 @@ investigations of the electronic structure of magnetic and disordered systems". 
 mathematical physics, which has led to a tremendous amount of research activity and many mathematical results. 
 \\
 The two important methods to prove Anderson localization are the \textit{multiscale analysis method} (MSA), developed by Froehlich and Spencer [] in 1983, and the 
-\textit{ fractional moment method} (FMM) by Aizenmann and Molchanov in 1993. We will deal with the second one, which is more elementary 
+\textit{ fractional moment method} (FMM) by Aizenman and Molchanov in 1993. We will deal with the second one, which is more elementary 
 and gives stronger results on \textit{dynamical localization} [Chapter 2.2]. \\
 
 \vspace{2cm}
@@ -104,69 +105,96 @@ and consequences (as spectral types).
 
 
 \subsection{The Anderson Model}
-In the first section the Anderson model is introduced as a discrete Schroedinger operator called \textit{Hamiltonian}: 
+Transport phenomena in a disordered material are often described via discrete random Schroedinger operator. On the lattice $\mathbb{Z}^d$, we consider the infinite random matrix called the \textit{Hamiltonian}: 
 \[
 H_\omega = - \Delta + \lambda V_\omega.
 \]
-This operator acts on the Hilbert space 
+It is 
+\textbf{Guarda paper diesrtori per info iniziali, mi sembravano scritte bene.}This operator acts on the Hilbert space 
 \[
 l^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
 with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$. 
-
+\\
+\vspace{0.3 cm}\\
+\subsubsection{The operator}
 \textbf{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
 For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
 \[
-- \Delta u(x) = - \sum_{{k \in \mathbb{Z}^d}, |x-k|=1} u(x)- u(k),  \quad k \in \mathbb{Z}^d
+- \Delta u(x) \coloneq - \sum_{{k \in \mathbb{Z}^d}, |x-k|=1} u(x)- u(k),  \quad k \in \mathbb{Z}^d
 \]
 where $|x-k|$ is the graph difference in $\mathbb{Z}^d$.
 The descrete Laplacian is per definiton bounded and consequently self-adjoint [for proofs see Appendix A].
 Just as the continuum Laplacian the Fourier trnasform blah blah blah.
-\\ the spectrum is absolutely continuous and as similarity with the continuus laplacian, it has plane waves as generalized eigenfunctions.
+\\ The spectrum is absolutely continuous and as similarity with the continuus laplacian, it has plane waves as generalized eigenfunctions.
 \vspace{0.5 cm}
 
-\textbf{The potential term}
+\textbf{The Potential Term.}\\
+... \textbf{The disorder strength.}\\
+
+\subsubsection{Self-adjointness} 
 
 
 
+\subsubsection{The spectrum of $H_\omega$.}
+\begin{itemize}
+    \item in $\mathbb{R}$
+    \item bounded $[0,4d]+ supp\mu$
+    \item spectral division (  any use of the spectral theorem should be sent to the Appendix)
+    \item RAGE theorem ( or maybe directly in the Appendix or chapter 2)
+\end{itemize} 
 
+\subsection{Main results}
+In this section one could write first of all the main theorem and the spectral results. starting maybe with: \\
+\textit{The aim of this thesis is to prove localisation on the whole spectrum of $H_\omega$ ...}\\
+Poi scrivo il teorema finale con spiegazione che la dimostrazione avverrà nel capitolo 5. \\
+potrebbe essere un'idea anche scrivere una piccola parentesi sulla differenza dei rislutati con Frohlich e spencer e con Aizenman e Molchanov.\\
+\textit{One of the main results concerns the values of $\lambda$ }
 
+\begin{itemize}
+    \item $\lambda >> 1$ and $\lambda =0$ 
+    \item general case for $d=1, d\geq2$
+\end{itemize}
 
-\subsection{Dokumentation}
-Die Distribution \TeX Live beinhaltet Dokumentation für alle darin enthaltenen Pakete.
-Eine kurze Einführung in \LaTeX\ sehen Sie, wenn Sie in der Kommandozeile
-\begin{verbatim}
-$ texdoc lshort-german
-\end{verbatim}
-eingeben.
-Die Dokumentation für ein Paket können Sie sich mit
-\begin{verbatim}
-$ texdoc PAKETNAME
-\end{verbatim}
-anzeigen lassen, also z.B.\ \verb|texdoc tikz|.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Screenshot (326).png}
+    \caption{Aizenman figure}
+    \label{fig:nome_etichetta}
+\end{figure}
 
-Wenn Sie ausgefallene mathematische Symbole suchen (die in der o.g.\ Kurzbeschreibung nicht auftauchen), werden Sie hier fündig:
-\begin{verbatim}
-$ texdoc comprehensive
-\end{verbatim}
-Es gibt viele Online-Ressourcen zu \LaTeX.
-Es kann aber schwierig sein, aktuelle Informationen von veralteten zu unterscheiden.
-Die aktivste, und deshalb aktuellste, Ressource ist zur Zeit \url{https://tex.stackexchange.com/}
-
-Es gibt auch Bücher über \LaTeX, wie z.B.\ \cite{More_Math_into_Latex}.
-
-\subsection{Editor}
-Wenn Sie noch keinen Lieblingseditor haben, empfehle ich aktuell \emph{Visual Studio Code} mit den Erweiterungen \emph{LaTeX Workshop} (IDE-Funktionen) und \emph{LTeX} (Rechtschreibprüfung).
-Spezialisierte \LaTeX-Editoren bieten dem gegenüber keine echten Vorteile, und diesen Editor können Sie auch für viele andere Zwecke einsetzen.
-
-Richten Sie ihren Editor so ein, dass er \verb|pdflatex| und \verb|biber| (und nicht \verb|latex|+\verb|dvipdf| bzw.\ \verb|bibtex|) benutzt.
-Qualitäts-Editoren sollten automatisch erkennen, was Sie benötigen.
-Wenn Sie keinen Editor mit integriertem Viewer verwenden, sollten Sie noch \verb|pdfsync| manuell einrichten.
 
 \clearpage
-\section{Paketempfehlungen}
-\label{sec:pakete}
-Ich stelle hier kurz die (nach meiner Meinung) für Mathematik wichtigsten Pakete vor.
+\section{localisation properties}
+We understood what localisation means from an heuristical point of view. Mathematically, it can be described
+from spectral and dynamical properties. 
+\subsection{spectral localisation}
+\dots
+\begin{definition}
+    \dots
+\end{definition}
+\subsection{dynamical localisation}
+\begin{definition}
+    \[
+    \sup_{t \in \mathbb{R}} || |X|^p e^{-itH_\omega} \phi || < \infty \qquad \text{almost surely} \dots
+    \]
+\end{definition}
+
+\subsubsection{exponential localisation}
+\begin{definition}
+    \[
+    \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-itH_\omega}e_k \rangle | \right) \leq C e^{- \mu |j-k|}
+    \]
+    for all $\varphi$ with compact support.
+\end{definition}
+
+\dots
+\subsection{From dynamical to spectral localisation}
+\begin{theorem}
+    If H shows dynamical localisation in an interval I, then it has pure point spectrum in I
+\end{theorem}
+
+
 
 \subsection{\texttt{amsmath}}
 Stellt nummerierte Umgebungen für Gleichungen bereit, wie z.B.

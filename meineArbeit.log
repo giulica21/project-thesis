@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  14 AUG 2026 18:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  15 AUG 2026 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,48 +648,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--96
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+Underfull \hbox (badness 10000) in paragraph at lines 115--119
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--134
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 139.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 139.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 139.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 139.
 
 [4]
-<Screenshot (326).png, id=147, 618.81187pt x 375.65344pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 154.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 154.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\omega' on input line 154.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 154.
+
+
+Overfull \hbox (0.58337pt too wide) in paragraph at lines 165--167
+\T1/cmr/m/n/10.95 sin-golar-mente con-tinuo $\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )$ \T1/cmr/m/n/10.95 e as-sol-uta-mente con-tinuo $\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )$\T1/cmr/m/n/10.95 , con $\OML/cmm/m/it/10.95 ^^[\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 ) =
+ []
+
+[5]
+<Screenshot (326).png, id=161, 618.81187pt x 375.65344pt>
 File: Screenshot (326).png Graphic file (type png)
 <use Screenshot (326).png>
-Package pdftex.def Info: Screenshot (326).png  used on input line 161.
+Package pdftex.def Info: Screenshot (326).png  used on input line 199.
 (pdftex.def)             Requested size: 251.9989pt x 152.97568pt.
- [5 <./Screenshot (326).png>] [6
+ [6] [7 <./Screenshot (326).png>]
+Overfull \hbox (5.41pt too wide) in paragraph at lines 220--221
+[]\T1/cmr/bx/n/10.95 Definition 2.2 \T1/cmr/m/n/10.95 (Ex-po-nen-tial Spec-tral Loc-al-iz-a-tion)\T1/cmr/bx/n/10.95 . \T1/cmr/m/n/10.95 L'operatore $\OML/cmm/m/it/10.95 H[]$ \T1/cmr/m/n/10.95 presenta
+ []
 
-] [7
 
-] [8
+Overfull \hbox (5.39684pt too wide) in paragraph at lines 228--229
+\T1/cmr/m/n/10.95 l'intero in-ter-vallo $\OML/cmm/m/it/10.95 I$\T1/cmr/m/n/10.95 ). Questo fenomeno è pro-fon-da-mente di-verso dalla presenza
+ []
 
-] [9
+[8
+
+]
+Overfull \hbox (15.27834pt too wide) detected at line 258
+\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 k\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^_[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95  \OMS/cmsy/m/n/10.95 k[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^T [] [] [][] \OML/cmm/m/it/10.95 dt [] \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 jh\OML/cmm/m/it/10.95 ^^N[]; e[]^^_[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^N[]\OMS/cmsy/m/n/10.95 ij\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 k\OML/cmm/m/it/10.95  \OMS/cmsy/m/n/10.95 k[]
+ []
+
+[9] [10] [11
+
+] [12]
+Overfull \hbox (8.19728pt too wide) detected at line 368
+[]
+ []
+
+[13]
+Overfull \hbox (7.83586pt too wide) detected at line 394
+[][][][] \OMS/cmsy/m/n/10.95 ^^T [] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 :
+ []
+
+[14] [15
+
+] [16
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 250.
+LaTeX Warning: Empty bibliography on input line 448.
 
 (meineArbeit.aux)
  ***********
@@ -697,23 +723,23 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
  ***********
 Package rerunfilecheck Info: File `meineArbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 1B488CB0F02743D87982872C35F8177C;3321.
+(rerunfilecheck)             Checksum: F26814492583D7CD87BE1B7F56C26EDF;3732.
 Package logreq Info: Writing requests to 'meineArbeit.run.xml'.
 \openout1 = `meineArbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19067 strings out of 467501
- 334051 string characters out of 5408550
- 1193884 words of memory out of 5000000
- 48049 multiletter control sequences out of 15000+600000
+ 19104 strings out of 467501
+ 334590 string characters out of 5408550
+ 1201884 words of memory out of 5000000
+ 48059 multiletter control sequences out of 15000+600000
  641789 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,6n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (11 pages, 374364 bytes).
+ 74i,17n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on meineArbeit.pdf (18 pages, 440433 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 673 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 

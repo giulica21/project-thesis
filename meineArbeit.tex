@@ -105,12 +105,11 @@ and consequences (as spectral types).
 
 
 \subsection{The Anderson Model}
-Transport phenomena in a disordered material are often described via discrete random Schroedinger operator. On the lattice $\mathbb{Z}^d$, we consider the infinite random matrix called the \textit{Hamiltonian}: 
+Transport phenomena in a disordered material are often described via discrete random Schroedinger operator. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
 \[
 H_\omega = - \Delta + \lambda V_\omega.
 \]
-It is 
-\textbf{Guarda paper diesrtori per info iniziali, mi sembravano scritte bene.}This operator acts on the Hilbert space 
+where $ -\Delta$ is a deterministic matrix (the kinetic part) and $ V_\omega$ is a diagonal matrix with random entries. This operator acts on the Hilbert space 
 \[
 l^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
@@ -123,14 +122,30 @@ For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
 \[
 - \Delta u(x) \coloneq - \sum_{{k \in \mathbb{Z}^d}, |x-k|=1} u(x)- u(k),  \quad k \in \mathbb{Z}^d
 \]
-where $|x-k|$ is the graph difference in $\mathbb{Z}^d$.
+where $|*|$ denotes the $ l^2$ norm.
 The descrete Laplacian is per definiton bounded and consequently self-adjoint [for proofs see Appendix A].
 Just as the continuum Laplacian the Fourier trnasform blah blah blah.
 \\ The spectrum is absolutely continuous and as similarity with the continuus laplacian, it has plane waves as generalized eigenfunctions.
 \vspace{0.5 cm}
 
-\textbf{The Potential Term.}\\
-... \textbf{The disorder strength.}\\
+\textbf{The Potential Term.}
+\begin{definition}[i.i.d. random variables]
+$(\omega_v)_{v \in V}$ are identically distributed if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_v \in A) = \mu(A)$ for all $v \in V$ and Borel sets $A \subset \mathbb{R}$. $(\omega_v)_{v \in V}$ are independent if
+\[
+\mathbb{P}(\omega_{v_1} \in A_1, \dots, \omega_{v_l} \in A_l) = \prod_{k=1}^l \mathbb{P}(\omega_{v_k} \in A_k) = \prod_{k=1}^l \mu(A_k)
+\]
+for each finite subset $\{v_1, \dots, v_l\}$ of $V$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
+\end{definition}
+
+We assume that the distribution $\mu$ of $\omega_v$ is absolutely continuous with density $\rho$ where $\rho$ is bounded with compact support, i.e.,
+\[
+\mu(B) = \int_B \rho(u) \, du \quad \text{for } B \subset \mathbb{R} \text{ Borel}, \quad \rho \in L_0^\infty(\mathbb{R}).
+\]
+
+Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $v \in \mathbb{Z}^d$. 
+... \textbf{ovviamente il testo da modificare in base al resto delle notazioni .}\\
+$ \lambda >0$ is the disorder parameter
+
 
 \subsubsection{Self-adjointness} 
 
@@ -139,10 +154,33 @@ Just as the continuum Laplacian the Fourier trnasform blah blah blah.
 \subsubsection{The spectrum of $H_\omega$.}
 \begin{itemize}
     \item in $\mathbb{R}$
-    \item bounded $[0,4d]+ supp\mu$
+    \item bounded $[0,4d]+ \text{supp}\mu$
     \item spectral division (  any use of the spectral theorem should be sent to the Appendix)
     \item RAGE theorem ( or maybe directly in the Appendix or chapter 2)
 \end{itemize} 
+
+Dalla teoria spettrale per operatori autoaggiunti su uno spazio di Hilbert $\mathcal{H}$, lo spazio si decompone univocamente nella somma diretta di sottospazi invarianti ortogonali:
+\begin{equation}
+\mathcal{H} = \mathcal{H}_{pp} \oplus \mathcal{H}_{sc} \oplus \mathcal{H}_{ac}
+\end{equation}
+a cui corrispondono rispettivamente lo spettro puramente puntuale $\sigma_{pp}(H)$, singolarmente continuo $\sigma_{sc}(H)$ e assolutamente continuo $\sigma_{ac}(H)$, con $\sigma(H) = \sigma_{pp}(H) \cup \sigma_{sc}(H) \cup \sigma_{ac}(H)$.
+
+L'interpretazione fisica di questi sottospazi \`e chiarita dal fondamentale \textbf{Teorema RAGE} (Ruelle-Amrein-Georgescu-Enss):
+\begin{theorem}[RAGE]
+Sia $H$ un operatore di Schr\"odinger su $l^2(G)$ e $\mathcal{H}_c = \mathcal{H}_{ac} \oplus \mathcal{H}_{sc}$ il sottospazio spettrale continuo. Allora:
+\begin{enumerate}
+    \item $\phi \in \mathcal{H}_{pp}$ se e solo se per ogni $\epsilon > 0$ esiste un raggio $R < \infty$ tale che:
+    \[
+    \sup_{t \in \mathbb{R}} \|\chi_{(|x| > R)} e^{-itH} \phi\| < \epsilon \quad \Longleftrightarrow \quad \lim_{R \to \infty} \sup_{t \in \mathbb{R}} \|\chi_{(|x| > R)} e^{-itH} \phi\| = 0
+    \]
+    ovvero lo stato $\phi$ rimane confinato in regioni compatte uniformemente nel tempo (stato legato).
+    \item $\psi \in \mathcal{H}_c$ se e solo se per ogni $R > 0$:
+    \[
+    \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \|\chi_{(|x| \le R)} e^{-itH} \psi\|\, dt = 0
+    \]
+    ovvero la probabilit\`a che lo stato permanga in qualsiasi regione limitata decade in media temporale a zero (stati di scattering / trasporto).
+\end{enumerate}
+\end{theorem}
 
 \subsection{Main results}
 In this section one could write first of all the main theorem and the spectral results. starting maybe with: \\
@@ -156,7 +194,7 @@ potrebbe essere un'idea anche scrivere una piccola parentesi sulla differenza de
     \item general case for $d=1, d\geq2$
 \end{itemize}
 
-\begin{figure}[htbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{Screenshot (326).png}
     \caption{Aizenman figure}
@@ -169,10 +207,29 @@ potrebbe essere un'idea anche scrivere una piccola parentesi sulla differenza de
 We understood what localisation means from an heuristical point of view. Mathematically, it can be described
 from spectral and dynamical properties. 
 \subsection{spectral localisation}
-\dots
-\begin{definition}
-    \dots
+
+
+\begin{definition}[Spectral Localization]
+Sia $I \subset \mathbb{R}$ un intervallo aperto. Un operatore di Schr\"odinger casuale $H_\omega$ presenta \textbf{localizzazione spettrale} in $I$ se, con probabilit\`a 1 (quasi certamente), lo spettro continuo in $I$ \`e vuoto e lo spettro \`e puramente puntuale:
+\[
+\sigma_c(H_\omega) \cap I = \emptyset \quad \text{e} \quad \sigma(H_\omega) \cap I \subset \sigma_{pp}(H_\omega) \quad \text{quasi certamente.}
+\]
 \end{definition}
+
+\begin{definition}[Exponential Spectral Localization]
+L'operatore $H_\omega$ presenta \textbf{localizzazione spettrale esponenziale} in $I$ se presenta localizzazione spettrale in $I$ e, per quasi ogni realizzazione $\omega$, possiede una base ortonormale completa di autofunzioni $(\phi_{\omega,n})_{n \in \mathbb{N}}$ corrispondenti ad autovalori in $I$ che decadono esponenzialmente nello spazio:
+\begin{equation}
+|\phi_{\omega,n}(x)| \le C_{\omega,n} e^{-\mu |x - x_{n,\omega}|}
+\end{equation}
+dove $\mu > 0$ \`e la lunghezza inversa di localizzazione, $x_{n,\omega}$ \`e il centro di localizzazione dell'autofunzione e $C_{\omega,n} < \infty$ \`e una costante (che pu\`o dipendere da $\omega$ e $n$).
+\end{definition}
+
+\begin{remark}[Spettro puntuale denso]
+Se $I$ \`e contenuto nello spettro quasi certo $\Sigma = \sigma(H_0) + \mathrm{supp}\,\mu$, la localizzazione spettrale implica che lo spettro in $I$ \`e costituito da un insieme \emph{denso} di autovalori (la cui chiusura riempie l'intero intervallo $I$). Questo fenomeno \`e profondamente diverso dalla presenza di autovalori isolati e discreti tipici dei sistemi atomici classici, e costituisce una delle peculiarit\`a pi\`u rilevanti del modello di Anderson.
+\end{remark}
+
+
+
 \subsection{dynamical localisation}
 \begin{definition}
     \[
@@ -180,7 +237,7 @@ from spectral and dynamical properties.
     \]
 \end{definition}
 
-\subsubsection{exponential localisation}
+\subsubsection{exponential dynamical localisation}
 \begin{definition}
     \[
     \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-itH_\omega}e_k \rangle | \right) \leq C e^{- \mu |j-k|}
@@ -190,23 +247,162 @@ from spectral and dynamical properties.
 
 \dots
 \subsection{From dynamical to spectral localisation}
-\begin{theorem}
-    If H shows dynamical localisation in an interval I, then it has pure point spectrum in I
+
+\begin{theorem}[Localizzazione Dinamica $\implies$ Localizzazione Spettrale]
+Se $H_\omega$ esibisce localizzazione dinamica in un intervallo aperto $I$, allora $H_\omega$ presenta quasi certamente solo spettro puramente puntuale in $I$ ($\sigma_c(H_\omega) \cap I = \emptyset$).
 \end{theorem}
-\begin{proof}
-    \dots
+\begin{proof}[Schema della dimostrazione via RAGE]
+Applicando il Teorema RAGE alla proiezione continua $P_{cont}(H) \chi_I(H)\psi$ per uno stato $\psi$ a supporto compatto in $\{|y| \le r\}$:
+\[
+\mathbb{E}(\|P_{cont}(H) \chi_I(H) \psi\|^2) \le \lim_{R \to \infty} \frac{1}{T} \int_0^T dt \sum_{|x| \ge R, |y| \le r} \mathbb{E}(|\langle \delta_x, e^{-itH} \chi_I(H) \delta_y \rangle|) \|\psi\|^2
+\]
+Per localizzazione dinamica, la somma $\sum_{|x| \ge R} e^{-\mu |x-y|}$ tende a zero quando $R \to \infty$. Dunque $P_{cont}(H) \chi_I(H)\psi = 0$ quasi certamente su un insieme denso di stati $\psi$, da cui $\sigma_c(H_\omega) \cap I = \emptyset$.
 \end{proof}
+
+
+\subsection{Assenza di moto balistico vs.\ Esempi di del Rio et al.}
+
+Sebbene la presenza di spettro puramente puntuale sia intuitivamente associata all'assenza di conduzione elettrica, la sola localizzazione spettrale non pone vincoli sufficientemente forti sulla dinamica asintotica a tempi lunghi.
+\begin{itemize}
+    \item \textbf{Teorema di Simon (1990):} La presenza di puro spettro puntuale garantisce l'assenza di moto puramente balistico per stati compattamente supportati $\psi_0$:
+    \[
+    \lim_{t \to \infty} \frac{\langle |X|^2 \rangle_{\psi(t)}}{t^2} = \lim_{t \to \infty} \frac{\||X| e^{-itH_\omega} P_{H \in I} \psi_0\|^2}{t^2} = 0.
+    \]
+    \item \textbf{Controesempi di del Rio, Jitomirskaya, Last e Simon (1996):} Esistono operatori di Schr\"odinger unidimensionali con localizzazione spettrale esponenziale ma per i quali il momento quadratico cresce in modo arbitrariamente vicino al moto balistico:
+    \[
+    \limsup_{t \to \pm \infty} \frac{\langle |X|^2 \rangle_{\psi(t)}}{t^{2-\delta}} = \infty \quad \text{per ogni } \delta > 0.
+    \]
+    Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.
+\end{itemize}
+
 
 \clearpage 
 \section{Fractional moments}
 \subsection{The green function}
-\begin{lemma}
-    (a priori bound)
-\end{lemma}
+
+The \emph{resolvent operator} is defined as:
+\[
+G(z) = (H - z)^{-1}
+\]
+
 \subsection{First localisation criteria}
-\begin{theorem}
-    first important theorem
+\begin{theorem}[Aizenman--Molchanov, 1993]
+Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda \ge \lambda_0$ there are $C < \infty$ and $\mu > 0$ with
+\begin{equation}
+\mathbb{E}\left( |G_{\omega,\lambda}(x, y; z)|^s \right) \le C e^{-\mu |x - y|}
+\end{equation}
+uniformly in $x, y \in \mathbb{Z}^d$ and $z \in \mathbb{C} \setminus \mathbb{R}$.
 \end{theorem}
+
+
+\begin{lemma}[A priori bound]
+There exists a constant $C_1 = C_1(s, \rho) < \infty$ such that
+\begin{equation}
+\mathbb{E}_{x,y}(|G_{\omega,\lambda}(x, y; z)|^s) \le C_1 \lambda^{-s}
+\end{equation}
+for all $x, y \in \mathbb{Z}^d$, $z \in \mathbb{C} \setminus \mathbb{R}$, and $\lambda > 0$.
+
+Here
+\[
+\mathbb{E}_{x,y}(\dots) = \int \int \dots \rho(\omega_x)\, d\omega_x \rho(\omega_y)\, d\omega_y
+\]
+is the conditional expectation with $(\omega_u)_{u \in \mathbb{Z}^d \setminus \{x,y\}}$ fixed. After averaging over $\omega_x$ and $\omega_y$ the bound in (1) does not depend on the remaining random parameters. Thus we get also that
+\[
+\mathbb{E}(|G_{\omega,\lambda}(x, y; z)|^s) \le C_1 \lambda^{-s}.
+\]
+\end{lemma}
+
+\begin{proof}
+We first prove (1) for the case $x = y$, which demonstrates the simplicity of the fundamental idea underlying the FMM. For fixed $x \in \mathbb{Z}^d$, write $\omega = (\hat{\omega}, \omega_x)$ where $\hat{\omega}$ is short for $(\omega_u)_{u \in \mathbb{Z}^d \setminus \{x\}}$. With $P_{e_x} := \langle e_x, \cdot \rangle e_x$, the orthogonal projection onto the span of $e_x$, we can separate the $\omega_x$ and $\hat{\omega}$ dependence of $H_{\omega,\lambda}$ as
+\[
+H_{\omega,\lambda} = H_{\hat{\omega},\lambda} + \lambda \omega_x P_{e_x}.
+\]
+The resolvent identity yields
+\begin{equation}
+(H_{\omega,\lambda} - z)^{-1} = (H_{\hat{\omega},\lambda} - z)^{-1} - \lambda \omega_x H_{\hat{\omega},\lambda} - z)^{-1} P_{e_x} (H_{\omega,\lambda} - z)^{-1}.
+\end{equation}
+Taking matrix-elements we conclude for the corresponding diagonal Green functions that
+\begin{equation}
+G_{\omega,\lambda}(x, x; z) = G_{\hat{\omega},\lambda}(x, x; z) - \lambda \omega_x G_{\hat{\omega},\lambda}(x, x; z) G_{\omega,\lambda}(x, x; z)
+\end{equation}
+or
+\begin{equation}
+G_{\omega,\lambda}(x, x; z) = \frac{1}{a + \lambda \omega_x} \quad \text{with } a = \frac{1}{G_{\hat{\omega},\lambda}(x, x; z)}.
+\end{equation}
+Note that the latter is well-defined since one can easily check the Herglotz property $\operatorname{Im} G_{\hat{\omega},\lambda}(x, x; z) / \operatorname{Im} z > 0$ of the Green function.
+
+The important fact is that $a$ is a complex number which does not depend on $\omega_x$. Thus, writing $\mathbb{E}_x(\dots) := \int \dots \rho(\omega_x)\, d\omega_x$, we find that
+\begin{equation}
+\mathbb{E}_x(|G_{\omega,\lambda}(x, x; z)|^s) \le \frac{\|\rho\|_\infty}{\lambda^s} \int_{\operatorname{supp} \rho} \frac{d\omega_x}{|\frac{a}{\lambda} + \omega_x|^s} \le \frac{C(\rho, s)}{\lambda^s},
+\end{equation}
+with $C(\rho, s)$ independent of $\lambda$ and $a$, and thus independent of $\hat{\omega}$, $z$ and $x$.
+
+The proof of (1) for $x \ne y$ is based on the same idea, replacing the rank-one-perturbation arguments above with rank-two-perturbation arguments. Write $\omega = (\hat{\omega}, \omega_x, \omega_y)$, $P = P_{e_x} + P_{e_y}$ and
+\[
+H_{\omega,\lambda} = H_{\hat{\omega},\lambda} + \lambda \omega_x P_{e_x} + \lambda \omega_y P_{e_y}.
+\]
+Using the resolvent identity similar to above one arrives at
+\begin{equation}
+P(H_{\omega,\lambda} - z)^{-1} P = \left( A + \lambda \begin{pmatrix} \omega_x & 0 \\ 0 & \omega_y \end{pmatrix} \right)^{-1},
+\end{equation}
+where
+\[
+A = \left( P(H_{\hat{\omega},\lambda} - z)^{-1} P \right)^{-1},
+\]
+both to be read as identities for $2 \times 2$-matrices in the range of $P$. This is a special case of the Krein formula which characterizes the resolvents of finite-rank perturbations of general self-adjoint operators. For the matrix $A$ one can check that $\operatorname{Im} A = \frac{1}{2i}(A - A^*) < 0$ if $\operatorname{Im} z > 0$ and $\operatorname{Im} A > 0$ if $\operatorname{Im} z < 0$. It is also independent of $\omega_x$ and $\omega_y$.
+
+Using that $G_{\omega,\lambda}(x, y; z)$ is one of the matrix-elements of $P(H_{\omega,\lambda} - z)^{-1} P$, we find
+\begin{align*}
+\mathbb{E}_{x,y}(|G_{\omega,\lambda}(x, y; z)|^s) &\le \mathbb{E}_{x,y} \left( \left\| \left( A + \lambda \begin{pmatrix} \omega_x & 0 \\ 0 & \omega_y \end{pmatrix} \right)^{-1} \right\|^s \right) \\
+&= \lambda^{-s} \mathbb{E}_{x,y} \left( \left\| \left( -\frac{1}{\lambda} A - \begin{pmatrix} \omega_x & 0 \\ 0 & \omega_y \end{pmatrix} \right)^{-1} \right\|^s \right) \\
+&\le \frac{\|\rho\|_\infty^2}{\lambda^s} \int_{-r}^r \int_{-r}^r \left\| \left( -\frac{1}{\lambda} A - \begin{pmatrix} \omega_x & 0 \\ 0 & \omega_y \end{pmatrix} \right)^{-1} \right\|^s d\omega_x\, d\omega_y,
+\end{align*}
+where $[-r, r]$ is an interval containing $\operatorname{supp} \rho$. In the double integral we change variables to
+\[
+u = \frac{1}{2}(\omega_x + \omega_y), \quad v = \frac{1}{2}(\omega_x - \omega_y),
+\]
+which gives a Jacobian factor of $2$. As $(\omega_x, \omega_y) \in [-r, r]^2$ implies $(u, v) \in [-r, r]^2$ we arrive at the bound
+\begin{align*}
+\mathbb{E}_{x,y}(|G_{\omega,\lambda}(x, y; z)|^s) &\le \frac{2\|\rho\|_\infty^2}{\lambda^s} \int_{-r}^r \int_{-r}^r \left\| \left( -\frac{1}{\lambda} A + \begin{pmatrix} -v & 0 \\ 0 & v \end{pmatrix} - u I \right)^{-1} \right\|^s du\, dv \\
+&\le \frac{4 r \|\rho\|_\infty^2}{\lambda^s} C(r, s) = \frac{C(s, \rho)}{\lambda^s}.
+\end{align*}
+That the latter bound is uniform in $x, y$ and $z$ as well as in the random parameters $(\omega_u)_{u \in \mathbb{Z}^d \setminus \{x,y\}}$ follows from the fact that the matrix
+\[
+-\frac{1}{\lambda} A + \begin{pmatrix} -v & 0 \\ 0 & v \end{pmatrix}
+\]
+has either positive or negative imaginary part and the following general result:
+
+For every $s \in (0, 1)$ and $r > 0$ there exists $C(r, s) < \infty$ such that
+\begin{equation}
+\int_{-r}^r \|(B - uI)^{-1}\|^s\, du \le C(r, s)
+\end{equation}
+for all $2 \times 2$-matrices $B$ such that either $\operatorname{Im} B \ge 0$ or $\operatorname{Im} B \le 0$.
+
+Starting with the observation that, by Schur's Theorem, $B$ may be assumed upper triangular, we also may assume without loss that $\operatorname{Im} B \ge 0$. Thus
+\begin{equation}
+B = \begin{pmatrix} b_{11} & b_{12} \\ 0 & b_{22} \end{pmatrix}
+\end{equation}
+and
+\begin{equation}
+(B - uI)^{-1} = \begin{pmatrix} \frac{1}{b_{11}-u} & -\frac{b_{12}}{(b_{11}-u)(b_{22}-u)} \\ 0 & \frac{1}{b_{22}-u} \end{pmatrix}.
+\end{equation}
+The bound (7) follows if we can establish a corresponding fractional integral bound for the absolute value of each entry of (9) separately. For the diagonal entries this is obvious.
+
+We bound the upper right entry of (9) by
+\begin{equation}
+\left| \frac{b_{12}}{(b_{11} - u)(b_{22} - u)} \right| \le \frac{|b_{12}|}{|\operatorname{Im}((b_{11}-u)(b_{22}-u))|} = \frac{1}{\left| u \frac{\operatorname{Im} b_{11} + \operatorname{Im} b_{22}}{|b_{12}|} - \frac{\operatorname{Im}(b_{11}b_{22})}{|b_{12}|} \right|}.
+\end{equation}
+The positive matrix
+\[
+\operatorname{Im} B = \begin{pmatrix} \operatorname{Im} b_{11} & \frac{1}{2i} b_{12} \\ -\frac{1}{2i} \bar{b}_{12} & \operatorname{Im} b_{22} \end{pmatrix}
+\]
+has positive determinant, i.e.\ $\det \operatorname{Im} B = \operatorname{Im} b_{11} \operatorname{Im} b_{22} - |b_{12}|^2/4 \ge 0$. We thus get
+\[
+\left| \frac{\operatorname{Im} b_{11} + \operatorname{Im} b_{22}}{b_{12}} \right|^2 \ge \frac{2 \operatorname{Im} b_{11} \operatorname{Im} b_{22}}{|b_{12}|^2} \ge \frac{1}{2}.
+\]
+The latter allows to conclude the required integral bound for (10).
+\end{proof}
+
 
 \subsubsection{Proof without SAW}
 
@@ -230,15 +426,17 @@ from spectral and dynamical properties.
 \subsection{Proof with SAW}
 \clearpage
 \section{From fractional moments to dynamical localisation}
-
+\begin{theorem}
+    Theorem final
+\end{theorem}
 \begin{proposition}
     \[
     |\Im z| \mathbb{E}\left( |G(x,y;z)|^2\right) \leq C_1\mathbb{E}\left( |G(x,y;z)|^s\right) 
     \]
 \end{proposition}
-\begin{theorem}
-    Theorem final
-\end{theorem}
+\begin{proof}[Proof of theorem 5.1]
+    
+\end{proof}
 
 
 

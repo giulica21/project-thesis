@@ -147,9 +147,6 @@ Physically, $V_\omega$ represents the random electric potential created by nucle
 $ \lambda >0$ is the disorder parameter
 
 
-\subsubsection{Self-adjointness} 
-
-
 
 \subsubsection{The spectrum of $H_\omega$.}
 \begin{itemize}
@@ -227,6 +224,40 @@ Sia $I \subset \mathbb{R}$ un intervallo aperto. Un operatore di Schr\"odinger c
 closure set of eigenvalues
 \end{remark}
 
+\subsubsection{Absence of transport}
+
+\begin{equation}
+\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)
+= \big\| \,|x|\, e^{-itH_\omega} P_{H_\omega\in[a,b]}\phi_0 \big\|^2
+\tag{5}
+\end{equation}
+
+If the electrons with energies in $[a,b]$ move ballistically with average
+velocity $v_{av}$, then roughly $x(t) \sim v_{av} t$ for large times. Hence
+$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ will be proportional to
+$t^2$ for large $t$.
+
+On the other hand, if the electrons in the energy interval $[a,b]$ are
+localized, then it should be natural to expect that
+$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ is bounded uniformly in
+$t$. It is known (Simon, 1990) that pure point spectrum implies absence of
+ballistic motion,
+\[
+\lim_{t\to\infty} \frac{\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)}{t^2} = 0
+\]
+for all compactly supported initial conditions $\phi_0$, as soon as the
+spectrum in $[a,b]$ is pure point. However, del Rio et al. (1996)
+constructed examples of (non-random) one-dimensional Schr\"odinger operators
+with pure point spectrum for all energies and exponentially localized
+eigenfunctions for which
+\begin{equation}
+\limsup_{t\to\pm\infty} \frac{\langle x^2\rangle_{\phi_0}(t)}{t^{2-\delta}} = \infty
+\qquad \text{for all } \delta > 0,
+\tag{6}
+\end{equation}
+for a large class of compactly supported initial conditions $\phi_0$.
+\textit{Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.}
+
 
 
 \subsection{dynamical localisation}
@@ -277,39 +308,6 @@ Per localizzazione dinamica, la somma $\sum_{|x| \ge R} e^{-\mu |x-y|}$ tende a 
 \end{proof}
 
 
-\subsection{Absence of transport}
-
-\begin{equation}
-\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)
-= \big\| \,|x|\, e^{-itH_\omega} P_{H_\omega\in[a,b]}\phi_0 \big\|^2
-\tag{5}
-\end{equation}
-
-If the electrons with energies in $[a,b]$ move ballistically with average
-velocity $v_{av}$, then roughly $x(t) \sim v_{av} t$ for large times. Hence
-$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ will be proportional to
-$t^2$ for large $t$.
-
-On the other hand, if the electrons in the energy interval $[a,b]$ are
-localized, then it should be natural to expect that
-$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ is bounded uniformly in
-$t$. It is known (Simon, 1990) that pure point spectrum implies absence of
-ballistic motion,
-\[
-\lim_{t\to\infty} \frac{\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)}{t^2} = 0
-\]
-for all compactly supported initial conditions $\phi_0$, as soon as the
-spectrum in $[a,b]$ is pure point. However, del Rio et al. (1996)
-constructed examples of (non-random) one-dimensional Schr\"odinger operators
-with pure point spectrum for all energies and exponentially localized
-eigenfunctions for which
-\begin{equation}
-\limsup_{t\to\pm\infty} \frac{\langle x^2\rangle_{\phi_0}(t)}{t^{2-\delta}} = \infty
-\qquad \text{for all } \delta > 0,
-\tag{6}
-\end{equation}
-for a large class of compactly supported initial conditions $\phi_0$.
-\textit{Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.}
 
 
 \clearpage 
@@ -321,7 +319,7 @@ The \emph{resolvent operator} is defined as:
 G(z) = (H - z)^{-1}
 \]
 
-\subsection{First localisation criteria}
+\subsection{Localisation at large disorder}
 \begin{theorem}[Aizenman--Molchanov, 1993]
 Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda \ge \lambda_0$ there are $C < \infty$ and $\mu > 0$ with
 \begin{equation}
@@ -447,6 +445,9 @@ The latter allows to conclude the required integral bound for (10).
 
 
 \subsection{SAW Definitions}
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
 
 \subsection{SAW representation of G }

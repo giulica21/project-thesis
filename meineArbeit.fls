@@ -241,6 +241,8 @@ INPUT .\Screenshot (326).png
 INPUT .\Screenshot (326).png
 INPUT .\Screenshot (326).png
 INPUT .\Screenshot (326).png
+INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0800.tfm
+INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
 INPUT meineArbeit.aux
 INPUT .\meineArbeit.out
 INPUT .\meineArbeit.out
@@ -284,6 +286,8 @@ INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

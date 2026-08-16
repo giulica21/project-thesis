@@ -217,15 +217,14 @@ Sia $I \subset \mathbb{R}$ un intervallo aperto. Un operatore di Schr\"odinger c
 \end{definition}
 
 \begin{definition}[Exponential Spectral Localization]
-L'operatore $H_\omega$ presenta \textbf{localizzazione spettrale esponenziale} in $I$ se presenta localizzazione spettrale in $I$ e, per quasi ogni realizzazione $\omega$, possiede una base ortonormale completa di autofunzioni $(\phi_{\omega,n})_{n \in \mathbb{N}}$ corrispondenti ad autovalori in $I$ che decadono esponenzialmente nello spazio:
+
 \begin{equation}
 |\phi_{\omega,n}(x)| \le C_{\omega,n} e^{-\mu |x - x_{n,\omega}|}
 \end{equation}
-dove $\mu > 0$ \`e la lunghezza inversa di localizzazione, $x_{n,\omega}$ \`e il centro di localizzazione dell'autofunzione e $C_{\omega,n} < \infty$ \`e una costante (che pu\`o dipendere da $\omega$ e $n$).
 \end{definition}
 
 \begin{remark}[Spettro puntuale denso]
-Se $I$ \`e contenuto nello spettro quasi certo $\Sigma = \sigma(H_0) + \mathrm{supp}\,\mu$, la localizzazione spettrale implica che lo spettro in $I$ \`e costituito da un insieme \emph{denso} di autovalori (la cui chiusura riempie l'intero intervallo $I$). Questo fenomeno \`e profondamente diverso dalla presenza di autovalori isolati e discreti tipici dei sistemi atomici classici, e costituisce una delle peculiarit\`a pi\`u rilevanti del modello di Anderson.
+closure set of eigenvalues
 \end{remark}
 
 
@@ -233,47 +232,84 @@ Se $I$ \`e contenuto nello spettro quasi certo $\Sigma = \sigma(H_0) + \mathrm{s
 \subsection{dynamical localisation}
 \begin{definition}
     \[
-    \sup_{t \in \mathbb{R}} || |X|^p e^{-itH_\omega} \phi || < \infty \qquad \text{almost surely} \dots
-    \]
-\end{definition}
-
-\subsubsection{exponential dynamical localisation}
-\begin{definition}
-    \[
     \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-itH_\omega}e_k \rangle | \right) \leq C e^{- \mu |j-k|}
     \]
     for all $\varphi$ with compact support.
 \end{definition}
+\textbf{further explaination of the meaning}
 
-\dots
+
+\subsubsection{finite moments}
+\textbf{Proposition:} \emph{Dynamical localization implies that all moments of the position operator are bounded in time, i.e., for all $p > 0$ and all finitely supported $\psi \in \ell^2(\mathbb{Z}^d)$,}
+\begin{equation}
+\sup_{t \in \mathbb{R}} \||X|^p e^{-it h_\omega}  \psi\| < \infty \quad \text{\emph{almost surely,}}
+\end{equation}
+\emph{where the position operator $|X|$ is defined by $(|X|\phi)(n) = |n|\phi(n)$.}
+
+\begin{proof}
+To see how (1) follows from dynamical localization, assume that $\psi(k) = 0$ for $|k| > R$. Then
+\begin{align*}
+\||X|^p e^{-it h_\omega} \psi\|^2 &= \sum_j |\langle e_j, |X|^p e^{-it h_\omega}  \psi \rangle|^2 \\
+&= \sum_j |j|^{2p} \left| \sum_{|k| \le R} \langle e_j, e^{-it h_\omega}  e_k \rangle \psi(k) \right|^2 \\
+&\le \sum_j \sum_{|k| \le R} |j|^{2p} |\langle e_j, e^{-it h_\omega}  e_k \rangle|^2 \|\psi\|^2,
+\end{align*}
+where the last step used the Cauchy-Schwarz inequality. We can drop the square from $|\langle e_j, e^{-it h_\omega}  e_k \rangle|^2$ (as this number is bounded by $1$) and then take expectations to get
+\begin{align*}
+\mathbb{E}\left( \sup_t \||X|^p e^{-it h_\omega} \psi\|^2 \right) &\le \sum_j \sum_{|k| \le R} |j|^{2p} \mathbb{E}\left( \sup_t |\langle e_j, e^{-it h_\omega}  e_k \rangle| \right) \|\psi\|^2 \\
+&\le C \sum_j \sum_{|k| \le R} |j|^{2p} e^{-\mu |j-k|} \|\psi\|^2 \\
+&< \infty.
+\end{align*}
+
+\end{proof}
+
+
 \subsection{From dynamical to spectral localisation}
 
 \begin{theorem}[Localizzazione Dinamica $\implies$ Localizzazione Spettrale]
 Se $H_\omega$ esibisce localizzazione dinamica in un intervallo aperto $I$, allora $H_\omega$ presenta quasi certamente solo spettro puramente puntuale in $I$ ($\sigma_c(H_\omega) \cap I = \emptyset$).
 \end{theorem}
 \begin{proof}[Schema della dimostrazione via RAGE]
-Applicando il Teorema RAGE alla proiezione continua $P_{cont}(H) \chi_I(H)\psi$ per uno stato $\psi$ a supporto compatto in $\{|y| \le r\}$:
+Applicando il Teorema RAGE alla proiezione continua $P_{cont}(H) \psi$ per uno stato $\psi$ a supporto compatto in $\{|y| \le r\}$:
 \[
-\mathbb{E}(\|P_{cont}(H) \chi_I(H) \psi\|^2) \le \lim_{R \to \infty} \frac{1}{T} \int_0^T dt \sum_{|x| \ge R, |y| \le r} \mathbb{E}(|\langle \delta_x, e^{-itH} \chi_I(H) \delta_y \rangle|) \|\psi\|^2
+\mathbb{E}(\|P_{cont}(H)  \psi\|^2) \le \lim_{R \to \infty} \frac{1}{T} \int_0^T dt \sum_{|x| \ge R, |y| \le r} \mathbb{E}(|\langle \delta_x, e^{-itH}  \delta_y \rangle|) \|\psi\|^2
 \]
-Per localizzazione dinamica, la somma $\sum_{|x| \ge R} e^{-\mu |x-y|}$ tende a zero quando $R \to \infty$. Dunque $P_{cont}(H) \chi_I(H)\psi = 0$ quasi certamente su un insieme denso di stati $\psi$, da cui $\sigma_c(H_\omega) \cap I = \emptyset$.
+Per localizzazione dinamica, la somma $\sum_{|x| \ge R} e^{-\mu |x-y|}$ tende a zero quando $R \to \infty$. Dunque $P_{cont}(H) \psi = 0$ quasi certamente su un insieme denso di stati $\psi$, da cui $\sigma_c(H_\omega) \cap I = \emptyset$.
 \end{proof}
 
 
-\subsection{Assenza di moto balistico vs.\ Esempi di del Rio et al.}
+\subsection{Absence of transport}
 
-Sebbene la presenza di spettro puramente puntuale sia intuitivamente associata all'assenza di conduzione elettrica, la sola localizzazione spettrale non pone vincoli sufficientemente forti sulla dinamica asintotica a tempi lunghi.
-\begin{itemize}
-    \item \textbf{Teorema di Simon (1990):} La presenza di puro spettro puntuale garantisce l'assenza di moto puramente balistico per stati compattamente supportati $\psi_0$:
-    \[
-    \lim_{t \to \infty} \frac{\langle |X|^2 \rangle_{\psi(t)}}{t^2} = \lim_{t \to \infty} \frac{\||X| e^{-itH_\omega} P_{H \in I} \psi_0\|^2}{t^2} = 0.
-    \]
-    \item \textbf{Controesempi di del Rio, Jitomirskaya, Last e Simon (1996):} Esistono operatori di Schr\"odinger unidimensionali con localizzazione spettrale esponenziale ma per i quali il momento quadratico cresce in modo arbitrariamente vicino al moto balistico:
-    \[
-    \limsup_{t \to \pm \infty} \frac{\langle |X|^2 \rangle_{\psi(t)}}{t^{2-\delta}} = \infty \quad \text{per ogni } \delta > 0.
-    \]
-    Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.
-\end{itemize}
+\begin{equation}
+\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)
+= \big\| \,|x|\, e^{-itH_\omega} P_{H_\omega\in[a,b]}\phi_0 \big\|^2
+\tag{5}
+\end{equation}
+
+If the electrons with energies in $[a,b]$ move ballistically with average
+velocity $v_{av}$, then roughly $x(t) \sim v_{av} t$ for large times. Hence
+$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ will be proportional to
+$t^2$ for large $t$.
+
+On the other hand, if the electrons in the energy interval $[a,b]$ are
+localized, then it should be natural to expect that
+$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ is bounded uniformly in
+$t$. It is known (Simon, 1990) that pure point spectrum implies absence of
+ballistic motion,
+\[
+\lim_{t\to\infty} \frac{\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)}{t^2} = 0
+\]
+for all compactly supported initial conditions $\phi_0$, as soon as the
+spectrum in $[a,b]$ is pure point. However, del Rio et al. (1996)
+constructed examples of (non-random) one-dimensional Schr\"odinger operators
+with pure point spectrum for all energies and exponentially localized
+eigenfunctions for which
+\begin{equation}
+\limsup_{t\to\pm\infty} \frac{\langle x^2\rangle_{\phi_0}(t)}{t^{2-\delta}} = \infty
+\qquad \text{for all } \delta > 0,
+\tag{6}
+\end{equation}
+for a large class of compactly supported initial conditions $\phi_0$.
+\textit{Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.}
 
 
 \clearpage 

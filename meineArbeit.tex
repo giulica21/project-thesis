@@ -56,6 +56,7 @@
 \addbibresource{Literatur.bib}
 \usepackage{setspace}
 \usepackage{graphicx}
+\usepackage{xcolor}
 
 \begin{document}
 \setstretch{1.15}
@@ -119,13 +120,67 @@ with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$.
 \subsubsection{The operator}
 \textbf{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
 For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
+
 \[
-- \Delta u(x) \coloneq - \sum_{{k \in \mathbb{Z}^d}, |x-k|=1} u(x)- u(k),  \quad k \in \mathbb{Z}^d
+-\Delta u(x) := -\sum_{k \in \mathbb{Z}^d,|x-k|=1} u(x) - u(k) \quad \text{for } x \in \mathbb{Z}^d.
 \]
+
 where $|*|$ denotes the $ l^2$ norm.
-The descrete Laplacian is per definiton bounded and consequently self-adjoint [for proofs see Appendix A].
-Just as the continuum Laplacian the Fourier trnasform blah blah blah.
-\\ The spectrum is absolutely continuous and as similarity with the continuus laplacian, it has plane waves as generalized eigenfunctions.
+
+The discrete Laplacian represents the kinetic term and connects neighbour sites, such that the electron can transition from one to another. 
+
+For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. This means that:
+\[
+-\Delta u(x) = 2d\, u(x) - \sum_{y \sim x} u(y).
+\]
+The discrete Laplacian defines an infinite matrix with the constant $2d$ on the diagonal and $-1$ on the off-diagonal entries corresponding to adjacent sites.
+
+\vspace{1em}
+\noindent
+For $u \in \ell^2(\mathbb{Z}^d)$, $-\Delta u$ is summable in $\ell^2$, bounded, and self-adjoint.
+
+The first claim (summability) is shown by:
+\[
+\sum_{x} |\Delta u(x)|^2 = \sum_{x} \left| \sum_{y \sim x} \bigl(u(x) - u(y)\bigr) \right|^2 
+= \sum_{x} \left| \sum_{|z|=1} \bigl(u(x) - u(x+z)\bigr) \right|^2 
+\]
+\[
+\leq C \sum_{x} \left( \sum_{|z|=1} |u(x)|^2 + \sum_{|z|=1} |u(x+z)|^2 \right) 
+\leq C \cdot 2d \cdot 2 \|u\|_2^2 < \infty.
+\]
+Where we used triangle inequality, the finity of the number of neighbors and the invariance under translation of the $ l^2$ norm.\\
+The boundedness comes from:
+\[
+\frac{\|\Delta u\|_2^2}{\|u\|_2^2} \le 4d C \implies \|\Delta\|_2 \le \sqrt{4d C}.
+\]
+
+To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded):
+\[
+\langle u, \Delta v \rangle = \sum_{x}\overline{u(x)} \Delta v(x)= \sum_{x}\overline{u(x)} \left( \sum_{k \sim x} v(x) - v(k) \right) 
+\]
+\[
+= \sum_{x} 2d u(x) v(x) - \sum _ {x} \sum_{k \sim x} u(x) v(k)
+\]
+\[
+= \sum_{x} 2d u(x) v(x) - \sum_{x} \sum_{k \sim x} u(k) v(x) = \langle \Delta u, v \rangle 
+\]
+\noindent
+The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron has.
+
+\vspace{0.5em}
+\noindent
+This result becomes clearer considering the eigenvalues of the Laplacian.
+
+\vspace{1em}
+\noindent
+Let's consider the discrete Fourier transform:
+\[
+\mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi]^d)
+\]
+such that:
+\[
+(\mathcal{F}u)(x) = \lim_{N \to \infty} (2\pi)^{-\frac{d}{2}} \sum_{|n| \le N} u(n)\, e^{i x \cdot n}.
+\]
 \vspace{0.5 cm}
 
 \textbf{The Potential Term.}
@@ -370,6 +425,8 @@ The important fact is that $a$ is a complex number which does not depend on $\om
 \mathbb{E}_x(|G_{\omega,\lambda}(x, x; z)|^s) \le \frac{\|\rho\|_\infty}{\lambda^s} \int_{\operatorname{supp} \rho} \frac{d\omega_x}{|\frac{a}{\lambda} + \omega_x|^s} \le \frac{C(\rho, s)}{\lambda^s},
 \end{equation}
 with $C(\rho, s)$ independent of $\lambda$ and $a$, and thus independent of $\hat{\omega}$, $z$ and $x$.
+
+{\color{red} \textbf{potrei fare una piccola parentesi in cui dico che per distribuzione uniforme prende un valore specifico.}}
 
 The proof of (1) for $x \ne y$ is based on the same idea, replacing the rank-one-perturbation arguments above with rank-two-perturbation arguments. Write $\omega = (\hat{\omega}, \omega_x, \omega_y)$, $P = P_{e_x} + P_{e_y}$ and
 \[

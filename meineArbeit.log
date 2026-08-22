@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  18 AUG 2026 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  22 AUG 2026 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -638,115 +638,123 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/giuli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
 
-]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.75 \clearpage
-                [1
-
 ] (meineArbeit.toc)
 \tf@toc=\write5
 \openout5 = `meineArbeit.toc'.
 
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.69 \clearpage
+                [1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 71--88
+
+ []
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.78 \clearpage
-                [2
+l.97 
+      [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 80--97
+Underfull \hbox (badness 10000) in paragraph at lines 107--111
 
  []
 
-[3
+[3]
+Overfull \hbox (6.1173pt too wide) detected at line 141
+[] \OMS/cmsy/m/n/10.95 j\OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/it/10.95 u\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j[] \OT1/cmr/m/n/10.95 = [] [][] \OMS/cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 d [] []
+ []
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
  []
 
-[4] [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 206.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 206.
+(hyperref)                removing `math shift' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 206.
+(hyperref)                removing `subscript' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 206.
+(hyperref)                removing `\omega' on input line 204.
 
 
-Overfull \hbox (0.58337pt too wide) in paragraph at lines 217--219
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 204.
+
+[5]
+Overfull \hbox (0.58337pt too wide) in paragraph at lines 215--217
 \T1/cmr/m/n/10.95 sin-golar-mente con-tinuo $\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )$ \T1/cmr/m/n/10.95 e as-sol-uta-mente con-tinuo $\OML/cmm/m/it/10.95 ^^[[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 )$\T1/cmr/m/n/10.95 , con $\OML/cmm/m/it/10.95 ^^[\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 ) =
  []
 
 [6]
-<Screenshot (326).png, id=160, 618.81187pt x 375.65344pt>
+<Screenshot (326).png, id=161, 618.81187pt x 375.65344pt>
 File: Screenshot (326).png Graphic file (type png)
 <use Screenshot (326).png>
-Package pdftex.def Info: Screenshot (326).png  used on input line 251.
+Package pdftex.def Info: Screenshot (326).png  used on input line 249.
 (pdftex.def)             Requested size: 251.9989pt x 152.97568pt.
- [7] [8 <./Screenshot (326).png>] [9
+ [7 <./Screenshot (326).png>] [8
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.315 
+l.313 
       ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 \begin{equation}
+l.328 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 \begin{equation}
+l.328 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 \begin{equation}
+l.328 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 \begin{equation}
-                       [10] [11] [12
+l.328 \begin{equation}
+                       [9] [10] [11
 
 ]
-Overfull \hbox (0.45102pt too wide) in paragraph at lines 429--430
+Overfull \hbox (0.45102pt too wide) in paragraph at lines 427--428
 []\T1/cmr/bx/n/10.95 potrei fare una pic-cola par-entesi in cui dico che per dis-tribuzione
  []
 
-[13]
-Overfull \hbox (8.19728pt too wide) detected at line 459
+[12]
+Overfull \hbox (8.19728pt too wide) detected at line 457
 []
  []
 
-[14]
-Overfull \hbox (7.83586pt too wide) detected at line 485
+[13]
+Overfull \hbox (7.83586pt too wide) detected at line 483
 [][][][] \OMS/cmsy/m/n/10.95 ^^T [] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 :
  []
 
-[15] [16
+[14] [15
 
-] [17
+] [16
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 542.
+LaTeX Warning: Empty bibliography on input line 540.
 
 (meineArbeit.aux)
  ***********
@@ -760,17 +768,17 @@ Package logreq Info: Writing requests to 'meineArbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19575 strings out of 467501
- 341295 string characters out of 5408550
- 1215151 words of memory out of 5000000
- 48516 multiletter control sequences out of 15000+600000
+ 19574 strings out of 467501
+ 341283 string characters out of 5408550
+ 1215184 words of memory out of 5000000
+ 48517 multiletter control sequences out of 15000+600000
  643162 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,17n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (19 pages, 451801 bytes).
+ <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on meineArbeit.pdf (18 pages, 447818 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 71 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

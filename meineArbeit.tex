@@ -5,7 +5,7 @@
 
 
 %Namen des Verfassers der Arbeit
-\author{X Y}
+\author{Giulia Liconti}
 %Geburtsdatum des Verfassers
 \geburtsdatum{21. November 2004}
 %Gebortsort des Verfassers
@@ -15,12 +15,12 @@
 
 %Name des Betreuers
 % z.B.: Prof. Dr. Peter Koepke
-\betreuer{Betreuer: Prof. Dr. Margerita Disertori}
+\betreuer{Advisor: Prof. Dr. Margerita Disertori}
 %Name des Zweitgutachters
-\zweitgutachter{Zweitgutachter: Prof. Dr. X Y}
+\zweitgutachter{Second advisor: Dr. Davide Macera}
 %Name des Instituts an dem der Betreuer der Arbeit tätig ist.
 %z.B.: Mathematisches Institut
-\institut{Institut XYZ}
+\institut{Institut of applied Mathematics}
 %\institut{Mathematisches Institut}
 %\institut{Institut f\"ur Angewandte Mathematik}
 %\institut{Institut f\"ur Numerische Simulation}
@@ -62,15 +62,6 @@
 \setstretch{1.15}
 \maketitle
 
-\section*{Zusammenfassung}
-Wir führen die Benutzung einiger \LaTeX-Befehle und -Pakete anhand von Beispielen vor.
-Die Verwendung der hier empfohlenen Lösungen ist, mit Ausnahme des Titelblatts, nicht verpflichtend, sollte Ihre Arbeit aber erheblich vereinfachen.
-
-Dieses Dokument spiegelt den Stand von 2021 wider; wenn Sie es im Jahr 2030 oder später noch lesen, sollten Sie sich vermutlich nach Alternativen für hier vorgestellte Lösungen umschauen.
-
-\begin{flushright}
----Pavel Zorin-Kranich
-\end{flushright}
 
 \clearpage
 \tableofcontents
@@ -110,7 +101,7 @@ Transport phenomena in a disordered material are often described via discrete ra
 \[
 H_\omega = - \Delta + \lambda V_\omega.
 \]
-where $ -\Delta$ is a deterministic matrix (the kinetic part) and $ V_\omega$ is a diagonal matrix with random entries. This operator acts on the Hilbert space 
+where $ -\Delta$ is a deterministic matrix and $ V_\omega$ is a diagonal matrix with random entries. This operator acts on the Hilbert space 
 \[
 l^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
@@ -127,13 +118,17 @@ For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
 
 where $|*|$ denotes the $ l^2$ norm.
 
-The discrete Laplacian represents the kinetic term and connects neighbour sites, such that the electron can transition from one to another. 
+The discrete Laplacian represents the kinetic term and connects neighbour sites on the lattice, such that the electron can transition from one to another. 
 
-For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. This means that:
-\[
--\Delta u(x) = 2d\, u(x) - \sum_{y \sim x} u(y).
+For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. We can now define an infinte matrix such that: \[
+(-\Delta)_{x,k} = \begin{cases} 
+2d & \text{if } x = k \quad \text{(on the diagonal)} \\
+-1 & \text{if } |x - k| = 1 \quad (k \sim x, \text{ first neighbors}) \\
+0 & \text{otherwise}
+\end{cases}
 \]
-The discrete Laplacian defines an infinite matrix with the constant $2d$ on the diagonal and $-1$ on the off-diagonal entries corresponding to adjacent sites.
+
+
 
 \vspace{1em}
 \noindent
@@ -141,28 +136,28 @@ For $u \in \ell^2(\mathbb{Z}^d)$, $-\Delta u$ is summable in $\ell^2$, bounded, 
 
 The first claim (summability) is shown by:
 \[
-\sum_{x} |\Delta u(x)|^2 = \sum_{x} \left| \sum_{y \sim x} \bigl(u(x) - u(y)\bigr) \right|^2 
-= \sum_{x} \left| \sum_{|z|=1} \bigl(u(x) - u(x+z)\bigr) \right|^2 
+\sum_{x \in \mathbb{Z}^d} |\Delta u(x)|^2 = \sum_{x \in \mathbb{Z}^d} \left| \sum_{k \sim x, k \in \mathbb{Z}^d} \bigl(u(x) - u(k)\bigr) \right|^2 
+\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{k \sim x} |u(x) - u(k)|^2 \right) 
 \]
 \[
-\leq C \sum_{x} \left( \sum_{|z|=1} |u(x)|^2 + \sum_{|z|=1} |u(x+z)|^2 \right) 
-\leq C \cdot 2d \cdot 2 \|u\|_2^2 < \infty.
+\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{k \sim x, k \in \mathbb{Z}^d} |u(x)|^2 + |u(k)|^2 \right) 
+\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty.
 \]
-Where we used triangle inequality, the finity of the number of neighbors and the invariance under translation of the $ l^2$ norm.\\
+In each step we used, in order, Cauchy-Schwarz, the bound over the number of neighbors, triangle inequality and the invariance under translation of the $ l^2$ norm..\\
 The boundedness comes from:
 \[
-\frac{\|\Delta u\|_2^2}{\|u\|_2^2} \le 4d C \implies \|\Delta\|_2 \le \sqrt{4d C}.
+\frac{\|\Delta u\|_2^2}{\|u\|_2^2} \le 16 d^2 \implies \|\Delta\|_2 \le 4d.
 \]
 
-To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded):
+To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded). For $ u, v \in l^2(\mathbb{Z}^d)$ and $ k \in \mathbb{Z}^d$:
 \[
-\langle u, \Delta v \rangle = \sum_{x}\overline{u(x)} \Delta v(x)= \sum_{x}\overline{u(x)} \left( \sum_{k \sim x} v(x) - v(k) \right) 
+\langle u, \Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} \Delta v(x)= \sum_{x \in \mathbb{Z}^d}u(x) \left( \sum_{k \sim x} v(x) - v(k) \right) 
 \]
 \[
-= \sum_{x} 2d u(x) v(x) - \sum _ {x} \sum_{k \sim x} u(x) v(k)
+= \sum_{x \in \mathbb{Z}^d} \left(u(x) 2d v(x) -  \sum_{k \sim x} u(x) v(k)\right) = \sum_{x \in \mathbb{Z}^d} 2d u(x) v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{k \sim x} u(k) v(x) 
 \]
 \[
-= \sum_{x} 2d u(x) v(x) - \sum_{x} \sum_{k \sim x} u(k) v(x) = \langle \Delta u, v \rangle 
+= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{k \sim x} u(x) - u(k) \right) = \langle \Delta u, v \rangle.
 \]
 \noindent
 The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron has.
@@ -175,14 +170,17 @@ This result becomes clearer considering the eigenvalues of the Laplacian.
 \noindent
 Let's consider the discrete Fourier transform:
 \[
-\mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi]^d)
+\mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi)^d)
 \]
 such that:
 \[
-(\mathcal{F}u)(x) = \lim_{N \to \infty} (2\pi)^{-\frac{d}{2}} \sum_{|n| \le N} u(n)\, e^{i x \cdot n}.
+(\mathcal{F}u)(x) = (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} u(n)\, e^{i x \cdot n}, \qquad x \in [0, 2\pi)^d.
 \]
-\vspace{0.5 cm}
 
+The descrete Laplacian, doesn't have eigenfunction in $ l^2(\mathbb{Z}^d)$, but has continuous plane waves as generalized eigenfunctions.
+\dots
+\\
+ 
 \textbf{The Potential Term.}
 \begin{definition}[i.i.d. random variables]
 $(\omega_v)_{v \in V}$ are identically distributed if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_v \in A) = \mu(A)$ for all $v \in V$ and Borel sets $A \subset \mathbb{R}$. $(\omega_v)_{v \in V}$ are independent if

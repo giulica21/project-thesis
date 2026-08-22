@@ -135,47 +135,68 @@ For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. We can now d
 For $u \in \ell^2(\mathbb{Z}^d)$, $-\Delta u$ is summable in $\ell^2$, bounded, and self-adjoint.
 
 The first claim (summability) is shown by:
-\[
-\sum_{x \in \mathbb{Z}^d} |\Delta u(x)|^2 = \sum_{x \in \mathbb{Z}^d} \left| \sum_{k \sim x, k \in \mathbb{Z}^d} \bigl(u(x) - u(k)\bigr) \right|^2 
-\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{k \sim x} |u(x) - u(k)|^2 \right) 
-\]
-\[
-\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{k \sim x, k \in \mathbb{Z}^d} |u(x)|^2 + |u(k)|^2 \right) 
-\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty.
-\]
-In each step we used, in order, Cauchy-Schwarz, the bound over the number of neighbors, triangle inequality and the invariance under translation of the $ l^2$ norm..\\
+
+\begin{align*}
+\sum_{x \in \mathbb{Z}^d} |\Delta u(x)|^2 &= \sum_{x \in \mathbb{Z}^d} \left| \sum_{k \sim x, k \in \mathbb{Z}^d} \bigl(u(x) - u(k)\bigr) \right|^2 \\
+&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{k \sim x} |u(x) - u(k)|^2 \right) \\
+&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{k \sim x, k \in \mathbb{Z}^d} |u(x)|^2 + |u(k)|^2 \right) \\
+&\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty.
+\end{align*}
+
+In each step we used, in order, Cauchy-Schwarz, the bound over the number of neighbors, triangle inequality and the invariance under translation of the $ l^2$ norm.\\
 The boundedness comes from:
 \[
 \frac{\|\Delta u\|_2^2}{\|u\|_2^2} \le 16 d^2 \implies \|\Delta\|_2 \le 4d.
 \]
 
 To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded). For $ u, v \in l^2(\mathbb{Z}^d)$ and $ k \in \mathbb{Z}^d$:
-\[
-\langle u, \Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} \Delta v(x)= \sum_{x \in \mathbb{Z}^d}u(x) \left( \sum_{k \sim x} v(x) - v(k) \right) 
-\]
-\[
-= \sum_{x \in \mathbb{Z}^d} \left(u(x) 2d v(x) -  \sum_{k \sim x} u(x) v(k)\right) = \sum_{x \in \mathbb{Z}^d} 2d u(x) v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{k \sim x} u(k) v(x) 
-\]
-\[
-= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{k \sim x} u(x) - u(k) \right) = \langle \Delta u, v \rangle.
-\]
-\noindent
-The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron has.
+\begin{align*}
+\langle u, \Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} \Delta v(x) &= \sum_{x \in \mathbb{Z}^d}u(x) \left( \sum_{k \sim x} v(x) - v(k) \right) \\
+= \sum_{x \in \mathbb{Z}^d} \left(u(x) 2d v(x) -  \sum_{k \sim x} u(x) v(k)\right)  &=\sum_{x \in \mathbb{Z}^d} 2d u(x) v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{k \sim x} u(k) v(x) \\
+= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{k \sim x} u(x) - u(k) \right) &= \sum_{x \in \mathbb{Z}^d}\overline{v(x)} \Delta u(x) =\langle \Delta u, v \rangle.
+\end{align*}
 
-\vspace{0.5em}
 \noindent
-This result becomes clearer considering the eigenvalues of the Laplacian.
+The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron owns.
 
 \vspace{1em}
 \noindent
-Let's consider the discrete Fourier transform:
+In order to understand this results better, let's consider the discrete Fourier transform:
 \[
 \mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi)^d)
 \]
 such that:
 \[
-(\mathcal{F}u)(x) = (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} u(n)\, e^{i x \cdot n}, \qquad x \in [0, 2\pi)^d.
+(\mathcal{F}u)(x) \coloneqq \lim_{N \rightarrow \infty} (2\pi)^{-\frac{d}{2}} \sum_{|n| \leq N} u(n)\, e^{- i x \cdot n}, \qquad x \in [0, 2\pi)^d.
 \]
+For semplicity of the calculations we don't consider the limit and just sum over all $ n \in \mathbb{Z}^d$ and $ u$ summable. 
+
+\begin{align*}
+    (\mathcal{F} \Delta u)(x) &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} (\Delta u)(n)\, e^{-i x \cdot n} \\
+    &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \left( \sum_{|k-n|=1} \bigl(u(n) - u(k)\bigr) \right) e^{-i x \cdot n} \\
+    &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \left( 2d\, u(n) - \sum_{|k-n|=1} u(k) \right) e^{-i x \cdot n} \\
+    &= 2d\,(\mathcal{F}u)(x) - (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \sum_{|k-n|=1} u(k)\, e^{-i x \cdot n} \\
+    &= 2d\,(\mathcal{F}u)(x) - (2\pi)^{-\frac{d}{2}} \sum_{k \in \mathbb{Z}^d} u(k) \sum_{|m|=1} e^{-i x \cdot (k+m)} \quad \text{\small (for $m = n - k$)} \\
+    &= 2d\,(\mathcal{F}u)(x) - \left( (2\pi)^{-\frac{d}{2}} \sum_{k \in \mathbb{Z}^d} u(k)\, e^{-i x \cdot k} \right) \sum_{|m|=1} e^{-i x \cdot m} \\
+    &= 2d\,(\mathcal{F}u)(x) - (\mathcal{F}u)(x) \sum_{j=1}^d \left( e^{-i x_j} + e^{i x_j} \right) \\
+    &= \left( 2d - 2\sum_{j=1}^d \cos(x_j) \right) (\mathcal{F}u)(x)\\
+    &= \left( 2 \sum_{j=1}^d 1-\cos(x_j) \right)  (\mathcal{F}u)(x).
+\end{align*}
+We obtain the multiplication operator: $$ \mathcal{F} \Delta \mathcal{F}^{-1}=  2 \sum_{j=1}^d 1-\cos(x_j) $$ on $ L^2 ( [0,2\pi)^d) $ in the variable $x= (x_1,\dots.., x_d)$. We notice that the Laplacian doesn't have eigenvalues in $ l^2(\mathbb{Z}^d)$.
+Another similarity of $\Delta$ with the continuum Laplacian is that it has plane waves as generalized eigenfunctions. To see this, let $x \in [0,2\pi)^d$ and set
+\[
+\phi_x(n) := e^{-i n \cdot x}
+\]
+While $\phi_x \notin l^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
+\begin{align*}
+(\Delta \phi_x)(n) &= \sum_{|k|=1} e^{-in \cdot x} - e^{-i(n+k)\cdot x} \\
+&=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)
+&= \left( 2 \sum_{j=1}^d 1-\cos(x_j) \right) \phi_x.
+\end{align*}
+Thus $\phi_x$ is a bounded generalized eigenfunction of $h_0$ to the spectral value $-2\sum_j \cos(x_j)$.
+
+
+
 
 The descrete Laplacian, doesn't have eigenfunction in $ l^2(\mathbb{Z}^d)$, but has continuous plane waves as generalized eigenfunctions.
 \dots

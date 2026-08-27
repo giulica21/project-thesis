@@ -473,6 +473,22 @@ with $\frac{1}{1-s}$ independent of $\lambda$ and $a$, and thus independent of $
 
 
 \subsubsection{From fractional moment's exponential bound to dynamical localisation}
+
+In this subsection we aim to prove the following theorem:
+
+\begin{theorem}
+    Let $I \subset \mathbb{R}$ be an open bounded interval. If there exist $s \in (0,1)$, $C < \infty$ and $\mu > 0$ such that
+    \begin{equation}
+    \mathbb{E}\left( |G(x,y; E+i\epsilon)|^s \right) \le C e^{-\mu |x-y|}
+    \end{equation}
+    uniformly in $E \in I$ and $\epsilon > 0$, then dynamical localization in the form
+    \begin{equation}
+    \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-it h_\omega} \chi_I(h_\omega) e_k \rangle| \right) \le C e^{-\mu |j-k|}
+    \end{equation}
+    holds on the interval $I$.
+\end{theorem}
+Before diving in the proof, we are going to need more equipment. 
+
 \begin{lemma}
     For a bounded and self-adjoint operator A,
     \begin{equation}
@@ -502,6 +518,130 @@ with $\frac{1}{1-s}$ independent of $\lambda$ and $a$, and thus independent of $
     \left\|(A-z)^{-1}\right\| \le \frac{1}{|\text{Im}(z)|}
     \]
     
+\end{proof}
+
+Thid bound is one of the most important and useful in this thesis. Once again we applied the resolvent identity to find a simple yet useful result. 
+
+
+\begin{proposition}
+For every $s \in (0,1)$ there exists a constant $C_1 < \infty$ only depending on $s$ and $\rho$ such that
+\begin{equation}
+|\mathrm{Im}\, z| \, \mathbb{E}_x\left(|G(x,y;z)|^2\right) \le C_1 \mathbb{E}_x\left(|G(x,y;z)|^s\right)
+\end{equation}
+for all $z \in \mathbb{C} \setminus \mathbb{R}$ and $x, y \in \mathbb{Z}^d$.
+\end{proposition}
+
+\begin{proof}
+As in the proof of Lemma 3.2 we write $\omega = (\hat{\omega}, \omega_x)$. Keep $\hat{\omega}$ fixed and consider the Hamiltonian
+\[
+H^{(\alpha)} = H(\hat{\omega}, \omega_x + \alpha) = H_\omega + \alpha P_{e_x}.
+\]
+Its Green function will be denoted by $G^{(\alpha)}$. Applying the resolvent identity, we find
+\[
+(H_\omega - z)^{-1} = (H^{(\alpha)} - z)^{-1} + \alpha (H_\omega - z)^{-1} P_{e_x} (H^{(\alpha)} - z)^{-1}
+\]
+and
+
+\begin{equation}
+    \begin{split}
+        G^{(\alpha)}(x,y;z) &= \frac{G_\omega(x,y;z)}{1 + \alpha G_\omega(x,x;z)} \\
+        &= \frac{1}{\alpha + G_\omega(x,x;z)^{-1}} \cdot \frac{G_\omega(x,y;z)}{G_\omega(x,x;z)}.   
+    \end{split}
+\end{equation}
+
+
+
+For the special case $x = y$ and $\tilde{\alpha} = -\mathrm{Re}\, G_\omega(x,x;z)^{-1}$ we get from (3.11) and Lemma 3.5 that
+\[
+\left|\frac{1}{\mathrm{Im}\, G(x,x;z)^{-1}}\right| = |G^{(\tilde{\alpha})}(x,x;z)| \le \frac{1}{|\mathrm{Im}\, z|},
+\]
+i.e.\ $|\mathrm{Im}\, G(x,x;z)^{-1}| \ge |\mathrm{Im}\, z|$. Inserting this into (3.11) gives
+\begin{equation}
+|\mathrm{Im}\, z| \, |G^{(\alpha)}(x,y;z)|^2 \le \frac{|\mathrm{Im}\, G_\omega(x,x;z)^{-1}|}{|\alpha + G_\omega(x,x;z)^{-1}|^2} \cdot \frac{|G_\omega(x,y;z)|^2}{|G_\omega(x,x;z)|^2}.
+\end{equation}
+On the other hand, we can bound the same expression by
+
+
+\begin{align}
+|\mathrm{Im}\, z| \, |G^{(\alpha)}(x,y;z)|^2 &\le |\mathrm{Im}\, z| \sum_{y' \in \mathbb{Z}^d} |G^{(\alpha)}(x,y';z)|^2 \nonumber \\
+&= |\mathrm{Im}\, z| \langle e_x \, (H^{(\alpha)} - z)^{-1}, (H^{(\alpha)} - z)^{-1} \,e_x \rangle \nonumber \\
+&= |\mathrm{Im}\, z| \langle e_x, (H^{(\alpha)} - \bar{z})^{-1} (H^{(\alpha)} - z)^{-1} e_x \rangle  \nonumber \\
+&= |\mathrm{Im}\, z| \langle e_x, \frac{1}{z - \bar{z}} \left[ (H^{(\alpha)} - z)^{-1} - (H^{(\alpha)} - \bar{z})^{-1} \right] e_x \rangle \nonumber \\
+&= |\mathrm{Im}\, G^{(\alpha)}(x,x;z)| \nonumber \\
+&= \frac{|\mathrm{Im}\, G_\omega(x,x;z)^{-1}|}{|\alpha + G_\omega(x,x;z)^{-1}|^2},
+\end{align}
+
+
+where the third step used the symmetry of $ H^{(\alpha)}$ and last step used (3.11) with $x = y$.
+
+For $t \ge 0$ one has $\min(1, t^2) \le t^s$, with $ s \in (0,1)$. Using this to interpolate between (3.12) and (3.13) we get
+\begin{equation}
+|\mathrm{Im}\, z| \, |G^{(\alpha)}(x,y;z)|^2 \le \frac{|\mathrm{Im}\, G_\omega(x,x;z)^{-1}|}{|\alpha + G_\omega(x,x;z)^{-1}|^2} \cdot \frac{|G_\omega(x,y;z)|^s}{|G_\omega(x,x;z)|^s}.
+\end{equation}
+We will now use the following ``re-sampling trick'', which has the effect of creating an additional random variable (here $\alpha$) to average over. For a non-negative Borel function $f$ on $\mathbb{R}$,
+\begin{align}
+\iint f(\omega_x + \alpha) \rho(\omega_x + \alpha)\, d\alpha\, \rho(\omega_x)\, d\omega_x &= \iint f(\omega_x + \alpha) \rho(\omega_x + \alpha) \rho(\omega_x)\, d\omega_x\, d\alpha \nonumber \\
+&= \iint f(\omega_x) \rho(\omega_x) \rho(\omega_x - \alpha)\, d\omega_x\, d\alpha \nonumber \\
+&= \int f(\omega_x) \rho(\omega_x) \left( \int \rho(\omega_x - \alpha)\, d\alpha \right) d\omega_x \nonumber \\
+&= \int f(\omega_x) \rho(\omega_x)\, d\omega_x,
+\end{align}
+where in the first and third steps we used Fubini and in the second we used translation invariance of Lebesgue measure.
+
+Choose $f(\omega_x) = |G_{(\hat{\omega}, \omega_x)}(x,y;z)|^2$; then (3.14) and (3.15) yield
+\begin{align}
+|\mathrm{Im}\, z| \, \mathbb{E}_x(|G_\omega(x,y;z)|^2) = |\mathrm{Im}\, z| \, \mathbb{E}_x\left( \int |G^{(\alpha)}(x,y;z)|^2 \rho(\omega_x + \alpha)\, d\alpha \right) \nonumber \\
+\le \mathbb{E}_x\left( |\mathrm{Im}\, G_\omega(x,x;z)^{-1}| \frac{|G_\omega(x,y;z)|^s}{|G_\omega(x,x;z)|^s} \int \frac{\rho(\omega_x + \alpha)}{|\alpha + G_\omega(x,x;z)^{-1}|^2}\, d\alpha \right).
+\end{align}
+We now use Lemma 5.2 below with $w = G_\omega(x,x;z)^{-1}$ to conclude
+\[
+|\mathrm{Im}\, z| \, \mathbb{E}_x(|G_\omega(x,y;z)|^2) \le C \mathbb{E}_x(|G_\omega(x,y;z)|^s),
+\]
+with a constant $C < \infty$ which only depends on $\mathrm{supp}\,\rho$, but not on $x, y$ and $z$.
+\end{proof}
+
+\begin{lemma}
+Let $0<s<1$. There exists a constant $C' = C'(\rho) < \infty$ such that
+\[
+|\mathrm{Im}\, w| \cdot |w|^s \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha \le C'
+\]
+uniformly in $w \in \mathbb{C}$ and $\omega_x \in \mathrm{supp}\,\rho$.
+\end{lemma}
+
+\begin{proof}
+The proof is that of [REFERENCE GUNTER STOLZ]. Since $|w|^s \le |\alpha|^s + |\alpha + w|^s$, we bound:
+\begin{enumerate}
+    \item \begin{align*}
+|\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le |\mathrm{Im}\, w| \int \frac{\| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty}{|\alpha + w|^2}\, d\alpha \\
+&\le |\mathrm{Im}\, w|\, \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \int \frac{1}{(\alpha + u)^2 + t^2}\, d\alpha
+\end{align*}
+by setting $w = u + it$.
+By changing variable and shift the integral, we have
+\[
+\int \frac{1}{\alpha^2 + t^2}\, d\alpha = 2\pi i \, \mathrm{Res}\left( \frac{1}{\alpha^2 + t^2}, it \right) = \frac{2\pi i}{2it}.
+\]
+Thus for $ \rho = \frac{1}{2}\chi_{[-1,1]}$ and $ |\alpha| \le 1+ |\omega| \le 2 $
+\begin{align*}
+|\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le \pi \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \\
+&\le \pi 2^{s-1}.
+\end{align*}
+    \item Now, we bound the second expression.
+\begin{align*}
+|\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha &\le |\mathrm{Im}\, w|\, \frac{1}{2} \int \frac{d\alpha}{|\alpha + w|^{2-s}} \\
+&= |t|\, \|\rho\|_\infty \int \frac{1}{|\alpha + it|^{2-s}}\, d\alpha \\
+&= |t|^2 \|\rho\|_\infty \int \frac{1}{|t\beta + it|^{2-s}}\, d\beta \\
+&= \|\rho\|_\infty t^s \int \frac{1}{|\beta + i|^{2-s}}\, d\beta
+\end{align*}
+by setting $w = u + it$ and $\alpha = t\beta$.
+
+Let $C' = \int \frac{1}{|\beta + i|^{2-s}}\, d\beta$ then we have
+\[
+|\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha \le \min\left( \frac{1}{|\mathrm{Im}\, w|^{1-s}}, C' \|\rho\|_\infty |\mathrm{Im}\, w|^s \right) \le C' \|\rho\|_\infty^{1-s}.
+\] 
+\end{enumerate}
+
+
+
+
 \end{proof}
 
 \clearpage

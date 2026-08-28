@@ -44,6 +44,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \numberwithin{equation}{section}
 \numberwithin{theorem}{section}
+\newtheorem{claim}{Claim}
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -110,7 +111,7 @@ with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$.
 \\
 \vspace{0.3 cm}\\
 \subsubsection{The operator}
-\textbf{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
+\paragraph{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
 For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
 
 \[
@@ -200,7 +201,7 @@ Thus $\phi_x$ is a bounded generalized eigenfunction of $\Delta$ to the spectral
 \dots
 \\
  
-\textbf{The Potential Term.} 
+\paragraph{The Random Potential.} 
 \begin{definition}[i.i.d. random variables]
 $(\omega_n)_{n \in \mathbb{Z}^d}$ are identically distributed if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_n \in A) = \mu(A)$ for all $n \in \mathbb{Z}^d$ and Borel sets $A \subset \mathbb{R}. ( \omega_{n_{n \in \mathbb{Z}^d}}$ are independent if
 \[
@@ -335,7 +336,7 @@ for a large class of compactly supported initial conditions $\phi_0$.
 
 \begin{definition}[Dynamical localisation]
     \begin{equation}
-    \sup_{t \in \mathbb{R}} \||X|^p e^{-it h_\omega}  \psi\| < \infty \quad \text{\emph{almost surely,}}
+    \sup_{t \in \mathbb{R}} \||X|^p e^{-it H_\omega}  \psi\| < \infty \quad \text{\emph{almost surely,}}
     \end{equation}
     \emph{where the position operator $|X|$ is defined by $(|X|\phi)(n) = |n|\phi(n)$ and for all $\varphi$ with compact support..}
 \end{definition}
@@ -345,14 +346,20 @@ for a large class of compactly supported initial conditions $\phi_0$.
         \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-itH_\omega}e_k \rangle | \right) \leq C e^{- \mu |j-k|}
     \end{equation}
 \end{definition}
+\begin{remark}
+    Dynamical localization in the form (2.2) is a strong form of asserting that solutions of the time-dependent Schr\"odinger equation $H_\omega \phi(t) = i \partial \phi(t)$ are staying
+localized in space, uniformly for all times, and thus shows the absence of quantum
+transport. 
+\end{remark}
 
 
 
-\textbf{Proposition:} \emph{Exponential dynamical localization implies that all moments of the position operator are bounded in time, i.e., dynamical localisation}
+
+\textbf{Proposition:} \emph{Exponential localization implies that all moments of the position operator are bounded in time, i.e., dynamical localisation}
 
 
 \begin{proof}
-To see how (1) follows from exp. dynamical localization, assume that $\psi(k) = 0$ for $|k| > R$. Then
+To see how (2.1) follows from (2.2), we assume that $\psi(k) = 0$ for $|k| > R$. Then
 \begin{align*}
 \||X|^p e^{-it h_\omega} \psi\|^2 &= \sum_j |\langle e_j, |X|^p e^{-it h_\omega}  \psi \rangle|^2 \\
 &= \sum_j |j|^{2p} \left| \sum_{|k| \le R} \langle e_j, e^{-it h_\omega}  e_k \rangle \psi(k) \right|^2 \\
@@ -481,11 +488,7 @@ In this subsection we aim to prove the following theorem:
     \begin{equation}
     \mathbb{E}\left( |G(x,y; E+i\epsilon)|^s \right) \le C e^{-\mu |x-y|}
     \end{equation}
-    uniformly in $E \in I$ and $\epsilon > 0$, then dynamical localization in the form
-    \begin{equation}
-    \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle e_j, e^{-it h_\omega} \chi_I(h_\omega) e_k \rangle| \right) \le C e^{-\mu |j-k|}
-    \end{equation}
-    holds on the interval $I$.
+    uniformly in $E \in I$ and $\epsilon > 0$, then dynamical localization holds on the interval $I$.
 \end{theorem}
 Before diving in the proof, we are going to need more equipment. 
 
@@ -514,9 +517,11 @@ Before diving in the proof, we are going to need more equipment.
     \left\|(A-z)^{-1}\right\| = \sup_{ \lambda \in \sigma(A)} \frac{1}{|\lambda -z|} = \frac{1}{\inf_{\lambda \in \sigma(A)} |\lambda-z|} = \frac{1}{\text{dist}(\sigma(A),z)}
     \]
     For a bounded and self-adjoint operator, we know that the spectrum is real-valued. For $ z \in \mathbb{C} \setminus \mathbb{R} $ the minimum distance between $ z$ and $ \sigma(A)$ is the imaginary component of $z$:\\
-    \[
-    \left\|(A-z)^{-1}\right\| \le \frac{1}{|\text{Im}(z)|}
-    \]
+    \begin{equation}
+        \left\|(A-z)^{-1}\right\| \le \frac{1}{|\text{Im}(z)|}
+    \end{equation}
+    
+    
     
 \end{proof}
 
@@ -649,11 +654,47 @@ The proof is that of [REFERENCE GUNTER STOLZ]. Since $|w|^s \le |\alpha|^s + |\a
 \end{enumerate}
 \end{proof}
 
-Now we can procede with the proof of theorem 3.4
+Now we can procede with the proof of the theorem.
 
-\begin{proof}
-    
+\begin{proof}[Proof of Theorem 3.4]
+Let $\mu_{x,y}$ be the complex Borel spectral measure of $h_\omega$ associated with vectors $\delta_x, \delta_y$, defined by
+\[
+\mu_{x,y}(B) := \langle \delta_x, \chi_B(h_\omega) \delta_y \rangle.
+\]
+The total variation measure $|\mu_{x,y}|$ over the open bounded interval $I$ satisfies
+\[
+\sup_{t \in \mathbb{R}} |\langle \delta_x, e^{-ith_\omega} \chi_I(h_\omega) \delta_y \rangle| \le |\mu_{x,y}|(I).
+\]
+By Lusin's Theorem, $|\mu_{x,y}|(I) = \sup_{g \in C_c(I), \|g\|_\infty \le 1} |\langle \delta_x, g(h_\omega) \delta_y \rangle|$. For every $g \in C_c(I)$, the spectral calculus and Parseval's identity yield
+\[
+\langle \delta_x, g(h_\omega) \delta_y \rangle = \lim_{\epsilon \downarrow 0} \frac{\epsilon}{\pi} \int_I g(E) \langle \delta_x, (h_\omega - E - i\epsilon)^{-1}(h_\omega - E + i\epsilon)^{-1} \delta_y \rangle\, dE.
+\]
+Inserting a partition of unity $I$:
+\[
+|\langle \delta_x, g(h_\omega) \delta_y \rangle| \le \liminf_{\epsilon \downarrow 0} \frac{\epsilon}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} |G_\omega(x,z; E+i\epsilon)|\, |G_\omega(z,y; E+i\epsilon)|\, dE.
+\]
+Taking expectations, applying Fatou's Lemma, Fubini's Theorem, and the Cauchy--Schwarz inequality on the expectation gives:
+\begin{align*}
+\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{1}{\pi} \liminf_{\epsilon \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \mathbb{E}\Big( \epsilon |G_\omega(x,z; E+i\epsilon)|\, |G_\omega(z,y; E+i\epsilon)| \Big)\, dE \\
+&\le \frac{1}{\pi} \liminf_{\epsilon \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \left( \mathbb{E}\big(\epsilon |G_\omega(x,z; E+i\epsilon)|^2\big) \right)^{1/2} \left( \mathbb{E}\big(\epsilon |G_\omega(z,y; E+i\epsilon)|^2\big) \right)^{1/2} dE.
+\end{align*}
+
+Applying Proposition to both factors and then substituting the uniform hypothesis:
+\begin{align*}
+\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{C_1}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} \left(\mathbb{E}|G_\omega(x,z; E+i\epsilon)|^s\right)^{1/2} \left(\mathbb{E}|G_\omega(z,y; E-i\epsilon)|^s\right)^{1/2} dE \\
+&\le \frac{C_1 |I| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{2}|x-z|} e^{-\frac{\mu}{2}|z-y|}.
+\end{align*}
+
+By the triangle inequality, $\frac{\mu}{2}|x-z| + \frac{\mu}{2}|z-y| \ge \frac{\mu}{4}|x-y| + \frac{\mu}{4}|x-z| + \frac{\mu}{4}|z-y|$. Therefore,
+\[
+\mathbb{E}(|\mu_{x,y}|(I)) \le \left( \frac{C_1 |I| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|x-z|} e^{-\frac{\mu}{4}|z-y|} \right) e^{-\frac{\mu}{4}|x-y|} \le \widetilde{C} e^{-\widetilde{\mu}|x-y|},
+\]
+with $\widetilde{\mu} = \frac{\mu}{4}$ and finite prefactor $\widetilde{C} = \frac{C_1 |I| C}{\pi} \sum_{u \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|u|}$.
 \end{proof}
+
+\begin{remark}[Spectral Localization]
+Via the RAGE theorem, spectral localisation is also implied.
+\end{remark}
 
 
 
@@ -692,8 +733,65 @@ The \textbf{connective constant} (or connectivity constant) $\mu_d$ of the latti
 By subadditivity of $\log c_N$, this limit exists, is positive, and satisfies the strict inequality $\mu_d < 2d - 1$.
 \end{definition}
 
+\begin{claim}
+Let $\mu_d$ be the connective constant (or growth rate) of self-avoiding walks on $\mathbb{Z}^d$. Then:
+\[
+\mu_d \le 2d - 1
+\]
+\end{claim}
+
+\begin{proof}
+Let $c_N$ denote the number of self-avoiding walks (SAWs) of length $N$ starting from the origin $0 \in \mathbb{Z}^d$, and let $S_N(0, x)$ denote the set of such walks ending at $x \in \mathbb{Z}^d$. By definition:
+\[
+c_N = \sum_{x \in \mathbb{Z}^d} |S_N(0, x)| = \sum_{x \in \mathbb{Z}^d} \sum_{\gamma \in S_N(0, x)} 1
+\]
+Consider the generating function (\textit{susceptibility}) with parameter $\xi \in \mathbb{C}$:
+\[
+\sum_{N=0}^{\infty} |\xi|^N c_N = \sum_{N=0}^{\infty} |\xi|^N \sum_{x \in \mathbb{Z}^d} |S_N(0, x)|
+\]
+
+\paragraph{Upper Bound on $c_N$:}
+For $N = 0$, $c_0 = 1$. For $N \ge 1$, a walk cannot immediately step back onto the previous vertex (non-reversing condition). Thus:
+\begin{itemize}
+    \item The first step has at most $2d$ choices.
+    \item Each of the subsequent $N-1$ steps has at most $2d - 1$ choices.
+\end{itemize}
+This gives the upper bound:
+\[
+c_N \le 2d (2d - 1)^{N-1}, \quad \text{for } N \ge 1.
+\]
+
+\paragraph{Convergence of the Series:}
+Using this upper bound, we can bound the series from above:
+\begin{align*}
+\sum_{N=0}^{\infty} |\xi|^N c_N 
+&\le 1 + \sum_{N=1}^{\infty} |\xi|^N (2d)(2d-1)^{N-1} \\
+&= 1 + 2d |\xi| \sum_{k=0}^{\infty} |\xi|^k (2d-1)^k \quad (\text{setting } k = N-1) \\
+&= 1 + 2d |\xi| \sum_{k=0}^{\infty} \left(|\xi|(2d-1)\right)^k
+\end{align*}
+
+This geometric series converges if and only if:
+\[
+|\xi|(2d - 1) < 1 \iff |\xi| < \frac{1}{2d - 1} =: R
+\]
+where $R = \frac{1}{2d - 1}$ is the radius of convergence of the bounding series.
+
+By the Cauchy--Hadamard theorem, the radius of convergence $R'$ of the original series $\sum_{N=0}^{\infty} c_N |\xi|^N$ is:
+\[
+R' = \frac{1}{\limsup_{N \to \infty} c_N^{1/N}} = \frac{1}{\mu_d}
+\]
+Since the original series is bounded term-by-term by a series that converges for $|\xi| < R$, the true radius of convergence must satisfy:
+\[
+R' \ge R \implies \frac{1}{\mu_d} \ge \frac{1}{2d - 1}
+\]
+Taking the reciprocal yields:
+\[
+\mu_d \le 2d - 1.
+\]
+\end{proof}
+
 \begin{definition}[SAW Correlation Function]
-For a parameter $\\beta \ge 0$, the \textbf{self-avoiding walk correlation function} $C_\beta(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is the generating function
+For a parameter $\\ \beta \ge 0$, the \textbf{self-avoiding walk correlation function} $C_\beta(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is the generating function
 \[
 C_\beta(y - x) := \sum_{N=0}^\infty \beta^N \, \#\mathcal{S}_N(y, x),
 \]
@@ -739,18 +837,8 @@ To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \
 
 \subsection{Proof with SAW}
 \clearpage
-\section{From fractional moments to dynamical localisation}
-\begin{theorem}
-    Theorem final
-\end{theorem}
-\begin{proposition}
-    \[
-    |\Im z| \mathbb{E}\left( |G(x,y;z)|^2\right) \leq C_1\mathbb{E}\left( |G(x,y;z)|^s\right) 
-    \]
-\end{proposition}
-\begin{proof}[Proof of theorem 5.1]
-    
-\end{proof}
+
+
 
 
 

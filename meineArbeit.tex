@@ -592,7 +592,7 @@ Choose $f(\omega_x) = |G_{(\hat{\omega}, \omega_x)}(x,y;z)|^2$; then (3.14) and 
 |\mathrm{Im}\, z| \, \mathbb{E}_x(|G_\omega(x,y;z)|^2) = |\mathrm{Im}\, z| \, \mathbb{E}_x\left( \int |G^{(\alpha)}(x,y;z)|^2 \rho(\omega_x + \alpha)\, d\alpha \right) \nonumber \\
 \le \mathbb{E}_x\left( |\mathrm{Im}\, G_\omega(x,x;z)^{-1}| \frac{|G_\omega(x,y;z)|^s}{|G_\omega(x,x;z)|^s} \int \frac{\rho(\omega_x + \alpha)}{|\alpha + G_\omega(x,x;z)^{-1}|^2}\, d\alpha \right).
 \end{align}
-We now use Lemma 5.2 below with $w = G_\omega(x,x;z)^{-1}$ to conclude
+We now use Lemma 3.7 below with $w = G_\omega(x,x;z)^{-1}$ to conclude
 \[
 |\mathrm{Im}\, z| \, \mathbb{E}_x(|G_\omega(x,y;z)|^2) \le C \mathbb{E}_x(|G_\omega(x,y;z)|^s),
 \]
@@ -600,61 +600,134 @@ with a constant $C < \infty$ which only depends on $\mathrm{supp}\,\rho$, but no
 \end{proof}
 
 \begin{lemma}
-Let $0<s<1$. There exists a constant $C' = C'(\rho) < \infty$ such that
+Let $0<s<1$. There exists a constant $C_s' < \infty$ such that
 \[
-|\mathrm{Im}\, w| \cdot |w|^s \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha \le C'
+|\mathrm{Im}\, w| \cdot |w|^s \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha \le C_s '
 \]
-uniformly in $w \in \mathbb{C}$ and $\omega_x \in \mathrm{supp}\,\rho$.
+uniformly in $w \in \mathbb{C}$ and $\omega_x \sim \mathcal{U}[-1,1]$.
 \end{lemma}
 
 \begin{proof}
 The proof is that of [REFERENCE GUNTER STOLZ]. Since $|w|^s \le |\alpha|^s + |\alpha + w|^s$, we bound:
 \begin{enumerate}
-    \item \begin{align*}
-|\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le |\mathrm{Im}\, w| \int \frac{\| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty}{|\alpha + w|^2}\, d\alpha \\
-&\le |\mathrm{Im}\, w|\, \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \int \frac{1}{(\alpha + u)^2 + t^2}\, d\alpha
-\end{align*}
-by setting $w = u + it$.
-By changing variable and shift the integral, we have
-\[
-\int \frac{1}{\alpha^2 + t^2}\, d\alpha = 2\pi i \, \mathrm{Res}\left( \frac{1}{\alpha^2 + t^2}, it \right) = \frac{2\pi i}{2it}.
-\]
-Thus for $ \rho = \frac{1}{2}\chi_{[-1,1]}$ and $ |\alpha| \le 1+ |\omega| \le 2 $
-\begin{align*}
-|\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le \pi \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \\
-&\le \pi 2^{s-1}.
-\end{align*}
-    \item Now, we bound the second expression.
-\begin{align*}
-|\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha &\le |\mathrm{Im}\, w|\, \frac{1}{2} \int \frac{d\alpha}{|\alpha + w|^{2-s}} \\
-&= |t|\, \|\rho\|_\infty \int \frac{1}{|\alpha + it|^{2-s}}\, d\alpha \\
-&= |t|^2 \|\rho\|_\infty \int \frac{1}{|t\beta + it|^{2-s}}\, d\beta \\
-&= \|\rho\|_\infty t^s \int \frac{1}{|\beta + i|^{2-s}}\, d\beta
-\end{align*}
-by setting $w = u + it$ and $\alpha = t\beta$.
+    \item 
+    \begin{align*}
+    |\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le |\mathrm{Im}\, w| \int \frac{\| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty}{|\alpha + w|^2}\, d\alpha \\
+    &\le |\mathrm{Im}\, w|\, \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \int \frac{1}{(\alpha + \mathrm{Re}\,w)^2 + \mathrm{Im}\,w ^2}\, d\alpha
+    \end{align*}
+    for $ a,b \in \mathbb{R}$ we have
+    \[
+    \int \frac{1}{a^2 + b^2}\, da = 2\pi i \, \mathrm{Res}\left( \frac{1}{a^2 + b^2}, ib \right) = \frac{2\pi i}{2ib}.
+    \]
+    Thus for $ \rho = \frac{1}{2}\chi_{[-1,1]}$ and $ |\alpha| \le 1+ |\omega| \le 2 $
+    \begin{align*}
+    |\mathrm{Im}\, w| \int \frac{|\alpha|^s \rho(\omega_x + \alpha)}{|\alpha + w|^2}\, d\alpha &\le \pi \| |\alpha|^s \rho(\omega_x + \alpha) \|_\infty \\
+    &\le \pi 2^{s-1}.
+    \end{align*}
+    \item Now, we bound the second expression.\\
+    \begin{enumerate}
+        \item For $|\mathrm{Im}\,w|$ big:\\
+        Since $\vert{}\alpha + w\vert{} \ge \vert{}\operatorname{Im} w\vert{}$ and $\int \rho(\omega_x + \alpha) \, d\alpha = 1$:$$I_2 \le \vert{}\operatorname{Im} w\vert{} \cdot \frac{1}{\vert{}\operatorname{Im} w\vert{}^{2-s}} \int \rho(\omega_x + \alpha) \, d\alpha = \frac{1}{\vert{}\operatorname{Im} w\vert{}^{1-s}}$$
+        \item For $ | \mathrm{Im}\, w|$ small: \\
+        \begin{align*}
+        |\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha &\le |\mathrm{Im}\, w|\, \frac{1}{2} \int \frac{d\alpha}{|\alpha + w|^{2-s}} \\
+        &= |\mathrm{Im}\, w|\, \frac{1}{2} \int \frac{1}{|u + \mathrm{Im}w|^{2-s}}\, du \\
+        &= |\mathrm{Im}\, w|^2 \frac{1}{2} \int \frac{1}{|u^2 + {\mathrm{Im}w}^2|^\frac{2-s}{2}}\, du \\
+        &= \frac{1}{2}\, ({\mathrm{Im}\, w})^s \int \frac{1}{|t^2 +1|^\frac{2-s}{2}}\, dt
+        \end{align*}
+        by setting $u= \alpha + \mathrm{Re}\,w $ and $t= \frac{u}{\mathrm{Im}\,w}$.
 
-Let $C' = \int \frac{1}{|\beta + i|^{2-s}}\, d\beta$ then we have
-\[
-|\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha \le \min\left( \frac{1}{|\mathrm{Im}\, w|^{1-s}}, C' \|\rho\|_\infty |\mathrm{Im}\, w|^s \right) \le C' \|\rho\|_\infty^{1-s}.
-\] 
+        To establish the finiteness of the constant, we consider the integral
+        \[
+        C_s := \int_{-\infty}^{\infty} \frac{1}{(t^2 + 1)^{\frac{2-s}{2}}} \, dt.
+        \]
+        For $s \in (0,1)$, the exponent satisfies $2 - s > 1$, which ensures the asymptotic decay $(t^2 + 1)^{-\frac{2-s}{2}} \sim |t|^{-(2-s)}$ as $|t| \to \infty$, rendering the integral absolutely convergent.Then we have
+        \[
+        |\mathrm{Im}\, w| \int \frac{\rho(\omega_x + \alpha)}{|\alpha + w|^{2-s}}\, d\alpha \le \min\left( \frac{1}{|\mathrm{Im}\, w|^{1-s}}, C_s \frac{1}{2} |\mathrm{Im}\, w|^s \right) \le C_s' 2^{s-1}.
+        \] 
+    \end{enumerate}
 \end{enumerate}
-
-
-
-
 \end{proof}
+
+Now we can procede with the proof of theorem 3.4
+
+\begin{proof}
+    
+\end{proof}
+
+
 
 \clearpage
 \section{SAW representation}
 
 
 \subsection{SAW Definitions}
+\begin{definition}[Self-Avoiding Walk]
+A \textbf{self-avoiding walk} (SAW) on the integer lattice $\mathbb{Z}^d$ of length $N \in \mathbb{N}_0$ is an ordered $(N+1)$-tuple of distinct lattice sites
+\[
+\gamma = (\gamma_0, \gamma_1, \dots, \gamma_N) \in (\mathbb{Z}^d)^{N+1}
+\]
+such that consecutive vertices are nearest neighbors, that is,
+\[
+|\gamma_i - \gamma_{i-1}| = 1 \quad \text{for all } i \in \{1, \dots, N\},
+\]
+and $\gamma_i \ne \gamma_j$ for all $i \ne j$.
+\end{definition}
+\textcolor{red}{\textbf{INSERISCI IMMAGINE}}
+
+\begin{definition}[Sets of Self-Avoiding Walks]
+Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mathbb{N}_0$:
 \begin{enumerate}
-    \item 
+    \item[\textup{(i)}] $\mathcal{S}_N^{(\Lambda)}(y, x)$ denotes the set of all self-avoiding walks of length $N$ contained entirely in $\Lambda$, starting at $\gamma_0 = x$ and terminating at $\gamma_N = y$. When $\Lambda = \mathbb{Z}^d$, we simply write $\mathcal{S}_N(y, x)$.
+    \item[\textup{(ii)}] $\mathcal{S}_N^{(\Lambda)}(x) := \bigcup_{y \in \Lambda} \mathcal{S}_N^{(\Lambda)}(y, x)$ denotes the set of all self-avoiding walks of length $N$ in $\Lambda$ starting at $x$.
+    \item[\textup{(iii)}] $c_N := \# \mathcal{S}_N(x) = \sum_{y \in \mathbb{Z}^d} \# \mathcal{S}_N(y, x)$ denotes the total number of self-avoiding walks of length $N$ on $\mathbb{Z}^d$ originating from a fixed site (e.g., the origin $0$), which is independent of the starting vertex by translation invariance.
 \end{enumerate}
+\end{definition}
+
+\begin{definition}[Connectivity Constant]
+The \textbf{connective constant} (or connectivity constant) $\mu_d$ of the lattice $\mathbb{Z}^d$ is defined as the asymptotic growth rate of $c_N$:
+\[
+\mu_d := \lim_{N \to \infty} (c_N)^{1/N}.
+\]
+By subadditivity of $\log c_N$, this limit exists, is positive, and satisfies the strict inequality $\mu_d < 2d - 1$.
+\end{definition}
+
+\begin{definition}[SAW Correlation Function]
+For a parameter $\\beta \ge 0$, the \textbf{self-avoiding walk correlation function} $C_\beta(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is the generating function
+\[
+C_\beta(y - x) := \sum_{N=0}^\infty \beta^N \, \#\mathcal{S}_N(y, x),
+\]
+defined for all values of $\beta$ for which the power series is absolutely convergent. By translation invariance, $C_\beta(y-x)$ depends only on the displacement vector $y - x$.
+\end{definition}
+
+\begin{definition}[SAW Susceptibility]
+The \textbf{susceptibility} $\chi(\beta)$ of self-avoiding walks is the sum of the two-point correlation function over all endpoints:
+\[
+\chi(\beta) := \sum_{x \in \mathbb{Z}^d} C_\beta(x) = \sum_{N=0}^\infty c_N \, \beta^N.
+\]
+The series converges absolutely if and only if $0 \le \beta < \beta := 1/\mu_d$, where $1/\mu_d$ is the critical radius of convergence.
+\end{definition}
+
+\begin{proposition}[Exponential Spatial Decay of the Correlation Function]
+For any $0 \le \beta < 1/\mu_d$ and every $\varepsilon > 0$ such that $(\mu_d + \varepsilon)\beta < 1$, there exists a constant $K_\varepsilon < \infty$ such that
+\[
+C_\beta(x) \le K_\varepsilon \left( (\mu_d + \varepsilon)\beta \right)^{|x|_1} \quad \text{for all } x \in \mathbb{Z}^d,
+\]
+which implies the exponential decay $C_\beta(x) \le K_\varepsilon e^{-m_\varepsilon(\beta)|x|_1}$ with mass parameter $m_\varepsilon(\beta) = -\ln \beta - \ln(\mu_d + \varepsilon) > 0$.
+\end{proposition}
 
 
 \subsection{SAW representation of G }
+The proof of the theorem 3.1 is similar to the one given by Schenker in []. We are going to work with the Green's function defined on a volume
+where one site is removed every stage. Therefore , for any $ \Lambda \supset \mathbb{Z}^d$ (finite or infinite) the Green function changes:
+\begin{equation}
+    G^{\Lambda}(x,y;z) \coloneq \begin{cases}
+        (H^{\Lambda}_\omega -z), \qquad \forall x,y \in \Lambda\\
+        0 \qquad, \text{otherwise}
+    \end{cases}
+\end{equation}
+where $H^{\Lambda}_\omega -z \in \mathbb{C}^{\Lambda \times \Lambda}$is the matrix obtained by restricting $ H_\omega -z$ to $ \Lambda$. In this thesis we will consider $ \Lambda = \mathbb{Z}^d$, but we leave the noation $\Lambda$ to highligth the fact that the same result holds for any volume.\\
+To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$.
 \begin{itemize}
     \item Theorem of the representation
     \begin{enumerate}

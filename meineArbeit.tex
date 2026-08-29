@@ -44,7 +44,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \numberwithin{equation}{section}
 \numberwithin{theorem}{section}
-\newtheorem{claim}{Claim}
+\newtheorem{claim}[theorem]{Claim}
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -428,7 +428,14 @@ Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda \ge \l
 \begin{equation}
 \mathbb{E}\left( |G_{\omega,\lambda}(x, y; z)|^s \right) \le C e^{-\mu |x - y|}
 \end{equation}
-uniformly in $x, y \in \mathbb{Z}^d$ and $z \in \mathbb{C} \setminus \mathbb{R}$.
+uniformly in $x, y \in \mathbb{Z}^d$ and $z \in \mathbb{C} \setminus \mathbb{R}$. In particular, if $ \lambda_{And}$ satisfies $\lambda_{\mathrm{And}} = \mu_d e \ln\lambda_{And}$ then for all $\lambda > \lambda_{\mathrm{And}}, \lambda >e$ and $\epsilon > 0$ we have
+\begin{equation}
+\mathbb{E}\left(|G^{(\Lambda)}(x,y;z)|^{1 - \frac{1}{\ln \lambda}}\right) \le \beta(\lambda) K_\epsilon \ln \lambda \, e^{-m_\epsilon(\lambda)|x - y|}
+\end{equation}
+where
+\[
+m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
+\]
 \end{theorem}
 
 
@@ -721,7 +728,7 @@ Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mat
 \begin{enumerate}
     \item[\textup{(i)}] $\mathcal{S}_N^{(\Lambda)}(y, x)$ denotes the set of all self-avoiding walks of length $N$ contained entirely in $\Lambda$, starting at $\gamma_0 = x$ and terminating at $\gamma_N = y$. When $\Lambda = \mathbb{Z}^d$, we simply write $\mathcal{S}_N(y, x)$.
     \item[\textup{(ii)}] $\mathcal{S}_N^{(\Lambda)}(x) := \bigcup_{y \in \Lambda} \mathcal{S}_N^{(\Lambda)}(y, x)$ denotes the set of all self-avoiding walks of length $N$ in $\Lambda$ starting at $x$.
-    \item[\textup{(iii)}] $c_N := \# \mathcal{S}_N(x) = \sum_{y \in \mathbb{Z}^d} \# \mathcal{S}_N(y, x)$ denotes the total number of self-avoiding walks of length $N$ on $\mathbb{Z}^d$ originating from a fixed site (e.g., the origin $0$), which is independent of the starting vertex by translation invariance.
+    \item[\textup{(iii)}] $c_N := | \mathcal{S}_N(x)| = \sum_{y \in \mathbb{Z}^d} | \mathcal{S}_N(y, x)|$ denotes the total number of self-avoiding walks of length $N$ on $\mathbb{Z}^d$ originating from a fixed site (e.g., the origin $0$), which is independent of the starting vertex by translation invariance.
 \end{enumerate}
 \end{definition}
 
@@ -750,7 +757,6 @@ Consider the generating function (\textit{susceptibility}) with parameter $\xi \
 \sum_{N=0}^{\infty} |\xi|^N c_N = \sum_{N=0}^{\infty} |\xi|^N \sum_{x \in \mathbb{Z}^d} |S_N(0, x)|
 \]
 
-\paragraph{Upper Bound on $c_N$:}
 For $N = 0$, $c_0 = 1$. For $N \ge 1$, a walk cannot immediately step back onto the previous vertex (non-reversing condition). Thus:
 \begin{itemize}
     \item The first step has at most $2d$ choices.
@@ -761,7 +767,6 @@ This gives the upper bound:
 c_N \le 2d (2d - 1)^{N-1}, \quad \text{for } N \ge 1.
 \]
 
-\paragraph{Convergence of the Series:}
 Using this upper bound, we can bound the series from above:
 \begin{align*}
 \sum_{N=0}^{\infty} |\xi|^N c_N 
@@ -793,7 +798,7 @@ Taking the reciprocal yields:
 \begin{definition}[SAW Correlation Function]
 For a parameter $\\ \beta \ge 0$, the \textbf{self-avoiding walk correlation function} $C_\beta(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is the generating function
 \[
-C_\beta(y - x) := \sum_{N=0}^\infty \beta^N \, \#\mathcal{S}_N(y, x),
+C_\beta(y - x) := \sum_{N=0}^\infty \beta^N \, |\mathcal{S}_N(y, x)|,
 \]
 defined for all values of $\beta$ for which the power series is absolutely convergent. By translation invariance, $C_\beta(y-x)$ depends only on the displacement vector $y - x$.
 \end{definition}
@@ -803,16 +808,53 @@ The \textbf{susceptibility} $\chi(\beta)$ of self-avoiding walks is the sum of t
 \[
 \chi(\beta) := \sum_{x \in \mathbb{Z}^d} C_\beta(x) = \sum_{N=0}^\infty c_N \, \beta^N.
 \]
-The series converges absolutely if and only if $0 \le \beta < \beta := 1/\mu_d$, where $1/\mu_d$ is the critical radius of convergence.
+The series \textcolor{red}{converges uniformly absolutely} if and only if $0 \le |\beta| 1/\mu_d$, where $1/\mu_d$ is the critical radius of convergence.
 \end{definition}
 
-\begin{proposition}[Exponential Spatial Decay of the Correlation Function]
-For any $0 \le \beta < 1/\mu_d$ and every $\varepsilon > 0$ such that $(\mu_d + \varepsilon)\beta < 1$, there exists a constant $K_\varepsilon < \infty$ such that
+\begin{proposition}[Exponential Decay of the Correlation Function]
+Let $\beta \ge 0$ be such that $\beta < 1/\mu_d$. Then for every $\varepsilon > 0$ there exists a constant $K_\varepsilon < \infty$, independent of $x$, such that
 \[
-C_\beta(x) \le K_\varepsilon \left( (\mu_d + \varepsilon)\beta \right)^{|x|_1} \quad \text{for all } x \in \mathbb{Z}^d,
+C_\beta(x) \;\le\; K_\varepsilon \big( (\mu_d+\varepsilon)\beta \big)^{|x|} \qquad \text{for all } x \in \mathbb{Z}^d.
 \]
-which implies the exponential decay $C_\beta(x) \le K_\varepsilon e^{-m_\varepsilon(\beta)|x|_1}$ with mass parameter $m_\varepsilon(\beta) = -\ln \beta - \ln(\mu_d + \varepsilon) > 0$.
 \end{proposition}
+
+\begin{proof}
+We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining $C_\beta(x)$ may be restricted to $N \ge |x|$:
+\begin{equation}
+    C_\beta(x) = \sum_{N=|x|}^{\infty} \beta^N \, |\mathcal S_N(x,0)| \;\le\; \sum_{N=|x|}^{\infty} \beta^N c_N.
+\end{equation}
+
+Fix $\varepsilon > 0$. Since $\mu_d = \lim_{N\to\infty} c_N^{1/N}$, by the definition of limit there exists $N_0 = N_0(\varepsilon) \in \mathbb{N}$ such that
+\[
+c_N^{1/N} < \mu_d + \varepsilon \qquad \text{for all } N \ge N_0,
+\]
+that is,
+\[
+c_N < (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge N_0.   
+\]
+For $N = 0, 1, \dots, N_0-1$, define
+\[
+K_\varepsilon \;:=\; \max\left(1,\; \max_{0 \le N < N_0} \frac{c_N}{(\mu_d+\varepsilon)^N}\right),
+\]
+which is finite, being the maximum of finitely many finite quantities. By construction it holds:
+\[
+c_N \;\le\; K_\varepsilon (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge 0.
+\]
+
+Combining it with (4.1) we obtain
+\[
+C_\beta(x) \;\le\; K_\varepsilon \sum_{N=|x|}^{\infty} \big[(\mu_d+\varepsilon)\beta\big]^N.
+\]
+Choosing $\varepsilon$ small enough that $r := (\mu_d+\varepsilon)\beta < 1$ (possible since $\beta < 1/\mu_d$), the tail of the geometric series equals
+\[
+\sum_{N=|x|}^{\infty} r^N = \frac{r^{|x|}}{1-r}.
+\]
+Hence
+\[
+C_\beta(x) \;\le\; \frac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta} \, \big[(\mu_d+\varepsilon)\beta\big]^{|x|}.
+\]
+where $ \dfrac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta}$ is still finite and $x$-independent.
+\end{proof}
 
 
 \subsection{SAW representation of G }
@@ -825,18 +867,128 @@ where one site is removed every stage. Therefore , for any $ \Lambda \supset \ma
     \end{cases}
 \end{equation}
 where $H^{\Lambda}_\omega -z \in \mathbb{C}^{\Lambda \times \Lambda}$is the matrix obtained by restricting $ H_\omega -z$ to $ \Lambda$. In this thesis we will consider $ \Lambda = \mathbb{Z}^d$, but we leave the noation $\Lambda$ to highligth the fact that the same result holds for any volume.\\
-To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$.
-\begin{itemize}
-    \item Theorem of the representation
-    \begin{enumerate}
-        \item first prove that $G(x,y) = G(x,x) \sum{G(x_1,y)}$
-        \item then the represantion with the $R_N$
-    \end{enumerate}
-    \item put figure of the grid ant the different paths
-\end{itemize}
+To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$. In this section, for semplicity during calculations, we will write $ G^{\Lambda}(x,y)$ instead of $ G^{\Lambda}(x,y;z)$.
+
+\begin{theorem}
+Let $x, y \in \mathbb{Z}^d$, $x \neq y$, $\Lambda \subseteq \mathbb{Z}^d$. $G^\Lambda$ is defined as in (4.1). It holds
+\begin{equation}
+    G^\Lambda(x, y) =  \sum_{n=1}^N \sum_{\gamma \in \mathcal{S}_n(x, y)} \prod_{i=1}^n G^{\Lambda}(x, x) \cdot G^{\Lambda_i}(\gamma_i, \gamma_i) + R_N   
+\end{equation}
+
+where $\Lambda_i = \Lambda \setminus \{x, \gamma_1, \dots, \gamma_{i-1}\}$ and
+\begin{equation}
+    R_N = \sum_{x \sim y} \sum_{\gamma \in \mathcal{S}_N(0, x)} \prod_{i=1}^{N-1} G^{\Lambda}(x, x) \cdot G^{\Lambda_i}(\gamma_i, \gamma_i) \cdot G^{\Lambda_N}(\gamma_N, y).    
+\end{equation}
+
+\end{theorem}
+
+\begin{claim}
+\begin{equation}
+    G^\Lambda(x, y) = - G^\Lambda(x, x) \sum_{x_1 \sim x} G^{\Lambda_1}(x_1, y)
+\end{equation}
+\end{claim}
+
+\begin{proof}
+Using the resolvent identity for $A = (H_\omega^\Lambda - z)$ and $B = (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)$, we obtain:
+\begin{align*}
+&(H_\omega^\Lambda - z)^{-1} - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1} \\
+&= - (H_\omega^\Lambda - z)^{-1} \left( H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) \right) 
+(H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1}
+\end{align*}
+
+We know:
+\begin{align*}
+H_\omega^\Lambda &= 2d - \sum_{x_1 \sim y} \delta_{x_1} + \lambda V_\omega  \quad \forall y \in \Lambda\\
+H_\omega^{\{x\}} &= \lambda \omega_x + 2d \\
+H_\omega^{\Lambda \setminus \{x\}} &= 2d - \sum_{x_1 \sim y} \delta_{x_1} + \lambda V_\omega  - \lambda \omega_x\quad \forall y \in \Lambda \setminus \{x\} 
+\end{align*}
+\[
+\implies H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) = -\sum_{x_1 \sim x}\delta_{x_1} =: T_{x, x_1}
+\]
+
+\noindent Now considering the matrix elements in $(x, y)$ with $x \neq y$ and matrix multiplication:
+\[
+(H_\omega^\Lambda - z)_{x, y}^{-1} - 0 = -\sum_{x_1, x_2} (H_\omega^\Lambda - z)_{x, x_1}^{-1} T_{x_1, x_2} (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)_{x_2, y}^{-1}
+\]
+For $T_{x_1, x_2} \neq 0$, we need $x_1 = x$ and $x_2 \sim x_1$.
+
+We obtain:
+\[
+G^\Lambda(x, y) = \sum_{x_1 \sim x} G^\Lambda(x, x)G^{\Lambda \setminus \{x\}}(x_1, y)
+\]
+Now we separate the case in which $ x_1 =y$ (which implies $|x-y|=1$) from the cas in which it isn't.
+\[
+G^\Lambda(x, y) = G^\Lambda(x, x) \left(\sum_{x_1 \sim x, x_1 \neq y}G^{\Lambda_1}(x_1, y) +  I_{|x-y|=1}\,G^{\Lambda_1}(y,y)\right)
+\]
+Iterating N times, it gives (4.2)
+\end{proof}
 
 \subsection{Proof with SAW}
-\clearpage
+\textit{Now we use self-avoiding-walks to prove the theorem (3.1).} 
+\begin{proof}
+We take the average of (4.2), and using  $|\sum a|^s \le \sum |a|^s$ (which follows from triangle inequality), we have:
+\begin{align}
+    \mathbb{E}\left[ |G^\Lambda(x, y)|^s \right] \le \sum_{n=1}^N \sum_{\gamma \in \mathcal{S}_n(x, y)} \mathbb{E}\left[ |G^\Lambda(x, x)|^s \prod_{i=1}^n |G^{\Lambda_i}(\gamma_i, \gamma_i)|^s \right] + \\
+    \sum_{x \sim y} \sum_{\gamma \in \mathcal{S}_N(0, x)} \mathbb{E}[|G^{\Lambda}(x, x)|^s \prod_{i=1}^{N-1} |G^{\Lambda_i}(\gamma_i, \gamma_i)|^s \cdot |G^{\Lambda_N}(\gamma_N, y)|^s.]
+\end{align}
+
+The resolvent $G^{\Lambda_j}(w, w')$ does not depend on the random variables $\omega_{x_i}$, $i = 0, \dots, j-1$. Hence, recursive applications of the a priori bound (3.2) yield
+
+\begin{align*}
+\mathbb{E}\left[ |G^\Lambda(x, x)|^s \prod_{j=1}^n |G^{\Lambda_j}(\gamma_j, \gamma_j)|^s \right] 
+\le \left( \frac{1}{1-s} \frac{1}{\lambda^s} \right)^{n+1}
+\end{align*}
+
+and
+\begin{align*}
+\mathbb{E}\left[ |G^\Lambda(x, x)|^s \prod_{j=1}^{N-1} |G^{\Lambda_j}(\gamma_j, \gamma_j)|^s \cdot |G^{\Lambda_{N-1}}(\gamma_N, y)|^s \right] \\
+\le \left( \frac{1}{1-s} \cdot \frac{1}{\lambda^s} \right)^N \cdot \mathbb{E}\left[ |G^{\Lambda_{N-1}}(\gamma_N, y)|^s \right] 
+\le  \left( \frac{1}{1-s} \frac{1}{\lambda^s} \right)^N  \frac{1}{|\operatorname{Im}(z)|^s}
+\end{align*}
+
+\noindent Where we used a priori bound and lemma 3.5.
+
+\vspace{1em}
+\noindent Inserting these estimates in the sums above, we get:
+\begin{equation}
+\mathbb{E}\left( |G^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=0}^N \beta(s)^{1+n} |\mathcal{S}_n^{(\Lambda)}(y,x)| + \beta(s)^N |\mathcal{S}_N^{(\Lambda)}(x)| \frac{1}{|\operatorname{Im} z|^s} 
+\end{equation}
+with $ \beta(s) = {\frac{1}{1-s} \frac{1}{\lambda^s}}$
+Let's consider the susceptability $\chi(\beta)$ of the self avoiding walks in $\mathcal{S}_N^{(\Lambda)}(x)$:
+\begin{equation}
+    \chi(\beta) = \sum_{x \in \mathbb{Z}^d} \sum_{N=0}^{\infty} \beta(s)^N \, |S_N^{(\Lambda)}(x)| = \sum_{N=0}^\infty c_N \, \beta(s)^N.
+\end{equation}
+The series converges absolutely if and only if $0 \le |\beta| < 1/\mu_d$, where $1/\mu_d = \lim_{N \rightarrow \infty} c_N ^{1/N}$ is the critical radius of convergence.
+Thus, for $|\beta(s)| = \frac{1}{|(1-s)\lambda^s|}\le \frac{1}{\mu_d} $, $ \chi(\beta)$ converges uniformly, and most importantly:
+\[
+c_N \, \beta(s)^N \longrightarrow 0 , \quad \text{for} N \rightarrow \infty
+\]
+We send $N$ to the infinity and obtain from (4.7):
+\begin{equation}
+    \mathbb{E}\left( |G^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=0}^\infty \beta(s)^{1+n} |\mathcal{S}_n^{(\Lambda)}(y,x)| 
+\end{equation}
+
+Taking the supremum over volumes $\Lambda$ now yields
+\begin{equation}
+\sup_{\Lambda \subset \mathbb{Z}^d} \mathbb{E}\left( |G^{(\Lambda)}(x,y)|^s \right) \le \beta(s) C_{\beta(s)}(x-y). \tag{4.3}
+\end{equation}
+
+It remains to establish for which $\lambda$ we may find $s \in (0,1)$ with $\beta(s) < 1/\mu_d$. As above, for $\lambda > e$ the unique critical point is $s_{\mathrm{crit}} = 1 - 1/\ln \lambda$ and
+\[
+\min_{s \in (0,1)} \beta(s) = \beta(s_{\mathrm{crit}}) = \frac{e \ln \lambda}{\lambda}
+\] 
+which is less than $1/\mu_d$ if and only if $\lambda > \lambda_{\mathrm{And}}$.
+Finally we get:
+\begin{equation}
+\mathbb{E}\left(|G^{(\Lambda)}(x,y;z)|^{1 - \frac{1}{\ln \lambda}}\right) \le \beta(\lambda) K_\epsilon \ln \lambda \, e^{-m_\epsilon(\lambda)|x - y|}
+\end{equation}
+where
+\[
+m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
+\]
+\end{proof}
+
+
 
 
 

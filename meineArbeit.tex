@@ -99,33 +99,33 @@ and consequences (as spectral types).
 
 
 \subsection{The Anderson Model}
-Transport phenomena in a disordered material are often described via discrete random Schroedinger operator. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
+Transport phenomena in a disordered material are often described via discrete random Schr\"odinger operator. In quantum mechanics, it corresponds to the classical total energy $E = T + V$, decomposing into kinetic energy $T$ and potential energy $V$. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
 \[
 H_\omega = - \Delta + \lambda V_\omega.
 \]
 where $ -\Delta$ is a deterministic matrix and $ V_\omega$ is a diagonal matrix with random entries. This operator acts on the Hilbert space 
 \[
-l^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
+\ell^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
 with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$. 
 \\
 \vspace{0.3 cm}\\
 \subsubsection{The operator}
-\paragraph{The Descrete Laplacian.} The kinetic term $- \Delta$ is the descrete analogue of the usual negative Lalacian ($ -\sum_j \partial^2/\partial x_j^2$).
-For the functions $u \in l^2(\mathbb{Z}^d)$ it is defined as:
+\paragraph{The Descrete Laplacian}is the descrete analogue of the usual negative Laplacian ($ -\sum_j \partial^2/\partial x_j^2$).
+For the functions $u \in \ell^2(\mathbb{Z}^d)$ it is defined as:
 
 \[
 -\Delta u(x) := \sum_{k \in \mathbb{Z}^d,|x-k|=1} u(x) - u(k) \quad \text{for } x \in \mathbb{Z}^d.
 \]
 
-where $|*|$ denotes the $ l^2$ norm.
+where $|*|$ denotes the $ \ell^2$ norm.
 
 The discrete Laplacian represents the kinetic term and connects neighbour sites on the lattice, such that the electron can transition from one to another. 
 
-For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. We can now define an infinte matrix such that: \[
+For each site $x$, there are $2d$ possible $k$ such that $|x-k|=1$. Thus, we can define an infinte matrix such that: \[
 (-\Delta)_{x,k} = \begin{cases} 
 2d & \text{if } x = k \quad \text{(on the diagonal)} \\
--1 & \text{if } |x - k| = 1 \quad (k \sim x, \text{ first neighbors}) \\
+-1 & \text{if } |x - k| = 1  \\
 0 & \text{otherwise}
 \end{cases}
 \]
@@ -139,31 +139,28 @@ For $u \in \ell^2(\mathbb{Z}^d)$, $-\Delta u$ is summable in $\ell^2$, bounded, 
 The first claim (summability) is shown by:
 
 \begin{align*}
-\sum_{x \in \mathbb{Z}^d} |\Delta u(x)|^2 &= \sum_{x \in \mathbb{Z}^d} \left| \sum_{k \sim x, k \in \mathbb{Z}^d} \bigl(u(x) - u(k)\bigr) \right|^2 \\
-&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{k \sim x} |u(x) - u(k)|^2 \right) \\
-&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{k \sim x, k \in \mathbb{Z}^d} |u(x)|^2 + |u(k)|^2 \right) \\
-&\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty.
+\sum_{x \in \mathbb{Z}^d} |\Delta u(x)|^2 &= \sum_{x \in \mathbb{Z}^d} \left| \sum_{ k \in \mathbb{Z}^d, |x - k| = 1} \bigl(u(x) - u(k)\bigr) \right|^2 \\
+&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{|x - k| = 1} |u(x) - u(k)|^2 \right) \\
+&\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{|x - k| = 1} \left(|u(x)|^2 + |u(k)|^2\right) \right) \\
+&\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty
 \end{align*}
 
-In each step we used, in order, Cauchy-Schwarz, the bound over the number of neighbors, triangle inequality and the invariance under translation of the $ l^2$ norm.\\
+where we used the bound over the number of neighbors, triangle inequality, Cauchy Schwarz and the invariance under translation of the $ \ell^2$ norm.\\
 The boundedness comes from:
 \[
 \frac{\|\Delta u\|_2^2}{\|u\|_2^2} \le 16 d^2 \implies \|\Delta\|_2 \le 4d.
 \]
 
-To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded). For $ u, v \in l^2(\mathbb{Z}^d)$ and $ k \in \mathbb{Z}^d$:
+To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bounded). For $ u, v \in \ell^2(\mathbb{Z}^d)$ and $ k \in \mathbb{Z}^d$:
 \begin{align*}
-\langle u, -\Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} (-\Delta v(x)) &= \sum_{x \in \mathbb{Z}^d}u(x) \left( \sum_{k \sim x} v(x) - v(k) \right) \\
-= \sum_{x \in \mathbb{Z}^d} \left(u(x) 2d v(x) -  \sum_{k \sim x} u(x) v(k)\right)  &=\sum_{x \in \mathbb{Z}^d} 2d u(x) v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{k \sim x} u(k) v(x) \\
-= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{k \sim x} u(x) - u(k) \right) &= \sum_{x \in \mathbb{Z}^d}\overline{v(x)} (-\Delta u(x)) =\langle - \Delta u, v \rangle.
-\end{align*}
-
-\noindent
-The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron owns.
-
+\langle u, -\Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} (-\Delta v(x)) &= \sum_{x \in \mathbb{Z}^d} \overline{u(x)} \left( \sum_{|x - k| = 1} v(x) - v(k) \right) \\
+= \sum_{x \in \mathbb{Z}^d} \left( \overline{u(x)} 2d v(x) -  \sum_{|x - k| = 1} \overline{u(x)} v(k)\right)  &=\sum_{x \in \mathbb{Z}^d} 2d \overline{u(x)} v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{|x - k| = 1} \overline{u(k)} v(x) \\
+= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{|x - k| = 1} \overline{u(x)} - \overline{u(k)} \right) &= \sum_{x \in \mathbb{Z}^d}v(x) \overline{(-\Delta u(x))} =\langle - \Delta u, v \rangle.
+\end{align*}\\
 \vspace{1em}
-\noindent
-In order to understand this results better, let's consider the discrete Fourier transform:
+
+The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron owns.
+In order to understand this result better, let's consider the discrete Fourier transform:
 \[
 \mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi)^d)
 \]
@@ -174,31 +171,28 @@ such that:
 For semplicity of the calculations we don't consider the limit and just sum over all $ n \in \mathbb{Z}^d$ and $ u$ summable. 
 
 \begin{align*}
-    (\mathcal{F} \Delta u)(x) &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} (\Delta u)(n)\, e^{-i x \cdot n} \\
+    (\mathcal{F} (-\Delta u))(x) &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} (-\Delta u)(n)\, e^{-i x \cdot n} \\
     &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \left( \sum_{|k-n|=1} \bigl(u(n) - u(k)\bigr) \right) e^{-i x \cdot n} \\
     &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \left( 2d\, u(n) - \sum_{|k-n|=1} u(k) \right) e^{-i x \cdot n} \\
     &= 2d\,(\mathcal{F}u)(x) - (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} \sum_{|k-n|=1} u(k)\, e^{-i x \cdot n} \\
     &= 2d\,(\mathcal{F}u)(x) - (2\pi)^{-\frac{d}{2}} \sum_{k \in \mathbb{Z}^d} u(k) \sum_{|m|=1} e^{-i x \cdot (k+m)} \quad \text{\small (for $m = n - k$)} \\
     &= 2d\,(\mathcal{F}u)(x) - \left( (2\pi)^{-\frac{d}{2}} \sum_{k \in \mathbb{Z}^d} u(k)\, e^{-i x \cdot k} \right) \sum_{|m|=1} e^{-i x \cdot m} \\
     &= 2d\,(\mathcal{F}u)(x) - (\mathcal{F}u)(x) \sum_{j=1}^d \left( e^{-i x_j} + e^{i x_j} \right) \\
-    &= \left( 2d - 2\sum_{j=1}^d \cos(x_j) \right) (\mathcal{F}u)(x)\\
-    &= \left( 2 \sum_{j=1}^d 1-\cos(x_j) \right)  (\mathcal{F}u)(x).
-\end{align*}
-We obtain the multiplication operator: $$ \mathcal{F} \Delta \mathcal{F}^{-1}=  2 \sum_{j=1}^d 1-\cos(x_j) $$ on $ L^2 ( [0,2\pi)^d) $ in the variable $x= (x_1,\dots.., x_d)$. We notice that the Laplacian doesn't have eigenvalues in $ l^2(\mathbb{Z}^d)$.
-\dots
+    &= \left( 2 \sum_{j=1}^d ( 1-\cos(x_j)) \right)  (\mathcal{F}u)(x).
+\end{align*}\\
+We obtain the multiplication operator: $$ \mathcal{F} \Delta \mathcal{F}^{-1}=  2 \sum_{j=1}^d (1-\cos(x_j)) $$ on $ L^2 ( [0,2\pi)^d) $ in the variable $x= (x_1,\dots.., x_d)$. We notice that the Laplacian doesn't have eigenvalues in $ \ell^2(\mathbb{Z}^d)$.
 Another similarity of $\Delta$ with the continuum Laplacian is that it has plane waves as generalized eigenfunctions. To see this, let $x \in [0,2\pi)^d$ and set
 \[
 \phi_x(n) := e^{-i n \cdot x}
 \]
-While $\phi_x \notin l^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
-\begin{align*}
-(\Delta \phi_x)(n) &= \sum_{|k|=1} e^{-in \cdot x} - e^{-i(n+k)\cdot x} \\
-&=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)
-&= \left( 2 \sum_{j=1}^d 1-\cos(x_j) \right) \phi_x.
-\end{align*}
-Thus $\phi_x$ is a bounded generalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d 1-\cos(x_j)$.
+While $\phi_x \notin \ell^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
 
-\dots
+\begin{align*}
+    (\Delta \phi_x)(n) &= \sum_{|k|=1} \(e^{-in \cdot x} - e^{-i(n+k)\cdot x} \)\\
+    &=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)\\
+    &= \left( 2 \sum_{j=1}^d (1-\cos(x_j)) \right) \phi_x.
+\end{align*}
+Thus $\phi_x$ is a bounded generalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(x_j))$.
 \\
  
 \paragraph{The Random Potential.} 
@@ -242,7 +236,7 @@ a cui corrispondono rispettivamente lo spettro puramente puntuale $\sigma_{pp}(H
 
 L'interpretazione fisica di questi sottospazi \`e chiarita dal fondamentale \textbf{Teorema RAGE} (Ruelle-Amrein-Georgescu-Enss):
 \begin{theorem}[RAGE]
-Suppose $H$ is a Schr\"odinger operator acting on $l^2(\mathbb{Z}^d)$. Then:
+Suppose $H$ is a Schr\"odinger operator acting on $\ell^2(\mathbb{Z}^d)$. Then:
 \begin{enumerate}
     \item[\textup{(i)}] $\phi \in \mathcal{H}_{pp}$ if and only if
     \[
@@ -386,7 +380,7 @@ holds in an open interval $I$. Then $h_\omega$ almost surely has pure point spec
 \end{proposition}
 
 \begin{proof}
-For a discrete Schr\"odinger operator $h = h_0 + V$ in $l^2(\mathbb{Z}^d)$ let $P_{\mathrm{cont}}(h)$ be the projection onto its continuous spectral subspace. Then the RAGE-Theorem says that for every $\psi \in l^2(\mathbb{Z}^d)$,
+For a discrete Schr\"odinger operator $h = h_0 + V$ in $\ell^2(\mathbb{Z}^d)$ let $P_{\mathrm{cont}}(h)$ be the projection onto its continuous spectral subspace. Then the RAGE-Theorem says that for every $\psi \in \ell^2(\mathbb{Z}^d)$,
 \begin{equation}
 \|P_{\mathrm{cont}}(h) \chi_I(h) \psi\|^2 = \lim_{R\to\infty} \lim_{T\to\infty} \int_0^T \frac{dt}{T} \|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \psi\|^2.
 \end{equation}
@@ -406,7 +400,7 @@ By (2.4) we have $\mathbb{E}\left( |\langle e_x, e^{-ith_\omega} \chi_I(h_\omega
 \[
 \le \lim_{R\to\infty} \tilde{C} \sum_{|x|\ge R, |y|\le r} e^{-\mu |x-y|} = 0.
 \]
-We conclude that $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) \psi = 0$ for almost every $\omega$ and every $\psi$ of finite support. The latter are dense in $l^2(\mathbb{Z}^d)$ and thus $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) = 0$ almost surely, meaning that the spectrum in $I$ is pure point.
+We conclude that $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) \psi = 0$ for almost every $\omega$ and every $\psi$ of finite support. The latter are dense in $\ell^2(\mathbb{Z}^d)$ and thus $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) = 0$ almost surely, meaning that the spectrum in $I$ is pure point.
 \end{proof}
 
 
@@ -824,7 +818,7 @@ We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining 
     C_\beta(x) = \sum_{N=|x|}^{\infty} \beta^N \, |\mathcal S_N(x,0)| \;\le\; \sum_{N=|x|}^{\infty} \beta^N c_N.
 \end{equation}
 
-Fix $\varepsilon > 0$. Since $\mu_d = \lim_{N\to\infty} c_N^{1/N}$, by the definition of limit there exists $N_0 = N_0(\varepsilon) \in \mathbb{N}$ such that
+Fix $\varepsilon > 0$. Since $\mu_d = \lim_{N\to\infty} c_N^{1/N}$, by the definition of limit there exists $N_0  \in \mathbb{N}$ such that
 \[
 c_N^{1/N} < \mu_d + \varepsilon \qquad \text{for all } N \ge N_0,
 \]

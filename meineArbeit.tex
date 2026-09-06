@@ -98,25 +98,44 @@ and foundations of the theory of linear operators in Hilbert spaces, up to the s
 and consequences (as spectral types). 
 
 
-\subsection{The Anderson Model}
-Transport phenomena in a disordered material are often described via discrete random Schr\"odinger operator. In quantum mechanics, it corresponds to the classical total energy $E = T + V$, decomposing into kinetic energy $T$ and potential energy $V$. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
+\section{The Anderson Model}
+Transport phenomena in a disordered material are often described via discrete random Schr\"odinger operator. In quantum mechanics, it corresponds to the classical total energy decomposing into kinetic and potential energy. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
 \[
 H_\omega = - \Delta + \lambda V_\omega.
 \]
-where $ -\Delta$ is a deterministic matrix and $ V_\omega$ is a diagonal matrix with random entries. This operator acts on the Hilbert space 
+where $-\Delta$ is a deterministic matrix  and $ \lambda V_\omega $ is a diagonal matrix where $V_\omega$ has random entries and $\lambda$ is the disorder parameter.\\
+This operator acts on the Hilbert space 
 \[
 \ell^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{n \in \mathbb{Z}^d} |u(n)|^2 < \infty\}
 \]
 with inner product $\langle u, v \rangle = \sum_n \overline{u(n)} v(n)$. 
 \\
-\vspace{0.3 cm}\\
-\subsubsection{The operator}
+
+In quantum mechanics, a physical state describing a single particle (such as an electron) is represented by a normalized wave function $\psi \in \ell^2(\mathbb{Z}^d)$ satisfying 
+\begin{equation}
+\|\psi\|_{\ell^2}^2 = \sum_{x \in \mathbb{Z}^d} |\psi(x)|^2 = 1.
+\end{equation}
+The quantity $P(x) = |\psi(x)|^2$ defines a probability mass function on the lattice $\mathbb{Z}^d$: it represents the probability of finding the particle localized at site $x \in \mathbb{Z}^d$. \\
+This functions are the solutions to the time-evolving Schr\"odinger operator $ H_\omega \phi (t)= \partial_t \phi(t)$. Because the time evolution operator $e^{-itH_\omega}$ is unitary on $\ell^2(\mathbb{Z}^d)$, the total probability is strictly conserved at all times $t \in \mathbb{R}$:
+\begin{equation}
+\|\psi(t)\|_{\ell^2}^2 = \|e^{-itH_\omega}\psi_0\|_{\ell^2}^2 = \|\psi_0\|_{\ell^2}^2 = 1.
+\end{equation}
+In particular, if the particle is initially placed at a specific site $y \in \mathbb{Z}^d$ with $\psi(0) = \delta_y$, the transition probability to find the particle at site $x \in \mathbb{Z}^d$ at time $t$ is given by the squared transition amplitude:
+\begin{equation}
+P(y \to x; t) = |\langle \delta_x, e^{-itH_\omega} \delta_y \rangle|^2.
+\end{equation}
+
+
+\vspace{0.3 cm}
+\subsection{The Hamiltonian}
 \paragraph{The Descrete Laplacian}is the descrete analogue of the usual negative Laplacian ($ -\sum_j \partial^2/\partial x_j^2$).
 For the functions $u \in \ell^2(\mathbb{Z}^d)$ it is defined as:
 
-\[
--\Delta u(x) := \sum_{k \in \mathbb{Z}^d,|x-k|=1} u(x) - u(k) \quad \text{for } x \in \mathbb{Z}^d.
-\]
+\begin{equation}
+    -\Delta u(x) := \sum_{k \in \mathbb{Z}^d,|x-k|=1} u(x) - u(k) \quad \text{for } x \in \mathbb{Z}^d.
+\end{equation}
+
+
 
 where $|*|$ denotes the $ \ell^2$ norm.
 
@@ -159,7 +178,7 @@ To prove self-adjointness, we only need to show symmetry (given $-\Delta$ is bou
 \end{align*}\\
 \vspace{1em}
 
-The spectrum of the bounded, self-adjoint operator $-\Delta$ is the closed, real-valued interval $[0, 4d]$. In this range, we find the levels of kinetic energy that an electron owns.
+The spectrum of a bounded, self-adjoint operator is real-valued, ad in this case equal to the closed interva $[0,4d]$. In this range, we find the levels of kinetic energy that an electron owns.
 In order to understand this result better, let's consider the discrete Fourier transform:
 \[
 \mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi)^d)
@@ -168,7 +187,8 @@ such that:
 \[
 (\mathcal{F}u)(x) \coloneqq \lim_{N \rightarrow \infty} (2\pi)^{-\frac{d}{2}} \sum_{|n| \leq N} u(n)\, e^{- i x \cdot n}, \qquad x \in [0, 2\pi)^d.
 \]
-For semplicity of the calculations we don't consider the limit and just sum over all $ n \in \mathbb{Z}^d$ and $ u$ summable. 
+
+We consider now calculations for $ u \in \ell^1( \mathbb{Z}^d)$. For $ \ell^1$ is a dense subset of $\ell^2$ and $ \mathcal{F}$ unitary, we can extend the results by continuity for all $ u \in \ell^2 (\mathbb{Z}^d)$
 
 \begin{align*}
     (\mathcal{F} (-\Delta u))(x) &= (2\pi)^{-\frac{d}{2}} \sum_{n \in \mathbb{Z}^d} (-\Delta u)(n)\, e^{-i x \cdot n} \\
@@ -188,39 +208,43 @@ Another similarity of $\Delta$ with the continuum Laplacian is that it has plane
 While $\phi_x \notin \ell^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
 
 \begin{align*}
-    (\Delta \phi_x)(n) &= \sum_{|k|=1} \(e^{-in \cdot x} - e^{-i(n+k)\cdot x} \)\\
-    &=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)\\
+    (\Delta \phi_x)(n) &= \sum_{|k|=1} (e^{-in \cdot x} - e^{-i(n+k)\cdot x}) \\
+    &=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)
     &= \left( 2 \sum_{j=1}^d (1-\cos(x_j)) \right) \phi_x.
 \end{align*}
-Thus $\phi_x$ is a bounded generalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(x_j))$.
-\\
- 
-\paragraph{The Random Potential.} 
-\begin{definition}[i.i.d. random variables]
-$(\omega_n)_{n \in \mathbb{Z}^d}$ are identically distributed if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_n \in A) = \mu(A)$ for all $n \in \mathbb{Z}^d$ and Borel sets $A \subset \mathbb{R}. ( \omega_{n_{n \in \mathbb{Z}^d}}$ are independent if
+Thus $\phi_x$ is a bounded generalized normalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(x_j))$. The spectrum is continuous and bounded in $ [0, 2 \dot (2d) ]$.\\
+
+\paragraph{The Random Potential}is expressed as the multiplication operator $V_\omega(n)= \omega_n$. It is a diagonal matrix, where $ \omega = (\omega_n)_{n \in \mathbb{Z}^d}$ is the set of the indipendent identically distributed real-valued random entries.
+
+
+\begin{definition}[ i.i.d. random variables]
+$(\omega_n)_{n \in \mathbb{Z}^d}$ are \textbf{identically distributed} if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_n \in A) = \mu(A)$ for all $n \in \mathbb{Z}^d$ and Borel sets $A \subset \mathbb{R}$.\\
+$( \omega_n)_{n \in \mathbb{Z}^d}$ are \textbf{independent} if
 \[
 \mathbb{P}(\omega_{n_1} \in A_1, \dots, \omega_{n_l} \in A_l) = \prod_{k=1}^l \mathbb{P}(\omega_{n_k} \in A_k) = \prod_{k=1}^l \mu(A_k)
 \]
 for each finite subset $\{n_1, \dots, n_l\}$ of $\mathbb{Z}^d$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
 \end{definition}
 
-We assume that the distribution $\mu$ of $\omega_v$ is absolutely continuous with density $\rho$ where $\rho$ is bounded with compact support, i.e.,
-\[
-\mu(B) = \int_B \rho(u) \, du \quad \text{for } B \subset \mathbb{R} \text{ Borel}, \quad \rho \in L_0^\infty(\mathbb{R}).
-\]
+In this thesis we assume that $\omega_n$ are uniformly distributed in the real closed interval $ [-1,1]$. This means that $ \mu(\omega_n)= \rho(\omega_n)d\omega_n$ where the continuous density is given by $\rho= \frac{1}{2}\chi_{[-1,1]}$.\\
+It is possible to generalize the results to all absolutely continuous distributions where $\rho$ has compact support and to the Gaussian distribution. \\
 
-Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $n \in \mathbb{Z}^d$. 
-... \textbf{ovviamente il testo da modificare in base al resto delle notazioni .}\\
-$ \lambda >0$ is the disorder parameter
+Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $n \in \mathbb{Z}^d$ . \\
+As a diagonal operator, the spectrum of $V_\omega$ consists of the random entries $\omega_n$, each corresponding to an eigenvector given by the Dirac delta $\delta_n \in \ell^2(\mathbb{Z}^d)$.\\
+
+
+As for the descrete laplacian, the random term is summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Self-adjointness of the maximal multiplication operator by a real-valued function is a fact. The spectrum is the closed interval $[-1,1] \subset \mathbb{R}$, which means that $ V_\omega$ is bounded, and  since $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
+\paragraph{The Disorder Parameter} is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localisation, which makes it one of the central objects of interest of this thesis. 
+Let's consider the two extreme cases:
 \begin{itemize}
-    \item Definition
-    \item heuristic role generic explanation
-    \item explanation for 0 and very big to give an idea. 
+    \item For $\boldsymbol{\lambda=0}$ the Hamiltonian looses the random term and only considers the Laplacian. Without disorder, the material behaves like a perfect crystal without localisation. 
+    The state functions are continuous plane waves and the spectrum is also continuous between $[0,4d]$.
+    \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_\omega \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits trivial localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
 \end{itemize}
 
 
 
-\subsubsection{The spectrum.}
+\subsection{The spectrum}
 \begin{itemize}
     \item in $\mathbb{R}$
     \item bounded $[0,4d]+ \text{supp}\mu$
@@ -230,7 +254,7 @@ $ \lambda >0$ is the disorder parameter
 
 Dalla teoria spettrale per operatori autoaggiunti su uno spazio di Hilbert $\mathcal{H}$, lo spazio si decompone univocamente nella somma diretta di sottospazi invarianti ortogonali:
 \begin{equation}
-\mathcal{H} = \mathcal{H}_{pp} \oplus \mathcal{H}_{sc} \oplus \mathcal{H}_{ac}
+    \mathcal{H} = \mathcal{H}_{pp} \oplus \mathcal{H}_{sc} \oplus \mathcal{H}_{ac}
 \end{equation}
 a cui corrispondono rispettivamente lo spettro puramente puntuale $\sigma_{pp}(H)$, singolarmente continuo $\sigma_{sc}(H)$ e assolutamente continuo $\sigma_{ac}(H)$, con $\sigma(H) = \sigma_{pp}(H) \cup \sigma_{sc}(H) \cup \sigma_{ac}(H)$.
 
@@ -487,9 +511,9 @@ In this subsection we aim to prove the following theorem:
 \begin{theorem}
     Let $I \subset \mathbb{R}$ be an open bounded interval. If there exist $s \in (0,1)$, $C < \infty$ and $\mu > 0$ such that
     \begin{equation}
-    \mathbb{E}\left( |G(x,y; E+i\epsilon)|^s \right) \le C e^{-\mu |x-y|}
+    \mathbb{E}\left( |G(x,y; E+i\eta)|^s \right) \le C e^{-\mu |x-y|}
     \end{equation}
-    uniformly in $E \in I$ and $\epsilon > 0$, then dynamical localization holds on the interval $I$.
+    uniformly in $E \in I$ and $\eta > 0$, then dynamical localisation holds on the interval $I$.
 \end{theorem}
 Before diving in the proof, we are going to need more equipment. 
 
@@ -668,21 +692,21 @@ The total variation measure $|\mu_{x,y}|$ over the open bounded interval $I$ sat
 \]
 By Lusin's Theorem, $|\mu_{x,y}|(I) = \sup_{g \in C_c(I), \|g\|_\infty \le 1} |\langle \delta_x, g(h_\omega) \delta_y \rangle|$. For every $g \in C_c(I)$, the spectral calculus and Parseval's identity yield
 \[
-\langle \delta_x, g(h_\omega) \delta_y \rangle = \lim_{\epsilon \downarrow 0} \frac{\epsilon}{\pi} \int_I g(E) \langle \delta_x, (h_\omega - E - i\epsilon)^{-1}(h_\omega - E + i\epsilon)^{-1} \delta_y \rangle\, dE.
+\langle \delta_x, g(h_\omega) \delta_y \rangle = \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_I g(E) \langle \delta_x, (h_\omega - E - i\eta)^{-1}(h_\omega - E + i\eta)^{-1} \delta_y \rangle\, dE.
 \]
 Inserting a partition of unity $I$:
 \[
-|\langle \delta_x, g(h_\omega) \delta_y \rangle| \le \liminf_{\epsilon \downarrow 0} \frac{\epsilon}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} |G_\omega(x,z; E+i\epsilon)|\, |G_\omega(z,y; E+i\epsilon)|\, dE.
+|\langle \delta_x, g(h_\omega) \delta_y \rangle| \le \liminf_{\eta \downarrow 0} \frac{\eta}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} |G_\omega(x,z; E+i\eta)|\, |G_\omega(z,y; E+i\eta)|\, dE.
 \]
 Taking expectations, applying Fatou's Lemma, Fubini's Theorem, and the Cauchy--Schwarz inequality on the expectation gives:
 \begin{align*}
-\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{1}{\pi} \liminf_{\epsilon \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \mathbb{E}\Big( \epsilon |G_\omega(x,z; E+i\epsilon)|\, |G_\omega(z,y; E+i\epsilon)| \Big)\, dE \\
-&\le \frac{1}{\pi} \liminf_{\epsilon \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \left( \mathbb{E}\big(\epsilon |G_\omega(x,z; E+i\epsilon)|^2\big) \right)^{1/2} \left( \mathbb{E}\big(\epsilon |G_\omega(z,y; E+i\epsilon)|^2\big) \right)^{1/2} dE.
+\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{1}{\pi} \liminf_{\eta \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \mathbb{E}\Big( \eta |G_\omega(x,z; E+i\eta)|\, |G_\omega(z,y; E+i\eta)| \Big)\, dE \\
+&\le \frac{1}{\pi} \liminf_{\eta \downarrow 0} \int_I \sum_{z \in \mathbb{Z}^d} \left( \mathbb{E}\big(\eta |G_\omega(x,z; E+i\eta)|^2\big) \right)^{1/2} \left( \mathbb{E}\big(\eta |G_\omega(z,y; E+i\eta)|^2\big) \right)^{1/2} dE.
 \end{align*}
 
 Applying Proposition to both factors and then substituting the uniform hypothesis:
 \begin{align*}
-\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{C_1}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} \left(\mathbb{E}|G_\omega(x,z; E+i\epsilon)|^s\right)^{1/2} \left(\mathbb{E}|G_\omega(z,y; E-i\epsilon)|^s\right)^{1/2} dE \\
+\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{C_1}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} \left(\mathbb{E}|G_\omega(x,z; E+i\eta)|^s\right)^{1/2} \left(\mathbb{E}|G_\omega(z,y; E-i\eta)|^s\right)^{1/2} dE \\
 &\le \frac{C_1 |I| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{2}|x-z|} e^{-\frac{\mu}{2}|z-y|}.
 \end{align*}
 
@@ -866,7 +890,7 @@ To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \
 \begin{theorem}
 Let $x, y \in \mathbb{Z}^d$, $x \neq y$, $\Lambda \subseteq \mathbb{Z}^d$. $G^\Lambda$ is defined as in (4.1). It holds
 \begin{equation}
-    G^\Lambda(x, y) =  \sum_{n=1}^N \sum_{\gamma \in \mathcal{S}_n(x, y)} \prod_{i=1}^n G^{\Lambda}(x, x) \cdot G^{\Lambda_i}(\gamma_i, \gamma_i) + R_N   
+    G^\Lambda(x, y) =  \sum_{n=1}^N \sum_{\gamma \in \mathcal{S}_n(x, y)} \prod_{i=1}^n G^{\Lambda}(x, x) \cdot G^{\Lambda_i}(\gamma_i, \gamma_i) + R_N  \label{eq:SAWrep} 
 \end{equation}
 
 where $\Lambda_i = \Lambda \setminus \{x, \gamma_1, \dots, \gamma_{i-1}\}$ and
@@ -876,12 +900,11 @@ where $\Lambda_i = \Lambda \setminus \{x, \gamma_1, \dots, \gamma_{i-1}\}$ and
 
 \end{theorem}
 
-\begin{claim}
+\begin{claim} \label{claim:SAWrep}
 \begin{equation}
-    G^\Lambda(x, y) = - G^\Lambda(x, x) \sum_{x_1 \sim x} G^{\Lambda_1}(x_1, y)
+    G^\Lambda(x, y) = G^\Lambda(x, x) \sum_{x_1 \sim x} G^{\Lambda_1}(x_1, y)
 \end{equation}
 \end{claim}
-
 \begin{proof}
 Using the resolvent identity for $A = (H_\omega^\Lambda - z)$ and $B = (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)$, we obtain:
 \begin{align*}
@@ -910,11 +933,13 @@ We obtain:
 \[
 G^\Lambda(x, y) = \sum_{x_1 \sim x} G^\Lambda(x, x)G^{\Lambda \setminus \{x\}}(x_1, y)
 \]
-Now we separate the case in which $ x_1 =y$ (which implies $|x-y|=1$) from the cas in which it isn't.
+\end{proof}
+\begin{proof}[Theorem 5.8]
+Now we separate the case in which $ x_1 =y$ (which implies $|x-y|=1$).
 \[
 G^\Lambda(x, y) = G^\Lambda(x, x) \left(\sum_{x_1 \sim x, x_1 \neq y}G^{\Lambda_1}(x_1, y) +  I_{|x-y|=1}\,G^{\Lambda_1}(y,y)\right)
 \]
-Iterating N times, it gives (4.2)
+Iterating N times, it gives \eqref{eq:SAWrep}.
 \end{proof}
 
 \subsection{Proof with SAW}
@@ -945,9 +970,9 @@ and
 \vspace{1em}
 \noindent Inserting these estimates in the sums above, we get:
 \begin{equation}
-\mathbb{E}\left( |G^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=0}^N \beta(s)^{1+n} |\mathcal{S}_n^{(\Lambda)}(y,x)| + \beta(s)^N |\mathcal{S}_N^{(\Lambda)}(x)| \frac{1}{|\operatorname{Im} z|^s} 
+\mathbb{E}\left( |G^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=0}^N \beta(s)^{1+n} |\mathcal{S}_n^{(\Lambda)}(y,x)| +  \text{\textit{Err}}(N) \frac{1}{|\operatorname{Im} z|^s} \label{eq:semifinalboundSAW}
 \end{equation}
-with $ \beta(s) = {\frac{1}{1-s} \frac{1}{\lambda^s}}$
+with $\text{\textit{Err}}(N) \coloneq \beta(s)^N |\mathcal{S}_N^{(\Lambda)}(x)|$ $ \beta(s) = {\frac{1}{1-s} \frac{1}{\lambda^s}}$
 Let's consider the susceptability $\chi(\beta)$ of the self avoiding walks in $\mathcal{S}_N^{(\Lambda)}(x)$:
 \begin{equation}
     \chi(\beta) = \sum_{x \in \mathbb{Z}^d} \sum_{N=0}^{\infty} \beta(s)^N \, |S_N^{(\Lambda)}(x)| = \sum_{N=0}^\infty c_N \, \beta(s)^N.
@@ -955,7 +980,7 @@ Let's consider the susceptability $\chi(\beta)$ of the self avoiding walks in $\
 The series converges absolutely if and only if $0 \le |\beta| < 1/\mu_d$, where $1/\mu_d = \lim_{N \rightarrow \infty} c_N ^{1/N}$ is the critical radius of convergence.
 Thus, for $|\beta(s)| = \frac{1}{|(1-s)\lambda^s|}\le \frac{1}{\mu_d} $, $ \chi(\beta)$ converges uniformly, and most importantly:
 \[
-c_N \, \beta(s)^N \longrightarrow 0 , \quad \text{for} N \rightarrow \infty
+\text{\textit{Err}}(N) \longrightarrow 0 , \quad \text{for} \quad N \rightarrow \infty
 \]
 We send $N$ to the infinity and obtain from (4.7):
 \begin{equation}
@@ -981,6 +1006,121 @@ where
 m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
 \]
 \end{proof}
+
+
+
+
+\clearpage
+\section{Connection to Long-Range SAW}
+
+The aim of this section is to use the strategies of the previous chapters in order to obtain similar results for long range jumps. In particular, we are comparing the two models and again applying both fractional moments method and the self-avoiding-walk representation of the Green's function. First of all we define the fractional descrete Laplacian and it's polynomial decay, then we'll compare the SAW representation with the one for the one-jump operator and finally, there will be an in-depth look at the localisation conditions in the fractional case. This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 [].
+
+\subsection{The fractional Laplacian}
+For the long-range, the kinetic operator doesn't connect only the first neighbors but also distant sites in the lattice. For this reason we need the fractional of the standard descrete Laplacian.
+\begin{definition}
+    Let $ -\Delta$ be defined as in 1.4 in Section 1. The fractional descrete Laplacian is $ (-\Delta)^\alpha$ for $ 0< \alpha<1$
+\end{definition}
+Just as the standard descrete Laplacian, $ (-\Delta)^\alpha$ is bounded, translation invariant and satisfies $$ (-\Delta)^\alpha >0 \quad \text{on the diagonal}, \qquad  (-\Delta)^\alpha \le 0 \quad \text{otherwise}$$.
+An important result in this study is the polinomial decay of the fractional moments of the Green's function, in contrast with the exponential decay that we proved in the previous chapters.
+This follows, in particular, from the polinomial decay of the off-diagonal elements of the fractional Laplacian.\\
+
+In fact, there exist constants $ 0<c_{\alpha,d}<C_{\alpha,d}$ such that 
+\begin{equation}
+\frac{c_{\alpha,d}}{|x-y|^{d+2\alpha}} \le -(-\Delta)^{\alpha}_{x,y} \le \frac{\mathcal{C}_{\alpha,d}}{|x-y|^{d+2\alpha}} \label{eq:fractionalbound}
+\end{equation}
+for all $ x, y \in \mathbb{Z}^{d}$ and $x \ne y$.\\
+From this bound, we obtain 
+\begin{equation}
+    \sum_{x \in \mathbb{Z}^{d}} |(-\Delta)^{\alpha}_{0,x}|^s < \infty, \qquad \forall\, 0 < \alpha \le 1 \quad \text{and} \quad s \in \left( \frac{d}{d+2\alpha},1\right] \label{eq:Dsbound}
+\end{equation}.
+
+More precisely:
+$$ \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} |(-\Delta)^\alpha_{0,x}|^s \le C_{\alpha,d}^s \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} \frac{1}{|x|^{(d+2\alpha)s}}.$$
+
+By standard comparison of the lattice sum with an integral on $\mathbb{R}^d$:
+\[
+\sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} \frac{1}{|x|^p} \le C_d \int_{|z|>1} \frac{1}{|z|^p} \, dz.
+\]
+
+Passing to spherical coordinates in $\mathbb{R}^d$, the integral reads
+\begin{align*}
+\int_{|z| > 1} \frac{1}{|z|^p} \, dz
+&= |\mathbb{S}^{d-1}| \int_{1}^\infty \frac{r^{d-1}}{r^p} \, dr \\
+&= |\mathbb{S}^{d-1}| \int_{1}^\infty r^{d - 1 - p} \, dr,
+\end{align*}
+where $|\mathbb{S}^{d-1}| = \frac{2\pi^{d/2}}{\Gamma(d/2)}$ denotes the surface area of the unit sphere in $\mathbb{R}^d$.
+
+The radial integral converges if and only if the power satisfies
+\[
+d - 1 - p < -1 \iff p > d.
+\]
+Substituting $p = s(d+2\alpha)$, this condition becomes
+\[
+s(d + 2\alpha) > d \iff s > \frac{d}{d + 2\alpha}.
+\]
+Since $\alpha > 0$ implies $d + 2\alpha > d$; for every $s \in \left(\frac{d}{d+2\alpha}, 1\right]$, we conclude that
+\[
+\sum_{x \ne 0} |(-\Delta)^\alpha_{0,x}|^s \le C_{\alpha,d}^s \sum_{x \ne 0} \frac{1}{|x|^{s(d+2\alpha)}} < \infty.
+\]
+
+\subsection{The SAW representation}
+As well as in the standard case, we consider the Hamiltonian operator with his random potential term $\lambda V_\omega$ and the fractional kinetic term $ (-\Delta)^\alpha$. This results consider an arbitrary continuous distribution with compact supported density.\\
+The Green's function is again the resolvent and its decay is close to the decay of the fractional Laplacian. 
+In fact, the averaged fractional Green's function satisfies
+\begin{equation}
+\mathbb{E}[|G_{z}(x,y)|^{s}] \le \frac{K_{0}\theta_{s}}{\lambda^{s}} \frac{1}{|x-y|^{d+2\alpha_{s}}} \qquad \forall\, x, y \in \mathbb{Z}^{d},\; x \ne y, \label{eq:LRSAW}
+\end{equation}
+uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda_0(s) \coloneq (\frac{\theta_s}{R})^{\frac{1}{s}}$, where $ R_{\chi_{(\beta,\alpha)}}$ is the radius of convergence of the susceptability and with $ \alpha_s \coloneq s(d+2\alpha)-d$.
+In addition, $K_0= K_0(d,\alpha)$ comes from the two-point function bound and $\frac{\theta_s}{\lambda^s} $ comes from the \textit{a priori bound}. \\
+\begin{remark}
+    Notice that for $\alpha=1$ and considering the uniform distribution in $[-1,1]$ for $\omega$, $ \theta_s = \frac{1}{1-s}$ which leads to $ \lambda_0(s) = \lambda_{\text{And}}$.
+\end{remark}
+
+In the long-range scenario, we are still using the same proof techniques as in Chapter 5 in order to prove \eqref{eq:LRSAW}. \\ 
+Nonetheless, one important change is given by the fact that, for long jumps, we are not just considering the neighbors, but an arbitrary site on the lattice. In particular, the probability to jump from the site x to the site y changes into: $$ p(x,y) \coloneq \frac{|(-\Delta)^\alpha_{x,y}|^s}{\sum_{z \ne x} |(-\Delta)^\alpha_{x,z}|^s}.$$ 
+Using the random walk on $\mathbb{Z}^d$ with $p(x,y)$ as transition probability, changes the definitions given in Chapter 5.1, which are now all generated by $|(-\Delta)^\alpha_{x,y}|^s$ and well defined for the values of $s$ as in \eqref{eq:Dsbound}.\\
+
+In order to prove \eqref{eq:LRSAW} we use the same proof steps as before:
+\begin{enumerate}
+    \item As in Claim \ref{claim:SAWrep}, by the resolvent identity we obtain: 
+        \begin{equation}
+            G^{\Lambda}_z (x,y)= G^{\Lambda}_z(x,x) \sum_{x_1 \in \Lambda \setminus \{x\}}   \Delta^\alpha_{x,x_1} G^{ \Lambda_1}(x_1,y)
+        \end{equation}
+        with $ \Delta^\alpha = -(-\Delta)^\alpha$ greater than zero for the off-diagonal elements. Since we are working with $0<\alpha <1$, we don't obtain an operator such as $T_{x,x_1}$ but we keep the Laplacian fractional. 
+    \item We then iterate and bound like in Chapter 5 for \eqref{eq:semifinalboundSAW}, in order to get:
+    \begin{equation}
+        \mathbb{E}[|G_{z}^{\Lambda}(x,y)|^{s}] \le \frac{\theta_{s}}{\lambda^{s}} C_{\beta}^{\alpha, s}(y-x) + \frac{1}{|\mathrm{Im}\, z|^{s}} \text{\textit{Err}}(N).
+    \end{equation} 
+    In this case, $\text{\textit{Err}}(N)$ depends on $|(-\Delta)^\alpha_{x,y}|^s$ and under the conditions of \eqref{eq:Dsbound} it vanishes for $N \rightarrow \infty$, solving the problem of the $\mathrm{Im}\, z$ as denominator in the equation.
+    \item Finally, (see [Lemma 4 of  PAPER DISERTORI]), 
+    \begin{equation}
+    C_{\beta}^{\alpha,s}(y-x) \le K_{0} \frac{1}{|y-x|^{d+2\alpha}}
+    \end{equation} 
+    holds as a consequence of \eqref{eq:fractionalbound}.
+\end{enumerate}
+\subsection{The Localisation critiria}
+A natural question that may arise from the previuous statements is how localisation is proven without exponental decay of the fractional moments of the Green's function.
+In the long-range case it is only possible to prove a weaker version of dynamical localisation. Without finitness for all moments of the position operator, it is convenient to prove spectral localisation via Simon-Wolff theorem.
+\begin{lemma}
+    Let's \eqref{eq:LRSAW} hold uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for $\lambda>\lambda_0(s)$. Then it follows:
+    \begin{enumerate}
+        \item[(i)] The spectrum of $H_{\alpha,\omega}$ consists only of pure point spectrum for a.e. $\omega \in \Omega$
+        \item[(ii)] for $0 < \beta < 2\alpha$ we have for a.e. $\omega \in \Omega$
+            \begin{equation}
+            \sup_{t \in \mathbb{R}} \left\| |x|^{\frac{\beta}{2}} e^{-it H_{\alpha,\omega}}(0,x)\right\| < \infty.
+            \end{equation}
+            In particular, if $\alpha > \frac{1}{2}$ the first moment of the wave function initially localized at the origin and evolving under the action of $H_{\alpha,\omega}$ is finite.
+    \end{enumerate}
+\end{lemma}In fact, for $0 < \beta < 2\alpha$ we have for a.e. $\omega \in \Omega$
+    \begin{equation}
+    \sup_{t \in \mathbb{R}} \left\| |x|^{\frac{\beta}{2}} e^{-it H_{\alpha,\omega}}(0,x)\right\| < \infty.
+    \end{equation}
+    In particular, if $\alpha > \frac{1}{2}$ the first moment of the wave function initially localized at the origin and evolving under the action of $H_{\alpha,\omega}$ is finite.
+ 
+
+
+
+
 
 
 

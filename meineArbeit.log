@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  11 SEP 2026 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  11 SEP 2026 21:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -553,14 +553,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count442
 \@quotereset=\count443
-(meineArbeit.aux
-
-LaTeX Warning: Label `eq:LRSAW' multiply defined.
-
-
-LaTeX Warning: Label `eq:boundsumlrs' multiply defined.
-
-)
+(meineArbeit.aux)
 \openout1 = `meineArbeit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -582,7 +575,6 @@ LaTeX Font Info:    ... okay on input line 62.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
 Package hyperref Info: Link coloring OFF on input line 62.
- (meineArbeit.out) (meineArbeit.out)
 \@outlinefile=\write4
 \openout4 = `meineArbeit.out'.
 
@@ -645,7 +637,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/giuli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
 
-] (meineArbeit.toc)
+]
+No file meineArbeit.toc.
 \tf@toc=\write5
 \openout5 = `meineArbeit.toc'.
 
@@ -719,6 +712,14 @@ LaTeX Warning: Citation 'Stolz2011' on page 9 undefined on input line 260.
 
 [9]
 
+LaTeX Warning: Reference `sec:The_Hamiltonian' on page 10 undefined on input line 269.
+
+
+Overfull \hbox (13.79375pt too wide) in paragraph at lines 268--270
+\T1/cmr/m/n/10.95 site ran-dom vari-ables $\OML/cmm/m/it/10.95 ![]$ \T1/cmr/m/n/10.95 are uni-formly dis-trib-uted on $\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1]$\T1/cmr/m/n/10.95 , we have $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^V\OT1/cmr/m/n/10.95 ) =
+ []
+
+
 LaTeX Warning: Reference `app:spectral_theory' on page 10 undefined on input line 275.
 
 
@@ -733,7 +734,10 @@ LaTeX Warning: Citation 'Cycon1987' on page 11 undefined on input line 292.
 
 LaTeX Warning: Citation 'HunzikerSigal2000' on page 11 undefined on input line 292.
 
-<Screenshot (326).png, id=218, 618.81187pt x 375.65344pt>
+
+LaTeX Warning: Reference `thm:RAGE' on page 11 undefined on input line 308.
+
+<Screenshot (326).png, id=94, 618.81187pt x 375.65344pt>
 File: Screenshot (326).png Graphic file (type png)
 <use Screenshot (326).png>
 Package pdftex.def Info: Screenshot (326).png  used on input line 326.
@@ -760,7 +764,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1})
 <to be read again> 
                    \relax 
 l.392     \begin{equation}
-                           [14
+                          
+
+LaTeX Warning: Reference `eq:explocalisation' on page 14 undefined on input line 404.
+
+
+LaTeX Warning: Reference `eq:dynloc' on page 14 undefined on input line 418.
+
+
+LaTeX Warning: Reference `eq:explocalisation' on page 14 undefined on input line 418.
+
+[14
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -772,60 +786,196 @@ Overfull \hbox (55.75288pt too wide) detected at line 479
 
 [16] [17
 
-] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 600--602
+]
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:544: Missing $ inserted.
+<inserted text> 
+                $
+l.544 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:544: Missing } inserted.
+<inserted text> 
+                }
+l.544 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:544: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.544 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:544: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.544 
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:546: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.546 \end{equation}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:546: You can't use `\eqno' in vertical mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.546 \end{equation}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:546: Missing $ inserted.
+<inserted text> 
+                $
+l.546 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex:546: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.546 \end{equation}
+                    
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 603--605
 
  []
 
 [19]
-Overfull \hbox (28.91263pt too wide) detected at line 661
+
+LaTeX Warning: Reference `lemma:aprioribound' on page 20 undefined on input line 625.
+
+
+LaTeX Warning: Reference `eq:4.12' on page 20 undefined on input line 645.
+
+
+LaTeX Warning: Reference `lemma:1/imz' on page 20 undefined on input line 645.
+
+
+LaTeX Warning: Reference `eq:4.12' on page 20 undefined on input line 649.
+
+[20]
+Overfull \hbox (28.91263pt too wide) detected at line 664
 []
  []
 
-[20]
-Overfull \hbox (9.09883pt too wide) detected at line 683
+
+LaTeX Warning: Reference `eq:4.12' on page 21 undefined on input line 674.
+
+
+LaTeX Warning: Reference `eq:4.13' on page 21 undefined on input line 676.
+
+
+LaTeX Warning: Reference `eq:4.14' on page 21 undefined on input line 676.
+
+
+Overfull \hbox (9.09883pt too wide) detected at line 686
 []
  []
 
 [21]
-Overfull \hbox (51.41739pt too wide) detected at line 715
+
+LaTeX Warning: Reference `eq:4.15' on page 22 undefined on input line 691.
+
+
+LaTeX Warning: Reference `eq:4.16' on page 22 undefined on input line 691.
+
+
+Overfull \hbox (51.41739pt too wide) detected at line 718
 []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
-
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 729--730
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 
  []
 
 
-Overfull \hbox (8.91849pt too wide) detected at line 745
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Overfull \hbox (8.91849pt too wide) detected at line 748
 \OMS/cmsy/m/n/10.95 j[] \OML/cmm/m/it/10.95 w\OMS/cmsy/m/n/10.95 j [] [] \OML/cmm/m/it/10.95 d \OMS/cmsy/m/n/10.95 ^^T [] [] ^^T \OML/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 :
  []
 
-[23]
-Overfull \hbox (62.7637pt too wide) detected at line 783
-[]
- []
-
-[24]
-Overfull \hbox (10.06854pt too wide) detected at line 789
+[23] [24]
+Overfull \hbox (62.7637pt too wide) detected at line 786
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 815--817
+LaTeX Warning: Reference `proposition:squaredbound' on page 25 undefined on input line 787.
+
+
+Overfull \hbox (10.06854pt too wide) detected at line 792
+[]
+ []
+
+
+LaTeX Warning: Reference `eq:explocalisation' on page 25 undefined on input line 801.
+
+[25]
+
+LaTeX Warning: Reference `thm:theorem1' on page 26 undefined on input line 811.
+
+
+LaTeX Warning: Reference `eq:FMM' on page 26 undefined on input line 815.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--820
 
  []
 
-[25] [26] [27
 
-] [28] [29] [30] [31] [32]
-Overfull \hbox (9.75713pt too wide) in paragraph at lines 1084--1087
+LaTeX Warning: Reference `proposition:squaredbound' on page 26 undefined on input line 821.
+
+
+LaTeX Warning: Reference `eq:4.20' on page 26 undefined on input line 829.
+
+
+LaTeX Warning: Reference `lemma:almostsurely' on page 26 undefined on input line 829.
+
+[26] [27
+
+] [28] [29] [30] [31]
+
+LaTeX Warning: Reference `eq:SAWrep' on page 32 undefined on input line 1050.
+
+[32]
+Overfull \hbox (9.75713pt too wide) in paragraph at lines 1087--1090
 [][] \OML/cmm/m/it/10.95 c[]$ \T1/cmr/m/n/10.95 is the crit-ical ra-dius of con-ver-gence. Thus, for $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^T
  []
 
@@ -833,69 +983,102 @@ Overfull \hbox (9.75713pt too wide) in paragraph at lines 1084--1087
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1106 \begin{equation}
+l.1109 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1106 \begin{equation}
+l.1109 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1106 \begin{equation}
+l.1109 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1106 \begin{equation}
+l.1109 \begin{equation}
                         [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+Underfull \hbox (badness 10000) in paragraph at lines 1124--1125
 
  []
+
+
+LaTeX Warning: Reference `eq:fractionalbound' on page 35 undefined on input line 1145.
 
 [35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1175--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1178--1181
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1182--1185
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1188
 
  []
 
 
-Overfull \hbox (1.87639pt too wide) in paragraph at lines 1190--1192
+LaTeX Warning: Reference `eq:LRSAW' on page 37 undefined on input line 1192.
+
+
+LaTeX Warning: Reference `eq:Dsbound' on page 37 undefined on input line 1194.
+
+
+Overfull \hbox (1.87639pt too wide) in paragraph at lines 1193--1195
 \T1/cmr/m/n/10.95 the defin-i-tions given in Chapter 5.1, which are now all gen-er-ated by $\OMS/cmsy/m/n/10.95 j\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 ^^A)[]\OMS/cmsy/m/n/10.95 j[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1190--1192
+Underfull \hbox (badness 10000) in paragraph at lines 1193--1195
 
  []
 
+
+LaTeX Warning: Reference `eq:LRSAW' on page 37 undefined on input line 1196.
+
+
+LaTeX Warning: Reference `claim:SAWrep' on page 37 undefined on input line 1198.
+
+
+LaTeX Warning: Reference `eq:semifinalboundSAW' on page 37 undefined on input line 1203.
+
 [37]
 
-LaTeX Warning: Reference `thm' on page 38 undefined on input line 1232.
+LaTeX Warning: Reference `eq:Dsbound' on page 38 undefined on input line 1207.
+
+
+LaTeX Warning: Reference `eq:fractionalbound' on page 38 undefined on input line 1212.
+
+
+LaTeX Warning: Reference `eq:LRSAW' on page 38 undefined on input line 1218.
+
+
+LaTeX Warning: Reference `eq:dynloc' on page 38 undefined on input line 1225.
+
+
+LaTeX Warning: Reference `eq:LRSAW' on page 38 undefined on input line 1231.
+
+
+LaTeX Warning: Reference `thm' on page 38 undefined on input line 1235.
 
 [38] [39]
 
-LaTeX Warning: Citation 'Disertori2024' on page 40 undefined on input line 1254.
+LaTeX Warning: Citation 'Disertori2024' on page 40 undefined on input line 1257.
 
 
-Overfull \hbox (75.13057pt too wide) detected at line 1272
+Overfull \hbox (75.13057pt too wide) detected at line 1275
 [][][]\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; x\OT1/cmr/m/n/10.95 )^^A[](\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y; y\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; x\OT1/cmr/m/n/10.95 ) [] ^^A[](\OML/cmm/m/it/10.95 x; w[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 w[]; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
 
-Overfull \hbox (36.04755pt too wide) in paragraph at lines 1272--1274
+Overfull \hbox (36.04755pt too wide) in paragraph at lines 1275--1277
 \T1/cmr/m/n/10.95 Iterating this ex-pan-sion $\OML/cmm/m/it/10.95 N$ \T1/cmr/m/n/10.95 times gen-er-ates self-avoiding paths $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 w[]; w[]; [] ; w[]\OMS/cmsy/m/n/10.95 g$
  []
 
 
-Overfull \hbox (3.25642pt too wide) in paragraph at lines 1274--1275
+Overfull \hbox (3.25642pt too wide) in paragraph at lines 1277--1278
 []\T1/cmr/bx/n/10.95 Averaging via the A-Priori Bound: \T1/cmr/m/n/10.95 Be-cause $\OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 w[]; w[]\OT1/cmr/m/n/10.95 )$
  []
 
@@ -903,19 +1086,25 @@ Overfull \hbox (3.25642pt too wide) in paragraph at lines 1274--1275
 
 ]
 
-LaTeX Warning: Citation 'CS15' on page 41 undefined on input line 1279.
+LaTeX Warning: Citation 'CS15' on page 41 undefined on input line 1282.
 
 
-LaTeX Warning: Citation 'Disertori2024' on page 41 undefined on input line 1286.
+LaTeX Warning: Reference `eq:LRSAW' on page 41 undefined on input line 1282.
+
+
+LaTeX Warning: Citation 'Disertori2024' on page 41 undefined on input line 1289.
+
+
+LaTeX Warning: Reference `thm:green_decay' on page 41 undefined on input line 1306.
 
 [41]
-Overfull \hbox (11.01617pt too wide) in paragraph at lines 1314--1315
+Overfull \hbox (11.01617pt too wide) in paragraph at lines 1317--1318
 []\T1/cmr/m/n/10.95 The bound fol-lows from con-trolling the ei-gen-func-tion cor-rel-ator $\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; \OT1/cmr/m/n/10.95 0; ^^F)$
  []
 
 [42]
 
-LaTeX Warning: Empty bibliography on input line 1328.
+LaTeX Warning: Empty bibliography on input line 1331.
 
 (meineArbeit.aux)
  ***********
@@ -927,10 +1116,16 @@ L3 programming layer <2026-07-20>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `meineArbeit.out' has not changed.
-(rerunfilecheck)             Checksum: D57FCC3202E93097C01BC2B3B9B06F42;4789.
+
+Package rerunfilecheck Warning: File `meineArbeit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `meineArbeit.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D57FCC3202E93097C01BC2B3B9B06F42;4789.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                meineArbeit
@@ -941,17 +1136,17 @@ Package logreq Info: Writing requests to 'meineArbeit.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19956 strings out of 467501
- 347236 string characters out of 5408550
- 1216012 words of memory out of 5000000
- 48770 multiletter control sequences out of 15000+600000
+ 19921 strings out of 467501
+ 346549 string characters out of 5408550
+ 1216021 words of memory out of 5000000
+ 48741 multiletter control sequences out of 15000+600000
  649095 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,16n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (44 pages, 642073 bytes).
+ <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on meineArbeit.pdf (44 pages, 616748 bytes).
 PDF statistics:
- 1041 PDF objects out of 1200 (max. 8388607)
+ 894 PDF objects out of 1000 (max. 8388607)
  187 named destinations out of 1000 (max. 500000)
- 206 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

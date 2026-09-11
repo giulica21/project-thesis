@@ -526,10 +526,11 @@ Here
 C_1 = \frac{1}{1-s}
 \]
 for $ \omega_x \sim \mathcal{U}[-1,1] $
+
 \end{lemma}
 
-\begin{lemma}
-    \textbf{RESOLVENT IDENTITY} còmo en el lìbro
+\begin{lemma}[Resolvent identity]
+    For a linear operator $A: \mathcal{D}(A) \rightarrow \mathcal{H}$ and $z_1,z_2 \in \varrho(A)$, $$ (A-z_1)^{-1}- (A- z_2)^{-1} = (A-z_1)^{-1}(z_1 -z_2)(A-z_2)^{-1} $$ 
 \end{lemma}
 
 \begin{proof}[Proof of a priori bound]
@@ -540,6 +541,8 @@ H_{\omega} = -\Delta + \lambda V_{\hat{\omega}} + \lambda \omega_x P_{e_x} = H_{
 For the operators $ (H_\omega-z)$ and $(H_{\hat{\omega}}-z)$, the resolvent identity yields
 \begin{equation}
 (H_{\omega} - z)^{-1} = (H_{\hat{\omega}} - z)^{-1} -  \lambda \omega_x ( H_{\hat{\omega}} - z)^{-1} P_{e_x} (H_{\omega} - z)^{-1}.
+
+
 \end{equation}
 Taking matrix-elements we conclude for the corresponding diagonal Green functions that
 \begin{equation}

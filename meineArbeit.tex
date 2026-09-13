@@ -89,18 +89,17 @@ The two important methods to prove Anderson localization are the \textit{multisc
 lead to a multitude of results on spectral and dynamical localization for a wide range of
 models. In this thesis we will focus on the fractional moment method, which has provided a simple
 perspective on localization and has enabled exponentially decaying bounds on expectation
-values of various propagation kernels. \\
+values of various propagation kernels.
 
-\vspace{2cm}
-\textbf{structure of the thesis}\\
-\vspace{2 cm}
+\paragraph{Structure of the thesis} In the first Chapter we are going to introduce the Anderson model, in particular the properties of its components, of its spectrum and the main resluts known to data. 
+In the second Chapter, we are going to discuss spectral and dynamical localisation. Moreover, we will state also the exponential dynamical localisation and how it implies that all moments of the position operator are bounded in time. 
+In Chapter 3 we introduce the Green function as the resolvent of the model and see how its fractinal power's exponential decay leads to localisation. Specifically we are going to use simple tools such as the resolvent identity of linear operstors and the a priori bound as a consequence.
+In Chapter 4 we give the preliminary definitions for self-avoiding-walks methods and obtain the main results of this thesis using a new representation for the Green function. The last Chapter offers a comparison between the standard model with one-site jumps and the model with long-range jumps.
 
-\textbf{Prerequisites}\\
-It is useful to have some familiarity with measure theory, basic probabilistic concepts such as indipendence and continuous distributions,
-and foundations of the theory of linear operators in Hilbert spaces, up to the spectral theorem for self adjoint operators 
-and consequences (as spectral types). 
+\paragraph{Prerequisites}
+It is useful to have some familiarity with measure theory, basic probabilistic concepts such as indipendence and continuous distributions, foundations of the theory of linear operators in Hilbert spaces, up to a general idea of the consequences of the spectral theorem for self adjoint operators. 
 
-
+\clearpage
 \subsection{The Anderson Model}
 Transport phenomena in a disordered material are often described via discrete random Schr\"odinger operator. In quantum mechanics, it corresponds to the classical total energy decomposing into kinetic and potential energy. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
 \[
@@ -128,7 +127,7 @@ In particular, if the particle is initially placed at a specific site $y \in \ma
 P(y \to x; t) = |\langle \delta_x, e^{-itH_\omega} \delta_y \rangle|^2.
 \end{equation}
 
-As we'll see later on, under localisation conditions, P tends to 0 faster than any polinomial at all t for $|x-y| \rightarrow \infty$.
+As we'll see later on, under certain localisation conditions, P tends to 0 faster than any polinomial at all t for $|x-y| \rightarrow \infty$.
 \vspace{0.3 cm}
 
 
@@ -219,7 +218,7 @@ While $\phi_x \notin \ell^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
     &=  2d \phi_x(n) -\left( \sum_{j=1}^d 2\cos(x_j) \right) \phi_x(n)
     &= \left( 2 \sum_{j=1}^d (1-\cos(x_j)) \right) \phi_x.
 \end{align*}
-Thus $\phi_x$ is a bounded generalized normalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(x_j))$. The spectrum is continuous and bounded in $ [0, 2 \dot (2d) ]$.\\
+Thus $\phi_x$ is a bounded generalized normalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(x_j))$. thus, the spectrum is continuous and bounded in $ [0, 2 \dot (2d) ]$.\\
 
 \textcolor{red}{\textbf{RIGUARDA L'INDICE n O x}}
 \paragraph{The Random Potential}
@@ -235,13 +234,13 @@ $( \omega_n)_{n \in \mathbb{Z}^d}$ are \textbf{independent} if
 for each finite subset $\{n_1, \dots, n_l\}$ of $\mathbb{Z}^d$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
 \end{definition}
 
-In this thesis we assume that $\omega_n$ are uniformly distributed in the real closed interval $ [-1,1]$. This means that $ \mu(\omega_n)= \rho(\omega_n)d\omega_n$ where the continuous density is given by $\rho= \frac{1}{2}\chi_{[-1,1]}$.\\
+In this thesis we assume that $\omega_n$ are uniformly distributed in the real closed interval $ [-1,1]$. This means that $ d\mu(\omega_n)= \rho(\omega_n)d\omega_n$ where the continuous density is given by $\rho= \frac{1}{2}\chi_{[-1,1]}$.\\
 It is possible to generalise the results to all absolutely continuous distributions where $\rho$ has compact bounded support and to the Gaussian distribution. \\
 
 As a diagonal operator, the spectrum of $V_\omega$ consists of the random entries $\omega_n$, each corresponding to an eigenvector given by the Dirac delta $\delta_n \in \ell^2(\mathbb{Z}^d)$.\\
 
 
-As for the descrete laplacian, the random term is summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Self-adjointness of the maximal multiplication operator by a real-valued function is a fact. The spectrum is the closed interval $[-1,1] \subset \mathbb{R}$, which means that $ V_\omega$ is bounded, and  since $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
+As for the descrete laplacian, the random term is summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Self-adjointness of the maximal multiplication operator by a real-valued function is a fact. For definition $V_\omega$ is bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and  since $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
 \paragraph{The Disorder Parameter} is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localisation, which makes it one of the central objects of interest of this thesis. 
 Let's consider the two extreme cases:
 \begin{itemize}
@@ -249,8 +248,7 @@ Let's consider the two extreme cases:
     The state functions are continuous plane waves and the spectrum is also continuous between $[0,4d]$.
     \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_\omega \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits trivial localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
 \end{itemize}
-\paragraph{The Green's Function}
-definition
+
 
 
 \subsubsection{The spectrum}
@@ -266,28 +264,34 @@ More specifically, as proven in [Theorem 2 GUNTERSTOLZ], the almost sure spectru
 \begin{equation}
 \Sigma = \sigma(-\Delta) + \lambda \, \mathrm{supp}(\mu).
 \end{equation}
-Recall from Section~\ref{sec:The_Hamiltonian} that under our non-negative convention for the discrete Laplacian, its spectrum is the band $\sigma(-\Delta) = [0, 4d]$. Since the single-site random variables $\omega_x$ are uniformly distributed on $[-1,1]$, we have $\mathrm{supp}(\mu) = [-1,1]$. Consequently, the almost sure spectrum of $H_\omega$ is given by the compact interval
+Recall from Section~\ref{sec:The_Hamiltonian} that under our non-negative convention for the discrete Laplacian, its spectrum is the band $\sigma(-\Delta) = [0, 4d]$. The random potential $V_\omega$ has i.i.d. entries distributed uniformly on $[-1, 1]$, making its almost sure spectrum the interval $[-\lambda, \lambda]$.. Consequently, the almost sure spectrum of $H_\omega$ is given by the compact interval
 \begin{equation}
-\sigma(H_\omega) = [0, 4d] + [-\lambda, \lambda] = [-\lambda, 4d + \lambda] \qquad \text{almost surely}.
+\sigma(H_\omega) = [0, 4d] + [-\lambda, \lambda] = [-\lambda, 4d + \lambda].
 \end{equation}
 This confirms that the spectrum is a bounded subset of $\mathbb{R}$.
 
-To characterize the physical nature of this spectrum and determine whether wave packets propagate or remain localized, we consider the spectral decomposition of the underlying Hilbert space. By the spectral theorem for self-adjoint operators (a detailed review of which is deferred to Appendix~\ref{app:spectral_theory}), the Hilbert space $\ell^2(\mathbb{Z}^d)$ decomposes uniquely into an orthogonal direct sum of invariant subspaces:
+Before characterising the physical meaning of this spectrum, we need some spectral theory preliminaries. 
+Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider now $P=\{x \in \mathbb{R}| \mu(\{x\}) \ne 0\}$ the set of \textbf{pure points} of $\mu$. We define the pure point measure as $$\mu_{pp}(X)=\mu(P \cap X)$$ for $X \subset \mathbb{R}$. In particular, there exists a continuous measure $\mu_{c}$ such that $\mu_{c}(\{x\})= 0$ for all $x \in X$ and $\mu_{c}=\mu -\mu_{pp}$. Since $\mu_{pp}(P^c)=0$ and $\mu_{c}(P)=0$, the two measures are concentrated on disjoint stes, and thus mutually singular.\\
+One can apply this same division also fro spectral measures::
+\begin{definition}
+    Le $A: \mathcal{H}\rightarrow\mathcal{H}$ be a bounded, self-adjoint operator. Let $\phi \in \mathcal{H}$ and $f \in C(\sigma(A))$. Then there is a unique measure $\mu_{\phi}$ on the compact set $\sigma(A)$ with $\langle\phi, f(A)\phi\rangle= \int_{\sigma(A)} f(\lambda) d\mu_{\phi}$. The measure $\mu_\phi$ is called the \textit{spectral measure associated with the vector $\phi$}.
+\end{definition}
+Thus, by the spectral theorem for self-adjoint operators ([RUDIN or REED]), the Hilbert space ( for example also $\ell^2(\mathbb{Z}^d)$) decomposes uniquely into an orthogonal direct sum of invariant subspaces:
 \begin{equation}
-\ell^2(\mathbb{Z}^d) = \mathcal{H}_{\mathrm{pp}} \oplus \mathcal{H}_{\mathrm{sc}} \oplus \mathcal{H}_{\mathrm{ac}},
+\mathcal{H} = \mathcal{H}_{\mathrm{pp}} \oplus \mathcal{H}_{\mathrm{c}},
 \end{equation}
 where:
 \begin{itemize}
-    \item $\mathcal{H}_{\mathrm{pp}}$ is the subspace spanned by all eigenvectors of $H_\omega$, corresponding to the \emph{pure point spectrum} $\sigma_{\mathrm{pp}}(H_\omega)$;
-    \item $\mathcal{H}_{\mathrm{ac}}$ is the subspace of states whose associated spectral measures are absolutely continuous with respect to Lebesgue measure, corresponding to the \emph{absolutely continuous spectrum} $\sigma_{\mathrm{ac}}(H_\omega)$;
-    \item $\mathcal{H}_{\mathrm{sc}}$ is the subspace corresponding to the \emph{singular continuous spectrum} $\sigma_{\mathrm{sc}}(H_\omega)$.
+    \item $\mathcal{H}_{\mathrm{pp}} =\{ \phi\,|\, \mu_{\phi}\, \text{is pure point}\}$;
+    \item $\mathcal{H}_{\mathrm{c}} =\{ \phi\,|\, \mu_{\phi}\, \text{is continuous}\} $
 \end{itemize}
-In the case of self-adjoint bounded operators $A: \mathcal{H}\rightarrow\mathcal{H}$, the restriction to these subspaces defines the components of the spectrum:
+In the case of self-adjoint bounded operators, the restriction to these subspaces defines the components of the spectrum:
 \begin{equation}
-\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega) \cup \sigma_{\mathrm{ac}}(H_\omega) \cup \sigma_{\mathrm{sc}}(H_\omega).
+\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega) \cup \sigma_{\mathrm{c}}(H_\omega)
 \end{equation}
+where $\sigma_{\mathrm{pp}}(H_\omega)=  \overline{\{ \lambda \in \mathbb{R}\, |\, \lambda \, \text{is an eigenvalue of } H_\omega\}}$. This sets need not to be disjoint, however.
 
-From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to bound states that remain confined to finite spatial regions for all times, whereas states in the continuous subspace $\mathcal{H}_{\mathrm{c}} \coloneq \mathcal{H}_{\mathrm{ac}} \oplus \mathcal{H}_{\mathrm{sc}}$ represent scattering states associated with transport and wave-packet spreading. This heuristic correspondence is made mathematically rigorous by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
+From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to bound states that remain confined to finite spatial regions for all times, whereas states in the continuous subspace $\mathcal{H}_{\mathrm{c}}$ represent scattering states associated with transport and wave-packet spreading. This heuristic meaning is mathematically expressed by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
 
 \begin{theorem}[RAGE Theorem \cite{Cycon1987, HunzikerSigal2000}]
 \label{thm:RAGE}
@@ -297,7 +301,7 @@ Let $H$ be a self-adjoint Schrödinger operator on $\ell^2(\mathbb{Z}^d)$. Then:
     \begin{equation}
     \lim_{R \to \infty} \sup_{t \in \mathbb{R}} \|\chi_{\{|x| > R\}} e^{-itH} \phi\| = 0.
     \end{equation}
-    \item[\textup{(ii)}] $\psi \in \mathcal{H}_{\mathrm{c}} = \mathcal{H}_{\mathrm{ac}} \oplus \mathcal{H}_{\mathrm{sc}}$ if and only if for all $R > 0$,
+    \item[\textup{(ii)}] $\psi \in \mathcal{H}_{\mathrm{c}} $ if and only if for all $R > 0$,
     \begin{equation}
     \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \|\chi_{\{|x| \le R\}} e^{-itH} \psi\|^2 \, dt = 0.
     \end{equation}
@@ -305,26 +309,35 @@ Let $H$ be a self-adjoint Schrödinger operator on $\ell^2(\mathbb{Z}^d)$. Then:
 Here, $\chi_{\{|x| \le R\}}$ and $\chi_{\{|x| > R\}}$ denote the projection operators corresponding to the characteristic functions of the ball $\{x \in \mathbb{Z}^d : |x| \le R\}$ and its complement, respectively.
 \end{theorem}
 
-Theorem~\ref{thm:RAGE} confirms that for any bound state $\phi \in \mathcal{H}_{\mathrm{pp}}$, the time-evolved state $e^{-itH}\phi$ remains inside a sufficiently large ball uniformly in time up to an arbitrarily small error. Conversely, any scattering state in $\mathcal{H}_{\mathrm{c}}$ escapes every compact region in the time-mean. In terms of this classification, Anderson localization corresponds to the complete suppression of continuous spectrum, ensuring that $\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega)$ almost surely.
+In terms of this classification, Anderson localization corresponds to the complete suppression of continuous spectrum, ensuring that $\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega)$ almost surely.
 
 
 \subsection{Main results and Open Problems}
-As already stated before, there are two known approaches to the mathematical analysis of localization properties
-for random Schr\"odinger operators.
 
- 
+There exist many studies on the Anderson localisation model, led by both physicist and mathematicians. Various discorveries have been made in the past years and yet deep challenges remain. \\
+The main result of this thesis states that if $s \in (0,1)$ and $\lambda > \lambda_{0}(s)$
+\begin{equation}
+    \mathbb{E}\left( |\langle \delta_x, \frac{1}{(H_\omega -z)}\delta_y \rangle | ^s \right) \le C e^{\mu |x-y|}
+\end{equation}
+uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$ and for all $x,y \in \mathbb{Z}^d$, where $\lambda_{\text{And}}$ is a fixed value proposed by P.W. Anderson, and rigourously proven later on by J. Schenker [] using self-avoiding walks. Finally we prove that localisation follows from this bound.\\
+As we can see, the resolvent is well-defined only if $z $ is not an element of $\sigma(H_\omega)$. In those cases, the resolvent blows up.
+The reason why the \textit{fractional moments method} was so revolutionary, is that by avereging the fractional power of the resolvent, we avoid the blow ups for $z \rightarrow \sigma(H_\omega)$ and the bound holds uniformly.
+Trivially we obtain: 
+$$ \int_{\Sigma} \frac{1}{|x|^s}dx = \left[\frac{ x^{1-s}}{1-s}\right]_{\Sigma} < \infty \qquad \text{for}\,\, s \in (0,1)$$ where $\Sigma \subset \mathbb{R}$.
+Originally, absence of conductivity was proved using the squared-power instead of the fractional, which creates problems at zero. \\
 
-\subsection{main results }
-In this section one could write first of all the main theorem and the spectral results. starting maybe with: \\
-\textit{The aim of this thesis is to prove localisation on the whole spectrum of $H_\omega$ ...}\\
-Poi scrivo il teorema finale con spiegazione che la dimostrazione avverrà nel capitolo 5. \\
-potrebbe essere un'idea anche scrivere una piccola parentesi sulla differenza dei rislutati con Frohlich e spencer e con Aizenman e Molchanov.\\
-\textit{One of the main results concerns the values of $\lambda$ }
-case for d=1,2,3
+Very important results concern the value of $\lambda$. This are the known results and open problems.
+\begin{itemize}
+    \item[-] $d=1$.\\
+            For the one-dimensional grid, it has been proven, that localisation holds for all $\lambda > 0$. 
+    \item[-] $d \ge 2$.\\
+            For $d=2$ it is expected that the Hamiltonian shows pure point spectrum for very small disorder chaneges, but no mathematical proof has been concluded. For $d \ge 3$, to find the exact value of $\lambda$, until which the material is still a conductor, is an open problem. 
+            The best that we can prove is given in this thesis and only states, that localisation shows from $\lambda_{\text{And}}$ on.
+\end{itemize}
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Screenshot (326).png}
-    \caption{Aizenman figure}
+    \includegraphics[width=0.7\textwidth]{IMG_1072.jpeg}
+    \caption{For small disorder localisation is not expected}
     \label{fig:nome_etichetta}
 \end{figure}
 
@@ -335,19 +348,15 @@ case for d=1,2,3
 \section{Localisation properties}
 We understood what localisation means from an heuristical point of view. Mathematically, it can be described
 from spectral and dynamical properties. 
-\subsection{spectral localisation}
+\subsection{Spectral Localisation}
 
 
-\begin{definition}[Spectral Localization]
- random Schr\"odinger operator $H = H_\omega$ exhibits \textbf{spectral localization} if $H_\omega$ almost surely has only pure point spectrum, that is,
-\[
-\sigma(H_\omega) = \sigma_{pp}(H_\omega) \quad \text{and} \quad \sigma_c(H_\omega) = \emptyset \quad \text{almost surely.}
-\]
-Furthermore the eigenfunctions corresponding to all eigenvalues decay exponentially: for almost all $\omega$, $H_\omega$ has a complete set of eigenfunctions $(\phi_{\omega,n})_{n \in \mathbb{N}}$ satisfying
-\[
-|\phi_{\omega,n}(x)| \le C_{\omega,n} e^{-\mu |x - x_{n,\omega}|}
-\]
-where $\mu > 0$ is the localization length parameter, $x_{n,\omega}$ are the centers of localization, and $C_{\omega,n} < \infty$ is a finite constant.
+\begin{definition}[Spectral Localisation]
+ random Schr\"odinger operator $H = H_\omega$ exhibits \textbf{spectral localisation} if $H_\omega$ almost surely has only pure point spectrum, that is,
+\begin{equation}
+    \sigma(H_\omega) = \sigma_{pp}(H_\omega) \quad \text{and} \quad \sigma_c(H_\omega) = \emptyset \quad \text{almost surely.}    
+\end{equation}
+
 \end{definition}
 
 \subsubsection{Absence of transport}
@@ -386,7 +395,7 @@ for a large class of compactly supported initial conditions $\phi_0$.
 
 
 
-\subsection{dynamical localisation}
+\subsection{Dynamical Localisation}
 
 \begin{definition}[Dynamical localisation]
     \begin{equation}
@@ -432,7 +441,7 @@ where the last step used the Cauchy-Schwarz inequality. We can drop the square f
 \end{proof}
 
 \begin{remark}
-    The reason why we obtain dynamical localisation \textit{almost surely}, is that we bound the expected value, instead of directly the norm. 
+     The reason we obtain dynamical localization \textit{almost surely} (rather than for every single realization of the potential) is that our bounds apply to the expected value over the disorder, rather than directly to the norm. As shown in the following standard lemma, bounding the expectation of a non-negative quantity guarantees it is finite with probability one.
 \end{remark}
 \begin{lemma}\label{lemma:almostsurely}
 Let $(\Omega,\Sigma,\mathbb{P})$ be a probability space and let 
@@ -490,14 +499,17 @@ We conclude that $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) \psi = 0$ for alm
 \clearpage 
 \section{Fractional moments}
 In this section we are going to see the important lemmas and theorems that help us proving localisation. In particular we see the power of the fractional moment method.
-\subsection{The green function}
+\subsection{The Green's function}
 
 The \emph{resolvent operator} is defined as:
-\[
-G_{z} = (H - z)^{-1}
-\]
+\begin{equation}
+    G_{z}(x,y) \coloneq \langle \delta_x,(H_\omega - z)^{-1}\delta_y\rangle 
+\end{equation}
+for all $x,y \in \mathbb{Z}^d$ and is well-defined for $ z \in \mathbb{C} \setminus \sigma(H_\omega)$
+
 
 \subsection{Localisation at large disorder}
+
 \begin{theorem}[Aizenman--Molchanov, 1993] \label{thm:theorem1}
 Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda \ge \lambda_0$ there are $C < \infty$ and $\mu > 0$ with
 \begin{equation}
@@ -520,17 +532,17 @@ There exists a constant $C_1 = C_1(s, \rho) < \infty$ such that
 \mathbb{E}_{x}(|G_{z}(x, x)|^s) \le C_1 \lambda^{-s}
 \end{equation}
 for all $x \in \mathbb{Z}^d$, $z \in \mathbb{C} \setminus \mathbb{R}$, and $\lambda > 0$.
-
 Here
 \[
 C_1 = \frac{1}{1-s}
 \]
-for $ \omega_x \sim \mathcal{U}[-1,1] $
-
+for $\omega_x \sim \mathcal{U}[-1,1]$
 \end{lemma}
 
 \begin{lemma}[Resolvent identity]
     For a linear operator $A: \mathcal{D}(A) \rightarrow \mathcal{H}$ and $z_1,z_2 \in \varrho(A)$, $$ (A-z_1)^{-1}- (A- z_2)^{-1} = (A-z_1)^{-1}(z_1 -z_2)(A-z_2)^{-1} $$ 
+    and moreover, if $B: \mathcal{D}(B)\rightarrow \mathcal{H}$ is defined on a common domain, $\mathcal{D}(A)=\mathcal{D}(B)$, 
+    $$(A-z)^{-1}- (B- z)^{-1} = (A-z)^{-1}(B-A)(B-z)^{-1}$$ for any $z \in \varrho(A) \cap \varrho(B)$.
 \end{lemma}
 
 \begin{proof}[Proof of a priori bound]
@@ -540,9 +552,7 @@ H_{\omega} = -\Delta + \lambda V_{\hat{\omega}} + \lambda \omega_x P_{e_x} = H_{
 \]
 For the operators $ (H_\omega-z)$ and $(H_{\hat{\omega}}-z)$, the resolvent identity yields
 \begin{equation}
-(H_{\omega} - z)^{-1} = (H_{\hat{\omega}} - z)^{-1} -  \lambda \omega_x ( H_{\hat{\omega}} - z)^{-1} P_{e_x} (H_{\omega} - z)^{-1}.
-
-
+(H_{\omega} - z)^{-1} = (H_{\hat{\omega}} - z)^{-1} -  \lambda \omega_x ( H_{\hat{\omega}} - z)^{-1} P_{e_x} (H_{\omega} - z)^{-1}
 \end{equation}
 Taking matrix-elements we conclude for the corresponding diagonal Green functions that
 \begin{equation}
@@ -799,7 +809,7 @@ with $\widetilde{\mu} = \frac{\mu}{4}$ and finite prefactor $\widetilde{C} = \fr
 \end{proof}
 
 From \eqref{eq:explocalisation} we can also easily obtain spectral localisation through Simon-Wolff criterion [book or paper].
-\begin{proposition}[Simon-Wolff criterion]
+\begin{proposition}[Simon-Wolff criterion]\label{proposition:simonwolff}
     Let $H_\omega$ be a random operator in $l^2(\mathbb{Z}^d)$ with a random potential whose conditional-single site distribution is absolutely continuous. Then if for Lebesgue-almost every $E\in\mathbb{R}$ and $\mathbb{P}$-almost all $\omega$: 
     \begin{equation}
         \lim_{\eta \downarrow 0}\sum_{y \in \mathbb{Z}^d}|G_{E+i\eta}(x,y)|^2 < \infty
@@ -807,7 +817,7 @@ From \eqref{eq:explocalisation} we can also easily obtain spectral localisation 
     $H_\omega$ has only pure point spectrum.
 \end{proposition}
 Proof can be found in [BOOK]
-\begin{theorem}
+\begin{theorem}\label{thm:simonwolfftheorem}
     Let Theorem \ref{thm:theorem1} hold. Then, the spectrum of $H_\omega$ consists only of pure point spectrum for a.e. realisation of $V_\omega$.
 \end{theorem}
 The proof, recalls the one proposed in [DISERTORI]
@@ -837,7 +847,7 @@ The proof, recalls the one proposed in [DISERTORI]
 
 \subsection{SAW Definitions}
 \begin{definition}[Self-Avoiding Walk]
-A \textbf{self-avoiding walk} (SAW) on the integer lattice $\mathbb{Z}^d$ of length $N \in \mathbb{N}_0$ is an ordered $(N+1)$-tuple of distinct lattice sites
+A \textbf{self-avoiding walk} on the integer lattice $\mathbb{Z}^d$ of length $N \in \mathbb{N}_0$ is an ordered $(N+1)$-tuple of distinct lattice sites
 \[
 \gamma = (\gamma_0, \gamma_1, \dots, \gamma_N) \in (\mathbb{Z}^d)^{N+1}
 \]
@@ -1121,7 +1131,7 @@ m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
 \clearpage
 \section{Connection to Long-Range SAW}
 
-The purpose of this chapter is to extend the self-avoiding walk (SAW) representation of the resolvent, to random Hamiltonians with long-range hopping. In particular, we compare this setting with the previous model and apply the fractional moment method to study localization. The difference lies in the kinetic operator, which is replaced by the fractional descrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green's function, in sharp contrast with the standard exponential decay. This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 [].\\
+The purpose of this chapter is to extend the self-avoiding walk representation of the resolvent, to random Hamiltonians with long-range hopping. In particular, we compare this setting with the previous model and apply the fractional moment method to study localization. The difference lies in the kinetic operator, which is replaced by the fractional descrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green's function, in sharp contrast with the standard exponential decay. This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 [].\\
 
 \subsection{The fractional Laplacian}
 For the long-range, the kinetic operator also connects arbitrarily distant sites in the lattice, rather than just the first neighbors.
@@ -1171,74 +1181,6 @@ Since $\alpha > 0$ implies $d + 2\alpha > d$; for every $s \in \left(\frac{d}{d+
 \sum_{x \ne 0} |(-\Delta)^\alpha_{0,x}|^s \le C_{\alpha,d}^s \sum_{x \ne 0} \frac{1}{|x|^{s(d+2\alpha)}} < \infty.
 \]
 \end{proof}
-\subsection{The SAW Representation for Long-Range Resolvents }
-We consider the fractional Anderson Hamiltonian
-\begin{equation}
-H_{\alpha,\omega} = (-\Delta)^\alpha + \lambda V_\omega \quad \text{on } \ell^2(\mathbb{Z}^d),
-\end{equation}
-with the same definitions given in Chapter 2. In this case we generalise directly for an arbitrary continuous distribution with compact supported density.\\
-The Green's function is again the resolvent and its decay is close to the decay of the fractional Laplacian. \\
-
-As proven in [theorem 1 of DISERTORI], the averaged fractional Green's function satisfies
-\begin{equation}
-\mathbb{E}[|G_{z}(x,y)|^{s}] \le \frac{K_{0}\theta_{s}}{\lambda^{s}} \frac{1}{|x-y|^{d+2\alpha_{s}}} \qquad \forall\, x, y \in \mathbb{Z}^{d},\; x \ne y, \label{eq:LRSAW}
-\end{equation}
-uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda_0(s) \coloneq (\frac{\theta_s}{R})^{\frac{1}{s}}$, where $ R_{\chi_{(\beta,\alpha)}}$ is the radius of convergence of the susceptability and with $ 2\alpha_s \coloneq s(d+2\alpha)-d$.
-In addition, $K_0= K_0(d,\alpha)$ comes from the two-point function bound and $\frac{\theta_s}{\lambda^s} $ comes from the \textit{a priori bound}. \\
-\begin{remark}
-    Notice that for $\alpha=1$ and considering the uniform distribution in $[-1,1]$ for $\omega$, $ \theta_s = \frac{1}{1-s}$ which leads to $ \lambda_0(s) = \lambda_{\text{And}}$.
-\end{remark}
-
-In the long-range scenario, we are still using the same proof techniques as in Chapter 5 in order to prove \eqref{eq:LRSAW}. \\ 
-Nonetheless, one important change is given by the fact that, for long jumps, we are not just considering the neighbors, but an arbitrary site on the lattice. In particular, the probability to jump from the site x to the site y changes into: $$ p(x,y) \coloneq \frac{|(-\Delta)^\alpha_{x,y}|^s}{\sum_{z \ne x} |(-\Delta)^\alpha_{x,z}|^s}.$$ 
-Using the random walk on $\mathbb{Z}^d$ with $p(x,y)$ as transition probability, changes the definitions given in Chapter 5.1, which are now all generated by $|(-\Delta)^\alpha_{x,y}|^s$ and well defined for the values of $s$ as in \eqref{eq:Dsbound}.\\
-
-In order to prove \eqref{eq:LRSAW} we use the same proof steps as before:
-\begin{enumerate}
-    \item As in Claim \ref{claim:SAWrep}, by the resolvent identity we obtain: 
-        \begin{equation}
-            G^{\Lambda}_z (x,y)= G^{\Lambda}_z(x,x) \sum_{x_1 \in \Lambda \setminus \{x\}}   \Delta^\alpha_{x,x_1} G^{ \Lambda_1}(x_1,y)
-        \end{equation}
-        with $ \Delta^\alpha = -(-\Delta)^\alpha$ greater than zero for the off-diagonal elements. Since we are working with $0<\alpha <1$, we don't obtain an operator such as $T_{x,x_1}$ but we keep the Laplacian fractional. 
-    \item We then iterate and bound like in Chapter 5 for \eqref{eq:semifinalboundSAW}, in order to get:
-    \begin{equation}
-        \mathbb{E}[|G_{z}^{\Lambda}(x,y)|^{s}] \le \frac{\theta_{s}}{\lambda^{s}} C_{\beta}^{\alpha, s}(y-x) + \frac{1}{|\mathrm{Im}\, z|^{s}} \text{\textit{Err}}(N).
-    \end{equation} 
-    In this case, $\text{\textit{Err}}(N)$ depends on $|(-\Delta)^\alpha_{x,y}|^s$ and under the conditions of \eqref{eq:Dsbound} it vanishes for $N \rightarrow \infty$, solving the problem of the $\mathrm{Im}\, z$ as denominator in the equation.
-    \item Finally, (see [Lemma 4 of  PAPER DISERTORI]), 
-    \begin{equation}
-    C_{\beta}^{\alpha,s}(y-x) \le K_{0} \frac{1}{|y-x|^{d+2\alpha_s}}
-    \end{equation} 
-    holds as a consequence of \eqref{eq:fractionalbound}.
-\end{enumerate}
-\subsection{The Localisation critiria}
-A natural question that may arise from the previuous statements is how localisation is proven without exponental decay of the fractional moments of the Green's function.
-In the long-range case it is only possible to prove a weaker version of dynamical localisation. Without finitness for all moments of the position operator, it is convenient to prove spectral localisation via Simon-Wolff theorem.
-\begin{lemma}
-    Let's \eqref{eq:LRSAW} hold uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for $\lambda>\lambda_0(s)$. Then it follows:
-    \begin{enumerate}
-        \item[(i)] The spectrum of $H_{\alpha,\omega}$ consists only of pure point spectrum for a.e. $\omega \in \Omega$
-        \item[(ii)] for $0 < \beta < 2\alpha$ we have for a.e. $\omega \in \Omega$
-            \begin{equation}
-            \sup_{t \in \mathbb{R}} \Vert{}\vert{}X\vert{}^{\beta/2} e^{-itH_{\omega,\alpha}} \delta_0\Vert{}^2 < \infty.
-            \end{equation}
-            where $X$ denotes the position operator as in \eqref{eq:dynloc}.In particular, if $\alpha > \frac{1}{2}$ the first moment of the wave function initially localized at the origin and evolving under the action of $H_{\alpha,\omega}$ is finite.
-    \end{enumerate}
-\end{lemma}
-
-\begin{proof}
-\begin{enumerate}
-        \item[(i)] From \eqref{eq:LRSAW} we obtain: 
-        \begin{equation}
-            \sum_{x \in \mathbb{Z}^d} \mathbb{E}[|G_z(0,x)|^s|x|^t]\le \frac{K_0 \,\theta_s}{\lambda^s}\sum_{x \in \mathbb{Z}^d} \frac{1}{|x|^{d+2\alpha_s-t}} < \infty \quad \forall t \in [0,2\alpha_s) \label{eq:boundsumlrs}
-        \end{equation}  uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$.
-                    We continue as in the proof of Theorem \ref{thm}. At the end we apply the Simon-Wolff criterion and obtain spectal localisation almost everywhere. 
-        \item [(ii)] Proof in [PAPER DISERTORI]
-\end{enumerate}
-   
-
-\end{proof}
-
 
 \clearpage
 \subsection{The SAW Representation for Long-Range Resolvents}
@@ -1246,80 +1188,69 @@ We consider the fractional Anderson Hamiltonian
 \begin{equation}
 H_{\alpha,\omega} = (-\Delta)^\alpha + \lambda V_\omega \quad \text{on } \ell^2(\mathbb{Z}^d),
 \end{equation}
-where $V_\omega(x) = \omega_x$ is an independent and identically distributed random field with single-site distribution $P_0$. We assume $P_0$ is $\tau$-regular for some $\tau \in \left(\frac{d}{d+2\alpha}, 1\right]$ with regularity constant $M_\tau(P_0)$ (Definition 3.1).
+where $0 < \alpha < 1$ and $V_\omega$ is a diagonal matrix with i.i.d. random entries. In this case, we generalise directly for an arbitrary continuous distribution with a compactly supported, bounded density. \\
+The Green's function $G_z = (H_{\alpha,\omega} - z)^{-1}$ is well-defined for all $z \in \mathbb{C} \setminus \mathbb{R}$, and its decay at strong disorder is closely related to the polynomial decay of the fractional Laplacian.
 
-For $s \in \left(\frac{d}{d+2\alpha}, \tau\right)$, we define the exponent
+As proven in [Theorem 1 and 2 of PAPER DISERTORI], the averaged fractional Green's function satisfies
 \begin{equation}
-2\alpha_s \coloneq s(d+2\alpha) - d > 0.
+\mathbb{E}[|G_{z}(x,y)|^{s}] \le \frac{K_{0}\theta_{s}}{\lambda^{s}} \frac{1}{|x-y|^{d+2\alpha_{s}}} \qquad \forall\, x, y \in \mathbb{Z}^{d},\; x \ne y, \label{eq:LRSAW}
 \end{equation}
-Let $D(x,y) \coloneq |(-\Delta)^\alpha(x,y)|^s$ for $x \ne y$ serve as the step-weight kernel of a long-range self-avoiding walk. Let $\chi_D^{\mathrm{SAW}}$ denote its susceptibility, with radius of convergence $R_{\chi_D^{\mathrm{SAW}}}$, and let $C_{D,\gamma}^{\mathrm{SAW}}(x)$ be the two-point correlation function with activity $\gamma > 0$.
+uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda_0(s) \coloneq \left(\frac{\theta_s}{R_{\chi_D^{\text{SAW}}}}\right)^{\frac{1}{s}}$. Here, $R_{\chi_D^{\text{SAW}}}$ is the radius of convergence of the susceptibility, and $2\alpha_s \coloneq s(d+2\alpha)-d$.
+The constant $K_0= K_0(d,\alpha,s)$ comes from the two-point function bound of the self-avoiding walk, and $\theta_s = \frac{1}{1-s}M_1(P_0)^s$ comes from the \textit{a priori bound} evaluated at $\tau=1$. 
 
-\begin{theorem}[\cite{Disertori2024}] \label{thm:green_decay}
-Define
-\begin{equation}
-\theta_s \coloneq \frac{\tau}{\tau-s} M_\tau(P_0)^{\frac{s}{\tau}}, \qquad \lambda_0(s) \coloneq \left(\frac{\theta_s}{R_{\chi_D^{\mathrm{SAW}}}}\right)^{\frac{1}{s}}.
-\end{equation}
-For any $\lambda > \lambda_0(s)$, setting $\gamma = \theta_s \lambda^{-s} < R_{\chi_D^{\mathrm{SAW}}}$, the fractional moment of the Green's function satisfies
-\begin{equation}
-\mathbb{E}[|G_z(x,y)|^s] \le \gamma \, C_{D,\gamma}^{\mathrm{SAW}}(x-y) \le \frac{K_0 \theta_s}{\lambda^s} \frac{1}{|x-y|^{d+2\alpha_s}} \qquad \forall\, x \ne y, \label{eq:LRSAW}
-\end{equation}
-uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, where $K_0 = K_0(d,\alpha,s,\lambda) < \infty$.
-\end{theorem}
 
-\begin{proof}[Outline of Proof]
-The proof proceeds via the depleted resolvent strategy adapted to non-local hoppings:
+In the long-range scenario, we use the geometric resolvent expansion to represent the fractional moments as a sum over self-avoiding paths. 
+Because $(-\Delta)^\alpha$ possesses long-range jumps, we are not just considering nearest neighbors, but arbitrary sites on the lattice. We define the step weight kernel for the SAW as $D(x,y) \coloneq |(-\Delta)^\alpha(x,y)|^s$, which generates a transition probability $p(x,y) \coloneq \frac{D(x,y)}{\sum_{z \ne x} D(x,z)}$. 
+This is well-defined for $s \in \left(\frac{d}{d+2\alpha}, 1\right)$ because the kernel is summable: $\sum_{x \ne 0} |(-\Delta)^\alpha(0,x)|^s < \infty$ ( See \eqref{eq:Dsbound}).
+
+As in the previous Chapter, in order to prove \eqref{eq:LRSAW}, we organize the proof into three main steps:
 \begin{enumerate}
-    \item \textbf{Depleted Resolvent Expansion:} Let $\Lambda \subset \mathbb{Z}^d$ and write $\Delta^\alpha(x,y) \coloneq -(-\Delta)^\alpha(x,y) > 0$ for $x \ne y$. By the resolvent identity, isolating the jump to $y$ gives
+    \item \textbf{Resolvent Identity Iteration:} We expand the restricted Green's function $G^{\Lambda}_z (x,y)$ by iterating the resolvent identity $N$ times, pulling out the off-diagonal elements $\Delta^\alpha(\gamma_j,\gamma_{j+1}) = -(-\Delta)^\alpha(\gamma_j,\gamma_{j+1}) > 0$ along self-avoiding paths $\gamma \in \mathcal{S}_n(x,y)$. Since $0<\alpha <1$, we keep the Laplacian fractional instead of reducing it to nearest-neighbor hopping.
+    \item \textbf{Averaging and A Priori Bound:} We take the fractional moment of the expansion and apply subadditivity. Using the a priori bound to decouple the diagonal resolvent terms, we obtain:
     \begin{equation}
-    G_z^\Lambda(x,y) = G_z^\Lambda(x,x) \Delta^\alpha(x,y) G_z^{\Lambda \setminus \{x\}}(y,y) + G_z^\Lambda(x,x) \sum_{w_1 \in \Lambda \setminus \{x,y\}} \Delta^\alpha(x,w_1) G_z^{\Lambda \setminus \{x\}}(w_1,y).
-    \end{equation}
-    Iterating this expansion $N$ times generates self-avoiding paths $\{w_0, w_1, \dots, w_n\}$ of lengths $n \le N$.
-    \item \textbf{Averaging via the A-Priori Bound:} Because $G_z^{\Lambda \setminus \{w_0, \dots, w_{j-1}\}}(w_j, w_j)$ is independent of the random variables at visited sites, conditional integration using the a-priori bound $\mathbb{E}_{w_j}[|G^\Lambda(w_j,w_j)|^s] \le \theta_s \lambda^{-s}$ factors across path vertices:
+        \mathbb{E}[|G_{z}^{\Lambda}(x,y)|^{s}] \le \frac{\theta_{s}}{\lambda^{s}} C_{\beta}^{D}(y-x) + \frac{1}{|\mathrm{Im}\, z|^{s}} \text{\textit{Err}}(N),
+    \end{equation} 
+    where $C_{\beta}^{D}$ is the SAW two-point function with fugacity $\beta = \frac{\theta_s}{\lambda^s}$. For $\lambda > \lambda_0(s)$, we have $\beta < R_{\chi_{\beta}^D}$, which ensures the susceptibility is finite and $\text{\textit{Err}}(N) \rightarrow 0$ as $N \rightarrow \infty$.
+    \item \textbf{Two-Point Function Decay:} Finally, by [Lemma 4 of PAPER DISERTORI], the SAW correlation function is bounded by the generating kernel's decay:
     \begin{equation}
-    \mathbb{E}[|G_z^\Lambda(x,y)|^s] \le \frac{\theta_s}{\lambda^s} C_{D,\gamma}^{\mathrm{SAW}}(x-y) + \mathrm{Err}(N).
-    \end{equation}
-    Since $\lambda > \lambda_0(s)$, the activity satisfies $\gamma < R_{\chi_D^{\mathrm{SAW}}}$, ensuring that $\lim_{N \to \infty} \mathrm{Err}(N) = 0$.
-    \item \textbf{Decay of the SAW Two-Point Function:} As established by Chen and Sakai \cite{CS15}, the two-point function of a self-avoiding walk whose jump kernel decays as $|x|^{-(d+2\alpha_s)}$ satisfies $C_{D,\gamma}^{\mathrm{SAW}}(x) \le K_0 |x|^{-(d+2\alpha_s)}$ for all $\gamma < R_{\chi_D^{\mathrm{SAW}}}$, yielding \eqref{eq:LRSAW}.
+    C_{\beta}^{D}(y-x) \le K_{0} \frac{1}{|y-x|^{d+2\alpha_s}},
+    \end{equation} 
+    yielding the final polynomial bound \eqref{eq:LRSAW}.
 \end{enumerate}
-\end{proof}
 
-\subsection{Spectral and Dynamical Consequences}
-Because $(-\Delta)^\alpha$ decays algebraically, the fractional moments of the Green's function decay polynomially rather than exponentially. Consequently, moments of the position operator $|X|^p$ are bounded only for limited powers $p$, precluding full dynamical localization. Spectral localization, however, remains accessible via the Simon--Wolff criterion.
+\subsection{The Localisation Criteria}
+A natural question that may arise is how localisation is proven without the exponential decay of the fractional moments of the Green's function.
+Due to the polynomial tail of the fractional Laplacian, exponential decay is not expected; instead, it is only possible to prove a weaker version of dynamical localisation where only moments $\beta < 2\alpha$ of the position operator are finite. Spectral localisation is proven via the Simon-Wolff theorem.
 
-\begin{theorem}[\cite{Disertori2024}] \label{thm:loc_results}
-Assume $P_0$ is $\tau$-regular and $\lambda > \lambda_0(s)$ for some $s \in \left(\frac{d}{d+2\alpha}, \tau\right)$. Then:
-\begin{enumerate}
-    \item[\textup{(i)}] \textbf{Spectral Localization:} The spectrum of $H_{\alpha,\omega}$ is almost surely pure point:
-    \begin{equation}
-    \sigma_{\mathrm{cont}}(H_{\alpha,\omega}) = \emptyset \qquad \text{a.s.}
-    \end{equation}
-    \item[\textup{(ii)}] \textbf{Partial Dynamical Localization:} If $P_0$ has a bounded density ($\tau = 1$), then for every $\beta \in (0, 2\alpha)$,
-    \begin{equation}
-    \sup_{t \in \mathbb{R}} \sum_{x \ne 0} |x|^\beta |e^{-it H_{\alpha,\omega}}(0,x)|^2 < \infty \qquad \text{a.s.}
-    \end{equation}
-    In particular, when $\alpha > 1/2$, the first spatial moment ($\beta = 1$) is uniformly bounded in time.
-\end{enumerate}
-\end{theorem}
+\begin{lemma}
+    Let \eqref{eq:LRSAW} hold uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for $\lambda>\lambda_0(s)$. It follows that:
+    \begin{enumerate}
+        \item[(i)] The spectrum of $H_{\alpha,\omega}$ consists only of pure point spectrum for a.e. $\omega \in \Omega$.
+        \item[(ii)] For a.e. $\omega \in \Omega$ and for all $E$ in the almost sure spectrum, the corresponding normalized eigenfunction $\varphi_E$ satisfies:
+            \begin{equation}
+            |\varphi_E(y,\omega)|^2 \le \frac{C_t(\omega)}{(1+|y-x_E(\omega)|)^t} \qquad \forall 0 < t < 2\alpha_s,
+            \end{equation}
+            where $x_E(\omega)$ is a localization center and $C_t(\omega)$ is an integrable random variable.
+        \item[(iii)] For $0 < \beta < 2\alpha_s$, we have for a.e. $\omega \in \Omega$
+            \begin{equation}
+            \sup_{t \in \mathbb{R}} \sum_{x \ne 0} |x|^{\beta} |e^{-itH_{\alpha,\omega}}(0,x)|^2 < \infty.
+            \end{equation}
+            In particular, if $\alpha > \frac{1}{2}$, the first moment of the wave function initially localized at the origin and evolving under the action of $H_{\alpha,\omega}$ is finite.
+    \end{enumerate}
+\end{lemma}
 
 \begin{proof}
 \begin{enumerate}
-    \item[\textup{(i)}] By Theorem \ref{thm:green_decay}, for any $t \in [0, 2\alpha_s)$,
-    \begin{equation}
-    \sum_{x \in \mathbb{Z}^d} \mathbb{E}[|G_z(0,x)|^s |x|^t] \le \frac{K_0 \theta_s}{\lambda^s} \sum_{x \ne 0} \frac{1}{|x|^{d+2\alpha_s-t}} < \infty, \label{eq:boundsumlrs}
-    \end{equation}
-    uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$. Setting $t = 0$, monotonicity of $u \mapsto u^{s/2}$, the elementary subadditivity inequality $(\sum_n a_n)^{s/2} \le \sum_n a_n^{s/2}$, and Fatou's lemma yield
-    \begin{align}
-    \mathbb{E}\left[ \left( \lim_{\eta \downarrow 0} \sum_{y \in \mathbb{Z}^d} |G_{E+i\eta}(x,y)|^2 \right)^{\frac{s}{2}} \right] 
-    &\le \mathbb{E}\left[ \liminf_{\eta \downarrow 0} \sum_{y \in \mathbb{Z}^d} |G_{E+i\eta}(x,y)|^s \right] \nonumber \\
-    &\le \liminf_{\eta \downarrow 0} \sum_{y \in \mathbb{Z}^d} \mathbb{E}[|G_{E+i\eta}(x,y)|^s] < \infty.
-    \end{align}
-    This implies $\sum_{y} |G_{E+i\eta}(x,y)|^2 < \infty$ for Lebesgue-almost every energy $E \in \mathbb{R}$ with probability one. By the Simon--Wolff theorem, the spectrum of $H_{\alpha,\omega}$ is purely pure point.
-    \item[\textup{(ii)}] The bound follows from controlling the eigenfunction correlator $Q(x,0;\Sigma)$ via the energy integral of the fractional Green's function, combined with the summability of $|x|^\beta |x|^{-(d+2\alpha_s)}$ for $s$ chosen sufficiently close to $1$ so that $\beta < 2\alpha_s < 2\alpha$.
+        \item[(i)] From \eqref{eq:LRSAW}, we verify the summability of the Green's function moments: 
+        \begin{equation}
+            \sum_{x \in \mathbb{Z}^d} \mathbb{E}[|G_z(0,x)|^s|x|^t]\le \frac{K_0 \,\theta_s}{\lambda^s}\sum_{x \ne 0} \frac{1}{|x|^{d+2\alpha_s-t}} < \infty \quad \forall t \in [0,2\alpha_s), \label{eq:boundsumlrs}
+        \end{equation} 
+        uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$.
+        Setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ a.s.. We then apply the Simon-Wolff criterion to obtain spectral localisation almost everywhere. 
+        \item[(ii)] The eigenfunction polynomial decay follows from the summability bound \eqref{eq:boundsumlrs} and standard fractional moment arguments.
+        \item[(iii)] The dynamical bounds follow from bounding the eigenfunction correlator $Q(x,0,\Sigma)$, which is majorized by the integrated Green's function moments. Since $\mathbb{E}[Q(x,0,\Sigma)] \le \frac{C}{|x|^{d+2\alpha_s}}$, the sum $\sum_{x \ne 0} |x|^\beta \mathbb{E}[Q(x,0,\Sigma)]$ converges for $\beta < 2\alpha_s$, yielding the result.
 \end{enumerate}
 \end{proof}
-
-
-
 
 
 

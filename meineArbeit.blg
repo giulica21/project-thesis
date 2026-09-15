@@ -1,0 +1,20 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'meineArbeit.blg'
+[118] biber-MSWIN64:342> INFO - === 
+[171] Biber.pm:421> INFO - Reading 'meineArbeit.bcf'
+[284] Biber.pm:1002> INFO - Found 4 citekeys in bib section 0
+[297] Biber.pm:4487> INFO - Processing section 0
+[307] Biber.pm:4678> INFO - Looking for bibtex file 'Literatur.bib' for section 0
+[394] bibtex.pm:1713> INFO - LaTeX decoding ...
+[404] bibtex.pm:1519> INFO - Found BibTeX data source 'Literatur.bib'
+[421] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
+[421] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[421] Biber.pm:4307> INFO - Sorting list 'anyt/global//global/global/global' of type 'entry' with template 'anyt' and locale 'en-UK'
+[421] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-UK'
+[422] bbl.pm:676> INFO - Writing 'meineArbeit.bbl' with encoding 'UTF-8'
+[422] bbl.pm:779> INFO - Output to meineArbeit.bbl
+[422] Biber.pm:132> WARN - I didn't find a database entry for 'Pastur1980' (section 0)
+[422] Biber.pm:132> WARN - I didn't find a database entry for 'Stolz2011' (section 0)
+[422] Biber.pm:132> WARN - I didn't find a database entry for 'Cycon1987' (section 0)
+[422] Biber.pm:132> WARN - I didn't find a database entry for 'HunzikerSigal2000' (section 0)
+[422] Biber.pm:134> INFO - WARNINGS: 4

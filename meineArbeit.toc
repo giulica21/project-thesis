@@ -13,16 +13,16 @@
 \contentsline {subsection}{\numberline {2.1}Spectral Localisation}{13}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Absence of transport}{13}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}Dynamical Localisation}{14}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}From dynamical to spectral localisation}{15}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}\textcolor {red}{From dynamical to spectral localisation}}{15}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Fractional moments}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}The Green's function}{17}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Localisation at large disorder}{17}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}From fractional moment's exponential bound to dynamical localisation}{18}{subsubsection.3.2.1}%
-\contentsline {section}{\numberline {4}SAW representation}{27}{section.4}%
-\contentsline {subsection}{\numberline {4.1}SAW Definitions}{27}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}SAW representation of G }{30}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Proof with SAW}{32}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Connection to Long-Range SAW}{35}{section.5}%
-\contentsline {subsection}{\numberline {5.1}The fractional Laplacian}{35}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The SAW Representation for Long-Range Resolvents}{37}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}The Localisation Criteria}{38}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {3.2.1}From fractional moment's exponential bound to dynamical localisation}{19}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}SAW representation}{28}{section.4}%
+\contentsline {subsection}{\numberline {4.1}SAW Definitions}{28}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}SAW representation of G }{31}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Proof with SAW}{33}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Connection to Long-Range SAW}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The fractional Laplacian}{36}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The SAW Representation for Long-Range Resolvents}{38}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The Localisation Criteria}{39}{subsection.5.3}%

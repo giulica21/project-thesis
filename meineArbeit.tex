@@ -319,9 +319,9 @@ The main result of this thesis states that if $s \in (0,1)$ and $\lambda > \lamb
 \begin{equation}
     \mathbb{E}\left( |\langle \delta_x, \frac{1}{(H_\omega -z)}\delta_y \rangle | ^s \right) \le C e^{\mu |x-y|}
 \end{equation}
-uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$ and for all $x,y \in \mathbb{Z}^d$, where $\lambda_{\text{And}}$ is a fixed value proposed by P.W. Anderson, and rigourously proven later on by J. Schenker [] using self-avoiding walks. Finally we prove that localisation follows from this bound.\\
+uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$ and for all $x,y \in \mathbb{Z}^d$, where $\lambda_0 = \lambda_{\text{And}}$ is a fixed value proposed by P.W. Anderson, and rigourously proven later on by J. Schenker [] using self-avoiding walks. Finally we prove that localisation follows from this bound.\\
 As we can see, the resolvent is well-defined only if $z $ is not an element of $\sigma(H_\omega)$, otherwise it blows up.
-The reason why the \textit{fractional moments method} was so revolutionary, is that by avereging the fractional power of the resolvent, we avoid this divrgences and the bound holds uniformally.\\
+The reason why the \textit{fractional moments method} was so revolutionary, is that by avereging the fractional power of the resolvent, we avoid this divrgences and the bound holds uniformly.\\
 Originally, absence of conductivity was proved using the squared-power instead of the fractional, which creates problems at zero and needs complicated analytical work such as the MSA method. \\
 The intuition behind the use of fractional methods, can be understood from this integral, which we'll need to solve in some proofs (for example see \ref{lemma:aprioribound}): 
 \[\int_{\Sigma} \frac{1}{|x|^s}dx = \left[\frac{ x^{1-s}}{1-s}\right]_{\Sigma}
@@ -359,9 +359,9 @@ from spectral and dynamical properties.
 
 
 \begin{definition}[Spectral Localisation]
- random Schr\"odinger operator $H = H_\omega$ exhibits \textbf{spectral localisation} if $H_\omega$ almost surely has only pure point spectrum, that is,
+We say that $H = H_\omega$ exhibits \textbf{spectral localisation} if it has pure point spectrum almost surely. That is
 \begin{equation}
-    \sigma(H_\omega) = \sigma_{pp}(H_\omega) \quad \text{and} \quad \sigma_c(H_\omega) = \emptyset \quad \text{almost surely.}    
+    \sigma(H_\omega) = \sigma_{pp}(H_\omega) \quad \text{and} \quad \sigma_c(H_\omega) = \emptyset.   
 \end{equation}
 
 \end{definition}
@@ -409,14 +409,15 @@ for a large class of compactly supported initial conditions $\phi_0$.
     \begin{equation}
     \sup_{t \in \mathbb{R}} \sum_{x \in \mathbb{Z}^d}|x|^p |\langle \delta_0,\, e^{-it H_\omega}\, \delta_x \rangle|^2 < \infty \label{eq:dynloc}
     \end{equation}
-holds for almost every $\omega \in [-1,1]$.
+for almost every $\omega \in [-1,1]$.
 \end{definition}
 
 \begin{definition}[Exponential localisation]
-    We say that $H_\omega$ shows exponential localisation if for $x \in \mathbb{Z}^d$, it holds that
+    We say that $H_\omega$ shows exponential localisation if 
     \begin{equation}
         \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle \delta_0, e^{-itH_\omega}\delta_x \rangle | \right) \leq C e^{- \mu |x|}\label{eq:explocalisation}
     \end{equation}
+for $x \in \mathbb{Z}^d$
 \end{definition}
 \begin{remark}
 Dynamical localisation implies that all moments of the distance between the origin and the site $x$ are bounded uniformly in time ( recall that we are working in an infinite grid, and with translation invariance).
@@ -428,7 +429,7 @@ In fact, the two definitions are strongly related and we can prove the following
 
 
 \begin{proposition}
-    Exponential localization implies that all moments of the position operator are bounded in time for almoste every realisation of $V_\omega$, i.e., dynamical localisation.
+    Exponential localization implies that all moments of the position operator are bounded in time for almost every realisation of $V_\omega$, i.e., dynamical localisation.
 \end{proposition}
 
 
@@ -1257,9 +1258,9 @@ Due to the polynomial tail of the fractional Laplacian, exponential decay is not
         \item[(i)] From \eqref{eq:LRSAW}, we verify the summability of the Green's function moments: 
         \begin{equation}
             \sum_{x \in \mathbb{Z}^d} \mathbb{E}[|G_z(0,x)|^s|x|^t]\le \frac{K_0 \,\theta_s}{\lambda^s}\sum_{x \ne 0} \frac{1}{|x|^{d+2\alpha_s-t}} < \infty \quad \forall t \in [0,2\alpha_s), \label{eq:boundsumlrs}
-        \end{equation} 
+        \end{equation}
         uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$.
-        Setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ a.s.. We then apply the Simon-Wolff criterion to obtain spectral localisation almost everywhere. 
+        Setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ a.s.. We then apply the Simon-Wolff criterion to obtain spectral localisation. 
         \item[(ii)] The eigenfunction polynomial decay follows from the summability bound \eqref{eq:boundsumlrs} and standard fractional moment arguments.
         \item[(iii)] The dynamical bounds follow from bounding the eigenfunction correlator $Q(x,0,\Sigma)$, which is majorized by the integrated Green's function moments. Since $\mathbb{E}[Q(x,0,\Sigma)] \le \frac{C}{|x|^{d+2\alpha_s}}$, the sum $\sum_{x \ne 0} |x|^\beta \mathbb{E}[Q(x,0,\Sigma)]$ converges for $\beta < 2\alpha_s$, yielding the result.
 \end{enumerate}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  15 SEP 2026 19:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  16 SEP 2026 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,7 +737,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2})
                                                   \__shipout_drop_firstpage_...
 l.411     \end{equation}
                         ]
-Overfull \hbox (7.56001pt too wide) in paragraph at lines 442--444
+Overfull \hbox (7.56001pt too wide) in paragraph at lines 443--445
 \T1/cmr/m/n/10.95 ition amp-litude is bounded by $\OT1/cmr/m/n/10.95 1$\T1/cmr/m/n/10.95 . There-fore, $\OMS/cmsy/m/n/10.95 jh\OML/cmm/m/it/10.95 ^^N[]; e[]^^N[]\OMS/cmsy/m/n/10.95 ij[] ^^T jh\OML/cmm/m/it/10.95 ^^N[]; e[]^^N[]\OMS/cmsy/m/n/10.95 ij$\T1/cmr/m/n/10.95 . 
  []
 
@@ -745,73 +745,73 @@ Overfull \hbox (7.56001pt too wide) in paragraph at lines 442--444
 pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.449 \end{remark}
+l.450 \end{remark}
                   ]
-Overfull \hbox (55.75288pt too wide) detected at line 491
+Overfull \hbox (55.75288pt too wide) detected at line 492
 [][][]\U/msb/m/n/10.95 E [] \OMS/cmsy/m/n/10.95 ^^T [] [][] [] [] \U/msb/m/n/10.95 E [] \OMS/cmsy/m/n/10.95 k\OML/cmm/m/it/10.95  \OMS/cmsy/m/n/10.95 k[]\OML/cmm/m/it/10.95 :
  []
 
 [15] [16] [17
 
 ] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 625--627
 
  []
 
 [20]
-Overfull \hbox (28.91263pt too wide) detected at line 685
+Overfull \hbox (28.91263pt too wide) detected at line 686
 []
  []
 
 [21]
-Overfull \hbox (9.09883pt too wide) detected at line 707
+Overfull \hbox (9.09883pt too wide) detected at line 708
 []
  []
 
 
-Overfull \hbox (51.41739pt too wide) detected at line 739
+Overfull \hbox (51.41739pt too wide) detected at line 740
 []
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 753--754
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
 
  []
 
 [23]
-Overfull \hbox (8.91849pt too wide) detected at line 769
+Overfull \hbox (8.91849pt too wide) detected at line 770
 \OMS/cmsy/m/n/10.95 j[] \OML/cmm/m/it/10.95 w\OMS/cmsy/m/n/10.95 j [] [] \OML/cmm/m/it/10.95 d \OMS/cmsy/m/n/10.95 ^^T [] [] ^^T \OML/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 :
  []
 
 [24]
-Overfull \hbox (62.7637pt too wide) detected at line 809
+Overfull \hbox (62.7637pt too wide) detected at line 810
 []
  []
 
 
-Overfull \hbox (10.06854pt too wide) detected at line 815
+Overfull \hbox (10.06854pt too wide) detected at line 816
 []
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 841--843
+Underfull \hbox (badness 10000) in paragraph at lines 842--844
 
  []
 
 [26] [27] [28
 
 ] [29] [30] [31]
-Overfull \hbox (36.05232pt too wide) detected at line 1057
+Overfull \hbox (36.05232pt too wide) detected at line 1058
 \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 ^^N[]; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 ^^N[]\OMS/cmsy/m/n/10.95 i ^^@ \OT1/cmr/m/n/10.95 0 = \OMS/cmsy/m/n/10.95 ^^@ []h\OML/cmm/m/it/10.95 ^^N[]; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 ^^N[]\OMS/cmsy/m/n/10.95 i\OML/cmm/m/it/10.95 T[]\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 ^^N[]; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^H \OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 ^^N[]\OMS/cmsy/m/n/10.95 i
  []
 
 [32] [33]
-Overfull \hbox (9.75713pt too wide) in paragraph at lines 1107--1110
+Overfull \hbox (9.75713pt too wide) in paragraph at lines 1108--1111
 [][] \OML/cmm/m/it/10.95 c[]$ \T1/cmr/m/n/10.95 is the crit-ical ra-dius of con-ver-gence. Thus, for $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^T
  []
 
@@ -819,54 +819,54 @@ Overfull \hbox (9.75713pt too wide) in paragraph at lines 1107--1110
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1129 \begin{equation}
+l.1130 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1129 \begin{equation}
+l.1130 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1129 \begin{equation}
+l.1130 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1129 \begin{equation}
+l.1130 \begin{equation}
                         [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1144--1145
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1146
 
  []
 
 [36
 
 ] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1200--1203
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1206
 
  []
 
 [38
 
 ]
-Overfull \hbox (36.72105pt too wide) in paragraph at lines 1225--1226
+Overfull \hbox (36.72105pt too wide) in paragraph at lines 1228--1229
 []\T1/cmr/bx/n/10.95 Two-Point Func-tion De-cay: \T1/cmr/m/n/10.95 Fi-nally, by [Lemma 4 of PA-PER DISERTORI],
  []
 
 [39]
-Overfull \hbox (5.95296pt too wide) in paragraph at lines 1261--1262
+Overfull \hbox (5.95296pt too wide) in paragraph at lines 1264--1265
 []\T1/cmr/m/n/10.95 The ei-gen-func-tion poly-no-mial de-cay fol-lows from the sum-mab-il-ity bound
  []
 
 
-Overfull \hbox (6.2207pt too wide) in paragraph at lines 1262--1263
+Overfull \hbox (6.2207pt too wide) in paragraph at lines 1265--1266
 \T1/cmr/m/n/10.95 mo-ments. Since $\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 ^^F)] \OMS/cmsy/m/n/10.95 ^^T []$\T1/cmr/m/n/10.95 , the sum $[][] \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j[]\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 ^^F)]$
  []
 
 [40]
 
-LaTeX Warning: Empty bibliography on input line 1273.
+LaTeX Warning: Empty bibliography on input line 1276.
 
 (meineArbeit.aux)
  ***********
@@ -897,9 +897,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  74i,16n,79p,743b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (42 pages, 543949 bytes).
+Output written on meineArbeit.pdf (42 pages, 543569 bytes).
 PDF statistics:
- 963 PDF objects out of 1000 (max. 8388607)
+ 962 PDF objects out of 1000 (max. 8388607)
  172 named destinations out of 1000 (max. 500000)
  182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

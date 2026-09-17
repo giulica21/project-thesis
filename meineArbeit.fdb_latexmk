@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber meineArbeit"] 1789493659.35528 "meineArbeit.bcf" "meineArbeit.bbl" "meineArbeit" 1789493665.05645 0
+["biber meineArbeit"] 1789493659.35528 "meineArbeit.bcf" "meineArbeit.bbl" "meineArbeit" 1789554347.35088 0
   "Literatur.bib" 1786433374 1090 837c46bfc672a4b0cc208f803b990ba0 ""
-  "meineArbeit.bcf" 1789493664 108918 480ac93d7abc776fb3c2479ea0a62b29 "pdflatex"
+  "meineArbeit.bcf" 1789554347 108918 480ac93d7abc776fb3c2479ea0a62b29 "pdflatex"
   (generated)
   "meineArbeit.bbl"
   "meineArbeit.blg"
   (rewritten before read)
-["pdflatex"] 1789493663.35651 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1789493665.05804 0
+["pdflatex"] 1789554345.33378 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1789554347.35218 0
   "BA_Titelseite.sty" 1786433374 1630 87e6a5d49fb587f3ed504d15aa580855 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1786616154 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1786434189 28976 c9d6ebed1332e2a099f7d04770dfdc56 ""
@@ -160,13 +160,13 @@
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IMG_1072.jpeg" 1789319845 61664 4dd62bbba44631ed981df8ba1b64d09d ""
-  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1789493657 77423 500c242f9aac950239c6b7c7558cf9cb ""
-  "meineArbeit.aux" 1789493664 6875 4d7a3e66426946dbbff6ebbb475954e4 "pdflatex"
+  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1789554344 77369 50df537ee4aa7e509f3b46f124b03d40 ""
+  "meineArbeit.aux" 1789554347 6875 4d7a3e66426946dbbff6ebbb475954e4 "pdflatex"
   "meineArbeit.bbl" 1789493661 486 76d65a242ec496c9b4361af646ff12cb "biber meineArbeit"
-  "meineArbeit.out" 1789493664 4107 2110df96908becb386f648cc9f071cc4 "pdflatex"
-  "meineArbeit.run.xml" 1789493664 2423 0e82004d293e0aba659adf15657a6687 "pdflatex"
-  "meineArbeit.tex" 1789493657 77423 500c242f9aac950239c6b7c7558cf9cb ""
-  "meineArbeit.toc" 1789493664 2374 e3122bde1e5cce8adfbe713a6f049546 "pdflatex"
+  "meineArbeit.out" 1789554347 4107 2110df96908becb386f648cc9f071cc4 "pdflatex"
+  "meineArbeit.run.xml" 1789554347 2423 0e82004d293e0aba659adf15657a6687 "pdflatex"
+  "meineArbeit.tex" 1789554344 77369 50df537ee4aa7e509f3b46f124b03d40 ""
+  "meineArbeit.toc" 1789554347 2374 e3122bde1e5cce8adfbe713a6f049546 "pdflatex"
   (generated)
   "meineArbeit.aux"
   "meineArbeit.bcf"

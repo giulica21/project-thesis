@@ -1,20 +1,51 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'meineArbeit.blg'
-[118] biber-MSWIN64:342> INFO - === 
-[171] Biber.pm:421> INFO - Reading 'meineArbeit.bcf'
-[284] Biber.pm:1002> INFO - Found 4 citekeys in bib section 0
-[297] Biber.pm:4487> INFO - Processing section 0
-[307] Biber.pm:4678> INFO - Looking for bibtex file 'Literatur.bib' for section 0
-[394] bibtex.pm:1713> INFO - LaTeX decoding ...
-[404] bibtex.pm:1519> INFO - Found BibTeX data source 'Literatur.bib'
-[421] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'variable = shifted' with 'variable = non-ignorable'
-[421] UCollate.pm:68> INFO - Overriding locale 'en-UK' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[421] Biber.pm:4307> INFO - Sorting list 'anyt/global//global/global/global' of type 'entry' with template 'anyt' and locale 'en-UK'
-[421] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-UK'
-[422] bbl.pm:676> INFO - Writing 'meineArbeit.bbl' with encoding 'UTF-8'
-[422] bbl.pm:779> INFO - Output to meineArbeit.bbl
-[422] Biber.pm:132> WARN - I didn't find a database entry for 'Pastur1980' (section 0)
-[422] Biber.pm:132> WARN - I didn't find a database entry for 'Stolz2011' (section 0)
-[422] Biber.pm:132> WARN - I didn't find a database entry for 'Cycon1987' (section 0)
-[422] Biber.pm:132> WARN - I didn't find a database entry for 'HunzikerSigal2000' (section 0)
-[422] Biber.pm:134> INFO - WARNINGS: 4
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: meineArbeit.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: amsra.bst
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: biblio.bib
+You've used 20 entries,
+            1821 wiz_defined-function locations,
+            586 strings with 6100 characters,
+and the built_in function-call counts, 17478 in all, are:
+= -- 672
+> -- 1311
+< -- 140
++ -- 401
+- -- 1187
+* -- 1339
+:= -- 2869
+add.period$ -- 0
+call.type$ -- 20
+change.case$ -- 97
+chr.to.int$ -- 381
+cite$ -- 20
+duplicate$ -- 1455
+empty$ -- 661
+format.name$ -- 127
+if$ -- 2194
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 510
+newline$ -- 193
+num.names$ -- 60
+pop$ -- 1174
+preamble$ -- 1
+purify$ -- 97
+quote$ -- 0
+skip$ -- 367
+stack$ -- 0
+substring$ -- 350
+swap$ -- 814
+text.length$ -- 137
+text.prefix$ -- 9
+top$ -- 0
+type$ -- 246
+warning$ -- 0
+while$ -- 220
+width$ -- 0
+write$ -- 426

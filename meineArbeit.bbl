@@ -1,20 +1,207 @@
-% $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
-% Do not modify the above lines!
-%
-% This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
-%
-\begingroup
-\makeatletter
-\@ifundefined{ver@biblatex.sty}
-  {\@latex@error
-     {Missing 'biblatex' package}
-     {The bibliography requires the 'biblatex' package.}
-      \aftergroup\endinput}
-  {}
-\endgroup
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
 
-\endinput
+\bib{aizenman2003}{misc}{
+      author={Aizenman, Michael},
+      author={Elgart, Alexander},
+      author={Naboko, Sergey},
+      author={Schenker, Jeffrey~H.},
+      author={Stolz, Günter},
+       title={Fractional moment methods for anderson localization in the
+  continuum},
+        date={2003},
+         url={https://arxiv.org/abs/math-ph/0309018},
+}
 
+\bib{aloisio2026}{misc}{
+      author={Aloisio, M.},
+       title={Dynamical localization and eigenvalue asymptotics: long-range
+  hopping lattice operators with electric field},
+        date={2026},
+         url={https://arxiv.org/abs/2501.02692},
+}
+
+\bib{aizenman1993}{article}{
+      author={Aizenman, Michael},
+      author={Molchanov, Stanislav},
+       title={Localization at large disorder and at extreme energies: An
+  elementary derivation},
+        date={1993},
+     journal={Communications in Mathematical Physics},
+      volume={157},
+       pages={245\ndash 278},
+}
+
+\bib{anderson1958}{article}{
+      author={Anderson, P.~W.},
+       title={Absence of diffusion in certain random lattices},
+        date={1958March},
+     journal={Physical Review},
+      volume={109},
+      number={5},
+       pages={1492\ndash 1505},
+}
+
+\bib{Aizenman_2015}{article}{
+      author={Aizenman, Michael},
+      author={Warzel, Simone},
+       title={Boosted simon‐wolff spectral criterion and resonant
+  delocalization},
+        date={2015-12},
+        ISSN={1097-0312},
+     journal={Communications on Pure and Applied Mathematics},
+      volume={69},
+      number={11},
+       pages={2195–2218},
+         url={http://dx.doi.org/10.1002/cpa.21625},
+}
+
+\bib{aizenman2015}{book}{
+      author={Aizenman, Michael},
+      author={Warzel, Simone},
+       title={Random operators: Disorder effects on quantum spectra and
+  dynamics},
+   publisher={American Mathematical Society},
+        date={2015},
+      volume={168},
+}
+
+\bib{boutetdemonvel2006}{article}{
+      author={Boutet~de Monvel, A.},
+      author={Naboko, S.},
+      author={Stollmann, P.},
+      author={Stolz, G.},
+       title={Localization near fluctuation boundaries via fractional moments
+  and applications},
+        date={2006},
+     journal={Journal d'Analyse Math{\'e}matique},
+      volume={100},
+       pages={83\ndash 116},
+}
+
+\bib{boumaza2023}{unpublished}{
+      author={Boumaza, H.},
+       title={Bounded and compact operators. spectral theorem.},
+        date={2023},
+        note={Master 1, Universit{\'e} Sorbonne Paris Nord - Institut
+  Galil{\'e}e},
+}
+
+\bib{disertori2024}{misc}{
+      author={Disertori, Margherita},
+      author={Escobar, Roberto~Maturana},
+      author={Rojas-Molina, Constanza},
+       title={Decay of the green's function of the fractional anderson model
+  and connection to long-range saw},
+        date={2024},
+         url={https://arxiv.org/abs/2306.02860},
+}
+
+\bib{frohlich1983}{article}{
+      author={Fr{\"o}hlich, J{\"u}rg},
+      author={Spencer, Thomas},
+       title={Absence of diffusion in the anderson tight binding model for
+  large disorder or low energy},
+        date={1983},
+     journal={Communications in Mathematical Physics},
+      volume={88},
+       pages={151\ndash 184},
+}
+
+\bib{guan2019}{unpublished}{
+      author={Guan, Chenguang},
+      author={Guan, Xingyue},
+       title={A brief introduction to anderson localization},
+        date={2019},
+        note={Department of Physics, Massachusetts Institute of Technology},
+}
+
+\bib{goldsheid1977}{article}{
+      author={Gold'sheid, I.},
+      author={Molchanov, S.},
+      author={Pastur, L.},
+       title={A random homogeneous schr{\"o}dinger operator has a pure point
+  spectrum},
+        date={1977},
+     journal={Functional Analysis and Its Applications},
+      volume={11},
+       pages={1\ndash 10},
+}
+
+\bib{graf1994}{article}{
+      author={Graf, Gian~Michele},
+       title={Anderson localization and the space-time characteristic of
+  continuum states},
+        date={1994},
+     journal={Journal of Statistical Physics},
+      volume={75},
+      number={1/2},
+       pages={337\ndash 346},
+}
+
+\bib{hundertmark2007}{article}{
+      author={Hundertmark, Dirk},
+       title={A short introduction to anderson localization},
+        date={2008},
+     journal={Analysis and Stochastics of Growth Processes and Interface
+  Models},
+       pages={194\ndash 218},
+}
+
+\bib{rojasmolina2018}{unpublished}{
+      author={Rojas-Molina, Constanza},
+       title={Random schr{\"o}dinger operators},
+        date={2018},
+        note={Presentation at Tbilisi, Heinrich Heine Universit{\"a}t
+  D{\"u}sseldorf},
+}
+
+\bib{reedsimon1980}{book}{
+      author={Reed, Michael},
+      author={Simon, Barry},
+       title={Methods of modern mathematical physics i: Functional analysis},
+     edition={Revised and enlarged},
+   publisher={Academic Press},
+     address={New York},
+        date={1980},
+}
+
+\bib{rudin1987}{book}{
+      author={Rudin, Walter},
+       title={Real and complex analysis},
+     edition={3},
+   publisher={McGraw-Hill},
+     address={Boston},
+        date={1987},
+}
+
+\bib{schenker2015}{article}{
+      author={Schenker, Jeffrey},
+       title={How large is large? estimating the critical disorder for the
+  anderson model},
+        date={2015},
+     journal={Letters in Mathematical Physics},
+      volume={105},
+      number={1},
+       pages={1\ndash 9},
+}
+
+\bib{stolz2011}{article}{
+      author={Stolz, G{\"u}nter},
+       title={An introduction to the mathematics of anderson localization},
+        date={2011},
+     journal={Entropy and the Quantum II},
+      volume={552},
+       pages={71\ndash 108},
+}
+
+\bib{suzuki2012}{thesis}{
+      author={Suzuki, Fumika},
+       title={Anderson localization with self-avoiding walk representation},
+        type={Master's Thesis},
+        date={2012},
+}
+
+\end{biblist}
+\end{bibdiv}

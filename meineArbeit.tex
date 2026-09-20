@@ -3,7 +3,6 @@
 \usepackage[UKenglish]{babel}
 \usepackage{BA_Titelseite}
 \usepackage{tikz}
-\usetikzlibrary{decorations.markings, arrows.meta}
 
 %Namen des Verfassers der Arbeit
 \author{Giulia Liconti}
@@ -884,21 +883,12 @@ such that consecutive vertices are nearest neighbors, that is,
 and $\gamma_i \ne \gamma_j$ for all $i \ne j$.
 \end{definition}
 
-\begin{tikzpicture}[
-    scale=1.2,
-    arr/.style={
-        postaction={decorate},
-        decoration={
-            markings,
-            mark=at position 0.55 with {\arrow{Latex[length=3mm, width=2.5mm]}}
-        }
-    },
-    pathline/.style={red!80!black, line width=1.8pt, arr}
-]
-    % Draw background grid
-    \draw[gray!70, thick, step=1cm] (-0.5, -0.5) grid (7.5, 7.5);
-    
-\end{tikzpicture}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{IMG_0259.jpeg}
+    \caption{$\gamma$ and $\gamma '$ are self-avoiding walks from $x$ to $y$}
+\end{figure}
+
 
 \begin{definition}[Sets of Self-Avoiding Walks]
 Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mathbb{N}_0$:

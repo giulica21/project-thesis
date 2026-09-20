@@ -3,6 +3,7 @@
 \usepackage[UKenglish]{babel}
 \usepackage{BA_Titelseite}
 \usepackage{tikz}
+\usetikzlibrary{decorations.markings, arrows.meta}
 
 %Namen des Verfassers der Arbeit
 \author{Giulia Liconti}
@@ -882,7 +883,22 @@ such that consecutive vertices are nearest neighbors, that is,
 \]
 and $\gamma_i \ne \gamma_j$ for all $i \ne j$.
 \end{definition}
-\textcolor{red}{\textbf{INSERISCI IMMAGINE}}
+
+\begin{tikzpicture}[
+    scale=1.2,
+    arr/.style={
+        postaction={decorate},
+        decoration={
+            markings,
+            mark=at position 0.55 with {\arrow{Latex[length=3mm, width=2.5mm]}}
+        }
+    },
+    pathline/.style={red!80!black, line width=1.8pt, arr}
+]
+    % Draw background grid
+    \draw[gray!70, thick, step=1cm] (-0.5, -0.5) grid (7.5, 7.5);
+    
+\end{tikzpicture}
 
 \begin{definition}[Sets of Self-Avoiding Walks]
 Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mathbb{N}_0$:
@@ -1349,17 +1365,18 @@ Due to the polynomial tail of the fractional Laplacian, exponential decay is not
     \end{align*}
     uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$. Exactly like for the case of $\alpha=1$, setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ almost surely  . We then apply the Simon-Wolff criterion to obtain spectral localisation  .
     
-    \item[(ii)] Recall from Chapter 1 that the probability measure $\mu$ of the random potential has a bounded density $\rho$ with compact support . Because of this, we can observe that
-    \begin{align*}
-        \sup_{v\in\mathbb{R}}(1+|v|)^s \rho(v) < \infty.
-    \end{align*}
-     The polynomial decay of the eigenfunctions follows directly from this bounded density property and the summability bound \eqref{eq:boundsumlrs} by applying standard fractional moment arguments \cite[Theorem 7.4]{Aizenman_2015}.
+    \item[(ii)]
+     The polynomial decay of the eigenfunctions follows directly from this bounded density property and the summability bound by applying standard fractional moment arguments \cite[Theorem 7.4]{Aizenman_2015}.
 
     \item[(iii)] The dynamical bounds follow from bounding the dynamic evolution using the eigenfunction correlator $Q(x,0,\Sigma)$. We note that:
     \begin{align*}
         \sup_{t\in\mathbb{R}}|e^{-itH_{\alpha,\omega}}(0,x)|^2 \le \sup_{F\in C(\mathbb{R}), \|F\|\le 1} |F(H_{\alpha,\omega})(0,x)|^2 =: Q(x,0,\Sigma),
     \end{align*}
-    where $\Sigma$ denotes the almost sure spectrum of $H_{\alpha,\omega}$ . The expectation of this correlator is majorized by the integrated Green's function moments:
+    where $\Sigma$ denotes the almost sure spectrum of $H_{\alpha,\omega}$ . Recall from Chapter 1 that the probability measure $\mu$ of the random potential has a bounded density $\rho$ with compact support . Because of this, we can observe that
+    \begin{align*}
+        \sup_{v\in\mathbb{R}}(1+|v|)^s \rho(v) < \infty.
+    \end{align*}
+    The expectation of this correlator is majorized by the integrated Green's function moments:
     \begin{align*}
         \mathbb{E}[Q(x,0,\Sigma)] \le C_s \liminf_{\eta \downarrow 0} \int_{\Sigma} \mathbb{E}[|G_{E+i\eta}(x,0)|^s] dE,
     \end{align*}

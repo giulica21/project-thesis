@@ -277,7 +277,7 @@ Before characterising the physical meaning of this spectrum, we need some spectr
 Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider now $P=\{x \in \mathbb{R}| \mu(\{x\}) \ne 0\}$ the set of \textbf{pure points} of $\mu$. We define the pure point measure as $$\mu_{pp}(X)=\mu(P \cap X)$$ for $X \subset \mathbb{R}$. In particular, there exists a continuous mesure $\mu_{c}$ such that $\mu_{c}(\{x\})= 0$ for all $x \in X$ and $\mu_{c}=\mu -\mu_{pp}$. Since $\mu_{pp}(P^c)=0$ and $\mu_{c}(P)=0$, the two measures are concentrated on disjoint stes, and thus mutually singular.\\
 One can apply this same division also for spectral measures:
 \begin{definition}
-    Le $A: \mathcal{H}\rightarrow\mathcal{H}$ be a bounded, self-adjoint operator. Let $\phi \in \mathcal{H}$ and $f \in C(\sigma(A))$. Then there is a unique measure $\mu_{\phi}$ on the compact set $\sigma(A)$ with $\langle\phi, f(A)\phi\rangle= \int_{\sigma(A)} f(\lambda) d\mu_{\phi}$. The measure $\mu_\phi$ is the \textit{spectral measure associated with the vector $\phi$}.
+    Le $A: \mathcal{H}\rightarrow\mathcal{H}$ be a bounded, self-adjoint operator. Let $\phi \in \mathcal{H}$ and $f \in C(\sigma(A))$. Then there is a unique measure $\mu_{\phi}$ on the compact set $\sigma(A)$ with $\langle\phi, f(A)\phi\rangle= \int_{\sigma(A)} f(\xi) d\mu_{\phi}(\xi)$. The measure $\mu_\phi$ is the \textit{spectral measure associated with the vector $\phi$}.\label{def:spectralmeasuredef}
 \end{definition}
 Thus, by the spectral theorem for self-adjoint operators (see \cite{rudin1987} and \cite{reedsimon1980}), the Hilbert space ( for example also $\ell^2(\mathbb{Z}^d)$) decomposes uniquely into an orthogonal direct sum of invariant subspaces:
 \begin{equation}
@@ -772,60 +772,70 @@ The proof is that of [REFERENCE GUNTER STOLZ]. Since $|w|^s \le |\alpha|^s + |\a
 \end{enumerate}
 \end{proof}
 
-Now we can procede with the proof of the theorem.
+Now we can procede with the proof of the theorem.The proof, recalls the one proposed in \cite{stolz2011}
 
 \begin{proof}[Proof of Theorem \ref{thm:theorem2}]
-For $H_\omega$ bounded and self-adjoint, from the spectral theorem, we define the complex Borel spectral measure $\mu_{\delta_x, \delta_y} = \mu_{x,y}$ such that:
+    
+For $H_\omega$ bounded and self-adjoint, from the spectral theorem ( see Definition \ref{def:spectralmeasuredef}), it exists a complex Borel spectral measure $\mu_{\delta_x, \delta_y} = \mu_{x,y}$ such that:
 \[
 \mu_{x,y}(B) := \langle \delta_x, \chi_B(H_\omega) \delta_y \rangle.
 \]
-with $B$ Borel in $\mathbb{R}$. The total variation measure $|\mu_{x,y}|$ satisfies
+with $B$ Borel in $\mathbb{R}$. The \textit{total variation measure} $|\mu_{x,y}|$ is a ragular bounded Borel measure, and satisfies
 \begin{equation}
-    |\mu_{x,y}(B)| = \sup \sum_{i=1}^{\infty} | \mu_{x,y}(B_j)| 
+    |\mu_{x,y}|(B) = \sup \sum_{i=1}^{\infty} | \mu_{x,y}|(B_j) \label{eq:deftotvar}
 \end{equation}
-where $B = \bigcup {B_j}$ disjoint. For $\mu_{x,y}$ complex, there exists $\alpha$ complex, such that $|\mu_{x,y}(B)|= \alpha\,\mu_{x,y}(B)$ Now we define $g$
+where $B = \bigcup {B_j}$, with $B_j$ disjoint. For $\mu_{x,y}$ complex, there exists $\alpha_j$ complex, such that $|\mu_{x,y}(B_j)|= \alpha_j\,\mu_{x,y}(B_j)$ and $| \alpha_j | = 1$. Let $g \coloneq \sum_{j=1}^{\infty} \alpha_j \chi_{B_j}$, which implies that $\vert{}g\vert{} \le 1$. Then it holds:
+\begin{equation}
+   \left| \int_B g(\xi)\,\, d\mu_{x,y}(\xi)\right| = \left| \sum_{j=1}^{\infty} \alpha_j \mu_{x,y}(B_j) \right|= \sum_{j=1}^{\infty} |\mu_{x,y}|(B_j).
+\end{equation}
+From \ref{eq:deftotvar} we obtain:
 \begin{align}
 \label{eq:40}
-|\mu_{x,y}|(I) &= \sup_{\substack{g: \mathbb{R} \to \mathbb{C} \text{ Borel} \\ |g| \le 1}} \left| \int g(\lambda) \, d\mu_{x,y}(\lambda) \right| \nonumber \\
-&= \sup_{|g| \le 1} |\langle \delta_x, g(H_\omega)\chi_I(H_\omega) \delta_y \rangle|,
+|\mu_{x,y}|(B) &= \sup_{\substack{g: \mathbb{R} \to \mathbb{C} \text{ Borel} \\ |g|\le 1}} \left| \int_B g(\xi)\,\, d\mu_{x,y}(\xi) \right| \nonumber \\
+&= \sup_{|g| \le 1} |\langle \delta_x, g(H_\omega)\chi_B(H_\omega) \delta_y \rangle|,
 \end{align}
-e.g. [Theorem 6.16 Rudin] for p=1. This implies: 
-$$\sup_{t \in \mathbb{R}} |\langle \delta_x, e^{-itH_\omega} \chi_I(H_\omega) \delta_y \rangle| \le |\mu_{x,y}|(I).$$ 
-From Lusin's theorem, we can extend the bound also for $g \in C_c(I)$: $$|\mu_{x,y}|(I) = \sup_{\substack{g \in C_c(I) \\ |g| \le 1}} |\langle \delta_x, g(H_\omega) \delta_y \rangle|.$$ da I bounded open interval.
-For $g \in C_c(I)$ it follows by elementary analysis (using that $g$ is bounded and uniformly continuous) that, uniformly in $\lambda \in \mathbb{R}$,
-\textcolor{red}{POISSON KERNEL}
+e.g. \cite[Chapter 6]{rudin1987}. This implies for $g= e^{-itH_\omega}$: 
+$$\sup_{t \in \mathbb{R}} |\langle \delta_x, e^{-itH_\omega} \chi_B(H_\omega) \delta_y \rangle| \le |\mu_{x,y}|(B).$$ 
+Therefore, Theorem \ref{thm:theorem2} will follow from a corresponding exponential decay bound for $\mathbb{E}(|\mu_{x,y}|(B))$.\\
+
+From Lusin's theorem, we can extend the bound also for $g \in C_c(B)$: $$|\mu_{x,y}|(B) = \sup_{\substack{g \in C_c(B) \\ |g| \le 1}} |\langle \delta_x, g(H_\omega) \delta_y \rangle|.$$ for $B$ bounded open interval.
+For $g \in C_c(B)$ it follows (using that $g$ is bounded and uniformly continuous) that, uniformly in $\xi \in \mathbb{R}$,
+
 \begin{equation*}
-g(\lambda) = \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int \frac{g(E)}{(\lambda - E)^2 + \eta^2} \, dE.
+g(\xi) = \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int \frac{g(E)}{(\xi - E)^2 + \eta^2} \, dE.
 \end{equation*}
-By the spectral theorem and dominated convergence, this implies:
+
+Now, always assuming that $g \in C_c(B)$, by the spectral theorem (see Def. \ref{def:spectralmeasuredef}), dominated convergence and Fubini:
 \begin{align*}
-    \langle e_x, g(H_\omega) e_y \rangle &= \int_{\mathbb{R}} g(\lambda) \, d\mu_{x,y}(\lambda) \\
-    &= \lim_{\eta \downarrow 0}\int_{\mathbb{R}} \left(   \frac{\eta}{\pi} \int_I \frac{g(E)}{(\lambda - E)^2 + \eta^2} \, dE \right) d\mu_{x,y}(\lambda)\\
-    &= \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_I g(E) \langle \delta_x, (H_\omega - E - i\eta)^{-1}(H_\omega - E + i\eta)^{-1} \delta_y \rangle\, dE
+    \langle \delta_x, g(H_\omega) \delta_y \rangle &= \int_{\mathbb{R}} g(\xi) \, d\mu_{x,y}(\xi) \\
+    &= \lim_{\eta \downarrow 0}\int_{\mathbb{R}} \left(   \frac{\eta}{\pi} \int_B \frac{g(E)}{(\xi - E)^2 + \eta^2} \, dE \right) d\mu_{x,y}(\xi)\\
+    &= \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_B g(E) \left(  \int_{\mathbb{R}}  \frac{1}{(\xi - E)^2 + \eta^2} \,d\mu_{x,y}(\xi) \right)dE  \\
+    &= \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_B g(E) \langle \delta_x,((H_\omega - E)^2 + \eta^2)^{-1} \delta_y \rangle\, dE\\
+    &= \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_B g(E) \langle \delta_x, (H_\omega - E - i\eta)^{-1}(H_\omega - E + i\eta)^{-1} \delta_y \rangle\, dE
 \end{align*}
 
 Now we can bound $\mathbb{E}(|\mu_{x,y}|)$, considering that $|g(E)| \le 1$:
 \begin{align*}
-\mathbb{E}(|\mu_{x,y}|(I)) &\le \mathbb{E}\left( \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_I g(E) \langle \delta_x, (H_\omega - E - i\eta)^{-1}(H_\omega - E + i\eta)^{-1} \delta_y \rangle\, dE \right) \\
-&\le \mathbb{E}\left( \lim_{\eta \to 0^+} \frac{\eta}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} |\langle \delta_x, (H_\omega - E - i\eta)^{-1} \delta_z \rangle| |\langle \delta_z, (H_\omega- E + i\eta)^{-1} \delta_y \rangle| \, dE \right) \\
-&\le \lim_{\eta \to 0^+} \frac{1}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} \left( \mathbb{E}(\eta |\langle \delta_x, (H_\omega- E - i\eta)^{-1} \delta_z \rangle|^2) \right)^{1/2} \\
+\mathbb{E}(|\mu_{x,y}|(B)) &\le \mathbb{E}\left( \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int_B g(E) \langle \delta_x, (H_\omega - E - i\eta)^{-1}(H_\omega - E + i\eta)^{-1} \delta_y \rangle\, dE \right) \\
+&\le \mathbb{E}\left( \lim_{\eta \to 0^+} \frac{\eta}{\pi} \int_B \sum_{z \in \mathbb{Z}^d} |\langle \delta_x, (H_\omega - E - i\eta)^{-1} \delta_z \rangle| |\langle \delta_z, (H_\omega- E + i\eta)^{-1} \delta_y \rangle| \, dE \right) \\
+&\le \lim_{\eta \to 0^+} \frac{1}{\pi} \int_B \sum_{z \in \mathbb{Z}^d} \left( \mathbb{E}(\eta |\langle \delta_x, (H_\omega- E - i\eta)^{-1} \delta_z \rangle|^2) \right)^{1/2} \\
 &\quad \cdot \left( \mathbb{E}(\eta |\langle \delta_z, (H_\omega - E + i\eta)^{-1} \delta_y \rangle|^2) \right)^{1/2} dE,
 \end{align*}
 where, in this order, Fatou, Fubini and Cauchy--Schwarz (on $\mathbb{E}$) have been used. Now we can use Proposition \ref{proposition:squaredbound} and the hypothesis to obtain:
 
 \begin{align*}
-\mathbb{E}(|\mu_{x,y}|(I)) &\le \frac{C_1}{\pi} \int_I \sum_{z \in \mathbb{Z}^d} \left(\mathbb{E}|G_\omega(x,z; E+i\eta)|^s\right)^{1/2} \left(\mathbb{E}|G_\omega(z,y; E-i\eta)|^s\right)^{1/2} dE \\
-&\le \frac{C_1 |I| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{2}|x-z|} e^{-\frac{\mu}{2}|z-y|}.
+\mathbb{E}(|\mu_{x,y}|(B)) &\le \frac{C_1}{\pi} \int_B \sum_{z \in \mathbb{Z}^d} \left(\mathbb{E}|G_\omega(x,z; E+i\eta)|^s\right)^{1/2} \left(\mathbb{E}|G_\omega(z,y; E-i\eta)|^s\right)^{1/2} dE \\
+&\le \frac{C_1 |B| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{2}|x-z|} e^{-\frac{\mu}{2}|z-y|}.
 \end{align*}
 
 By the triangle inequality, $\frac{\mu}{2}|x-z| + \frac{\mu}{2}|z-y| \ge \frac{\mu}{4}|x-y| + \frac{\mu}{4}|x-z| + \frac{\mu}{4}|z-y|$. Therefore,
 \[
-\mathbb{E}(|\mu_{x,y}|(I)) \le \left( \frac{C_1 |I| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|x-z|} e^{-\frac{\mu}{4}|z-y|} \right) e^{-\frac{\mu}{4}|x-y|} \le \widetilde{C} e^{-\widetilde{\mu}|x-y|},
+\mathbb{E}(|\mu_{x,y}|(B)) \le \left( \frac{C_1 |B| C}{\pi} \sum_{z \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|x-z|} e^{-\frac{\mu}{4}|z-y|} \right) e^{-\frac{\mu}{4}|x-y|} \le \widetilde{C} e^{-\widetilde{\mu}|x-y|},
 \]
-with $\widetilde{\mu} = \frac{\mu}{4}$ and finite prefactor $\widetilde{C} = \frac{C_1 |I| C}{\pi} \sum_{u \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|u|}$.
+with $\widetilde{\mu} = \frac{\mu}{4}$ and finite prefactor $\widetilde{C} = \frac{C_1 |B| C}{\pi} \sum_{u \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|u|}$.
 \end{proof}
 
-From \eqref{eq:explocalisation} we can also easily obtain spectral localisation through Simon-Wolff criterion [book or paper].
+From \eqref{eq:explocalisation} we can also directly obtain spectral localisation through Simon-Wolff criterion.
 \begin{proposition}[Simon-Wolff criterion]\label{proposition:simonwolff}
     Let $H_\omega$ be a random operator in $l^2(\mathbb{Z}^d)$ with a random potential whose conditional-single site distribution is absolutely continuous. Then if for Lebesgue-almost every $E\in\mathbb{R}$ and $\mathbb{P}$-almost all $\omega$: 
     \begin{equation}
@@ -833,18 +843,16 @@ From \eqref{eq:explocalisation} we can also easily obtain spectral localisation 
     \end{equation}
     $H_\omega$ has only pure point spectrum.
 \end{proposition}
-Proof can be found in [BOOK]
+Proof can be found in \cite[Chapter 5]{aizenman2015}
 \begin{theorem}\label{thm:simonwolfftheorem}
     Let Theorem \ref{thm:theorem1} hold. Then, the spectrum of $H_\omega$ consists only of pure point spectrum for a.e. realisation of $V_\omega$.
 \end{theorem}
-The proof, recalls the one proposed in [DISERTORI]
-\begin{proof}[proof of Theorem 4.9]
+\begin{proof}[Proof from \cite{disertori2024}]
     From \eqref{eq:FMM} we notice that for all $\lambda>\lambda_{\text{And}}$:
     \begin{equation}
         \sum_{y \in \mathbb{Z}^d} \mathbb{E}[|G_{E+i\eta}(x,y)|^s] = C \sum_{y \in \mathbb{Z}^d} e^{-\mu |x-y|} < \infty \quad \text{for all }\mu>0 \label{eq:4.20}
     \end{equation}
     uniformly for $z \in \mathbb{C} \setminus \mathbb{R}$ and $x \in \mathbb{Z}^d$ fixed.\\
-
     From Preposition \ref{proposition:squaredbound} we notice also that  $\sum_{y \in \mathbb{Z}^d} \mathbb{E}[|G_{E+i\eta}(x,y)|^2]$ always exists but might be infinite for $\eta \rightarrow 0$.
     We argue:
     \begin{align*}
@@ -853,7 +861,7 @@ The proof, recalls the one proposed in [DISERTORI]
         &\le \mathbb{E}\left[ \lim_{\eta \downarrow 0} \sum_{y \in \mathbb{Z}^{d}} |G_{E+i\eta}(x,y)|^{s} \right] \\
         &\le \liminf_{\eta \downarrow 0} \sum_{y \in \mathbb{Z}^{d}} \mathbb{E}[|G_{E+i\eta}(x,y)|^{s}] < \infty,
     \end{align*}
-    where in the first two steps we used that the function $x \mapsto x^{\frac{s}{2}}$ is monotone and $(\sum_{n} a_{n})^{s} \le \sum_{n} a_{n}^{s}$ for all $a_{n} \ge 0$ and $0 < s < 1$. The last two inequalities follow by Fatou and \eqref{eq:4.20}. From Lemma \ref{lemma:almostsurely} we notice that $$ \lim_{\eta \downarrow 0}\sum_{y \in \mathbb{Z}^d}|G_{E+i\eta}(x,y)|^2 < \infty \qquad \text{almost surely}$$. 
+    where in the first two steps we used that the function $x \mapsto x^{\frac{s}{2}}$ is monotone and $\left|\sum_{n} a_{n}\right|^{s} \le \sum_{n} |a_{n}|^{s}$ for all $a_{n} \ge 0$ and $0 < s < 1$. The last two inequalities follow by Fatou and \eqref{eq:4.20}. 
 \end{proof}
 
 
@@ -1012,14 +1020,14 @@ where $ \dfrac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta}$ is still finite and i
 
 \section{SAW representation of G }
 The proof of the theorem 3.1 is similar to the one given by Schenker in []. We are going to work with the Green's function defined on a volume
-where one site is removed every stage. Therefore , for any $ \Lambda \supset \mathbb{Z}^d$ (finite or infinite) the Green function changes:
+where one site is removed every stage. Therefore , for any $ \Lambda \subseteq \mathbb{Z}^d$ (finite or infinite) the Green function changes:
 \begin{equation}
     G^{\Lambda}_z(x,y) \coloneq \begin{cases}
         (H^{\Lambda}_\omega -z), \qquad \forall x,y \in \Lambda\\
         0 \qquad, \text{otherwise}
     \end{cases}
 \end{equation}
-where $H^{\Lambda}_\omega -z \in \mathbb{C}^{\Lambda \times \Lambda}$is the matrix obtained by restricting $ H_\omega -z$ to $ \Lambda$. In this thesis we will consider $ \Lambda = \mathbb{Z}^d$, but we leave the noation $\Lambda$ to highligth the fact that the same result holds for any volume.\\
+where $H^{\Lambda}_\omega -z \in \mathbb{C}^{\Lambda \times \Lambda}$ is the matrix obtained by restricting $ H_\omega -z$ to $ \Lambda$. In this thesis we will consider $ \Lambda = \mathbb{Z}^d$, but we leave the noation $\Lambda$ to highligth the fact that the same result holds for any volume.\\
 To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$. In this section, for semplicity during calculations, we will write $ G^{\Lambda}(x,y)$ instead of $ G^{\Lambda}_z(x,y)$.
 
 \begin{theorem}
@@ -1069,7 +1077,7 @@ G^\Lambda(x, y) = \sum_{x_1 \sim x} G^\Lambda(x, x)G^{\Lambda \setminus \{x\}}(x
 \begin{proof}[Proof of Theorem 5.8]
 Now we separate the case in which $ x_1 =y$ (which implies $|x-y|=1$).
 \[
-G^\Lambda(x, y) = G^\Lambda(x, x) \left(\sum_{x_1 \sim x, x_1 \neq y}G^{\Lambda_1}(x_1, y) +  I_{|x-y|=1}\,G^{\Lambda_1}(y,y)\right)
+G^\Lambda(x, y) = G^\Lambda(x, x) \left(\sum_{x_1 \sim x, x_1 \neq y}G^{\Lambda_1}(x_1, y) +  \delta_{|x-y|=1}\,G^{\Lambda_1}(y,y)\right)
 \]
 Iterating N times, it gives \eqref{eq:SAWrep}.
 \end{proof}
@@ -1145,33 +1153,38 @@ m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
 \clearpage
 \chapter{Connection to Long-Range SAW}
 
-The purpose of this chapter is to extend the self-avoiding walk representation of the resolvent, to random Hamiltonians with long-range hopping. In particular, we compare this setting with the previous model and apply the fractional moment method to study localization.
-The difference lies in the kinetic operator, which is replaced by the fractional descrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green's function, in sharp contrast with the standard exponential decay.
-This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 [].\\
+The purpose of this chapter is to extend the self-avoiding walk representation of the resolvent, to random Hamiltonians with long-range hopping. In particular, we compare this setting with the previous model and apply the fractional moment method to study localization.\\
+The difference lies in the kinetic operator, which is replaced by the fractional descrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green's function, in sharp contrast with the standard exponential decay.\\
+This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 \cite{disertori2024}.\\
 
 \section{The fractional Laplacian}
 The fractional kinetic operator also connects arbitrarily distant sites in the lattice, rather than just the first neighbors.
 \begin{definition}
-    Let $ -\Delta$ be defined as in 1.4 in Section 1. The fractional descrete Laplacian is $ (-\Delta)^\alpha$ for $ 0< \alpha<1$
+    Let $ -\Delta$ be defined as in Section \ref{sec:The_Hamiltonian}. The fractional descrete Laplacian is $ (-\Delta)^\alpha$ for $ 0< \alpha<1$
 \end{definition}
-Just as the standard descrete Laplacian, $ (-\Delta)^\alpha$ is bounded, self-adjoint and translation invariant. Furthermore, it satisfies $$ (-\Delta)^\alpha_{x,x} >0 \quad \forall x \in \mathbb{Z}^d, \qquad  (-\Delta)^\alpha_{x,y} < 0 \quad \forall x \ne y \,\,\text{in}\,\, \mathbb{Z}^d$$
+Just as the standard descrete Laplacian, $ (-\Delta)^\alpha$ is bounded, self-adjoint and translation invariant. Its entries satisfy $$ (-\Delta)^\alpha(x,x) >0 \quad \forall x \in \mathbb{Z}^d, \qquad  (-\Delta)^\alpha(x,y) < 0 \quad \forall x \ne y \,\,\text{in}\,\, \mathbb{Z}^d$$
 
 Moreover, its off-diagonal matrix elements exhibit polynomial decay: there exist constants $0 < c_{\alpha,d} \le \mathcal{C}_{\alpha,d} < \infty$ such that
 \begin{equation}
-\frac{c_{\alpha,d}}{|x-y|^{d+2\alpha}} \le -(-\Delta)^{\alpha}_{x,y} \le \frac{C_{\alpha,d}}{|x-y|^{d+2\alpha}} \label{eq:fractionalbound}
+\frac{c_{\alpha,d}}{|x-y|^{d+2\alpha}} \le -(-\Delta)^{\alpha}(x,y) \le \frac{C_{\alpha,d}}{|x-y|^{d+2\alpha}} \label{eq:fractionalbound}
 \end{equation}
-We notice that the fractional laplacian is surely bounded 
-From this bound, one deduces the summability of fractional powers of the matrix elements:
+We notice that for $x \ne y$, the fractional Laplacian is never exactly equal to zero. This characteristic describes the long-jump behavior: now, the descrete Laplacian reaches every site of the grid, since the values are never zero, in contrast with the standard case, where the only value different from zero were on the diagonal and first neighbor sites.\\
+Morover, \eqref{eq:fractionalbound} confirms the boundeness of the fractional operator for all $x\ne y$ and the summability of its kernel $\sum_{x\in\mathbb{Z}^{d}}|(-\Delta)^{\alpha}(0,x)|<\infty$. For the diagonal entries, it holds:
+$$
+(-\Delta)^{\alpha}(x,x)=-\sum_{y\ne x}(-\Delta)^{\alpha}(x,y)
+$$
+which confirms boundness also for $x=y$. Notice that for $\alpha=1$, we can use the same sum and obtain $ (-\Delta)(x,x) = -\sum_{y}(-\Delta)(x,y) = 2d$.\\
+We can already prove the summability of the fractional kernel too:
 \begin{lemma}
     For any $\alpha \in (0,1)$ and $s \in \left(\frac{d}{d+2\alpha},1\right]$,
     \begin{equation}
-    \sum_{x \in \mathbb{Z}^{d}} |(-\Delta)^{\alpha}_{0,x}|^s < \infty \label{eq:Dsbound}
+    \sum_{x \in \mathbb{Z}^{d}} |(-\Delta)^{\alpha} (0,x)|^s < \infty \label{eq:Dsbound}
 \end{equation}
 \end{lemma}
 
 \begin{proof}
 From \eqref{eq:fractionalbound}:
-$$ \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} |(-\Delta)^\alpha_{0,x}|^s \le C_{\alpha,d}^s \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} \frac{1}{|x|^{(d+2\alpha)s}}.$$
+$$ \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} |(-\Delta)^\alpha(0,x)|^s \le C_{\alpha,d}^s \sum_{|x| \ge 1, \, x \in \mathbb{Z}^d} \frac{1}{|x|^{(d+2\alpha)s}}.$$
 
 By standard comparison of the lattice sum with an integral on $\mathbb{R}^d$:
 \[
@@ -1200,29 +1213,45 @@ Since $\alpha > 0$ implies $d + 2\alpha > d$; for every $s \in \left(\frac{d}{d+
 \]
 \end{proof}
 
-\clearpage
 \section{The SAW Representation for Long-Range Resolvents}
-We consider the fractional Anderson Hamiltonian
+We consider the fractional Hamiltonian
 \begin{equation}
 H_{\alpha,\omega} = (-\Delta)^\alpha + \lambda V_\omega \quad \text{on } \ell^2(\mathbb{Z}^d),
 \end{equation}
-where $0 < \alpha < 1$ and $V_\omega$ is a diagonal matrix with i.i.d. random entries. In this case, we generalise directly for an arbitrary continuous distribution with a compactly supported, bounded density. \\
+where $0 < \alpha < 1$ and $V_\omega$ is a diagonal matrix with i.i.d. random entries defined as in Section \ref{sec:The_Hamiltonian}.
 The Green's function $G_z = (H_{\alpha,\omega} - z)^{-1}$ is well-defined for all $z \in \mathbb{C} \setminus \mathbb{R}$, and its decay at strong disorder is closely related to the polynomial decay of the fractional Laplacian.\\
 
-In the long-range scenario, we use the geometric resolvent expansion to represent the fractional moments as a sum over self-avoiding paths. 
-Because $(-\Delta)^\alpha$ possesses long-range jumps, we are not just considering nearest neighbors, but arbitrary sites on the lattice. We define the step weight kernel for the SAW as $D(x,y) \coloneq |(-\Delta)^\alpha(x,y)|^s$, which generates a transition probability $p(x,y) \coloneq \frac{D(x,y)}{\sum_{z \ne x} D(x,z)}$. 
+As before, in the long-range scenario, we use the geometric resolvent expansion to represent the fractional moments as a sum over self-avoiding paths. 
+Since we are considring arbitrary sites on the lattice, we define the step weight kernel for the SAW as $D(x,y) \coloneq |(-\Delta)^\alpha(x,y)|^s$, which generates a transition probability $p(x \to y) \coloneq \frac{D(x,y)}{\sum_{z \ne x} D(x,z)}$. 
 This is well-defined for $s \in \left(\frac{d}{d+2\alpha}, 1\right)$ because the kernel is summable: $\sum_{x \ne 0} |(-\Delta)^\alpha(0,x)|^s < \infty$ ( See \eqref{eq:Dsbound}).
-
-As proven in [Theorem 1 and 2 of PAPER DISERTORI], the averaged fractional Green's function satisfies
+From this essential condition, we develop the same strategy as for the standard Anderson resolvent. The new definitions for SAWs are all generated by $D$.
+\paragraph{SAW definitions for the descrete Anderson model.}
+The averaged fractional Green function satisfies
 \begin{equation}
-\mathbb{E}[|G_{z}(x,y)|^{s}] \le \frac{K_{0}\theta_{s}}{\lambda^{s}} \frac{1}{|x-y|^{d+2\alpha_{s}}} \qquad \forall\, x, y \in \mathbb{Z}^{d},\; x \ne y, \label{eq:LRSAW}
+\mathbb{E}[|G_{z}(x,y)|^{s}] \le \frac{K_{0}}{(1-s)\lambda^{s}} \frac{1}{|x-y|^{d+2\alpha_{s}}} \qquad \forall\, x, y \in \mathbb{Z}^{d},\; x \ne y, \label{eq:LRSAW}
 \end{equation}
-uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda_0(s) \coloneq \left(\frac{\theta_s}{R_{\chi_D}}\right)^{\frac{1}{s}}$. Here, $R_{\chi_D}$ is the radius of convergence of the susceptibility generated by $D(0,x)$, and $2\alpha_s \coloneq s(d+2\alpha)-d$.
-The constant $K_0= K_0(d,\alpha,s)$ comes from the two-point function bound of the self-avoiding walk, and $\theta_s = \frac{1}{1-s}$ comes from the \textit{a priori bound}. 
+uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda_0(s) \coloneq \left(\frac{1}{(1-s)R_{\chi_D}}\right)^{\frac{1}{s}}$. Here, $R_{\chi_D}$ is the radius of convergence of the susceptibility generated by $D(0,x)$, and $2\alpha_s \coloneq s(d+2\alpha)-d$.
+The constant $K_0= K_0(d,\alpha,s)$ comes from the two-point function bound of the self-avoiding walk, and $ \frac{1}{(1-s)\lambda^s}$ comes from the \textit{a priori bound}. 
 
 
 
-As in the previous Chapter, in order to prove \eqref{eq:LRSAW}, we organize the proof into three main steps:
+As in the previous Chapter, we prove \eqref{eq:LRSAW} using a SAW representation of $G_{\alpha,\omega}$.
+\begin{theorem}
+    Let $s \in (\frac{d}{d+2\alpha},1)$. Then, for all the above definitions, it holds 
+    \begin{equation}
+        \mathbb{E}(|G_{\alpha,\omega}(x,y)|^s)\le\frac{1}{\lambda^{s}(1-s)}C_{\beta}^{D}(y-x)+\frac{1}{|\mathrm{Im}(z)|^{s}}\,R_{N}
+    \end{equation}  
+    for all $x,y \in \mathbb{Z}^d$. Moreover, 
+    \begin{equation}
+        R_N \coloneqq \left(\frac{1}{(1-s)\lambda^{s}}\right)^{N}\sum_{\gamma\in S_{N+1}(x,y)}\prod_{j=0}^{N-1}\,D(\gamma_{j},\gamma_{j+1}).
+    \end{equation} 
+\end{theorem}
+
+
+
+
+
+
 \begin{enumerate}
     \item \textbf{Resolvent Identity Iteration:} We expand the restricted Green's function $G^{\Lambda}_z (x,y)$ by iterating the resolvent identity $N$ times, pulling out the off-diagonal elements $\Delta^\alpha(\gamma_j,\gamma_{j+1}) = -(-\Delta)^\alpha(\gamma_j,\gamma_{j+1}) > 0$ along self-avoiding paths $\gamma \in \mathcal{S}_n(x,y)$. Since $0<\alpha <1$, we keep the Laplacian fractional instead of reducing it to nearest-neighbor hopping.
     \item \textbf{Averaging and A Priori Bound:} We take the fractional moment of the expansion and apply subadditivity. Using the a priori bound to decouple the diagonal resolvent terms, we obtain:

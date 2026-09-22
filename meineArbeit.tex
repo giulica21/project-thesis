@@ -26,7 +26,7 @@
 %\institut{Institut f\"ur Numerische Simulation}
 %\institut{Forschungsinstitut f\"ur Diskrete Mathematik}
 %Titel der Bachelorarbeit
-\title{Self-avoiding walks in Anderson localisation}
+\title{Self-avoiding walks in Anderson localization}
 %Do not change!
 \ausarbeitungstyp{Bachelor's Thesis Mathematics}
 
@@ -42,11 +42,14 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \numberwithin{equation}{section}
 \numberwithin{theorem}{section}
 \newtheorem{claim}[theorem]{Claim}
+\newtheorem{example}[theorem]{Example}
+
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -72,84 +75,82 @@
 \addcontentsline{toc}{chapter}{Introduction}
 \chapter*{Introduction}
 The Anderson localization model was introduced by the physicist P.W. Anderson in 1958 \cite{anderson1958} to explain the quantum mechanical effects of disorder in materials.
-The model considers a d-dimensional grid, in which each site represents an atom.
-Anderson discusses the behaviour of electrons in dirty crystals, which is the quantum mechanical analogue of a random walk in a random environment.
-From a heuristical point of view, we consider electrons that jump from atom to atom, subject to an external random potential that influences their motion.
-When the disorder is strong enough, these particles become trapped in a specific region and can no longer spread to generate electric conduction.
-This complete absence of quantum transport is called Anderson localisation, and it essentially turns the material into an insulator. 
-This is in sharp contrast with the behaviour of electrons in ideal, perfectly ordered crystals, which always act as conductors.
-\\
-In the last decades, the study of random operators has become an important field of mathematical physics, leading to a tremendous amount of research activity and many rigorous mathematical results.
-\\
-The two important methods to prove Anderson localization are the \textit{multiscale analysis} (MSA), developed by Fr\"ohlich and Spencer \cite{frohlich1983} , and the 
-\textit{ fractional moment method} (FMM) by Aizenman and Molchanov \cite{aizenman1993} . Even though the multiscale analysis method has
-lead to a multitude of results on spectral and dynamical localization for a wide range of
-models, in this thesis we will focus on the fractional moments method, which has provided a simple
+In particular, Anderson's purpouse was to study the behavior of electrons in a lattice with disordered potential energy on the sites, which is the quantum mechanical analogue of a random walk in a random environment.\\
+
+The model is governed by a random Schr\"odinger operator that describes the total energy of the system. This operator is composed of a kinetic term and a random potential term. The kinetic energy allows the particles to hop from site to site, while the random potential disturbs their motion through the material.
+When the disorder is sufficiently strong, these particles become trapped in a localized region and can no longer spread to conduct electricity. This phenomenon is known as Anderson localization, and it effectively turns the material into an insulator. 
+This stands in sharp contrast to the behavior of electrons in ideal, perfectly ordered crystals, which naturally act as conductors.\\
+
+In the last decades, the study of random operators has become an important field of mathematical physics.
+The two important methods that have been used to prove on which condition on the disorder level Anderson localization holds are the \textit{multiscale analysis} (MSA), developed by Fr\"ohlich and Spencer \cite{frohlich1983}, and the 
+\textit{ fractional moment method} (FMM) by Aizenman and Molchanov \cite{aizenman1993}. The multiscale analysis method focuses on the bound of the second moments of the operator's resolvent, whereas the fractional moments method utilizes its fractional powers. In this thesis, we are going to focus on the second one, since it provides a simple
 perspective on localization and has enabled exponentially decaying bounds on expectation
 values of various propagation kernels.
 
-\paragraph{Structure of the thesis} In Chapter 1, we introduce the Anderson model, focusing on the properties of its components, its spectrum, and the main results known to date.
+\subsection*{Structure of the thesis}
+In Chapter 1, we introduce the Anderson model, focusing on the properties of its components, its spectrum, and the main results known to date.\\
 
-In Chapter 2, we define spectral and dynamical localisation. We also define exponential dynamical localisation and show how it implies that all moments of the position operator remain bounded in time.
+\noindent
+In Chapter 2, we define spectral and dynamical localization. We also define exponential dynamical localization and show how it implies that all moments of the position operator remain bounded in time.\\
 
-In Chapter 3, we introduce the Green function as the resolvent of the model and explore how the exponential decay of its fractional power leads to localisation. Specifically, we rely on simple analytical tools, such as the resolvent identity of linear operators and the resulting a priori bound.
+\noindent
+In Chapter 3, we introduce the Green function as the resolvent of the model and explore how the exponential decay of its fractional power leads to localization. Specifically, we also introduce two central analytical tools, such as the \textit{resolvent identity} of linear operators and the resulting \textit{a priori bound}.\\
 
-In Chapter 4, we provide the preliminary definitions for self-avoiding walk (SAW) methods and obtain the main results of this thesis using a new representation for the Green's function.
+\noindent
+In Chapter 4, we provide the preliminary definitions for self-avoiding walk (SAW) methods and obtain the main results of this thesis using a new representation for the Green function.\\
 
-The final chapter offers a comparison between the standard model with nearest-neighbor jumps and a model with long-range jumps. We define the fractional descrete Laplacian and basically follow the proof structure of the previous Chapters in order to obtain similar results but with a polinomial decay.
-\paragraph{Prerequisites}
-It is useful to have some familiarity with measure theory, basic probabilistic concepts such as indipendence and continuous distributions, foundations of the theory of linear operators in Hilbert spaces, up to a general idea of the consequences of the spectral theorem for self adjoint operators. \\
-
-
-
+\noindent
+Finally,  Chapter 5 offers a comparison between the standard model with nearest-neighbor jumps and a model with long-range jumps. We define the fractional discrete Laplacian and basically follow the proof structure of the previous Chapters in order to obtain similar results but with a polynomial decay.
+\subsection*{Prerequisites}
+It is useful to have some familiarity with measure theory, basic probabilistic concepts, foundations of the theory of linear operators in Hilbert spaces and the consequences of the spectral theorem for self-adjoint operators. \\
 
 
 \clearpage
 \chapter{The Anderson Model}
-Transport phenomena in a disordered material are often described via discrete random Schr\"odinger operator. In quantum mechanics, it corresponds to the classical total energy decomposing into kinetic and potential energy. On the lattice $\mathbb{Z}^d$, it takes the form of an infinite random matrix called the \textit{Hamiltonian}: 
+In this chapter, the random Schr\"odinger operator is the center of our attention. First, we define it as the \textit{Hamiltonian} and discuss the physical meaning of its time-evolving solutions. Right after, we focus on the properties of each of its components and their spectra. Finally, we discuss the main results and some open problems in the field.\\
+\section{The Hamiltonian}
+\label{sec:The_Hamiltonian}
+Transport phenomena in disordered materials are often described via discrete random Schr\"odinger operators. In quantum mechanics, the \textit{Hamiltonian} represents the total energy of the system, decomposing naturally into kinetic and potential energy. It takes the form of an infinite random matrix on the lattice $\mathbb{Z}^d$, 
 \begin{equation}
-    H_\omega = - \Delta + \lambda V_\omega.
+    H_\omega = - \Delta + \lambda V_\omega,
 \end{equation}
+where $-\Delta$ is a deterministic matrix representing the kinetic energy, $V_\omega$ is a diagonal matrix with random entries representing the disordered potential, and $\lambda$ is the disorder parameter.
 
-where $-\Delta$ is a deterministic matrix,  $V_\omega $ is a diagonal matrix with random entries and $\lambda$ is the disorder parameter.\\
-This operator acts on the Hilbert space 
+This operator acts on the Hilbert space of square summable sequences
 \[
-\ell^2(\mathbb{Z}^d) = \{ u : \mathbb{Z}^d \to \mathbb{C} : \sum_{x \in \mathbb{Z}^d} |u(x)|^2 < \infty\}
+\ell^2(\mathbb{Z}^d) = \left\{ u : \mathbb{Z}^d \to \mathbb{C} \ \middle| \ \sum_{x \in \mathbb{Z}^d} |u(x)|^2 < \infty \right\}
 \]
-with inner product $\langle u, v \rangle = \sum_n \overline{u(x)} v(x)$. 
-\\
+with the inner product defined as $\langle u, v \rangle = \sum_{x \in \mathbb{Z}^d} \overline{u(x)} v(x)$.\\
 
-In quantum mechanics, a physical state describing a single particle (such as an electron) is represented by a normalized wave function $\psi \in \ell^2(\mathbb{Z}^d)$: 
+The mathematical space $\ell^2(\mathbb{Z}^d)$ is exactly where the physical reality of the electron is recorded. In quantum mechanics, the state of the system is described by a vector in this space : a normalized wave function $\psi \in \ell^2(\mathbb{Z}^d)$, such that
 \[
 \|\psi\|_{\ell^2}^2 = \sum_{x \in \mathbb{Z}^d} |\psi(x)|^2 = 1.
 \]
-The quantity $P(x) = |\psi(x)|^2$ defines a probability mass function on the lattice $\mathbb{Z}^d$: it represents the probability of finding the particle at site $x \in \mathbb{Z}^d$. \\
-This functions are the solutions to the time-evolving Schr\"odinger operator $ H_\omega \phi (t)= i\partial_t \phi(t)$. Because the time evolution operator $e^{-itH_\omega}$ is unitary on $\ell^2(\mathbb{Z}^d)$, the total probability is strictly conserved at all times $t \in \mathbb{R}$:
+The quantity $P(x) = |\psi(x)|^2$ defines a probability mass function on the lattice $\mathbb{Z}^d$, representing the exact probability of finding the particle at site $x$. 
+
+The state functions are the solutions to the time-dependent Schr\"odinger equation $H_\omega \psi(t) = i\partial_t \psi(t)$. Because the resulting time evolution operator $e^{-itH_\omega}$ is unitary on $\ell^2(\mathbb{Z}^d)$, the total probability is conserved at all times $t \in \mathbb{R}$:
 \begin{equation}
 \|\psi(t)\|_{\ell^2}^2 = \|e^{-itH_\omega}\psi_0\|_{\ell^2}^2 = \|\psi_0\|_{\ell^2}^2 = 1.
 \end{equation}
-In particular, if the particle is initially placed at a specific site $x \in \mathbb{Z}^d$ with $\psi(0) = \delta_x$, the transition probability to find the particle at site $y \in \mathbb{Z}^d$ at time $t$ is given by the squared transition amplitude:
+
+In particular, if the particle is initially placed at a specific site $x \in \mathbb{Z}^d$ with $\psi_0 = \delta_x$, the transition probability to find the particle at site $y \in \mathbb{Z}^d$ at time $t$ is given by the squared transition amplitude:
 \begin{equation}
-P(x \to y; t) = | e^{-itH_\omega} (x,y)|^2.
+P(x \to y; t) = |\langle \delta_y, e^{-itH_\omega} \delta_x \rangle|^2.
 \end{equation}
 
-As we'll see later on, under certain conditions on the disorder parameter, P tends to 0 faster than any polinomial at all t for $|x-y| \rightarrow \infty$.
+As we will see later, under certain conditions on the disorder parameter, this probability $P$ tends to $0$ faster than any polynomial at all times $t$ as the distance $|x-y| \to \infty$, mathematically proving that the particle remains trapped.
 \vspace{0.3 cm}
 
-
-\section{The Hamiltonian}
-\label{sec:The_Hamiltonian}
-\paragraph{The Descrete Laplacian} is the descrete analogue of the usual Laplacian ($ \sum_j \partial^2/\partial x_j^2$).
-For the functions $u \in \ell^2(\mathbb{Z}^d)$ it is defined as:
+\subsection*{The  Discrete Laplacian} 
+The  discrete Laplacian is the  discrete analogue of the usual Laplacian ($ \sum_j \partial^2/\partial x_j^2$).
+For the functions $u \in \ell^2(\mathbb{Z}^d)$ it is defined as
 
 \begin{equation}
     -\Delta u(x) := \sum_{y \in \mathbb{Z}^d,|x-y|=1} u(x) - u(y) \quad \text{for } x \in \mathbb{Z}^d.
 \end{equation}
+where $|*|$ denotes the Euclidean norm.
 
-
-
-where $|*|$ denotes the $ \ell^2$ norm.
-For each site $x$, there are $2d$ possible $y$ such that $|x-y|=1$. Thus, we can define an infinte matrix such that: \[
+For each site $x$, there are $2d$ possible $y$ such that $|x-y|=1$. Thus, we can define an infinte matrix such that \[
 (-\Delta)(x,y) = \begin{cases} 
 2d & \text{if } x = y  \\
 -1 & \text{if } |x - y| = 1  \\
@@ -157,189 +158,209 @@ For each site $x$, there are $2d$ possible $y$ such that $|x-y|=1$. Thus, we can
 \end{cases}
 \]
 
-The discrete Laplacian represents the kinetic term and connects neighbour sites on the lattice, such that the electron can transition from one to another.\\
+The discrete Laplacian represents the kinetic term and connects neighboring sites on the lattice, allowing the electron to transition from one to another.
 
-
-For $u \in \ell^2(\mathbb{Z}^d)$, $-\Delta u$ is summable in $\ell^2$, bounded, and self-adjoint.
-In fact we can show:
-
+The operator $-\Delta$ is bounded and self-adjoint on $\ell^2(\mathbb{Z}^d)$. To establish boundedness, we verify that $-\Delta u \in \ell^2(\mathbb{Z}^d)$ for any $u \in \ell^2(\mathbb{Z}^d)$. We can show this through the following,
 \begin{align*}
-\sum_{x \in \mathbb{Z}^d} |-\Delta u(x)|^2 &= \sum_{x \in \mathbb{Z}^d} \left| \sum_{ y \in \mathbb{Z}^d, |x - y| = 1} \bigl(u(x) - u(y)\bigr) \right|^2 \\
+\sum_{x \in \mathbb{Z}^d} |-\Delta u(x)|^2 &= \sum_{x \in \mathbb{Z}^d} | \sum_{\substack{y \in \mathbb{Z}^d \\ |x - y| = 1}} \bigl(u(x) - u(y)\bigr)|^2 \\
 &\leq  \sum_{x \in \mathbb{Z}^d} \left(2d \sum_{|x - y| = 1} |u(x) - u(y)|^2 \right) \\
 &\leq 2d \sum_{x \in \mathbb{Z}^d} \left( \sum_{|x - y| = 1} \left(|u(x)|^2 + |u(y)|^2+2|u(x)u(y)|\right) \right) \\
 &\leq 2d \sum_{x \in \mathbb{Z}^d} \left( 2 \sum_{|x - y| = 1} \left(|u(x)|^2 + |u(y)|^2\right) \right) \\
-&\leq 2d \cdot 2d \cdot 4 \|u\|_2^2 < \infty
+&= 2d \cdot 2 \cdot 4d \|u\|_{\ell^2}^2 = 16d^2 \|u\|_{\ell^2}^2 < \infty,
 \end{align*}
-
-where we used the bound over the number of neighbors and Cauchy Schwarz, then the Young's inequality and in the last step the invariance under translation of the $ \ell^2$ norm.\\
-The boundedness comes from:
+where we applied the Cauchy-Schwarz inequality to the sum over the $2d$ neighbors, followed by Young's inequality, and finally the translation invariance of the $\ell^2$ norm. 
+This guarantees the operator is bounded:
 \[
-\frac{\|\Delta u\|_{\ell^2}^2}{\|u\|_{\ell^2}^2} \le 16 d^2 \implies \|\Delta\| = \sup_{u \ne 0} \frac{\|\Delta u\|_{\ell^2}}{\|u\|_{\ell^2}}\le 4d.
+\frac{\|-\Delta u\|_{\ell^2}^2}{\|u\|_{\ell^2}^2} \le 16 d^2 \implies \|-\Delta\| = \sup_{u \ne 0} \frac{\|-\Delta u\|_{\ell^2}}{\|u\|_{\ell^2}} \le 4d.
 \]
 
-To prove self-adjointness, we only need to show symmetry (since $-\Delta$ is bounded). For $ u, v \in \ell^2(\mathbb{Z}^d)$ and $ y \in \mathbb{Z}^d$:
+To prove self-adjointness for a bounded operator, we only need to show symmetry. For $u, v \in \ell^2(\mathbb{Z}^d)$:
 \begin{align*}
-\langle u, -\Delta v \rangle = \sum_{x \in \mathbb{Z}^d}\overline{u(x)} (-\Delta v(x)) &= \sum_{x \in \mathbb{Z}^d} \overline{u(x)} \left( \sum_{|x - y| = 1} v(x) - v(y) \right) \\
-&= \sum_{x \in \mathbb{Z}^d} \left( \overline{u(x)} 2d v(x) -  \sum_{|x - y| = 1} \overline{u(x)} v(y)\right)\\
+\langle u, -\Delta v \rangle &= \sum_{x \in \mathbb{Z}^d} \overline{u(x)} \left( \sum_{|x - y| = 1} (v(x) - v(y)) \right) \\
+&= \sum_{x \in \mathbb{Z}^d} \left( 2d \overline{u(x)} v(x) -  \sum_{|x - y| = 1} \overline{u(x)} v(y)\right)\\
 &=\sum_{x \in \mathbb{Z}^d} 2d \overline{u(x)} v(x) - \sum_{x \in \mathbb{Z}^d} \sum_{|x - y| = 1} \overline{u(y)} v(x) \\
-&= \sum_{x \in \mathbb{Z}^d}v(x) \left( \sum_{|x - y| = 1} \overline{u(x)} - \overline{u(y)} \right)\\
- &= \sum_{x \in \mathbb{Z}^d}v(x) \overline{(-\Delta u(x))} =\langle - \Delta u, v \rangle.
-\end{align*}\\
+&= \sum_{x \in \mathbb{Z}^d} v(x) \left( \sum_{|x - y| = 1} (\overline{u(x)} - \overline{u(y)}) \right)\\
+ &= \sum_{x \in \mathbb{Z}^d} v(x) \overline{(-\Delta u(x))} = \langle - \Delta u, v \rangle.
+\end{align*}
 \vspace{1em}
 
-The spectrum of a bounded, self-adjoint operator is real-valued, ad in this case equal to the closed interva $[0,4d]$. In this range, we find the levels of kinetic energy that an electron owns.
-In order to understand this result better, we consider the discrete Fourier transform:
+The spectrum of a bounded, self-adjoint operator is a compact subset of $\mathbb{R}$, which in this case is exactly the closed interval $[0,4d]$. This range represents the allowed kinetic energy levels an electron can possess. 
+
+To understand this result explicitly, we apply the discrete Fourier transform:
 \[
 \mathcal{F} \colon \ell^2(\mathbb{Z}^d) \longrightarrow L^2([0, 2\pi)^d)
 \]
-such that:
+defined by
 \[
 (\mathcal{F}u)(k) \coloneqq \lim_{N \rightarrow \infty} (2\pi)^{-\frac{d}{2}} \sum_{|x| \leq N} u(x)\, e^{- i k \cdot x}, \qquad k \in [0, 2\pi)^d.
 \]
 
-We consider now calculations for $ u \in \ell^1( \mathbb{Z}^d)$. For $ \ell^1$ is a dense subset of $\ell^2$ and $ \mathcal{F}$ unitary, we can extend the results by continuity for all functions $ \ell^2 (\mathbb{Z}^d)$.
-
+We first assume $u \in \ell^1(\mathbb{Z}^d)$. Because $\ell^1(\mathbb{Z}^d)$ is a dense subset of $\ell^2(\mathbb{Z}^d)$ and the Fourier transform $\mathcal{F}$ is unitary, we can extend the results by continuity to all functions in $\ell^2(\mathbb{Z}^d)$.
 \begin{align*}
     (\mathcal{F} (-\Delta u))(k) &= (2\pi)^{-\frac{d}{2}} \sum_{x \in \mathbb{Z}^d} (-\Delta u)(x)\, e^{-i k \cdot x} \\
     &= (2\pi)^{-\frac{d}{2}} \sum_{x \in \mathbb{Z}^d} \left( \sum_{|y-x|=1} \bigl(u(x) - u(y)\bigr) \right) e^{-i k \cdot x} \\
     &= (2\pi)^{-\frac{d}{2}} \sum_{x \in \mathbb{Z}^d} \left( 2d\, u(x) - \sum_{|y-x|=1} u(y) \right) e^{-i k \cdot x} \\
     &= 2d\,(\mathcal{F}u)(k) - (2\pi)^{-\frac{d}{2}} \sum_{x \in \mathbb{Z}^d} \sum_{|y-x|=1} u(y)\, e^{-i k \cdot x} \\
-    &= 2d\,(\mathcal{F}u)(k) - (2\pi)^{-\frac{d}{2}} \sum_{x \in \mathbb{Z}^d} u(y) \sum_{|m|=1} e^{-i k \cdot (y+m)} \quad \text{\small (for $m = x - y$)} \\
+    &= 2d\,(\mathcal{F}u)(k) - (2\pi)^{-\frac{d}{2}} \sum_{y \in \mathbb{Z}^d} u(y) \sum_{|m|=1} e^{-i k \cdot (y+m)} \quad \text{\small (setting $m = x - y$)} \\
     &= 2d\,(\mathcal{F}u)(k) - \left( (2\pi)^{-\frac{d}{2}} \sum_{y \in \mathbb{Z}^d} u(y)\, e^{-i k \cdot y} \right) \sum_{|m|=1} e^{-i k \cdot m} \\
     &= 2d\,(\mathcal{F}u)(k) - (\mathcal{F}u)(k) \sum_{j=1}^d \left( e^{-i k_j} + e^{i k_j} \right) \\
     &= \left( 2 \sum_{j=1}^d ( 1-\cos(k_j)) \right)  (\mathcal{F}u)(k).
-\end{align*}\\
-We obtain the multiplication operator: $$ \mathcal{F} \Delta \mathcal{F}^{-1}=  2 \sum_{j=1}^d (1-\cos(k_j)) $$ on $ L^2 ( [0,2\pi)^d) $ in the variable $k= (k_1,\dots.., k_d)$. We notice that the Laplacian doesn't have eigenvalues in $ \ell^2(\mathbb{Z}^d)$.
-Another similarity of $\Delta$ with the continuum Laplacian is that it has plane waves as generalized eigenfunctions. To see this, let $k \in [0,2\pi)^d$ and set
-\[
-\phi_k(x) := e^{-i x \cdot k}
-\]
-While $\phi_k \notin \ell^2(\mathbb{Z}^d)$, $\Delta$ acts on it as
-
-\begin{align*}
-    (\Delta \phi_k)(x) &= \sum_{|y|=1} (e^{-in \cdot k} - e^{-i(x+y)\cdot k}) \\
-    &=  2d \phi_k(x) -\left( \sum_{j=1}^d 2\cos(k_j) \right) \phi_k(x)
-    &= \left( 2 \sum_{j=1}^d (1-\cos(k_j)) \right) \phi_k.
 \end{align*}
-Thus $\phi_k$ is a bounded generalized normalized eigenfunction of $\Delta$ to the spectral value $2\sum_{j=1}^d (1-\cos(k_j))$. thus, the spectrum is continuous and bounded in $ [0, 2 \dot (2d) ]$.\\
+Thus, the Laplacian acts as a simple multiplication operator in Fourier space
+$$ \mathcal{F} (-\Delta) \mathcal{F}^{-1} =  2 \sum_{j=1}^d (1-\cos(k_j)) $$ 
+on $L^2([0,2\pi)^d)$ in the momentum variable $k= (k_1,\dots, k_d)$. 
 
-\paragraph{The Random Potential}
-is expressed as the multiplication operator $V_\omega(x)= \omega_x$. It is a diagonal matrix, where $ \omega = (\omega_x)_{x \in \mathbb{Z}^d}$ is the set of the indipendent identically distributed real-valued random entries. Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $x \in \mathbb{Z}^d$ . \\
+\begin{remark}
+    The discrete Laplacian has no true eigenvalues in $\ell^2(\mathbb{Z}^d)$. However, similar to the continuum Laplacian, it possesses plane waves as generalized eigenfunctions. For a fixed momentum $k \in [0,2\pi)^d$, we define:
+    \[
+    \phi_k(x) := e^{-i x \cdot k}.
+    \]
+    While $\phi_k \notin \ell^2(\mathbb{Z}^d)$ because it is not square-summable, the operator $(-\Delta)$ acts on it as
+    \begin{align*}
+        (-\Delta \phi_k)(x) &= \sum_{|m|=1} (e^{-ix \cdot k} - e^{-i(x+m)\cdot k}) \\
+        &=  2d \phi_k(x) - \left( \sum_{j=1}^d 2\cos(k_j) \right) \phi_k(x) \\
+        &= \left( 2 \sum_{j=1}^d (1-\cos(k_j)) \right) \phi_k(x).
+    \end{align*}
+    Thus, $\phi_k$ is a bounded, generalized eigenfunction of $(-\Delta)$ corresponding to the spectral value $2\sum_{j=1}^d (1-\cos(k_j))$. Since $\cos(k_j)$ oscillates between $-1$ and $1$, the spectrum of the discrete Laplacian is purely continuous and strictly bounded within the interval $[0,4d]$.
+\end{remark}
+\subsection*{The Random Potential}
+The random potential is expressed as the multiplication operator $V_\omega(x)= \omega_x$. It is a diagonal matrix, where $ \omega = (\omega_x)_{x \in \mathbb{Z}^d}$ is a set of indipendent identically distributed real-valued random entries. Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $x \in \mathbb{Z}^d$.
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{IMG_1129.jpeg}
+    \caption{A disordered lattice system. Picture from \cite{aizenman2015}}
+\end{figure}
 
-\begin{definition}[ i.i.d. random variables]Let $(\Omega, \mathcal{A}, \mathbb{P})$ be a general probability space.\\
-A family of random variables $(\omega_x)_{x \in \mathbb{Z}^d}$ defined on $(\Omega, \mathcal{A}, \mathbb{P})$ is \textbf{identically distributed} if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_x \in A) = \mu(A)$ for all $x \in \mathbb{Z}^d$ and all Borel sets $A \subset \mathbb{R}$.\\
+\begin{definition}[i.i.d. random variables]Let $(\Omega, \mathcal{A}, \mathbb{P})$ be a general probability space. A family of random variables $(\omega_x)_{x \in \mathbb{Z}^d}$ defined on $(\Omega, \mathcal{A}, \mathbb{P})$ is \textbf{identically distributed} if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_x \in A) = \mu(A)$ for all $x \in \mathbb{Z}^d$ and all Borel sets $A \subset \mathbb{R}$.\\
 The family $(\omega_x)_{x \in \mathbb{Z}^d}$ is \textbf{independent} if$$\mathbb{P}(\omega_{x_1} \in A_1, \dots, \omega_{x_l} \in A_l) = \prod_{j=1}^l \mathbb{P}(\omega_{x_j} \in A_j) = \prod_{j=1}^l \mu(A_j)$$for every finite subset of distinct indices $\{x_1, \dots, x_l\} \subset \mathbb{Z}^d$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
 \end{definition}
 
 In this thesis we assume that $\omega_x$ are uniformly distributed in the real closed interval $ [-1,1]$.\\
-We consider then the probability space as the following infinite prduct space:
+We consider then the probability space as the following infinite prduct space
 \[
 (\Omega, \mathcal{A},\mathbb{P})= \bigotimes_{x \in \mathbb{Z}^d} ([-1,1], \mathcal{B}([-1,1]), \mu),
 \]
-where $\mathcal{B}([-1,1])$ is the Borel $\sigma$-algebra and $ d\mu(\omega_x)= \rho(\omega_x)d\omega_x$ where the continuous density is given by $\rho= \frac{1}{2}\chi_{[-1,1]}$.\\
-It is possible to generalise the results to all absolutely continuous distributions where $\rho$ has compact bounded support. \\
+where $\mathcal{B}([-1,1])$ is the Borel $\sigma$-algebra and $ d\mu(\omega_x)= \rho(\omega_x)d\omega_x$ where the continuous density is given by $\rho= \frac{1}{2}\chi_{[-1,1]}$.
+\begin{remark}
+     It is possible to generalise the results to all absolutely continuous distributions where $\rho$ has compact support.
+\end{remark}
+   
+
+
 
 As a diagonal operator, the spectrum of $V_\omega$ consists of the random entries $\omega_x$, each corresponding to an eigenvector given by the Dirac delta $\delta_x \in \ell^2(\mathbb{Z}^d)$.\\
 
 
-As for the descrete laplacian, the random term is summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Self-adjointness of the maximal multiplication operator by a real-valued function is a fact. For definition $V_\omega$ is bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and  since $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
-\paragraph{The Disorder Parameter} is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localization, which makes it one of the central objects of interest of this thesis. It allows us to adjust the strength of the random disorder with respect
+As for the  discrete laplacian, the random term is summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Self-adjointness of the maximal multiplication operator by a real-valued function is a fact. For definition $V_\omega$ is almost surely bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and  since $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
+\subsection*{The Disorder Parameter} 
+The disorder parameter is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localization, which makes it one of the central objects of interest of this thesis. It allows us to adjust the strength of the random disorder with respect
 to the deterministic part.\\
 Let's consider the two extreme cases:
 \begin{itemize}
     \item For $\boldsymbol{\lambda=0}$ the Hamiltonian looses the random term and only considers the Laplacian. Without disorder, the material behaves like a perfect crystal without localization. 
     The state functions are continuous plane waves and the spectrum is also continuous between $[0,4d]$.
-    \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_\omega \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits trivial localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
+    \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_\omega \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits trivial localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the almost sure spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
 \end{itemize}
 
 
 
 \section{The spectrum}
 \label{sec:the_spectrum}
-
-The next goal is to determine the spectrum of $H_\omega$.
-Because the random potential entries $(\omega_x)_{x\in\mathbb{Z}^d}$ are independent and identically distributed, the random Hamiltonian $H_\omega = -\Delta + \lambda V_\omega$ is an ergodic family of bounded self-adjoint operators. A standard consequence of ergodic operator theory is that the spectrum of $H_\omega$ is almost surely deterministic: there exists a closed, non-random set $\Sigma \subset \mathbb{R}$ such that
+The next goal is to determine the spectrum of $H_\omega$. Because the random potential entries $(\omega_x)_{x\in\mathbb{Z}^d}$ are independent and identically distributed, the random Hamiltonian $H_\omega = -\Delta + \lambda V_\omega$ forms an ergodic family of bounded self-adjoint operators. A standard consequence of ergodic operator theory is that the spectrum of $H_\omega$ is almost surely deterministic: there exists a closed, non-random set $\Sigma \subset \mathbb{R}$ such that
 \begin{equation}
-\sigma(H_\omega) = \Sigma \qquad \text{for } \mathbb{P}\text{-almost all } \omega \in \Omega.
+    \sigma(H_\omega) = \Sigma \qquad \text{for } \mathbb{P}\text{-almost all } \omega \in \Omega.
 \end{equation}
 
-More specifically, as proven in \cite[Theorem 2]{stolz2011}, the almost sure spectrum can be determined explicitly as the Minkowski sum of the spectrum of the kinetic energy operator and the support of the random potential distribution:
+More specifically, as proven in \cite[Theorem 2]{stolz2011}, this almost sure spectrum can be determined explicitly as the Minkowski sum of the kinetic energy spectrum and the support of the random potential distribution:
 \begin{equation}
-\Sigma = \sigma(-\Delta) + \lambda \, \mathrm{supp}(\mu).
+    \Sigma = \sigma(-\Delta) + \lambda \, \mathrm{supp}(\mu).
 \end{equation}
-Recall from Section~\ref{sec:The_Hamiltonian} that under our convention for the discrete Laplacian, its spectrum is the band $\sigma(-\Delta) = [0, 4d]$. The random potential $V_\omega$ has i.i.d. entries distributed uniformly on $[-1, 1]$, making the almost sure spectrum of $\lambda V_\omega$ the interval $[-\lambda, \lambda]$. Consequently, the almost sure spectrum of $H_\omega$ is given by the compact interval
+Recall from Section~\ref{sec:The_Hamiltonian} that the spectrum of the discrete Laplacian is the band $\sigma(-\Delta) = [0, 4d]$. Since the random potential $V_\omega$ has i.i.d. entries distributed uniformly on $[-1, 1]$, the almost sure spectrum of $\lambda V_\omega$ is the interval $[-\lambda, \lambda]$. Consequently, the almost sure spectrum of $H_\omega$ is given by the compact interval:
 \begin{equation}
-\sigma(H_\omega) = [0, 4d] + [-\lambda, \lambda] = [-\lambda, 4d + \lambda].
+    \sigma(H_\omega) = [0, 4d] + [-\lambda, \lambda] = [-\lambda, 4d + \lambda].
 \end{equation}
-This confirms that the spectrum is a bounded subset of $\mathbb{R}$.\\
+This confirms that the spectrum is a strictly bounded subset of $\mathbb{R}$.
 
-Before characterising the physical meaning of this spectrum, we need some spectral theory preliminaries. \\
-Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider now $P=\{x \in \mathbb{R}| \mu(\{x\}) \ne 0\}$ the set of \textbf{pure points} of $\mu$. We define the pure point measure as $$\mu_{pp}(X)=\mu(P \cap X)$$ for $X \subset \mathbb{R}$. In particular, there exists a continuous mesure $\mu_{c}$ such that $\mu_{c}(\{x\})= 0$ for all $x \in X$ and $\mu_{c}=\mu -\mu_{pp}$. Since $\mu_{pp}(P^c)=0$ and $\mu_{c}(P)=0$, the two measures are concentrated on disjoint stes, and thus mutually singular.\\
-One can apply this same division also for spectral measures:
-\begin{definition}
-    Le $A: \mathcal{H}\rightarrow\mathcal{H}$ be a bounded, self-adjoint operator. Let $\phi \in \mathcal{H}$ and $f \in C(\sigma(A))$. Then there is a unique measure $\mu_{\phi}$ on the compact set $\sigma(A)$ with $\langle\phi, f(A)\phi\rangle= \int_{\sigma(A)} f(\xi) d\mu_{\phi}(\xi)$. The measure $\mu_\phi$ is the \textit{spectral measure associated with the vector $\phi$}.\label{def:spectralmeasuredef}
+\subsubsection*{Preliminaries on Spectral Measures}
+
+Before characterizing the physical meaning of this spectrum, we briefly recall the relevant spectral theory. Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider the set of \textbf{pure points} of $\mu$, defined as $P = \{x \in \mathbb{R} \mid \mu(\{x\}) \ne 0\}$. We define the pure point measure as 
+\begin{equation*}
+    \mu_{\mathrm{pp}}(X) = \mu(P \cap X)
+\end{equation*}
+for any Borel set $X \subset \mathbb{R}$. By definition, there remains a continuous measure $\mu_{\mathrm{c}}$ such that $\mu_{\mathrm{c}}(\{x\}) = 0$ for all $x \in \mathbb{R}$, satisfying $\mu = \mu_{\mathrm{pp}} + \mu_{\mathrm{c}}$. Because $\mu_{\mathrm{pp}}(P^c) = 0$ and $\mu_{\mathrm{c}}(P) = 0$, these two measures are concentrated on disjoint sets and are therefore mutually singular.
+
+This decomposition naturally extends to spectral measures:
+
+\begin{definition}\label{def:spectralmeasuredef}
+    Let $A: \mathcal{H} \to \mathcal{H}$ be a bounded, self-adjoint operator. For any vector $\phi \in \mathcal{H}$ and any continuous function $f \in C(\sigma(A))$, there exists a unique Borel measure $\mu_{\phi}$ on the compact set $\sigma(A)$ satisfying 
+    \begin{equation*}
+        \langle \phi, f(A)\phi \rangle = \int_{\sigma(A)} f(\xi) \, d\mu_{\phi}(\xi).
+    \end{equation*}
+    The measure $\mu_\phi$ is called the \textit{spectral measure associated with the vector $\phi$}.
 \end{definition}
-Thus, by the spectral theorem for self-adjoint operators (see \cite{rudin1987} and \cite{reedsimon1980}), the Hilbert space ( for example also $\ell^2(\mathbb{Z}^d)$) decomposes uniquely into an orthogonal direct sum of invariant subspaces:
-\begin{equation}
-\mathcal{H} = \mathcal{H}_{\mathrm{pp}} \oplus \mathcal{H}_{\mathrm{c}},
-\end{equation}
-where:
-\begin{itemize}
-    \item $\mathcal{H}_{\mathrm{pp}} =\{ \phi\,|\, \mu_{\phi}\, \text{is pure point}\}$;
-    \item $\mathcal{H}_{\mathrm{c}} =\{ \phi\,|\, \mu_{\phi}\, \text{is continuous}\} $
-\end{itemize}
-In the case of self-adjoint bounded operators, the restriction to these subspaces defines two, not necessarily disjoint, subsets of the spectrum:
-\begin{equation}
-\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega) \cup \sigma_{\mathrm{c}}(H_\omega)
-\end{equation}
-where $\sigma_{\mathrm{pp}}(H_\omega)=  \overline{\{ \lambda \in \mathbb{R}\, |\, \lambda \, \text{is an eigenvalue of } H_\omega\}}$.
 
-From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to bound states that remain confined to finite spatial regions for all times, whereas states in the continuous subspace $\mathcal{H}_{\mathrm{c}}$ represent scattering states associated with transport and wave-packet spreading. This heuristic meaning is mathematically expressed by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
+By the spectral theorem for self-adjoint operators (see \cite{rudin1987} and \cite{reedsimon1980}), the Hilbert space (such as $\ell^2(\mathbb{Z}^d)$) decomposes uniquely into an orthogonal direct sum of invariant subspaces:
+\begin{equation}
+    \mathcal{H} = \mathcal{H}_{\mathrm{pp}} \oplus \mathcal{H}_{\mathrm{c}},
+\end{equation}
+where $\mathcal{H}_{\mathrm{pp}} = \{ \phi \in \mathcal{H} \mid \mu_{\phi} \text{ is pure point} \}$ and $\mathcal{H}_{\mathrm{c}} = \{ \phi \in \mathcal{H} \mid \mu_{\phi} \text{ is continuous} \}$. For bounded self-adjoint operators, these subspaces define two (not necessarily disjoint) subsets of the spectrum:
+\begin{equation}
+    \sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega) \cup \sigma_{\mathrm{c}}(H_\omega),
+\end{equation}
+where $\sigma_{\mathrm{pp}}(H_\omega) = \overline{\{ \lambda \in \mathbb{R} \mid \lambda \text{ is an eigenvalue of } H_\omega \}}$.
 
-\begin{theorem}[RAGE Theorem]
-\label{thm:RAGE}
-Let $H$ be a self-adjoint Schrödinger operator on $\ell^2(\mathbb{Z}^d)$. Then:
-\begin{enumerate}
-    \item[\textup{(i)}] $\phi \in \mathcal{H}_{\mathrm{pp}}$ if and only if
-    \begin{equation}
-    \lim_{R \to \infty} \sup_{t \in \mathbb{R}} \|\chi_{\{|x| > R\}} e^{-itH} \phi\| = 0.
-    \end{equation}
-    \item[\textup{(ii)}] $\psi \in \mathcal{H}_{\mathrm{c}} $ if and only if for all $R > 0$,
-    \begin{equation}
-    \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \|\chi_{\{|x| \le R\}} e^{-itH} \psi\|^2 \, dt = 0.
-    \end{equation}
-\end{enumerate}
-Here, $\chi_{\{|x| \le R\}}$ and $\chi_{\{|x| > R\}}$ denote the projection operators corresponding to the characteristic functions of the ball $\{x \in \mathbb{Z}^d : |x| \le R\}$ and its complement, respectively.
+\begin{remark}
+    In measure theory, the continuous measure $\mu_{\mathrm{c}}$ further decomposes uniquely into $\mu_{\mathrm{ac}} + \mu_{\mathrm{sc}}$, where $\mu_{\mathrm{ac}}$ is absolutely continuous with respect to Lebesgue measure, and $\mu_{\mathrm{sc}}$ is singular continuous. Following this principle, the continuous subspace can also be decomposed as $\mathcal{H}_{\mathrm{c}} = \mathcal{H}_{\mathrm{ac}} \oplus \mathcal{H}_{\mathrm{sc}}$.
+\end{remark}
+
+\subsubsection*{Physical Interpretation and the RAGE Theorem}
+From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to bound states that remain confined to finite regions for all time, while states in the continuous subspace $\mathcal{H}_{\mathrm{c}}$ represent scattering states associated with transport and wave-packet spreading. This heuristic meaning is made mathematically rigorous by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
+
+\begin{theorem}[RAGE Theorem]\label{thm:RAGE}
+    Let $H$ be a self-adjoint Schrödinger operator on $\ell^2(\mathbb{Z}^d)$. Then:
+    \begin{enumerate}
+        \item[\textup{(i)}] $\phi \in \mathcal{H}_{\mathrm{pp}}$ if and only if
+        \begin{equation}
+            \lim_{R \to \infty} \sup_{t \in \mathbb{R}} \|\chi_{\{|x| > R\}} e^{-itH} \phi\| = 0.
+        \end{equation}
+        \item[\textup{(ii)}] $\psi \in \mathcal{H}_{\mathrm{c}}$ if and only if for all $R > 0$,
+        \begin{equation}
+            \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \|\chi_{\{|x| \le R\}} e^{-itH} \psi\|^2 \, dt = 0.
+        \end{equation}
+    \end{enumerate}
+    Here, $\chi_{\{|x| \le R\}}$ and $\chi_{\{|x| > R\}}$ denote the projection operators corresponding to multiplication by the characteristic functions of the ball $\{x \in \mathbb{Z}^d \mid |x| \le R\}$ and its complement, respectively.
 \end{theorem}
 
-In terms of this classification, Anderson localization corresponds to the complete suppression of continuous spectrum, ensuring that $\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega)$ almost surely.
-
+In terms of this classification, Anderson localization corresponds exactly to the absence of continuous spectrum, ensuring that $\sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega)$ almost surely.
 
 \section{Main results and Open Problems} \label{sec:Mainresults}
 
-There exist many studies on the Anderson localisation model, led by both physicist and mathematicians. Various discorveries have been made in the past years and yet deep challenges remain. \\
-The main result of this thesis states that if $s \in (0,1)$ and $\lambda > \lambda_{0}(s)$
+There are many studies on the Anderson localization model by both physicists and mathematicians. Various discoveries have been made over the years, yet deep challenges remain. \\
+
+The main result of this thesis states that if $s \in (0,1)$ and $\lambda > \lambda_{0}(s)$,
 \begin{equation}
-    \mathbb{E}\left( |\langle \delta_x, \frac{1}{(H_\omega -z)}\delta_y \rangle | ^s \right) \le C e^{-\mu |x-y|}
+    \mathbb{E}\left( |(H_\omega - z)^{-1}(x,y)|^s \right) \le C e^{-\mu |x-y|}
 \end{equation}
-uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $x,y \in \mathbb{Z}^d$ and $C< \infty, \mu >0$ where $\lambda_0 = \lambda_{\text{And}}$ is a fixed value proposed by P.W. Anderson (\cite{anderson1958}), and rigourously proven later on by J. Schenker (\cite{schenker2015}) using self-avoiding walks.\\
-As we can see, the resolvent is well-defined only if $z $ is not an element of $\sigma(H_\omega)$.
-The reason why the \textit{fractional moments method} was so revolutionary, is that by avereging the fractional power of the resolvent, we avoid this divrgences and the bound holds uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$.\\
-Originally, absence of conductivity was proved using the squared-power instead of the fractional, which creates problems at zero and needs complicated analytical work such as the MSA method. \\
-The intuition behind the use of fractional methods, can be trivially understood from this integral, which we'll encaunter in the next proofs (for example see \ref{lemma:aprioribound}): 
-\[\int_{\Sigma} \frac{1}{|x|^s}dx = \left[\frac{ x^{1-s}}{1-s}\right]_{\Sigma}
-\begin{cases}
-    < \infty \qquad \text{for}\,\, s \in (0,1)\\
-    = \infty \qquad \text{for}\,\, s \ge 1 \,\,\text{in}\,\,x=0
+uniformly for $z \in \mathbb{C} \setminus \mathbb{R}$ and all $x,y \in \mathbb{Z}^d$, with $C < \infty$ and $\mu > 0$. Here, $\lambda_0 = \lambda_{\text{And}}$ is a fixed threshold proposed by P.W. Anderson (\cite{anderson1958}), which was rigorously proven later by J. Schenker (\cite{schenker2015}) using self-avoiding walks. \\
+
+Naturally, the resolvent is well-defined only when $z \notin \sigma(H_\omega)$. The \textit{fractional moments method} was revolutionary because averaging a fractional power of the resolvent avoids these divergences, allowing the bound to hold uniformly for all $z \in \mathbb{C} \setminus \mathbb{R}$. \\
+
+Originally, the absence of conductivity was proven using integer powers instead of fractional ones. This creates divergence problems near zero and requires complicated analytical tools like the MSA method. \\
+
+The intuition behind the fractional method is simple and can be understood from the following integral, which we will encounter in upcoming proofs (for example, see Lemma \ref{lemma:aprioribound}):
+\[
+\int_{\Sigma} \frac{1}{|x|^s} \, dx 
+\begin{cases} 
+    < \infty & \text{for } s \in (0,1), \\ 
+    = \infty & \text{for } s \ge 1 \text{ (diverges at } x=0),
 \end{cases} 
 \]
-where $\Sigma \subset \mathbb{R}$ closed.\\
-
+where $\Sigma \subset \mathbb{R}$ is a closed interval containing the origin.\\
 
 Very important results concern the value of $\lambda$. Based on the dimension of the grid, we know the following.
 \begin{itemize}
     \item[-] $d = 1$.\\
-            For the one-dimensional grid, it has been proven, that localisation holds for all $\lambda > 0$ \cite{goldsheid1977}. 
+            For the one-dimensional grid, it has been proven, that localization holds for all $\lambda > 0$ \cite{goldsheid1977}. 
     \item[-] $d = 2$.\\
             For $d=2$ it has been numerically established that localization persists at arbitrarily small disorder.
     \item[-]$d\ge 3$.\\
@@ -348,8 +369,8 @@ Very important results concern the value of $\lambda$. Based on the dimension of
 \end{itemize}
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=1.0\textwidth]{IMG_1072.jpeg}
-    \caption{For small disorder localization we can still find continuous spectrum}
+    \includegraphics[width=0.6\textwidth]{IMG_1072.jpeg}
+    \caption{Picture from \cite{aizenman2015}}
     \label{fig:nome_etichetta}
 \end{figure}
 
@@ -357,13 +378,13 @@ Very important results concern the value of $\lambda$. Based on the dimension of
 
 
 \clearpage
-\chapter{Localisation properties}
-We understood what localisation means from an heuristical point of view. In the previous Chapter, it came out as a spectral property of the Hemiltonian. In this section, we also introduce dynamical properties for localization, together with the implications between them.
-\section{Spectral Localisation}
+\chapter{Localization properties}
+We understood what localization means from an heuristic point of view. In the previous Chapter, it came out as a spectral property of the Hemiltonian. In this section, we also introduce dynamical properties for localization, together with the implications between them. The definitions follow the ones given by A. Klein in \cite{klein2007}.
+\section{Spectral localization}
 
 
-\begin{definition}[Spectral Localisation]
-We say that $H = H_\omega$ exhibits \textbf{spectral localisation} if it has pure point spectrum almost surely. That is
+\begin{definition}[Spectral localization]
+We say that $H = H_\omega$ exhibits \textbf{spectral localization} if it has pure point spectrum almost surely. That is
 \begin{equation}
     \sigma(H_\omega) = \sigma_{pp}(H_\omega) \quad \text{and} \quad \sigma_c(H_\omega) = \emptyset    
 \end{equation}
@@ -371,159 +392,200 @@ for almost every realization of $\omega \in \Omega$.
 
 \end{definition}
 
-\subsection{Absence of transport}
+\section{Dynamical localization}
 
-\begin{equation}
-\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)
-= \big\| \,|x|\, e^{-itH_\omega} P_{H_\omega\in[a,b]}\phi_0 \big\|^2
-\tag{5}
-\end{equation}
-
-If the electrons with energies in $[a,b]$ move ballistically with average
-velocity $v_{av}$, then roughly $x(t) \sim v_{av} t$ for large times. Hence
-$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ will be proportional to
-$t^2$ for large $t$.
-
-On the other hand, if the electrons in the energy interval $[a,b]$ are
-localized, then it should be natural to expect that
-$\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)$ is bounded uniformly in
-$t$. It is known (Simon, 1990) that pure point spectrum implies absence of
-ballistic motion,
-\[
-\lim_{t\to\infty} \frac{\langle x^2\rangle_{P_{H_\omega\in[a,b]}\phi_0}(t)}{t^2} = 0
-\]
-for all compactly supported initial conditions $\phi_0$, as soon as the
-spectrum in $[a,b]$ is pure point. However, del Rio et al. (1996)
-constructed examples of (non-random) one-dimensional Schr\"odinger operators
-with pure point spectrum for all energies and exponentially localized
-eigenfunctions for which
-\begin{equation}
-\limsup_{t\to\pm\infty} \frac{\langle x^2\rangle_{\phi_0}(t)}{t^{2-\delta}} = \infty
-\qquad \text{for all } \delta > 0,
-\tag{6}
-\end{equation}
-for a large class of compactly supported initial conditions $\phi_0$.
-\textit{Il fallimento risiede nella libert\`a delle costanti $C_{\omega,n}$: se $C_{\omega,n}$ cresce incontrollatamente con $n$, le code delle autofunzioni possono sovrapporsi su scale spaziali arbitrariamente grandi.}
-
- 
-
-\section{Dynamical Localisation}
-
-\begin{definition}[Dynamical localisation]
-    We say that $H_\omega$ shows dynamical localisation if for all $p>0$,
+\begin{definition}[Dynamical localization]
+    We say that $H_\omega$ shows dynamical localization if for all $p>0$ and $\phi \in \ell^2(\mathbb{Z}^d)$,
     \begin{equation}
-    \sup_{t \in \mathbb{R}} \sum_{x \in \mathbb{Z}^d}|x|^p | e^{-it H_\omega}(0,x)|^2 < \infty \label{eq:dynloc}
+    \sup_{t \in \mathbb{R}} \left\| |X|^p\,e^{-it H_\omega}\phi \right\| < \infty \label{eq:dynloc}
     \end{equation}
-for almost every realization of $\omega \in \Omega$.
+for almost every realization of $\omega \in \Omega$, where the position operator $|X|$ is defined by $(|X|\phi)(n) = |n|\phi(n)$.
 \end{definition}
 
-\begin{definition}[Exponential localisation]
-    We say that $H_\omega$ shows exponential localisation if 
+\begin{definition}[Exponential localization]
+    We say that $H_\omega$ shows exponential localization if 
     \begin{equation}
-        \mathbb{E}\left( \sup_{t \in \mathbb{R}} |e^{-itH_\omega}(0,x) |^ 2 \right) \leq C e^{- \mu |x|}\label{eq:explocalisation}
+        \mathbb{E}\left( \sup_{t \in \mathbb{R}} |e^{-itH_\omega}(0,x) |\right) \leq C e^{- \mu |x|}\label{eq:explocalisation}
     \end{equation}
 for $x \in \mathbb{Z}^d$
 \end{definition}
+Furthermore the eigenfunctions corresponding to all eigenvalues $E$ in the almost sure spectrum, decay exponentially: for almost all $\omega$, $H_\omega$ has a complete set of eigenfunctions $\phi_E(., \omega)$ satisfying
+$$|\phi_E(x, \omega)| \le C_{\omega}e^{-\mu|x-x_E(\omega)|}$$
+where $\mu > 0$ is the localization length parameter, $x_E(\omega)$ are the centers of localization, and $C_{\omega  } < \infty$ is a finite constant.
 \begin{remark}
-Dynamical localisation implies that all moments of the distance between the two sites are bounded uniformly in time ( recall that we are working in an infinite grid, and with translation invariance).
+Dynamical localization implies that all moments of the distance between the two sites are bounded uniformly in time (recall that we are working in an infinite grid, and with translation invariance, so as well as $(0,x)$ we can consider any site in the grid).
 From \eqref{eq:dynloc} we already notice that the probability of transitioning from $0$ to $x$ goes to zero faster than any polinomial, but \eqref{eq:explocalisation} explicits this directly with an exponential bound. 
 In fact, the two definitions are strongly related and we can prove the following implication.
 \end{remark}
 
-
-
-
-\begin{proposition}
-    Exponential localization implies that all moments of the position operator are bounded in time for almost every realisation of $\omega \in \Omega$, i.e., dynamical localisation.
+\begin{proposition}\label{prop:exptodyn}
+Exponential localization implies that all moments of the position operator are bounded in time for almost every realisation of $V_\omega$, i.e., dynamical localisation. 
 \end{proposition}
 
+\begin{proof}
+To see how (2.1) follows from (2.2), we assume that $\psi(k) = 0$ for $|k| > R$, since $\psi$ has compact support.  Then
+\begin{align*}
+    \||X|^p e^{-itH_\omega} \psi\|^2 &= \sum_j |\langle \delta_j, |X|^p e^{-itH_\omega} \psi \rangle|^2\\
+    &= \sum_j |j|^{2p} |\sum_{|k|\le R} e^{-itH_\omega} (j,k) \psi(k)|^2\\
+    &\le \sum_j \sum_{|k|\le R} |j|^{2p} | e^{-itH_\omega} (j,k) |^2 ||\psi||^2.
+\end{align*}
+where the last step used the Cauchy-Schwarz inequality.\\
+Since $|e^{-itH_\omega} (j,k)|^2 \le 1$:
+\begin{align*}
+    \mathbb{E}(\sup_t |||X|^p e^{-itH_\omega} \psi||^2) &\le \sum_j \sum_{|k|\le R} |j|^{2p}\,\, \mathbb{E}(\sup_t |e^{-itH_\omega} (j,k)|) ||\psi||^2\\ 
+    &\le C \sum_j \sum_{|k|\le R} |j|^{2p} e^{-\mu|j-k|} ||\psi||^2 \\
+    &< \infty.
+\end{align*}
+\end{proof}
+
+
+\begin{remark}
+     Dynamical localisation holds \textit{almost surely} rather than for every realisation, because our bounds control only the \textit{expected} value over the disorder. A bound on the average does not exclude that a single realisation is large. However, if the expectations decay fast enough, then being large at distance $|x|$ is a very unlikely event for each $x$, and the probabilities of these events are summable. The Borel--Cantelli lemma below then shows that, with probability one, this can happen only for finitely many $x$.
+\end{remark}
+
+\begin{lemma}[Borel--Cantelli]\label{lemma:almostsurely}
+Let $(\Omega,\mathcal{F},\mathbb{P})$ a probability space. Let $n \rightarrow A_n \in \mathcal{F}$ a sequence of events. 
+Then if $\sum_{n \in \mathbb{N}}(A_n) < \infty$, almost surely, only finitely many of the $A_n$ occur, which means $\mathbb{P}(\limsup_{n \to \infty} An)=0$
+\end{lemma}
+
+
+\begin{example}[From proposition \ref{prop:exptodyn}]
+Set $X_x := \sup_{t\in\mathbb{R}} \bigl|e^{-itH_\omega}(0,x)\bigr|$ and consider the events
+\begin{equation*}
+  A_x := \bigl\{ X_x > e^{-\mu|x|/2} \bigr\}.
+\end{equation*}
+By Markov's inequality and \eqref{eq:explocalisation},
+\begin{equation*}
+\mathbb{P}(A_x) \le \frac{\mathbb{E}[X_x]}{e^{-\mu|x|/2}} \le C e^{-\mu|x|/2}.
+\end{equation*}
+This is summable over $x \in \mathbb{Z}^d$, so $\sum_x \mathbb{P}(A_x) < \infty$.
+By Lemma \ref{lemma:almostsurely}, almost surely only finitely many $A_x$ occur.
+Hence there is a random radius $R(\omega) < \infty$ such that
+$X_x \le e^{-\mu|x|/2}$ for all $|x| > R(\omega)$.
+
+Split the sum at $R(\omega)$, considering $X_x \le 1$:
+\begin{equation*}
+\sum_j \sum_{|k|\le R} |j|^{2p} | e^{-itH_\omega} (j,k) |^2 ||\psi||^2
+\le \sum_{|j|\le R(\omega)} |j|^{2p}||\psi||^2 + \sum_{|j|>R(\omega)}\sum_{|k|\le R} |j|^p e^{-\mu|j-k|}||\psi||^2 < \infty .
+\end{equation*}
+for almost every realization of $\omega \in \Omega$.   
+\end{example}
+
+\clearpage
+\chapter{Localization properties}
+We have understood what localization means from a heuristic point of view. In the previous chapter, it was presented as a spectral property of the Hamiltonian. In this section, we introduce dynamical properties for localization and discuss the implications between them. The definitions follow those given by A. Klein in \cite{klein2007}.
+
+\section{Spectral localization}
+
+\begin{definition}[Spectral localization]
+We say that $H = H_\omega$ exhibits \textbf{spectral localization} if it has pure point spectrum almost surely. That is,
+\begin{equation}
+    \sigma(H_\omega) = \sigma_{\mathrm{pp}}(H_\omega) \quad \text{and} \quad \sigma_{\mathrm{c}}(H_\omega) = \emptyset    
+\end{equation}
+for almost every realization of $\omega \in \Omega$.
+\end{definition}
+
+\section{Dynamical localization}
+
+\begin{definition}[Dynamical localization]
+    We say that $H_\omega$ exhibits dynamical localization if for all $p>0$ and $\phi \in \ell^2(\mathbb{Z}^d)$ of finite support,
+    \begin{equation}
+    \sup_{t \in \mathbb{R}} \left\| |X|^p\,e^{-it H_\omega}\phi \right\| < \infty \label{eq:dynloc}
+    \end{equation}
+    for almost every realization of $\omega \in \Omega$, where the position operator $|X|$ is defined by $(|X|\phi)(n) = |n|\phi(n)$.
+\end{definition}
+
+\begin{definition}[Exponential localization]
+    We say that $H_\omega$ exhibits exponential localization if 
+    \begin{equation}
+        \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle \delta_0, e^{-itH_\omega} \delta_x \rangle |\right) \leq C e^{- \mu |x|}\label{eq:explocalisation}
+    \end{equation}
+    for all $x \in \mathbb{Z}^d$.
+\end{definition}
+
+Furthermore, the eigenfunctions corresponding to all eigenvalues $E$ in the almost sure spectrum decay exponentially: for almost every $\omega$, $H_\omega$ has a complete set of eigenfunctions $\phi_E(\cdot, \omega)$ satisfying
+$$|\phi_E(x, \omega)| \le C_{\omega}e^{-\mu|x-x_E(\omega)|}$$
+where $\mu > 0$ is the localization length parameter, $x_E(\omega)$ are the centers of localization, and $C_{\omega} < \infty$ is a finite constant.
+
+\begin{remark}
+Dynamical localization implies that all spatial moments of the distance are bounded uniformly in time. (Recall that because we are working on an infinite grid with translation invariance, we can consider any arbitrary starting site just as easily as the origin $0$). 
+
+From \eqref{eq:dynloc}, we can already deduce that the probability of transitioning from $0$ to $x$ goes to zero faster than any polynomial, but \eqref{eq:explocalisation} makes this explicit with a direct exponential bound. In fact, the two definitions are strongly related, and we can prove the following implication.
+\end{remark}
+
+\begin{proposition}\label{prop:exptodyn}
+Exponential localization implies that all moments of the position operator are bounded in time for almost every realization of $V_\omega$, i.e., it implies dynamical localization. 
+\end{proposition}
 
 \begin{proof}
-To see how \eqref{eq:dynloc} follows from \eqref{eq:explocalisation}, we argue
+To see how \eqref{eq:dynloc} follows from \eqref{eq:explocalisation}, assume that $\psi(k) = 0$ for $|k| > R$ (i.e., $\psi$ has finite support). Then
 \begin{align*}
-\mathbb{E}\left( \sup_t \sum_{x} |x|^{p} |e^{-itH_\omega}(0,x) |^ 2 \right) &\le \sum_x |x|^{p} \mathbb{E}\left( \sup_t |e^{-itH_\omega}(0,x) |^ 2 \right)\\
-&\le C \sum_x |x|^{p} e^{-\mu |x|} \\
-&< \infty.
+    \||X|^p e^{-itH_\omega} \psi\|^2 &= \sum_j |\langle \delta_j, |X|^p e^{-itH_\omega} \psi \rangle|^2\\
+    &= \sum_j |j|^{2p} \left|\sum_{|k|\le R} \langle \delta_j, e^{-itH_\omega} \delta_k \rangle \psi(k)\right|^2\\
+    &\le \sum_j \sum_{|k|\le R} |j|^{2p} |\langle \delta_j, e^{-itH_\omega} \delta_k \rangle|^2 \|\psi\|^2,
 \end{align*}
+where the last step applies the Cauchy-Schwarz inequality.
+
+Because $|\langle \delta_j, e^{-itH_\omega} \delta_k \rangle| \le 1$, it follows
+\begin{align}
+    \mathbb{E}\left(\sup_{t \in \mathbb{R}} \||X|^p e^{-itH_\omega} \psi\|^2\right) &\le \sum_j \sum_{|k|\le R} |j|^{2p}\,\, \mathbb{E}\left(\sup_{t \in \mathbb{R}} |\langle \delta_j, e^{-itH_\omega} \delta_k \rangle|\right) \|\psi\|^2\\ \nonumber
+    &\le C \sum_j \sum_{|k|\le R} |j|^{2p} e^{-\mu|j-k|} \|\psi\|^2 \\
+    &< \infty.\nonumber
+\end{align}
 \end{proof}
 
 \begin{remark}
-     The reason why we obtain dynamical localization \textit{almost surely} (rather than for every single realization of the potential) is that our bounds apply to the expected value over the disorder, rather than directly to the norm. An expectation bound alone only tells you about the average behavior (a single realization could still be huge). But if you have expectation bounds on infinitely many random variables that shrink fast enough, then "being large" becomes such a rare event across the whole sequence that (with probability 1) it can only happen finitely often. Thereare some standard proof using Borel-Cantelli or the Markov inequality.
+    Dynamical localization holds \textit{almost surely} rather than for every single realization because our bounds control only the \textit{expected} value over the disorder. A bound on the average does not strictly exclude the possibility that a specific realization is large. However, if the expectations decay fast enough, then being large at a great distance $|x|$ is a very unlikely event. The probabilities of these events are summable, and the Borel--Cantelli lemma below guarantees that, with probability one, this can happen only for finitely many $x$.
 \end{remark}
-\begin{lemma}\label{lemma:almostsurely}
-Let $(\Omega,\Sigma,\mathbb{P})$ be a probability space. Let $h: \mathbb{R} \rightarrow [0,\infty)$ be a monotone, non-negative, growing and measurable function, $A: \Omega \rightarrow \mathbb{R}$ a random variable. Then, 
-if $\mathbb{E}[h(A)] < \infty$,
-$A < \infty$ $\mathbb{P}$-almost surely.
+
+\begin{lemma}[Borel--Cantelli]\label{lemma:almostsurely}
+Let $(\Omega,\mathcal{F},\mathbb{P})$ be a probability space, and let $(A_n)_{n \in \mathbb{N}}$ be a sequence of events in $\mathcal{F}$. 
+If $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) < \infty$, then almost surely, only finitely many of the events $A_n$ occur. That is, $\mathbb{P}(\limsup_{n \to \infty} A_n)=0$.
 \end{lemma}
-\vspace{.2cm}
-\begin{proof}
-For every $M>0$, Markov's inequality gives $\mathbb{P}(A \ge M) \le \frac{\mathbb{E}[h(A)]}{M}$. \\ 
-Define $\Omega_0 := \{\omega\in\Omega \mid A(\omega) = \infty\}$.
-Since $\Omega_0 \subseteq \{A \ge M\}$ for every $M$, we get
-$\mathbb{P}(\Omega_0) \le \frac{\mathbb{E}[h(A)]}{M} \to 0$ as $M\to\infty$, so
-$\mathbb{P}(\Omega_0)=0$.
-\end{proof}
 
+\begin{example}[From Proposition \ref{prop:exptodyn}]
+Set $X_x := \sup_{t\in\mathbb{R}} \bigl|\langle \delta_0, e^{-itH_\omega} \delta_x \rangle\bigr|$ and consider the events
+\begin{equation*}
+  A_x := \bigl\{ X_x > e^{-\mu|x|/2} \bigr\}.
+\end{equation*}
+By Markov's inequality and \eqref{eq:explocalisation},
+\begin{equation*}
+\mathbb{P}(A_x) \le \frac{\mathbb{E}[X_x]}{e^{-\mu|x|/2}} \le C e^{-\mu|x|/2}.
+\end{equation*}
+This is summable over $x \in \mathbb{Z}^d$, meaning $\sum_x \mathbb{P}(A_x) < \infty$.
 
-\section{\textcolor{red}{From dynamical to spectral localisation}}
+By Lemma \ref{lemma:almostsurely}, almost surely only finitely many $A_x$ occur. Hence, there exists a random, finite radius $R(\omega) < \infty$ such that $X_x \le e^{-\mu|x|/2}$ for all $|x| > R(\omega)$.
 
-\begin{proposition}
-Suppose that dynamical localization in the form
-\begin{equation}
-\mathbb{E}\left(\sup_{t\in\mathbb{R}} |\langle e_j, e^{-it h_\omega} \chi_I(h_\omega) e_k \rangle|\right) \le C e^{-\mu |j-k|}
-\end{equation}
-holds. Then $h_\omega$ almost surely has pure point spectrum in $I$.
-\end{proposition}
-
-\begin{proof}
-For a discrete Schr\"odinger operator $h = h_0 + V$ in $\ell^2(\mathbb{Z}^d)$ let $P_{\mathrm{cont}}(h)$ be the projection onto its continuous spectral subspace. Then the RAGE-Theorem says that for every $\psi \in \ell^2(\mathbb{Z}^d)$,
-\begin{equation}
-\|P_{\mathrm{cont}}(h) \chi_I(h) \psi\|^2 = \lim_{R\to\infty} \lim_{T\to\infty} \int_0^T \frac{dt}{T} \|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \psi\|^2.
-\end{equation}
-If $\psi$ has finite support, say $\mathrm{supp}\,\psi \subset \{|x| \le r\}$, then
-\begin{align*}
-\|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \psi\|^2 &\le \|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \chi_{\{|x|\le r\}}\|^2 \|\psi\|^2 \\
-&\le \|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \chi_{\{|x|\le r\}}\| \|\psi\|^2 \\
-&\le \sum_{|x|\ge R, |y|\le r} |\langle e_x, e^{-ith} \chi_I(h) e_y \rangle| \|\psi\|^2,
-\end{align*}
-where dropping a square is allowed as $\|\chi_{\{|x|\ge R\}} e^{-ith} \chi_I(h) \chi_{\{|x|\le r\}}\| \le 1$.
-
-Taking expectations in (2) implies, after using Fatou and Fubini,
-\begin{equation}
-\mathbb{E}\left( \|P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) \psi\|^2 \right) \le \lim_{R\to\infty, T\to\infty} \int_0^T \frac{dt}{T} \sum_{|x|\ge R, |y|\le r} \mathbb{E}\left( |\langle e_x, e^{-ith_\omega} \chi_I(h_\omega) e_y \rangle| \right) \|\psi\|^2.
-\end{equation}
-By (2.4) we have $\mathbb{E}\left( |\langle e_x, e^{-ith_\omega} \chi_I(h_\omega) e_y \rangle| \right) \le C e^{-\mu |x-y|}$ uniformly in $t$, which bounds the right hand side of (2.6) by
-\[
-\le \lim_{R\to\infty} \tilde{C} \sum_{|x|\ge R, |y|\le r} e^{-\mu |x-y|} = 0.
-\]
-We conclude that $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) \psi = 0$ for almost every $\omega$ and every $\psi$ of finite support. The latter are dense in $\ell^2(\mathbb{Z}^d)$ and thus $P_{\mathrm{cont}}(h_\omega) \chi_I(h_\omega) = 0$ almost surely, meaning that the spectrum in $I$ is pure point.
-\end{proof}
-
-
-
+We can then split the sum at $R(\omega)$ and use the trivial bound $X_x \le 1$ for the interior terms:
+\begin{equation*}
+\sum_j \sum_{|k|\le R} |j|^{2p} X_{j-k}^2 \|\psi\|^2
+\le \sum_{|j|\le R(\omega)} \sum_{|k|\le R} |j|^{2p}\|\psi\|^2 + \sum_{|j|>R(\omega)}\sum_{|k|\le R} |j|^{2p} e^{-\mu|j-k|}\|\psi\|^2 < \infty
+\end{equation*}
+for almost every realization of $\omega \in \Omega$.   
+\end{example}
 
 \clearpage 
 \chapter{Fractional moments}
-In this section we are going to see the important lemmas and theorems that help us proving localization. In particular we see the power of the fractional moment method, specifically on the \textit{a priori bound}.
-\section{The Green's function}
+In this section, we introduce the key lemmas and theorems that help us prove localization. The goal of this section is to demonstrate the power of the fractional moments method (FMM). First, we define the Green function, and then we prove the first fractional bound: the \textit{a priori bound}. This will provide a good example of how we use simple but important analytic tools, such as the \textit{resolvent identity}, to obtain strong results. Finally, we will prove dynamical and spectral localization using the bound on the fractional power of the Green function.
+
+\section{The Green function}
 
 The \emph{resolvent operator} is defined as:
 \begin{equation}
-    G_{z}\coloneq(H_\omega - z)^{-1}
+    G_{z} \coloneqq (H_\omega - z)^{-1}
 \end{equation}
-and is a well defined bounded operator for all $ z \in \mathbb{C} \setminus \sigma \mathbb{R}$.
+and is a well-defined bounded operator for all $z \in \mathbb{C} \setminus \mathbb{R}$.
 
+\section{Localization at large disorder}
 
-\section{Localisation at large disorder}
-
-The goal of this thesis is to prove the following theorem.
+The primary goal of this thesis is to prove the following theorem.
 
 \begin{theorem}[Aizenman--Molchanov and Schenker] \label{thm:theorem1}
-Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda > \lambda_0$ there are $C < \infty$ and $\mu > 0$ with
+Let $0 < s < 1$. Then there exists $\lambda_0 > 0$ such that for $\lambda > \lambda_0$, there are constants $C < \infty$ and $\mu > 0$ satisfying
 \begin{equation}
 \mathbb{E}\left( |G_{z}(x, y)|^s \right) \le C e^{-\mu |x - y|}\label{eq:FMM}
 \end{equation}
-uniformly in $x, y \in \mathbb{Z}^d$ and $z \in \mathbb{C} \setminus \mathbb{R}$. In particular, $ \lambda_0$ is the unique solution of $\lambda_0 = \mu_d\,e\,\ln(\lambda_0)$ and for all $\lambda > \lambda_0 > e$ and $\epsilon > 0$ we have
+uniformly in $x, y \in \mathbb{Z}^d$ and $z \in \mathbb{C} \setminus \mathbb{R}$. In particular, $\lambda_0$ is the unique solution to the equation $\lambda_0 = \mu_d\,e\,\ln(\lambda_0)$, and for all $\lambda > \lambda_0 > e$ and $\epsilon > 0$ we have
 \begin{equation}
 \mathbb{E}\left(|G_{z}(x,y)|^{1 - \frac{1}{\ln (\lambda)}}\right) \le \beta(\lambda) K_\epsilon \ln(\lambda) \, e^{-m_\epsilon(\lambda)|x - y|}\label{eq:schenkerbound}
 \end{equation}
@@ -532,60 +594,58 @@ where
 m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
 \]
 \end{theorem}
-\begin{remark}
-    The reason why we distinguish \eqref{eq:FMM} from \eqref{eq:schenkerbound} in this Theorem, is that the first one, represents a generalised bound for any absolutely continuous distribution of $\omega$, while the second, considers the specific case of the uniform distribution between $[-1,1]$, giving a more precise value of $\lambda_0$. Both are equally valid to prove localization, but our goal will be to reach \eqref{eq:schenkerbound}. 
-\end{remark}
-Before achieving this result, we start with two new lemmas, the so called \textit{a priori bound} on the fractional moments and the \text{resolvent identity}.
-\begin{lemma}[A priori bound] \label{lemma:aprioribound}
-There exists a constant $C_1 = C_1(s) < \infty$ such that
-\begin{equation}
-\mathbb{E}_{x}(|G_{z}(x, x)|^s) \le C_1 \lambda^{-s}
-\end{equation}
-for all $x \in \mathbb{Z}^d$, $z \in \mathbb{C} \setminus \mathbb{R}$, and $\lambda > 0$. In particular, for $\omega_x \sim \mathcal{U}[-1,1]$
-\[
-C_1 = \frac{1}{1-s}
-\]
 
+\begin{remark}
+    We distinguish \eqref{eq:FMM} from \eqref{eq:schenkerbound} in this theorem because the first represents a generalized bound for any absolutely continuous distribution of $\omega$, while the second considers the specific case of a uniform distribution on $[-1,1]$, yielding a more precise value for $\lambda_0$. Both are equally valid for proving localization, but our ultimate goal is to reach \eqref{eq:schenkerbound}. 
+\end{remark}
+
+Before achieving this result, we introduce two preparatory lemmas: the so-called \textit{a priori bound} on fractional moments and the \textit{resolvent identity}.
+
+\begin{lemma}[A priori bound] \label{lemma:aprioribound}
+Let $s \in (0,1)$. Then it holds
+\begin{equation}
+\mathbb{E}_{x}(|G_{z}(x, x)|^s) \le \frac{1}{(1-s) \,\lambda^{s}}
+\end{equation}
+for all $x \in \mathbb{Z}^d$, $z \in \mathbb{C} \setminus \mathbb{R}$, and $\lambda > 0$.
 \end{lemma}
 
 \begin{lemma}[Resolvent identity]
-    For a linear operator $A: \mathcal{D}(A) \rightarrow \mathcal{H}$ and $z_1,z_2 \in \varrho(A)$, $$ (A-z_1)^{-1}- (A- z_2)^{-1} = (A-z_1)^{-1}(z_1 -z_2)(A-z_2)^{-1} $$ 
-    and moreover, if $B: \mathcal{D}(B)\rightarrow \mathcal{H}$ is defined on a common domain, $\mathcal{D}(A)=\mathcal{D}(B)$, 
-    $$(A-z)^{-1}- (B- z)^{-1} = (A-z)^{-1}(B-A)(B-z)^{-1}$$ for any $z \in \varrho(A) \cap \varrho(B)$.
+    For a linear operator $A: \mathcal{D}(A) \rightarrow \mathcal{H}$ and $z_1,z_2 \in \varrho(A)$, 
+    $$ (A-z_1)^{-1} - (A- z_2)^{-1} = (A-z_1)^{-1}(z_1 - z_2)(A-z_2)^{-1}. $$ 
+    Moreover, if $B: \mathcal{D}(B)\rightarrow \mathcal{H}$ shares a common domain with $A$ such that $\mathcal{D}(A)=\mathcal{D}(B)$, then
+    $$ (A-z)^{-1} - (B- z)^{-1} = (A-z)^{-1}(B-A)(B-z)^{-1} $$ 
+    for any $z \in \varrho(A) \cap \varrho(B)$.
 \end{lemma}
 
-\textit{The resolvent identity comes from a simple development of the first subtraction}
+\textit{The resolvent identity follows directly from simple algebraic manipulation of the inverses.}
 
-\begin{proof}[Proof of a priori bound]
-This proof demonstrates the simplicity of the fundamental idea underlying the FMM. For fixed $x \in \mathbb{Z}^d$, write $\omega = (\hat{\omega}, \omega_x)$ where $\hat{\omega}$ is short for $(\omega_n)_{n \in \mathbb{Z}^d \setminus \{x\}}$. With $P_{e_x} := \langle e_x, \cdot \rangle e_x$, the orthogonal projection onto the span of $e_x$, we can separate the $\omega_x$ and $\hat{\omega}$ dependence of $H_{\omega}$ as
+\begin{proof}[Proof of the a priori bound]
+This proof demonstrates the simplicity of the fundamental idea underlying the FMM . For a fixed $x \in \mathbb{Z}^d$, we write $\omega = (\hat{\omega}, \omega_x)$, where $\hat{\omega}$ is shorthand for the variables at all other sites, $(\omega_n)_{n \in \mathbb{Z}^d \setminus \{x\}}$ . Using $P_{e_x} := \langle e_x, \cdot \rangle e_x$ to denote the orthogonal projection onto the span of the basis vector $e_x$, we can separate the dependence of $H_{\omega}$ on $\omega_x$ and $\hat{\omega}$ as follows :
 \[
 H_{\omega} = -\Delta + \lambda V_{\hat{\omega}} + \lambda \omega_x P_{e_x} = H_{\hat{\omega}} +  \lambda \omega_x P_{e_x}.
 \]
-For the operators $ (H_\omega-z)$ and $(H_{\hat{\omega}}-z)$, the resolvent identity yields
+For the operators $(H_\omega-z)$ and $(H_{\hat{\omega}}-z)$, the resolvent identity yields 
 \begin{equation}
-(H_{\omega} - z)^{-1} = (H_{\hat{\omega}} - z)^{-1} -  \lambda \omega_x ( H_{\hat{\omega}} - z)^{-1} P_{e_x} (H_{\omega} - z)^{-1}
+(H_{\omega} - z)^{-1} = (H_{\hat{\omega}} - z)^{-1} -  \lambda \omega_x ( H_{\hat{\omega}} - z)^{-1} P_{e_x} (H_{\omega} - z)^{-1}.
 \end{equation}
-Taking matrix-elements we conclude for the corresponding diagonal Green functions that
+Taking the matrix elements, it follows
 \begin{equation}
-G_{z}(x, x) = \hat{G_{z}}(x, x) - \lambda \omega_x \hat{G_{z}}(x, x) G_{z}(x, x)
+G_{z}(x, x) = \hat{G}_{z}(x, x) - \lambda \omega_x \hat{G}_{z}(x, x) G_{z}(x, x),
 \end{equation}
-where $\hat{G_{z}}$ denotes the Green's function of $H_{\hat{\omega}}$. Collecting in $G_{z}(x, x)$:
+where $\hat{G}_{z}$ denotes the Green function of $H_{\hat{\omega}}$ . Solving for $G_{z}(x, x)$, we obtain
 \begin{equation}
-G_{z}(x, x) = \frac{1}{a + \lambda \omega_x} \quad \text{with } a = \frac{1}{\hat{G_{z}}(x, x)}.
+G_{z}(x, x) = \frac{1}{a + \lambda \omega_x} \quad \text{with } a = \frac{1}{\hat{G}_{z}(x, x)}.
 \end{equation}
-Note that the latter is well-defined since one can easily check that\\
- $\mathrm{Im} \hat{G_{z}}(x, x) >0 $ for $ \mathrm{Im} z > 0$.
+Note that this expression is well-defined because one can easily check through the resolvent identity $\mathrm{Im} \hat{G}_{z}(x, x) > 0$ whenever $\mathrm{Im} z > 0$ .
 
-The important fact is that $a$ is a complex number which does not depend on $\omega_x$. Thus, writing $\mathbb{E}_x(\dots) := \int \dots \rho(\omega_x)\, d\omega_x$ for $ \rho(\omega_x) = \frac{1}{2} \chi_{[-1,1]}$, we find that
+The crucial fact is that the complex number $a$ does not depend on $\omega_x$ . Thus, defining the partial expectation over the single site $x$ as $\mathbb{E}_x(\dots) := \int \dots \rho(\omega_x)\, d\omega_x$, and using the uniform density $\rho(\omega_x) = \frac{1}{2} \chi_{[-1,1]}$, we find 
 \begin{equation}
-\mathbb{E}_x(|G_{z}(x, x)|^s) = \frac{1}{2 \lambda^s} \int_{-1}^{1} \frac{d\omega_x}{|\frac{a}{\lambda} + \omega_x|^s} \le \frac{1}{2 \lambda^s} \int_{-1}^{1} \frac{d\omega_x}{|\omega_x|^s} = \frac{1}{(1-s)\lambda^s},
+\mathbb{E}_x(|G_{z}(x, x)|^s) = \frac{1}{2 \lambda^s} \int_{-1}^{1} \frac{d\omega_x}{\left|\frac{a}{\lambda} + \omega_x\right|^s} \le \frac{1}{2 \lambda^s} \int_{-1}^{1} \frac{d\omega_x}{|\omega_x|^s} = \frac{1}{(1-s)\lambda^s}.
 \end{equation}
-with $\frac{1}{1-s}$ independent of $\lambda$ and $a$, and thus independent of $\hat{\omega}$, $z$ and $x$.
-
+The resulting constant $\frac{1}{1-s}$ is independent of $\lambda$ and $a$, and therefore independent of the remaining random variables $\hat{\omega}$, the energy $z$, and the site $x$ .
 \end{proof}
 
-
-\subsection{From fractional moment's exponential bound to dynamical localisation}
+\subsection{From fractional moments to dynamical localization}
 
 In this subsection we aim to prove the following theorem:
 
@@ -594,7 +654,7 @@ In this subsection we aim to prove the following theorem:
     \begin{equation}
     \mathbb{E}\left( |G_{E+i\eta}(x,y)|^s \right) \le C e^{-\mu |x-y|}
     \end{equation}
-    uniformly in $E \in \mathbb{R}$ and $\eta > 0$, then exponential localisation holds.
+    uniformly in $E \in \mathbb{R}$ and $\eta > 0$, then exponential localization holds.
 \end{theorem}
 Before proving this theorem, we need two more lemmas. 
 
@@ -640,9 +700,7 @@ For every $s \in (0,1)$ there exists a constant $C_2 \coloneq C_2(s,\rho) < \inf
 \end{equation}
 for all $z \in \mathbb{C} \setminus \mathbb{R}$ and $x, y \in \mathbb{Z}^d$.
 \end{proposition}
-\begin{remark}
-    As it has been explained in the Section \ref{sec:Mainresults}, we prefer to use fractional moments, rather than directly prove localization from the squared power. 
-\end{remark}
+
 \begin{proof}
 As in the proof of \ref{lemma:aprioribound} we  consider the Hamiltonian
 \[
@@ -835,7 +893,7 @@ By the triangle inequality, $\frac{\mu}{2}|x-z| + \frac{\mu}{2}|z-y| \ge \frac{\
 with $\widetilde{\mu} = \frac{\mu}{4}$ and finite prefactor $\widetilde{C} = \frac{C_1 |B| C}{\pi} \sum_{u \in \mathbb{Z}^d} e^{-\frac{\mu}{4}|u|}$.
 \end{proof}
 
-From \eqref{eq:explocalisation} we can also directly obtain spectral localisation through Simon-Wolff criterion.
+From \eqref{eq:explocalisation} we can also directly obtain spectral localization through Simon-Wolff criterion.
 \begin{proposition}[Simon-Wolff criterion]\label{proposition:simonwolff}
     Let $H_\omega$ be a random operator in $l^2(\mathbb{Z}^d)$ with a random potential whose conditional-single site distribution is absolutely continuous. Then if for Lebesgue-almost every $E\in\mathbb{R}$ and $\mathbb{P}$-almost all $\omega$: 
     \begin{equation}
@@ -865,6 +923,13 @@ Proof can be found in \cite[Chapter 5]{aizenman2015}
 \end{proof}
 
 
+\subsection{Exponential decay of the eigenfucntions}
+From \textit{exponential and dynamical localization}, we can obtain that all the eigenfunction of the time-evolving Schr\"odinger operator decay also exponentially. 
+\begin{enumerate}
+    \item da simon wolff ottengo Theorem 7.4
+    \item dalla dynamical ottengo che decade più veloce di ogni polinomio
+    \item dalla exponential so che la sua time evolution  
+\end{enumerate}
 
 \clearpage
 \chapter{SAW representation}
@@ -1025,7 +1090,7 @@ where $ \dfrac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta}$ is still finite and i
 
 
 \section{SAW representation of G }
-The proof of the theorem 3.1 is similar to the one given by Schenker in []. We are going to work with the Green's function defined on a volume
+The proof of the theorem 3.1 is similar to the one given by Schenker in []. We are going to work with the Green function defined on a volume
 where one site is removed every stage. Therefore , for any $ \Lambda \subseteq \mathbb{Z}^d$ (finite or infinite) the Green function changes:
 \begin{equation}
     G^{\Lambda}_z(x,y) \coloneq \begin{cases}
@@ -1160,21 +1225,21 @@ m_\epsilon(\lambda) = -\ln \beta(\lambda) - \ln(\mu_d + \epsilon) > 0.
 \chapter{Connection to Long-Range SAW}
 
 The purpose of this chapter is to extend the self-avoiding walk representation of the resolvent, to random Hamiltonians with long-range hopping. In particular, we compare this setting with the previous model and apply the fractional moment method to study localization.\\
-The difference lies in the kinetic operator, which is replaced by the fractional descrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green's function, in sharp contrast with the standard exponential decay.\\
+The difference lies in the kinetic operator, which is replaced by the fractional  discrete Laplacian $(-\Delta)^\alpha$ with $0<\alpha < 1$. This change leads to a polynomial decay bound for the avareged Green function, in sharp contrast with the standard exponential decay.\\
 This chapter is based on the work of M. Disertori, R.M. Escobar and C. Rojas-Molina in 2024 \cite{disertori2024}.\\
 
 \section{The fractional Laplacian}
 The fractional kinetic operator also connects arbitrarily distant sites in the lattice, rather than just the first neighbors.
 \begin{definition}
-    Let $ -\Delta$ be defined as in Section \ref{sec:The_Hamiltonian}. The fractional descrete Laplacian is $ (-\Delta)^\alpha$ for $ 0< \alpha<1$
+    Let $ -\Delta$ be defined as in Section \ref{sec:The_Hamiltonian}. The fractional  discrete Laplacian is $ (-\Delta)^\alpha$ for $ 0< \alpha<1$
 \end{definition}
-Just as the standard descrete Laplacian, $ (-\Delta)^\alpha$ is bounded, self-adjoint and translation invariant. Its entries satisfy $$ (-\Delta)^\alpha(x,x) >0 \quad \forall x \in \mathbb{Z}^d, \qquad  (-\Delta)^\alpha(x,y) < 0 \quad \forall x \ne y \,\,\text{in}\,\, \mathbb{Z}^d$$
+Just as the standard  discrete Laplacian, $ (-\Delta)^\alpha$ is bounded, self-adjoint and translation invariant. Its entries satisfy $$ (-\Delta)^\alpha(x,x) >0 \quad \forall x \in \mathbb{Z}^d, \qquad  (-\Delta)^\alpha(x,y) < 0 \quad \forall x \ne y \,\,\text{in}\,\, \mathbb{Z}^d$$
 
 Moreover, its off-diagonal matrix elements exhibit polynomial decay: there exist constants $0 < c_{\alpha,d} \le \mathcal{C}_{\alpha,d} < \infty$ such that
 \begin{equation}
 \frac{c_{\alpha,d}}{|x-y|^{d+2\alpha}} \le -(-\Delta)^{\alpha}(x,y) \le \frac{C_{\alpha,d}}{|x-y|^{d+2\alpha}} \label{eq:fractionalbound}
 \end{equation}
-We notice that for $x \ne y$, the fractional Laplacian is never exactly equal to zero. This characteristic describes the long-jump behavior: now, the descrete Laplacian reaches every site of the grid, since the values are never zero, in contrast with the standard case, where the only value different from zero were on the diagonal and first neighbor sites.\\
+We notice that for $x \ne y$, the fractional Laplacian is never exactly equal to zero. This characteristic describes the long-jump behavior: now, the  discrete Laplacian reaches every site of the grid, since the values are never zero, in contrast with the standard case, where the only value different from zero were on the diagonal and first neighbor sites.\\
 Morover, \eqref{eq:fractionalbound} confirms the boundeness of the fractional operator for all $x\ne y$ and the summability of its kernel $\sum_{x\in\mathbb{Z}^{d}}|(-\Delta)^{\alpha}(0,x)|<\infty$. For the diagonal entries, it holds:
 $$
 (-\Delta)^{\alpha}(x,x)=-\sum_{y\ne x}(-\Delta)^{\alpha}(x,y)
@@ -1225,7 +1290,7 @@ We consider the fractional Hamiltonian
 H_{\alpha,\omega} = (-\Delta)^\alpha + \lambda V_\omega \quad \text{on } \ell^2(\mathbb{Z}^d),
 \end{equation}
 where $0 < \alpha < 1$ and $V_\omega$ is a diagonal matrix with i.i.d. random entries defined as in Section \ref{sec:The_Hamiltonian}.
-The Green's function $G_z = (H_{\alpha,\omega} - z)^{-1}$ is well-defined for all $z \in \mathbb{C} \setminus \mathbb{R}$, and its decay at strong disorder is closely related to the polynomial decay of the fractional Laplacian.\\
+The Green function $G_z = (H_{\alpha,\omega} - z)^{-1}$ is well-defined for all $z \in \mathbb{C} \setminus \mathbb{R}$, and its decay at strong disorder is closely related to the polynomial decay of the fractional Laplacian.\\
 
 As before, in the long-range scenario, we use the geometric resolvent expansion to represent the fractional moments as a sum over self-avoiding paths and we obtain that the averaged fractional Green function satisfies
 \begin{equation}
@@ -1236,7 +1301,7 @@ uniformly in $z \in \mathbb{C} \setminus \mathbb{R}$, for all $\lambda > \lambda
 Since we are considring arbitrary sites on the lattice, we define the step weight kernel for the SAW as $D(x,y) \coloneq |(-\Delta)^\alpha(x,y)|^s$, which generates a transition probability $p(x \to y) \coloneq \frac{D(x,y)}{\sum_{z \ne x} D(x,z)}$ and is translation-invariant. 
 This is well-defined for $s \in \left(\frac{d}{d+2\alpha}, 1\right)$ because the kernel is summable: $\sum_{x \ne 0} |(-\Delta)^\alpha(0,x)|^s < \infty$ ( See \eqref{eq:Dsbound}).
 From this essential condition, we develop the same strategy as for the standard Anderson resolvent. The new definitions for SAWs are all generated by $D$.
-\paragraph{SAW definitions for the descrete Anderson model.}
+\paragraph{SAW definitions for the  discrete Anderson model.}
 Recall the definitions in Chapter 4. A self-avoiding walk (SAW) on the lattice $\mathbb{Z}^{d}$ with long-range jumps is characterized by the following essential components:
 
 \begin{itemize}
@@ -1326,9 +1391,9 @@ R_N &:= \beta^{N}\sum_{\gamma\in\mathcal{S}_{N+1}(0,y-x)}\prod_{j=0}^{N-1}D(\gam
 The assumption that $\lambda>\lambda_{0}(s)\coloneqq (\frac{1}{(1-s)}\, \frac{1}{R_{\chi^D}})^{\frac{1}{s}}$ ensures that $\beta<R_{\chi^{D}}$. Since the susceptibility $\chi^{D}(\beta)$ is finite within its radius of convergence, taking the limit implies $\lim_{N\rightarrow\infty}R_N=0$, which , together with \eqref{eq:twopointbound}, gives us \eqref{eq:LRSAW}.
 
 
-\section{The Localisation Criteria}
-A natural question that may arise is how localisation is proven without the exponential decay of the fractional moments of the Green's function.
-Due to the polynomial tail of the fractional Laplacian, exponential decay is not expected; instead, it is only possible to prove a weaker version of dynamical localisation where only moments $\beta < 2\alpha$ of the position operator are finite. Spectral localisation is proven via the Simon-Wolff theorem.
+\section{The Localization Criteria}
+A natural question that may arise is how localization is proven without the exponential decay of the fractional moments of the Green function.
+Due to the polynomial tail of the fractional Laplacian, exponential decay is not expected; instead, it is only possible to prove a weaker version of dynamical localization where only moments $\beta < 2\alpha$ of the position operator are finite. Spectral localization is proven via the Simon-Wolff theorem.
 
 \begin{lemma}
     Let \eqref{eq:LRSAW} hold uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for $\lambda>\lambda_0(s)$. It follows that:
@@ -1349,11 +1414,11 @@ Due to the polynomial tail of the fractional Laplacian, exponential decay is not
 
 \begin{proof}
 \begin{enumerate}
-    \item[(i)] From \eqref{eq:LRSAW}, we verify the summability of the Green's function moments: 
+    \item[(i)] From \eqref{eq:LRSAW}, we verify the summability of the Green function moments: 
     \begin{align*}
         \sum_{x \in \mathbb{Z}^d} \mathbb{E}[|G_z(0,x)|^s|x|^t] \le \frac{K_0 \,\theta_s}{\lambda^s}\sum_{x \ne 0} \frac{1}{|x|^{d+2\alpha_s-t}} < \infty \quad \forall t \in [0,2\alpha_s), \label{eq:boundsumlrs}
     \end{align*}
-    uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$. Exactly like for the case of $\alpha=1$, setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ almost surely  . We then apply the Simon-Wolff criterion to obtain spectral localisation  .
+    uniformly in $z \in \mathbb{C}\setminus\mathbb{R}$ and for all $\lambda >\lambda_0(s)$. Exactly like for the case of $\alpha=1$, setting $t=0$ and applying Fatou's lemma ensures that $\liminf_{\eta \downarrow 0} \sum_y |G_{E+i\eta}(x,y)|^2 < \infty$ almost surely  . We then apply the Simon-Wolff criterion to obtain spectral localization  .
     
     \item[(ii)]
      The polynomial decay of the eigenfunctions follows directly from this bounded density property and the summability bound by applying standard fractional moment arguments \cite[Theorem 7.4]{Aizenman_2015}.
@@ -1366,7 +1431,7 @@ Due to the polynomial tail of the fractional Laplacian, exponential decay is not
     \begin{align*}
         \sup_{v\in\mathbb{R}}(1+|v|)^s \rho(v) < \infty.
     \end{align*}
-    The expectation of this correlator is majorized by the integrated Green's function moments:
+    The expectation of this correlator is majorized by the integrated Green function moments:
     \begin{align*}
         \mathbb{E}[Q(x,0,\Sigma)] \le C_s \liminf_{\eta \downarrow 0} \int_{\Sigma} \mathbb{E}[|G_{E+i\eta}(x,0)|^s] dE,
     \end{align*}

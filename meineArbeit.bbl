@@ -149,6 +149,13 @@
        pages={194\ndash 218},
 }
 
+\bib{klein2007}{misc}{
+      author={Klein, Abel},
+       title={Multiscale analysis and localization of random operators},
+        date={2007},
+         url={https://arxiv.org/abs/0708.2292},
+}
+
 \bib{rojasmolina2018}{unpublished}{
       author={Rojas-Molina, Constanza},
        title={Random schr{\"o}dinger operators},

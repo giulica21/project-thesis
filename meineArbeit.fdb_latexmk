@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex meineArbeit"] 1789927361.74628 "meineArbeit.aux" "meineArbeit.bbl" "meineArbeit" 1789927530.57375 0
-  "./biblio.bib" 1789748923 5683 16590a63d6919e8b7d22c1119c19debe ""
+["bibtex meineArbeit"] 1790066890.42763 "meineArbeit.aux" "meineArbeit.bbl" "meineArbeit" 1790066892.51632 0
+  "./biblio.bib" 1789996434 5961 37262aa51100008fcab1e510f16383f3 ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/bibtex/bst/amsrefs/amsra.bst" 1362760567 17320 f01543d3c77f0cd9af37d8d862e383f7 ""
-  "meineArbeit.aux" 1789927529 8819 9c32b3652c4d91a84cf8a3dc253e0c4f "pdflatex"
+  "meineArbeit.aux" 1790066891 9026 31c22732ee796dfcea51475b44a265af "pdflatex"
   (generated)
   "meineArbeit.bbl"
   "meineArbeit.blg"
   (rewritten before read)
-["pdflatex"] 1789927528.01465 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1789927530.57549 0
+["pdflatex"] 1790066890.68388 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1790066892.51716 0
   "BA_Titelseite.sty" 1786433374 1630 87e6a5d49fb587f3ed504d15aa580855 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789717350 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1789717932 22504 9f59b6f9e6763a25d59533cdfc6a19f5 ""
@@ -228,12 +228,13 @@
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "IMG_0259.jpeg" 1789926267 203704 695ba06253737860d607b27a10f1673d ""
   "IMG_1072.jpeg" 1789319845 61664 4dd62bbba44631ed981df8ba1b64d09d ""
-  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1789927527 86578 fdaefaf8d13e926706e3d14dd2903477 ""
-  "meineArbeit.aux" 1789927529 8819 9c32b3652c4d91a84cf8a3dc253e0c4f "pdflatex"
-  "meineArbeit.bbl" 1789927361 6076 befebafb42bfdb07fa4070db08035fb0 "bibtex meineArbeit"
-  "meineArbeit.out" 1789927529 4121 3c524ed492a0435b26b41caed25fb218 "pdflatex"
-  "meineArbeit.tex" 1789927527 86578 fdaefaf8d13e926706e3d14dd2903477 ""
-  "meineArbeit.toc" 1789927529 2380 f1f3796469722655404a6998a925bbf9 "pdflatex"
+  "IMG_1129.jpeg" 1790004320 86775 1479a012b4d7876e6fd828ccef841113 ""
+  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1790066887 93614 2a20ebe261ff81a1b54546c8f8f485d1 ""
+  "meineArbeit.aux" 1790066891 9026 31c22732ee796dfcea51475b44a265af "pdflatex"
+  "meineArbeit.bbl" 1790066890 6279 af60da7b5335872c345fd1dcf4e5b97e "bibtex meineArbeit"
+  "meineArbeit.out" 1790066891 4343 c9583a23dbd85efd7e827712bb19f5ca "pdflatex"
+  "meineArbeit.tex" 1790066887 93614 2a20ebe261ff81a1b54546c8f8f485d1 ""
+  "meineArbeit.toc" 1790066891 2186 dc8edc6a52d231cf9a0573b7c5aa71f9 "pdflatex"
   (generated)
   "meineArbeit.aux"
   "meineArbeit.log"

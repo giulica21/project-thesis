@@ -3,15 +3,15 @@
 \contentsline {chapter}{\numberline {1}The Anderson Model}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}The Hamiltonian}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}The spectrum}{13}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Main results}{16}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Main results and Open Problems}{15}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Localization properties}{18}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Types of localization}{18}{section.2.1}%
 \contentsline {chapter}{\numberline {3}Fractional moments}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The Green function}{21}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Localization at large disorder}{24}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}From fractional moments to localization}{25}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}SAW representation}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}SAW Definitions}{32}{section.4.1}%
-\contentsline {section}{\numberline {4.2}SAW representation of $G_z$ }{36}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Proof with SAW}{38}{section.4.3}%
-\contentsline {chapter}{Bibliography}{42}{remark.4.3.5}%
+\contentsline {chapter}{\numberline {4}SAW representation}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}SAW Definitions}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}SAW representation of $G_z$ }{40}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Proof with SAW}{42}{section.4.3}%
+\contentsline {chapter}{Bibliography}{47}{remark.4.3.5}%

@@ -156,6 +156,17 @@
          url={https://arxiv.org/abs/0708.2292},
 }
 
+\bib{madras2013self}{book}{
+      author={Madras, Neal},
+      author={Slade, Gordon},
+       title={The self-avoiding walk},
+      series={Modern Birkh{\"a}user Classics},
+   publisher={Birkh{\"a}user},
+     address={New York, NY},
+        date={2013},
+        ISBN={978-1-4614-6024-4},
+}
+
 \bib{rojasmolina2018}{unpublished}{
       author={Rojas-Molina, Constanza},
        title={Random schr{\"o}dinger operators},

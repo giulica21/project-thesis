@@ -751,9 +751,9 @@ The following Proposition, is the mein step for the proofs of Theorem \ref{thm:e
 \begin{proposition}\label{prop:almostloc}
     Let $\Sigma$ be the almost sure spectrum of $H_{\omega,\alpha}$. Then,
     \begin{equation}
-        \mathbb{E}[Q(x,y;\Sigma)] \le C_s \lim_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G(x,y;E+i\eta)|^s] \, dE
+        \mathbb{E}[Q(x,y;\Sigma)] \le C_1 \lim_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G(x,y;E+i\eta)|^s] \, dE
     \end{equation}
-    with a finite constant $C_s < \infty$
+    with a finite constant $C_1 \coloneq C_1(s,\rho) < \infty$
 \end{proposition}
 
 \begin{theorem}\label{thm:explocproof}
@@ -837,39 +837,57 @@ The following Proposition, is the mein step for the proofs of Theorem \ref{thm:e
         &|\mathrm{Im}(G_{z,\alpha}(x,x))|^{1-s}|G_{z,\alpha}(x,y)|^s \\
         &= \left| \mathrm{Im}\left(\frac{1}{{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x}\right)\right|^{1-s}\left|\frac{1}{{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x} \frac{G_z^{(\zeta)}(x,y)}{G_z^{(\zeta)}(x,x)}\right|^s\\
         &= \frac{|\mathrm{Im}({\hat{G}_{z,\alpha}(x,x)}^{-1})|^{1-s}}{|{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x|^{2-2s}} \frac{|\zeta + {\hat{G}_{z,\alpha}(x,x)}^{-1}|^s}{|{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x|^s} |G_z^{(\zeta)}(x,y)|^s \\
-        &\le (|\zeta|^s + |{\hat{G}_{z,\alpha}(x,x)}^{-1}|^s) \frac{|\mathrm{Im}({\hat{G}_{z,\alpha}(x,x)}^{-1})|^{1-s}}{|{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x|^{2-s}} |G_z^{(\zeta)}(x,y)|^s
+        &\le  \frac{|\mathrm{Im}({\hat{G}_{z,\alpha}(x,x)}^{-1})|^{1-s}}{|{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x|^{2-s}} \, \frac{(|\zeta|^s + |{\hat{G}_{z,\alpha}(x,x)}^{-1}|^s)}{|\hat{G}_{z,\alpha}(x,x)^{-1} + \lambda\omega_x|^s} |G_z^{(\zeta)}(x,y)|^s \eqcolon L
     \end{align*}
-    where we used the triangle inequality in the last step.
+    where we used $ |\sum _n a_n|^s \le \sum_n |a_n|^s$ in the last step.\\
+    Now, we average $I$ in $\omega_x$, in order to obtain the following bound:
+    \begin{align*}
+    \mathbb{E}_x [I] &\le \mathbb{E}_x [L] \\
+    &= (|\zeta|^s - |\lambda a|^s) \cdot |G_{E+i\eta}^{(\zeta)}(x,y)|^s \cdot \frac{1}{\lambda} \int_{-1}^{1} \frac{1}{2} \frac{|\text{Im}(a)|^{1-s}}{| \omega_x - a|^{2-s}} \, d \omega_x
+    \end{align*}
+    where $a=- \frac{\hat{G}_{z,\alpha}(x,x)^{-1}}{\lambda}$.
 
-    Now we compute the conditional expectation with respect to the random variable $\omega_x$. Let us denote the distribution of $\lambda \omega_x$ by $\rho_\lambda(v) \, dv$. Taking the conditional expectation given $\{\omega_y\}_{y \neq x}$, we integrate over $v$:
-    \begin{equation} \label{eq:conditional_expectation}
-        \begin{split}
-        \mathbb{E}\left[ I \mid \{\omega_y\}_{y \neq x} \right] &= \int_{\mathbb{R}} I (v) \, \rho_\lambda(v) \, dv \\
-        &\le (|\zeta|^s + |{\hat{G}_{z,\alpha}(x,x)}^{-1}|^s) |G_z^{(\zeta)}(x,y)|^s \\
-        &\quad \times \int_{\mathbb{R}} \frac{|\mathrm{Im}(-{\hat{G}_{z,\alpha}(x,x)}^{-1})|^{1-s}}{|v - (-{\hat{G}_{z,\alpha}(x,x)}^{-1})|^{2-2s}} \frac{\rho_\lambda(v)}{|v - (-{\hat{G}_{z,\alpha}(x,x)}^{-1})|^s} \, dv.
-        \end{split}
-    \end{equation}
-
-    At this point, Lemma \ref{lemma:7.8} is applied to the remaining integral with $\gamma = -{\hat{G}_{z,\alpha}(x,x)}^{-1}$. The integral completely absorbs the $(1-s)$ powers and is bounded by $C_s / \max\{1, |\gamma|^s\}$. The multiplicative factor $(|\zeta|^s + |\gamma|^s)$ is thus reduced to $(|\zeta|^s + 1)$ thanks to this normalization
-    \begin{equation} \label{eq:7.34_rigorous}
-        \mathbb{E}\left[ |\mathrm{Im}(G_{z,\alpha}(x,x))|^{1-s} |G_{z,\alpha}(x,y)|^s\right]\le C_s (|\zeta|^s + 1) |G_z^{(\zeta)}(x,y)|^s.
-    \end{equation}
-
-    Because the inequality \eqref{eq:7.34_rigorous} holds for any arbitrary $\zeta \in \mathbb{R}$, the resulting bound may now be averaged over $\zeta$. For its probability distribution, we pick a density proportional to $(|\zeta|^s + 1)^{-1} \rho_\lambda(\zeta)$. Note that the normalization constant for this distribution is strictly positive. Averaging over this distribution neutralizes the polynomial prefactor $(|\zeta|^s + 1)$, and taking the expectation over the remaining variables yields
-    \begin{equation} \label{eq:final_factor_bound}
-        \mathbb{E} \left[ |\mathrm{Im}(G_{E+i\eta,\alpha}(x,x))|^{1-s}|G_{E+i\eta,\alpha}(x,y)|^s \right] \le C'_{s,\lambda} \mathbb{E} \left[ |G_{E+i\eta,\alpha}(x,y)|^s \right].
-    \end{equation}
-
-    As noted earlier, we also need to bound the second factor in \eqref{eq:7.31} which involves $E - i\eta$. Because $|\mathrm{Im}(G_{E - i\eta,\alpha})(y,y)| = |\mathrm{Im}(G_{E + i\eta,\alpha})(y,y)|$ for any complex energy off the real axis, the exact same upper bound rigorously applies to the second factor. 
-
-    Substituting these bounds back into the two factors of our original Cauchy-Schwarz inequality \eqref{eq:7.31}, we obtain:
+    From Lemma \ref{lemma:7.8} it reduces to:
     \begin{equation*}
-        \left( \int_\Sigma \mathbb{E}[|\mathrm{Im}(G_{E + i\eta,\alpha})(x,y)|] \, dE \right)^2 \le (C'_{s,\lambda})^2 \left( \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE \right)^2.
+    \mathbb{E}_x [I] \le (|\zeta|^s + 1)\, C_s(\rho)\, |G_{E+i\eta}^{(\zeta)}(x,y)|^s
+    \end{equation*}
+
+    We can average over $\zeta$, and in particular define a new distribution density
+    \begin{equation*}
+    \rho_\zeta = \frac{1}{Z} (|\zeta|^s + 1)^{-1} \cdot \frac{1}{2} \chi_{[-1,1]}
+    \end{equation*}
+
+    with $Z = \int_{-1}^{1} \frac{1}{2} (|\zeta|^s + 1)^{-1} \, d\zeta$. This definition is valid since:
+    \begin{enumerate}
+        \item[(a)] $\rho_\zeta$ is non-negative, since we consider $|\zeta|$.
+        \item[(b)] $\rho_\zeta$ is continuous and $\int_{\mathbb{R}} \rho_\zeta \, d\zeta = 1$.
+    \end{enumerate}
+
+    Integrating both sides, we get:
+    \begin{equation*}
+    \int_{\mathbb{R}} \mathbb{E}_x [I] \rho_\zeta \, d\zeta = \mathbb{E}_x [I] \cdot \int_{\mathbb{R}} \rho_\zeta \, d\zeta = \mathbb{E}_x [I]
+    \end{equation*}
+
+    and
+    \begin{align*}
+    &\int_{\mathbb{R}} \frac{C_s(\rho)}{Z} (|\zeta|^s + 1) (|\zeta|^s + 1)^{-1} \cdot \frac{1}{2} \chi_{[-1,1]} |G_{E+i\eta}^{(\zeta)}(x,y)|^s \, d\zeta \\
+    &= \frac{C_s(\rho)}{Z} \int_{-1}^{1} \frac{1}{2} |G_{E+i\eta}^{(\zeta)}(x,y)|^s \, d\zeta \\
+    &= \frac{C_s(\rho)}{Z} \mathbb{E}_x \left[ |G_{E+i\eta}^{(\zeta)}(x,y)|^s \right]
+    \end{align*}
+
+    Averaging over all $(w_n)_{n \in \mathbb{Z}^d}$ means
+    \begin{equation*}
+    \mathbb{E}[I] \le C_1 \mathbb{E} \left[ |G_{E+i\eta}^{(\zeta)}(x,y)|^s \right]
+    \end{equation*}
+
+    Finally, substituting these bounds back into the two factors of our original Cauchy-Schwarz inequality \eqref{eq:7.31}, we obtain:
+    \begin{equation*}
+        \left( \int_\Sigma \mathbb{E}[|\mathrm{Im}(G_{E + i\eta,\alpha})(x,y)|] \, dE \right)^2 \le (C_1)^2 \left( \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE \right)^2.
     \end{equation*}
 
     Taking the square root of both sides and substituting this result back into \eqref{eq:7.29}, we can take the limit $|\eta| \downarrow 0$:
     \begin{equation}
-        \mathbb{E}[Q(x,y;\Sigma)] \le C'_{s,\lambda} \liminf_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE.
+        \mathbb{E}[Q(x,y;\Sigma)] \le C_1 \liminf_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE.
     \end{equation}
     This concludes the proof.
 \end{proof}
@@ -902,7 +920,6 @@ such that $\gamma_i \ne \gamma_j$ for all $i \ne j$.
     \caption{$\gamma$ and $\gamma '$ are self-avoiding walks from $x$ to $y$}
 \end{figure}
 
-\vspace{0.5cm}
 \begin{definition}[Sets of Self-Avoiding Walks]
 Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mathbb{N}_0$:
 \begin{enumerate}
@@ -937,7 +954,7 @@ This is defined by
     This limit exists, is positive, and satisfies a strict inequality dependent on the summability of the fractional kernel.
 \end{definition}
 
-\begin{claim}
+\begin{claim}\label{claim:radius}
      Let $R_{\chi^D}$ be the radius of convergence of self-avoiding walks on $\mathbb{Z}^d$ generated by $D$. Then
     \begin{equation*}
     R_{\chi^D} \ge \frac{1}{\sum_{z \neq 0} D(0,z)} > 0
@@ -956,15 +973,10 @@ Repeating this argument inductively for a general length $N \ge 1$, we obtain an
 Since the geometric series converges provided that the product with the parameter $\beta$ is strictly less than $1$, the radius of convergence satisfies the required inequality $R_{\chi^D} \ge \left( \sum_{z \neq 0} D(0,z) \right)^{-1}$.   
 \end{proof} 
 \begin{remark}
-    For $\alpha=1$ the radius of convergence is defined as $1/\mu_d$, where 
-    \[
-    \mu_d := \lim_{N \to \infty} (c_N)^{1/N}.
-    \]
-    and $\mu_d < 2d$.
-    one can prove that $\mu_d < 2d-1$ APPENDIX
+    For $\alpha=1$ we define the inverse of the radius fo convergence as the \textit{the connective constant}, such that $R_{\chi^D}^{-1} \eqcolon \mu_d$.\\ We can find a slightly better estimate for $\mu_d$, which is $\mu_d \le 2d-1$ (see Claim \ref{claim:mud} ) instead of $\mu_d \le 2d$ (as proven before in Claim \ref{claim:radius}). The $2d -1$ comes from the property of the SAW of not jumping back to the site we came from.
 \end{remark}
 
-\begin{claim}
+\begin{claim}\label{claim:mud}
 Let $\mu_d$ be the connective constant (or growth rate) of self-avoiding walks on $\mathbb{Z}^d$. Then:
 \[
 \mu_d \le 2d - 1
@@ -972,9 +984,9 @@ Let $\mu_d$ be the connective constant (or growth rate) of self-avoiding walks o
 \end{claim}
 
 \begin{proof}
-Let $c_N$ denote the number of self-avoiding walks (SAWs) of length $N$ starting from the origin $0 \in \mathbb{Z}^d$, and let $S_N(0, x)$ denote the set of such walks ending at $x \in \mathbb{Z}^d$. By definition:
+Let $c_N$ denote the number of self-avoiding walks (SAWs) of length $N$ starting from the origin $0 \in \mathbb{Z}^d$ for $\alpha=1$, and let $S_N(0, x)$ denote the set of such walks ending at $x \in \mathbb{Z}^d$. By definition:
 \[
-c_N = \sum_{x \in \mathbb{Z}^d} |S_N(0, x)| = \sum_{x \in \mathbb{Z}^d} \sum_{\gamma \in S_N(0, x)} 1
+c_N= \sum_{x \in \mathbb{Z}^d} |S_N(0, x)| = \sum_{x \in \mathbb{Z}^d} \sum_{\gamma \in S_N(0, x)} 1
 \]
 Consider the generating function (\textit{susceptibility}) with parameter $\beta >0$ in $\mathbb{C}$:
 \[
@@ -993,19 +1005,19 @@ c_N \le 2d (2d - 1)^{N-1}, \quad \text{for } N \ge 1.
 
 Using this upper bound, we can bound the series from above:
 \begin{align*}
-\sum_{N=0}^{\infty} |\beta|^N c_N 
+\sum_{N=0}^{\infty} |\beta|^N c_N
 &\le \sum_{N=1}^{\infty} |\beta|^N (2d)(2d-1)^{N-1} \\
 &= 2d |\beta| \sum_{k=0}^{\infty} |\beta|^k (2d-1)^k \quad (\text{setting } k = N-1) \\
 &= 2d |\beta| \sum_{k=0}^{\infty} \left(|\beta|(2d-1)\right)^k
 \end{align*}
 
-This geometric series converges if and only if:
+This geometric series converges if and only if
 \[
 |\beta|(2d - 1) < 1 \iff |\beta| < \frac{1}{2d - 1} =: R
 \]
 where $R = \frac{1}{2d - 1}$ is the radius of convergence of the bounding series.
 
-By the Cauchy--Hadamard theorem, the radius of convergence $R'$ of the original series $\sum_{N=0}^{\infty} c_N |\beta|^N$ is:
+The radius of convergence $R'$ of the original series $\sum_{N=0}^{\infty} c_N|\beta|^N$ is
 \[
 R' = \frac{1}{\limsup_{N \to \infty} c_N^{1/N}} = \frac{1}{\mu_d}
 \]
@@ -1019,60 +1031,6 @@ Taking the reciprocal yields:
 \]
 \end{proof}
 
-The final results reguarding the decay of the fractional moments of the green function, depend on the estimated decay of the two point function. In fact we can prove the following Propositions.
-\begin{proposition}[Polinomial Decay of the Correlation Function]
-Let $\alpha \in (0,1)$, $s \in (\frac{d}{d+2\alpha},1)$ and $\beta \ge 0$ such that $\beta < R_{\chi^D}$. Then there exists a constant $K_0 < \infty$, independent of $x$, such that
-\[
-C_\beta^D(x) \;\le\; K_0 \frac{1}{|x|^{s(d+2\alpha)}} \qquad \text{for all } x \in \mathbb{Z}^d.
-\]
-\end{proposition}
-The proof of this Lemma can be found in \cite[Lemma 4]{disertori2024}.
-\begin{proposition}[Exponential Decay of the Correlation Function]
-Let $\alpha=1$, $s \in (0,1)$ and $\beta \ge 0$ such that $\beta < 1/\mu_d$. Then for every $\varepsilon > 0$ there exists a constant $K_\varepsilon < \infty$, independent of $x$, such that
-\[
-C_\beta^D(x) \;\le\; K_\varepsilon \big( (\mu_d+\varepsilon)\beta \big)^{|x|} \qquad \text{for all } x \in \mathbb{Z}^d.
-\]
-\end{proposition}
-
-\begin{proof}
-We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining $C_\beta^D(x)$ may be restricted to $N \ge |x|$:
-\begin{equation}
-    C_\beta^D(x) = \sum_{N=|x|}^{\infty} \beta^N \, |\mathcal S_N(x,0)| \;\le\; \sum_{N=|x|}^{\infty} \beta^N c_N. \label{eq:4.1.1}
-\end{equation}
-
-Fix $\varepsilon > 0$. Since $\mu_d = \lim_{N\to\infty} c_N^{1/N}$, by the definition of limit there exists $N_0  \in \mathbb{N}$ such that
-\[
-c_N^{1/N} < \mu_d + \varepsilon \qquad \text{for all } N \ge N_0,
-\]
-that is,
-\[
-c_N < (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge N_0.   
-\]
-For $N = 0, 1, \dots, N_0-1$, define
-\[
-K_\varepsilon \;:=\; \max\left(1,\; \max_{0 \le N < N_0} \frac{c_N}{(\mu_d+\varepsilon)^N}\right),
-\]
-which is finite, being the maximum of finitely many finite quantities. By construction it holds:
-\[
-c_N \;\le\; K_\varepsilon (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge 0.
-\]
-
-Combining it with \eqref{eq:4.1.1} we obtain
-\[
-C_\beta^D(x) \;\le\; K_\varepsilon \sum_{N=|x|}^{\infty} \big[(\mu_d+\varepsilon)\beta\big]^N.
-\]
-Choosing $\varepsilon$ small enough that $r := (\mu_d+\varepsilon)\beta < 1$ (possible since $\beta < 1/\mu_d$), the tail of the geometric series equals
-\[
-\sum_{N=|x|}^{\infty} r^N = \frac{r^{|x|}}{1-r}.
-\]
-Hence
-\[
-C_\beta^D(x) \;\le\; \frac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta} \, \big[(\mu_d+\varepsilon)\beta\big]^{|x|}.
-\]
-where $ \dfrac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta}$ is still finite and indipendent from $x$.
-\end{proof}
-
-
 \section{SAW representation of $G_z$ }
 The proof of the theorem 3.1 is similar to the one given by Schenker in []. We are going to work with the Green function defined on a volume
 where one site is removed every stage. Therefore , for any $ \Lambda \subseteq \mathbb{Z}^d$ (finite or infinite) the Green function changes:
@@ -1083,7 +1041,42 @@ where one site is removed every stage. Therefore , for any $ \Lambda \subseteq \
     \end{cases}
 \end{equation}
 where $H^{\Lambda}_\omega -z \in \mathbb{C}^{\Lambda \times \Lambda}$ is the matrix obtained by restricting $ H_\omega -z$ to $ \Lambda$. In this thesis we will consider $ \Lambda = \mathbb{Z}^d$, but we leave the noation $\Lambda$ to highligth the fact that the same result holds for any volume.\\
-To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$. In this section, for semplicity during calculations, we will write $ G^{\Lambda}(x,y)$ instead of $ G^{\Lambda}_z(x,y)$.
+To notice is also that  $H^{\Lambda}_\omega -z$ is still invertible for all $z \in \mathbb{C} \setminus \mathbb{R}$. In this section, for semplicity during calculations, we will write $ G^{\Lambda}(x,y)$ instead of $ G^{\Lambda}_z(x,y)$.\\
+
+The first SAW representation is given byt the following Claim.
+\vspace{.2cm}
+\begin{claim} \label{claim:SAWrep}
+\begin{equation}
+    G^\Lambda(x, y) = G^\Lambda(x, x) \sum_{x_1 \in \Lambda \setminus \{x\}} \triangle^\alpha(x, x_1) G^{\Lambda \setminus \{x\}}(x_1, y)
+\end{equation}
+\end{claim}
+
+\begin{proof}
+Using the resolvent identity for $A = (H_\omega^\Lambda - z)$ and $B = (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)$, we obtain:
+\begin{align*}
+&(H_\omega^\Lambda - z)^{-1} - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1} \\
+&= - (H_\omega^\Lambda - z)^{-1} \left( H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) \right) 
+(H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1}.
+\end{align*}
+
+The kinetic operator $(-\Delta)^\alpha$ could connect all arbitrarily distant sites in the lattice, not just nearest neighbors. Therefore, $\left( H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) \right)$ isolates all off-diagonal jumps originating from or terminating at $x$:
+\[
+H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) = \sum_{w \in \Lambda \setminus \{x\}} (-\Delta)^\alpha(x, w) \left( \langle \delta_w, \cdot \rangle \delta_x + \langle \delta_x, \cdot \rangle \delta_w \right) =: T_{x,w}.
+\]
+
+Now, considering the matrix elements for $(x, y)$ with $x \neq y$ and applying matrix multiplication:
+\[
+ (H_\omega^\Lambda - z)^{-1}(x,y) - 0 = -\sum_{x_1, x_2 \in \Lambda}(H_\omega^\Lambda - z)^{-1} (x,x_1) T_{x_1, x_2} (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1}(x_2,y).
+\]
+For $T_{x_1,x_2} \ne 0$, we need $x_1 = x$ and $x_2 \ne x$.
+
+For the rightmost matrix element to be non-zero when $y \neq x$, we strictly need $x_2 \neq x$ (since the decoupled resolvent cannot transition between $x$ and the rest of the lattice). For the perturbation term $T_{x_1, x_2}$ to be non-zero under the condition $x_2 \neq x$, we must have $x_1 = x$. 
+
+Applying these constraints, the corresponding matrix element of the perturbation is exactly $-T_{x, x_2} = -(-\Delta)^\alpha(x, x_2)$. Following standard notation for the fractional Anderson model, we define this strictly positive jump weight as $\triangle^\alpha(x, x_2) \coloneqq -(-\Delta)^\alpha(x, x_2)$. Substituting this back into the sum leaves us with:
+\[
+G^\Lambda(x, y) = \sum_{x_1 \in \Lambda \setminus \{x\}} G^\Lambda(x, x) \triangle^\alpha(x, x_1) G^{\Lambda \setminus \{x\}}(x_1, y).
+\]
+\end{proof}
 
 \begin{theorem}\label{thm:ultimaterepsaw}
 Let $x, y \in \mathbb{Z}^d$, $x \neq y$, $\Lambda \subseteq \mathbb{Z}^d$. $G^\Lambda$ is defined as in \eqref{eq:Ginlambda}. It holds
@@ -1097,39 +1090,7 @@ where $\Lambda_i = \Lambda \setminus \{x, \gamma_1, \dots, \gamma_{i-1}\}$ and
 \end{equation}
 
 \end{theorem}
-In order to prove Theorem \ref{thm:ultimaterepsaw}, we first need te following claim to hold. 
-\vspace{.2cm}
-
-\begin{claim} \label{claim:SAWrep}
-\begin{equation}
-    G^\Lambda(x, y) = G^\Lambda(x, x) \sum_{x_1 \sim x} G^{\Lambda_1}(x_1, y)
-\end{equation}
-\end{claim}
 \begin{proof}
-Using the resolvent identity for $A = (H_\omega^\Lambda - z)$ and $B = (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)$, we obtain:
-\begin{align*}
-&(H_\omega^\Lambda - z)^{-1} - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1} \\
-&= - (H_\omega^\Lambda - z)^{-1} \left( H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) \right) 
-(H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1}
-\end{align*}
-
-Moreover:
-\[
-H_\omega^\Lambda - (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}}) = -\sum_{x_1 \sim x}\delta_{x_1} =: T_{x, x_1}
-\]
-
-\noindent Now considering the matrix elements in $(x, y)$ with $x \neq y$ and matrix multiplication:
-\[
-\langle \delta_x, (H_\omega^\Lambda - z)^{-1} \delta_y \rangle - 0 = -\sum_{x_1, x_2} \langle \delta_x, (H_\omega^\Lambda - z)^{-1} \delta_{x_1} \rangle T_{x_1, x_2} \langle \delta_{x_2}, (H_\omega^{\{x\}} \oplus H_\omega^{\Lambda \setminus \{x\}} - z)^{-1} \delta_y \rangle
-\]
-For $T_{x_1, x_2} \neq 0$, we need $x_1 = x$ and $x_2 \sim x_1$.
-
-Which leaves us with:
-\[
-G^\Lambda(x, y) = \sum_{x_1 \sim x} G^\Lambda(x, x)G^{\Lambda \setminus \{x\}}(x_1, y)
-\]
-\end{proof}
-\begin{proof}[Proof of Theorem 5.8]
 Now we separate the case in which $ x_1 =y$ (which implies $|x-y|=1$).
 \[
 G^\Lambda(x, y) = G^\Lambda(x, x) \left(\sum_{x_1 \sim x, x_1 \neq y}G^{\Lambda_1}(x_1, y) +  \delta_{|x-y|=1}\,G^{\Lambda_1}(y,y)\right)
@@ -1191,11 +1152,69 @@ Taking the supremum over all finite volumes $\Lambda \subset \mathbb{Z}^d$ now y
 \sup_{\Lambda \subset \mathbb{Z}^d} \mathbb{E}\left( |G_z^{(\Lambda)}(x,y)|^s \right) \le \beta(s) C_{\beta(s)}^D(x-y). \tag{4.3}
 \end{equation}
 \end{proof}
-
-
 \begin{remark}
-    The two theorems \ref{thm:theorem1.1} and \ref{thm:theorem1.2} are a consequence of this result, combined with the decay of the two point function, proved in Section \ref{sec:SAW.1}.
+    The value of $\lambda_0$ is given by $R_{\chi^D}= \frac{1}{(1-s)\lambda_0}$ which gives $\lambda_0 = \left(\frac{1}{(1-s)R_{\chi^D}}\right)^{1/s}$ \\
 \end{remark}
+
+
+The final results reguarding the decay of the fractional moments of the green function, depends on the estimated decay of the two point function. In fact we can prove the following Propositions.
+\begin{proposition}[Polinomial Decay of the Correlation Function]
+Let $\alpha \in (0,1)$, $s \in (\frac{d}{d+2\alpha},1)$ and $\beta \ge 0$ such that $\beta < R_{\chi^D}$. Then there exists a constant $K_0 < \infty$, independent of $x$, such that
+\[
+C_\beta^D(x) \;\le\; K_0 \frac{1}{|x|^{s(d+2\alpha)}} \qquad \text{for all } x \in \mathbb{Z}^d.
+\]
+\end{proposition}
+The proof of this Lemma can be found in \cite[Lemma 4]{disertori2024}.
+
+
+\begin{proposition}[Exponential Decay of the Correlation Function]
+Let $\alpha=1$, $s \in (0,1)$ and $\beta \ge 0$ such that $\beta < 1/\mu_d$. Then for every $\varepsilon > 0$ there exists a constant $K_\varepsilon < \infty$, independent of $x$, such that
+\[
+C_\beta^D(x) \;\le\; K_\varepsilon \big( (\mu_d+\varepsilon)\beta \big)^{|x|} \qquad \text{for all } x \in \mathbb{Z}^d.
+\]
+\end{proposition}
+
+\begin{proof}
+We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining $C_\beta^D(x)$ may be restricted to $N \ge |x|$:
+\begin{equation}
+    C_\beta^D(x) = \sum_{N=|x|}^{\infty} \beta^N \, |\mathcal S_N(x,0)| \;\le\; \sum_{N=|x|}^{\infty} \beta^N c_N. \label{eq:4.1.1}
+\end{equation}
+
+Fix $\varepsilon > 0$. Since $\mu_d = \lim_{N\to\infty} c_N^{1/N}$, by the definition of limit there exists $N_0  \in \mathbb{N}$ such that
+\[
+c_N^{1/N} < \mu_d + \varepsilon \qquad \text{for all } N \ge N_0,
+\]
+that is,
+\[
+c_N^D< (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge N_0.   
+\]
+For $N = 0, 1, \dots, N_0-1$, define
+\[
+K_\varepsilon \;:=\; \max\left(1,\; \max_{0 \le N < N_0} \frac{c_N}{(\mu_d+\varepsilon)^N}\right),
+\]
+which is finite, being the maximum of finitely many finite quantities. By construction it holds:
+\[
+c_N^D\;\le\; K_\varepsilon (\mu_d+\varepsilon)^N \qquad \text{for all } N \ge 0.
+\]
+
+Combining it with \eqref{eq:4.1.1} we obtain
+\[
+C_\beta^D(x) \;\le\; K_\varepsilon \sum_{N=|x|}^{\infty} \big[(\mu_d+\varepsilon)\beta\big]^N.
+\]
+Choosing $\varepsilon$ small enough that $r := (\mu_d+\varepsilon)\beta < 1$ (possible since $\beta < 1/\mu_d$), the tail of the geometric series equals
+\[
+\sum_{N=|x|}^{\infty} r^N = \frac{r^{|x|}}{1-r}.
+\]
+Hence
+\[
+C_\beta^D(x) \;\le\; \frac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta} \, \big[(\mu_d+\varepsilon)\beta\big]^{|x|}.
+\]
+where $ \dfrac{K_\varepsilon}{1-(\mu_d+\varepsilon)\beta}$ is still finite and indipendent from $x$.
+\end{proof}
+
+
+
+
 \begin{remark}
     It remains to establish for which $\lambda$ for $\alpha =1 $ we may find $s \in (0,1)$ with $\beta(s) < 1/\mu_d$. As above, the unique critical point is $s_{\mathrm{crit}} = 1 - 1/\ln \lambda$ and
 \[

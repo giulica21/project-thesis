@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex meineArbeit"] 1790272273.90721 "meineArbeit.aux" "meineArbeit.bbl" "meineArbeit" 1790272406.55003 0
+["bibtex meineArbeit"] 1790329964.10461 "meineArbeit.aux" "meineArbeit.bbl" "meineArbeit" 1790329969.50907 0
   "./biblio.bib" 1789996434 5961 37262aa51100008fcab1e510f16383f3 ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/bibtex/bst/amsrefs/amsra.bst" 1362760567 17320 f01543d3c77f0cd9af37d8d862e383f7 ""
-  "meineArbeit.aux" 1790272405 9193 5c75ec8ce93ab602e747e80661e3d9c4 "pdflatex"
+  "meineArbeit.aux" 1790329968 8287 030ffaa7f5600d62175fc9ec6965f19f "pdflatex"
   (generated)
   "meineArbeit.bbl"
   "meineArbeit.blg"
   (rewritten before read)
-["pdflatex"] 1790272402.5841 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1790272406.55075 0
+["pdflatex"] 1790329967.24501 "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" "meineArbeit.pdf" "meineArbeit" 1790329969.50963 0
   "BA_Titelseite.sty" 1786433374 1630 87e6a5d49fb587f3ed504d15aa580855 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789717350 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1789717932 22504 9f59b6f9e6763a25d59533cdfc6a19f5 ""
@@ -17,7 +17,6 @@
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2074.pk" 1786434209 59008 4d0f3c9d59c1ef376599fe6276e0cdae ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk" 1789665636 72288 e43a07f067b5df2f23bbf7f9c7c76ce5 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/eccc1200.pk" 1786434201 30576 b2f5a3c398d2379d149fdbbdcdacfbb0 ""
-  "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk" 1786434196 19080 d1b248378df11fb254eb705dc323db89 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0900.pk" 1789717828 21356 06ddd279c7fda540edd714ad8ad467c0 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk" 1787421388 23808 a0a6ca0d7e3a28a9a1704ad2274657b7 ""
   "C:/Users/giuli/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk" 1786434205 26228 36c3ff63d860492346d93d600db27a2c ""
@@ -99,7 +98,6 @@
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
-  "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1247596670 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb" 1247596670 35479 2cca68718f15872e7cce1a8f6033b99b ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/giuli/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -235,12 +233,12 @@
   "IMG_0259.jpeg" 1789926267 203704 695ba06253737860d607b27a10f1673d ""
   "IMG_1072.jpeg" 1789319845 61664 4dd62bbba44631ed981df8ba1b64d09d ""
   "IMG_1129.jpeg" 1790004320 86775 1479a012b4d7876e6fd828ccef841113 ""
-  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1790272401 98717 7e1d7ea67d7fb3b1e880f4644d6562c1 ""
-  "meineArbeit.aux" 1790272405 9193 5c75ec8ce93ab602e747e80661e3d9c4 "pdflatex"
-  "meineArbeit.bbl" 1790272274 6279 af60da7b5335872c345fd1dcf4e5b97e "bibtex meineArbeit"
-  "meineArbeit.out" 1790272405 3538 2e146fd4ecbb6cf82b38c9d5963c5932 "pdflatex"
-  "meineArbeit.tex" 1790272401 98717 7e1d7ea67d7fb3b1e880f4644d6562c1 ""
-  "meineArbeit.toc" 1790272405 1834 24466649530118d7e3da318c774a470d "pdflatex"
+  "c:/Users/giuli/Desktop/BA_Titelseite_LaTeX/meineArbeit.tex" 1790329964 78404 ce22329a03ed6b0fdb7749984db74c9a ""
+  "meineArbeit.aux" 1790329968 8287 030ffaa7f5600d62175fc9ec6965f19f "pdflatex"
+  "meineArbeit.bbl" 1790329964 6279 af60da7b5335872c345fd1dcf4e5b97e "bibtex meineArbeit"
+  "meineArbeit.out" 1790329968 2404 d3942075e5f39b736b74bc40c93c9b98 "pdflatex"
+  "meineArbeit.tex" 1790329964 78404 ce22329a03ed6b0fdb7749984db74c9a ""
+  "meineArbeit.toc" 1790329968 1270 93fc615718af2c74762cb0ef6a3565fc "pdflatex"
   (generated)
   "meineArbeit.aux"
   "meineArbeit.log"

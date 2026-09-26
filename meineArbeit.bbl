@@ -88,6 +88,19 @@
   Galil{\'e}e},
 }
 
+\bib{Chen_2015}{article}{
+      author={Chen, Lung-Chi},
+      author={Sakai, Akira},
+       title={Critical two-point functions for long-range
+  statistical-mechanical models in high dimensions},
+        date={2015-03},
+        ISSN={0091-1798},
+     journal={The Annals of Probability},
+      volume={43},
+      number={2},
+         url={http://dx.doi.org/10.1214/13-AOP843},
+}
+
 \bib{disertori2024}{misc}{
       author={Disertori, Margherita},
       author={Escobar, Roberto~Maturana},

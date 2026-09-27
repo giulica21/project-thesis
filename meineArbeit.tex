@@ -66,6 +66,23 @@
 \setstretch{1.15}
 \maketitle
 
+\clearpage
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\chapter*{Acknowledgments}
+
+This thesis marks the conclusion of a deeply meaningful chapter in my life. Although moving to Bonn for my Bachelor's degree was challenging at first, it has proven to be the best decision I have ever made. This milestone would not have been possible without the support of many wonderful people.
+
+First and foremost, I would like to express my sincere gratitude to my advisor, Prof. Dr. Margherita Disertori, for her invaluable guidance, patience, and continuous support throughout the writing of this thesis. Her profound knowledge, curiosity and passion for mathematics have been truly inspirational, and it has been a true privilege to learn from her directly. I also want to thank Dr. Davide Macera for his support and feedback.
+
+I would also like to thank my friends in Bonn (the \textit{Piquitos}) and in Bologna ( the \textit{Interrail}) for their friendship and loyalty. In particular, I want to express my gratitude to Jorge Carrasco Coquillat, Daniel Sanchez del Pino, Diego Jimenez Tellez, and Elisabetta Romeo for their valuable advice. 
+
+Al di fuori dell'ambiente matematico (e, a dire il vero, in un mondo abbastanza estraneo ad esso), voglio dedicare questo spazio finale alla mia famiglia. Ai miei nonni: grazie per avermi chiamata spesso e avermi fatto sentire pensata. Vi prometto che troverò un modo di portarvi a Bonn senza traumatizzarvi per lo sbalzo termico. \\
+Voglio ringraziare mia sorella per avermi sempre fatta ridere e per avermi fatta sentire compresa; lei lo sa già, ma saremmo state grandi amiche anche se non avessimo vissuto sotto lo stesso tetto.\\
+Infine, grazie a mio padre per la sua saggezza e il suo supporto, e a mia madre per il suo calore e la sua incrollabile fiducia. Senza il vostro amore, non avrei avuto la forza di credere in me stessa e di continuare ad andare avanti. Il vostro sostegno è la benedizione più grande di tutte.
+
+
+
+
 
 \clearpage
 \tableofcontents
@@ -89,7 +106,7 @@ In the last decades, the study of random operators has become an important field
 The two important methods that have helped to prove under which conditions on the disorder level Anderson localization holds are the \textit{multiscale analysis} (MSA), developed by Fr\"ohlich and Spencer \cite{frohlich1983}, and the 
 \textit{ fractional moment method} (FMM) by Aizenman and Molchanov \cite{aizenman1993}. The multiscale analysis method develops with the bound of the second moment of the operator's resolvent, whereas the fractional moment method utilizes its fractional powers. In this thesis, we are going to focus on the latter, combined with the self-avoiding-walks method.\\
 
-As I stated before, we are working with a random operator. Moreover, the decay of its resolvent's fractional moments can be used to prove localization.
+As stated before, we are working with a random operator. Moreover, the decay of its resolvent's fractional moments can be used to prove localization.
 
 Studies in this field also differentiate between two variations of the Anderson model. The \textit{standard model} considers nearest-neighbour hopping, while the \textit{fractional model} allows particles to make jumps over arbitrarily long distances. As a result, they have different types of decay: in the standard model, the resolvent operator has exponential decay, while in the fractional model, the decay is polynomial.\\
 
@@ -106,7 +123,7 @@ In Chapter 2, we define spectral and dynamical localization. We also define expo
 In Chapter 3, we introduce the Green function as the resolvent of the operator and explore how the exponential decay of its fractional powers leads to localization. Specifically, we also introduce two central analytical tools, such as the \textit{resolvent identity} of linear operators and the resulting \textit{a priori bound}.\\
 
 \noindent
-In Chapter 4, we provide the preliminary definitions for self-avoiding walk (SAW) methods and obtain the main results of this thesis using a new representation for the Green function. We focus on both exponential decay for the standard model, and polynomial decay for the fractional model. \\
+In Chapter 4, we provide the preliminary definitions for self-avoiding walk (SAW) methods and obtain the main results of this thesis using a new representation for the Green function. We focus on both exponential, for the standard model, and polynomial decay for the fractional model. \\
 
 \noindent
 In Chapter 5 we focus on the values of the disorder parameter that are proven in the thesis and compare them with previous ones. Finally, we also take a look at the open problems in the field.
@@ -669,7 +686,7 @@ $$ \mathbb{E}(|G_{z,\alpha}(x, x)|^s) \le \frac{1}{(1-s)\lambda^s}. $$
 \end{proof}
 
 \section{Localization at large disorder}
-The follwing two thworems establish the main goal of this thesis. In this Chapter, we are going to use their results to check which type of localization follow. The whole proof of Theorem \ref{thm:theorem1.1} and Theorem \ref{thm:theorem1.2} need both FMM and SAW, so they are given in Chapter \ref{sec:SAW}.
+The follwing two theorems establish the main goal of this thesis. In this Chapter, we are going to use their results to check which type of localization follow. The whole proof of Theorem \ref{thm:theorem1.1} and Theorem \ref{thm:theorem1.2} need both FMM and SAW, so they are given in Chapter \ref{sec:SAW}.
 \begin{theorem}[Schenker \cite{schenker2015}] \label{thm:theorem1.1}
 Let $\alpha =1 $ and $s \in (0,1)$. Then for all $\lambda > \lambda_0(s)$,
 \begin{equation}

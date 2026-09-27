@@ -370,12 +370,12 @@ INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc120
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx2488.tfm
+INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1095.tfm
 INPUT .\meineArbeit.toc
 INPUT .\meineArbeit.toc
 INPUT meineArbeit.toc
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1095.tfm
 OUTPUT meineArbeit.toc
-INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1095.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsl1095.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
@@ -462,10 +462,10 @@ INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
-INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
+INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\giuli\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk

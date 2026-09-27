@@ -22,8 +22,8 @@ INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\UKeng
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\UKenglish.ldf
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\UKenglish.ldf
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
-INPUT .\BA_Titelseite.sty
-INPUT BA_Titelseite.sty
+INPUT .\MA_Titlepage.sty
+INPUT MA_Titlepage.sty
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
@@ -431,13 +431,6 @@ INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0800.tfm
 INPUT C:\Users\giuli\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
-INPUT .\IMG_1072.jpeg
 INPUT .\meineArbeit.bbl
 INPUT .\meineArbeit.bbl
 INPUT meineArbeit.bbl

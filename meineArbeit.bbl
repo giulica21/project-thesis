@@ -14,6 +14,19 @@
          url={https://arxiv.org/abs/math-ph/0309018},
 }
 
+\bib{Aizenman_1998}{article}{
+      author={Aizenman, M},
+      author={Graf, G~M},
+       title={Localization bounds for an electron gas},
+        date={1998-08},
+        ISSN={1361-6447},
+     journal={Journal of Physics A: Mathematical and General},
+      volume={31},
+      number={32},
+       pages={6783–6806},
+         url={http://dx.doi.org/10.1088/0305-4470/31/32/004},
+}
+
 \bib{aloisio2026}{misc}{
       author={Aloisio, M.},
        title={Dynamical localization and eigenvalue asymptotics: long-range

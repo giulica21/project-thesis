@@ -109,7 +109,7 @@ The two important methods that have helped to prove under which conditions on th
 
 Studies in this field also differentiate between two variations of the Anderson model. The \textit{standard model} considers nearest-neighbour hopping, while the \textit{fractional model} allows particles to make jumps over arbitrarily long distances. As a result, the farctional moments of the resolvent operator decay exponentially or polynomially, respectively.\\
 
-Although the two models are different, the proof structures are similar. In both cases, the fractional moment method can be combined with self-avoiding walks (SAW). The self-avoiding-walk approach organizes the expansion of the resolvent in terms of paths that do not visit the same site more than once. This gives a better way of counting the possible paths and can therefore improve the disorder threshold above which localization can be proved. This approach was used by J. Schenker \cite{schenker2015} for the standard Anderson model and was later adapted to the fractional model by M. Disertori, R. Escobar, and C. Rojas-Molina \cite{disertori2024}.\\
+Although the two models are different, the proof structures are similar. In both cases, the fractional moment method can be combined with \textit{self-avoiding walks (SAW)}. The self-avoiding-walk approach organizes the expansion of the resolvent in terms of paths that do not visit the same site more than once. This gives a better way of counting the possible paths and can therefore improve the disorder threshold above which localization can be proved. This approach was used by J. Schenker \cite{schenker2015} for the standard Anderson model and was later adapted to the fractional model by M. Disertori, R. Escobar, and C. Rojas-Molina \cite{disertori2024}.\\
 
 In fact, this thesis considers a generalized operator that allows us to study both types of models within the same framework. The goal is to show how the use of self-avoiding-walk (SAW) iterations on fractional moments of the resolvent can improve the disorder threshold above which localization can be proved.
 \subsection*{Structure of the thesis}
@@ -137,8 +137,8 @@ Transport phenomena in disordered materials are often described via discrete ran
     H_{\omega,\alpha} = (- \Delta)^\alpha + \lambda V_\omega, \qquad \text{for } 0<\alpha\le 1
 \end{equation}
 where $(-\Delta)^{\alpha}$ is a deterministic matrix representing the kinetic energy, $V_\omega$ is a diagonal matrix with random entries representing the disordered potential, and $\lambda$ is the disorder parameter.\\
-For $\alpha=1$, the kinetic energy is the standard discrete Laplacian, which lets the particles jump from one site to the first-neighbors.\\
-For $\alpha <1$, the kinetic energy is the fractional discrete Laplacian, which provides jumps of any arbitrary distance in the grid.\\
+For $\alpha=1$, the kinetic energy is the \textit{standard discrete Laplacian}, which lets the particles jump from one site to the first-neighbors.\\
+For $\alpha <1$, the kinetic energy is the \textit{fractional discrete Laplacian}, which provides jumps of any arbitrary distance in the grid.\\
 This operator acts on the Hilbert space of square summable sequences
 \[
 \ell^2(\mathbb{Z}^d) = \left\{ u : \mathbb{Z}^d \to \mathbb{C} \ \middle| \ \sum_{x \in \mathbb{Z}^d} |u(x)|^2 < \infty \right\}
@@ -156,7 +156,7 @@ The state functions are the solutions to the time-dependent Schr\"odinger equati
 \|\psi(t)\|_{\ell^2}^2 = \|e^{-itH_\omega}\psi_0\|_{\ell^2}^2 = \|\psi_0\|_{\ell^2}^2 = 1.
 \end{equation}
 
-Moreover, if the particle is initially placed at a specific site $x \in \mathbb{Z}^d$ with $\psi_0 = \delta_x$, the transition probability to find the particle at site $y \in \mathbb{Z}^d$ at time $t$ is given by the squared transition amplitude:
+Moreover, if the particle is initially placed at a specific site $x \in \mathbb{Z}^d$ with $\psi_0 = \delta_x$, the transition probability to find the particle at site $y \in \mathbb{Z}^d$ at time $t$ is given by the squared \textit{transition amplitude}:
 \begin{equation}
 P(x \to y; t) = |\langle \delta_y, e^{-itH_\omega} \delta_x \rangle|^2.
 \end{equation}
@@ -165,7 +165,7 @@ As we see later, under certain conditions on the disorder parameter, this probab
 \vspace{0.3 cm}
 
 \subsection*{The  discrete Laplacian}
-The  discrete Laplacian is the  discrete analogue of the usual Laplacian ($ \sum_j \partial^2/\partial x_j^2$). To simplify calculations and highlight the main differences, first we focus on the case $\alpha=1$ and later we compare it with $\alpha \in (0,1)$.
+The \textit{discrete Laplacian} is the  discrete analogue of the usual Laplacian ($ \sum_j \partial^2/\partial x_j^2$). To simplify calculations and highlight the main differences, first we focus on the case $\alpha=1$ and later we compare it with $\alpha \in (0,1)$.
 \subsection*{$\boldsymbol{(- \Delta)^{\alpha}}$ for $\boldsymbol{\alpha =1}$}
 For the functions $u \in \ell^2(\mathbb{Z}^d)$ it is defined by
 
@@ -336,15 +336,15 @@ Since $\alpha > 0$ implies $d + 2\alpha > d$; for every $s \in \left(\frac{d}{d+
 \end{note}
 
 \subsection*{The Random Potential}
-The random potential is expressed as the multiplication operator $V_\omega(x)= \omega_x$. It is a diagonal matrix, where $ \omega = (\omega_x)_{x \in \mathbb{Z}^d}$ is a set of independent identically distributed real-valued random entries. Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $x \in \mathbb{Z}^d$.
+The \textit{random potential} is expressed as the multiplication operator $V_\omega(x)= \omega_x$. It is a diagonal matrix, where $ \omega = (\omega_x)_{x \in \mathbb{Z}^d}$ is a set of independent identically distributed real-valued random entries. Physically, $V_\omega$ represents the random electric potential created by nuclei at the sites $x \in \mathbb{Z}^d$.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.4\textwidth]{IMG_1129.jpeg}
     \caption{A disordered lattice system. Picture from \cite{aizenman2015}}
 \end{figure}
 
-\begin{definition}[i.i.d. random variables]Let $(\Omega, \mathcal{A}, \mathbb{P})$ be a general probability space. A family of random variables $(\omega_x)_{x \in \mathbb{Z}^d}$ defined on $(\Omega, \mathcal{A}, \mathbb{P})$ is \textbf{identically distributed} if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_x \in A) = \mu(A)$ for all $x \in \mathbb{Z}^d$ and all Borel sets $A \subset \mathbb{R}$.\\
-The family $(\omega_x)_{x \in \mathbb{Z}^d}$ is \textbf{independent} if$$\mathbb{P}(\omega_{x_1} \in A_1, \dots, \omega_{x_l} \in A_l) = \prod_{j=1}^l \mathbb{P}(\omega_{x_j} \in A_j) = \prod_{j=1}^l \mu(A_j)$$for every finite subset of distinct indices $\{x_1, \dots, x_l\} \subset \mathbb{Z}^d$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
+\begin{definition}[i.i.d. random variables]Let $(\Omega, \mathcal{A}, \mathbb{P})$ be a general probability space. A family of random variables $(\omega_x)_{x \in \mathbb{Z}^d}$ defined on $(\Omega, \mathcal{A}, \mathbb{P})$ is \textit{identically distributed} if there exists a Borel probability measure $\mu$ on $\mathbb{R}$ such that $\mathbb{P}(\omega_x \in A) = \mu(A)$ for all $x \in \mathbb{Z}^d$ and all Borel sets $A \subset \mathbb{R}$.\\
+The family $(\omega_x)_{x \in \mathbb{Z}^d}$ is \textit{independent} if$$\mathbb{P}(\omega_{x_1} \in A_1, \dots, \omega_{x_l} \in A_l) = \prod_{j=1}^l \mathbb{P}(\omega_{x_j} \in A_j) = \prod_{j=1}^l \mu(A_j)$$for every finite subset of distinct indices $\{x_1, \dots, x_l\} \subset \mathbb{Z}^d$ and arbitrary Borel sets $A_1, \dots, A_l \subset \mathbb{R}$.
 \end{definition}
 
 In this thesis we assume that $\omega_x$ are uniformly distributed in the real closed interval $ [-1,1]$.\\
@@ -365,7 +365,7 @@ As a diagonal operator, the spectrum of $V_\omega$ consists of the random entrie
 
 As for the  discrete Laplacian, the random term is almost surely summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Indeed, self-adjointness of the maximal multiplication operator is a real-valued function. By definition $V_\omega$ is almost surely bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$, which proves that it is also summable in $ \ell^2(\mathbb{Z}^d)$.
 \subsection*{The Disorder Parameter} 
-The disorder parameter is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localization, which makes it one of the central objects of interest of this thesis. It allows us to adjust the strength of the random disorder with respect
+The \textit{disorder parameter} is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localization, which makes it one of the central objects of interest of this thesis. It allows us to adjust the strength of the random disorder with respect
 to the deterministic part.\\
 Let's consider the two extreme cases:
 \begin{itemize}
@@ -397,11 +397,11 @@ This confirms that the spectrum is a bounded subset of $\mathbb{R}$.
 
 Before characterizing the physical meaning of this spectrum, we briefly recall the relevant spectral theory. The following definitions come from \cite{reedsimon1980} and \cite{rudin1987}.\\
 
-Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider the set of \textbf{pure points} of $\mu$, defined by $P = \{x \in \mathbb{R} \mid \mu(\{x\}) \ne 0\}$. We define the pure point measure as 
+Let $\mu$ be a Borel measure on $\mathbb{R}$. Consider the set of \textit{pure points} of $\mu$, defined by $P = \{x \in \mathbb{R} \mid \mu(\{x\}) \ne 0\}$. We define the \textit{pure point measure} as 
 \begin{equation*}
     \mu_{\mathrm{pp}}(X) = \mu(P \cap X)
 \end{equation*}
-for any Borel set $X \subset \mathbb{R}$. By definition, there remains a continuous measure $\mu_{\mathrm{c}}$ such that $\mu_{\mathrm{c}}(\{x\}) = 0$ for all $x \in \mathbb{R}$, satisfying $\mu = \mu_{\mathrm{pp}} + \mu_{\mathrm{c}}$. Because $\mu_{\mathrm{pp}}(P^c) = 0$ and $\mu_{\mathrm{c}}(P) = 0$, these two measures are concentrated on disjoint sets and are therefore mutually singular.
+for any Borel set $X \subset \mathbb{R}$. By definition, there remains a \textit{continuous measure} $\mu_{\mathrm{c}}$ such that $\mu_{\mathrm{c}}(\{x\}) = 0$ for all $x \in \mathbb{R}$, satisfying $\mu = \mu_{\mathrm{pp}} + \mu_{\mathrm{c}}$. Because $\mu_{\mathrm{pp}}(P^c) = 0$ and $\mu_{\mathrm{c}}(P) = 0$, these two measures are concentrated on disjoint sets and are therefore mutually singular.
 
 This decomposition naturally extends to spectral measures:
 
@@ -424,7 +424,7 @@ where $\mathcal{H}_{\mathrm{pp}} = \{ \phi \in \mathcal{H} \mid \mu_{\phi} \text
 where $\sigma_{\mathrm{pp}}(H_{\omega, \alpha}) = \overline{\{ \lambda \in \mathbb{R} \mid \lambda \text{ is an eigenvalue of } H_{\omega, \alpha} \}}$.
 
 \begin{remark}
-    In measure theory, the continuous measure $\mu_{\mathrm{c}}$ further decomposes uniquely into $\mu_{\mathrm{ac}} + \mu_{\mathrm{sc}}$, where $\mu_{\mathrm{ac}}$ is absolutely continuous with respect to Lebesgue measure, and $\mu_{\mathrm{sc}}$ is singular continuous. Following this principle, the continuous subspace can also be decomposed as $\mathcal{H}_{\mathrm{c}} = \mathcal{H}_{\mathrm{ac}} \oplus \mathcal{H}_{\mathrm{sc}}$.
+    In measure theory, the continuous measure $\mu_{\mathrm{c}}$ further decomposes uniquely into $\mu_{\mathrm{ac}} + \mu_{\mathrm{sc}}$, where $\mu_{\mathrm{ac}}$ is \textit{absolutely continuous} with respect to Lebesgue measure, and $\mu_{\mathrm{sc}}$ is \textit{singular continuous}. Following this principle, the continuous subspace can also be decomposed as $\mathcal{H}_{\mathrm{c}} = \mathcal{H}_{\mathrm{ac}} \oplus \mathcal{H}_{\mathrm{sc}}$.
 \end{remark}
 
 \subsubsection*{Physical Interpretation and the RAGE Theorem}
@@ -459,7 +459,7 @@ The main result of this thesis states that there exists a critical $\lambda_0(s)
         C_2 \frac{1}{|x-y|^{s(d+2\alpha)}} \qquad \text{if } \alpha \in (0,1) \text{ and } s \in (\frac{d}{d+2\alpha},1)
     \end{cases} 
 \end{equation}
-uniformly for $z \in \mathbb{C} \setminus \mathbb{R}$ and all $x,y \in \mathbb{Z}^d$, with $C_{1,2} < \infty$ and $\mu> 0$. Determining this critical threshold $\lambda_0(s)$ is a primary focus of this work. Specifically, Chapter 4 demonstrates how self-avoiding walk (SAW) techniques can be applied to significantly improve the estimates for this value. \\
+uniformly for $z \in \mathbb{C} \setminus \mathbb{R}$ and all $x,y \in \mathbb{Z}^d$, with $C_{1,2} < \infty$ and $\mu> 0$. Determining this critical threshold $\lambda_0(s)$ is a primary focus of this work. Specifically, Chapter 4 demonstrates how \textit{self-avoiding walk (SAW)}'s techniques can be applied to significantly improve the estimates for this value. \\
 
 Notice that the resolvent operator $(H_{\omega,\alpha} - z)^{-1}$ is well-defined only when $z \notin \sigma(H_{\omega,\alpha})$. If $z$ gets closer to the spectrum, its norm tends to infinite. The \textit{fractional moment method} was revolutionary because averaging a fractional powers of the resolvent avoids these divergences, allowing the bound to hold uniformly for all $z \in \mathbb{C} \setminus \mathbb{R}$.
 Originally, the absence of conductivity was proven using squared powers instead of fractional ones. This creates divergence problems near zero and requires complicated analytical tools like the MSA method. \\
@@ -482,7 +482,7 @@ We have understood what localization means from a heuristic point of view. In th
 \section{Types of localization}
 
 \begin{definition}[Spectral localization]
-We say that $H_{\omega,\alpha}$ exhibits \textbf{spectral localization} if it has pure point spectrum almost surely. That is,
+We say that $H_{\omega,\alpha}$ exhibits \textit{spectral localization} if it has pure point spectrum almost surely. That is,
 \begin{equation}
     \sigma(H_{\omega,\alpha}) = \sigma_{\mathrm{pp}}(H_{\omega,\alpha}) \quad \text{and} \quad \sigma_{\mathrm{c}}(H_{\omega,\alpha}) = \emptyset    
 \end{equation}
@@ -491,7 +491,7 @@ for almost every realization of $\omega \in \Omega$.
 
 
 \begin{definition}[Dynamical localization]
-    We say that $H_{\omega,\alpha}$ exhibits dynamical localization if for all $p>0$ and $\phi \in \ell^2(\mathbb{Z}^d)$ of finite support,
+    We say that $H_{\omega,\alpha}$ exhibits \textit{dynamical localization} if for all $p>0$ and $\phi \in \ell^2(\mathbb{Z}^d)$ of finite support,
     \begin{equation}
     \sup_{t \in \mathbb{R}} \left\| |X|^p\,e^{-it H_{\omega,\alpha}}\phi \right\| < \infty \label{eq:dynloc}
     \end{equation}
@@ -499,7 +499,7 @@ for almost every realization of $\omega \in \Omega$.
 \end{definition}
 
 \begin{definition}[Exponential localization]
-    We say that $H_{\omega,\alpha}$ exhibits exponential localization if 
+    We say that $H_{\omega,\alpha}$ exhibits \textit{exponential localization} if 
     \begin{equation}
         \mathbb{E}\left( \sup_{t \in \mathbb{R}} |\langle \delta_0, e^{-itH_\omega} \delta_x \rangle |\right) \leq C e^{- \mu |x|}\label{eq:explocalisation}
     \end{equation}
@@ -985,7 +985,7 @@ Recall Lemma \ref{lemma:summability}. For $s \in \left(\frac{d}{d+2\alpha},1\rig
 \end{remark}
 
 \begin{definition}[Self-Avoiding Walk]
-A \textbf{self-avoiding walk} on the integer lattice $\mathbb{Z}^d$ of length $N \in \mathbb{N}_0$ is an ordered $(N+1)$-tuple of distinct lattice sites
+A \textit{self-avoiding walk} on the integer lattice $\mathbb{Z}^d$ of length $N \in \mathbb{N}_0$ is an ordered $(N+1)$-tuple of distinct lattice sites
 \[
 \gamma = (\gamma_0, \gamma_1, \dots, \gamma_N) \in (\mathbb{Z}^d)^{N+1}
 \]
@@ -1007,7 +1007,7 @@ Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mat
 \end{enumerate}
 \end{definition}
 \begin{definition}[Correlation Function]
-    For a parameter $\beta \ge 0$, the self-avoiding walk correlation function $C_\beta^D(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is 
+    For a parameter $\beta \ge 0$, the self-avoiding walk \textit{correlation function} $C_\beta^D(y-x)$ between two vertices $x, y \in \mathbb{Z}^d$ is 
     \begin{equation*}
         C_\beta^D(y-x) \coloneqq \sum_{N=0}^{\infty} \beta^N \sum_{\gamma \in \mathcal{S}_N(x,y)} \prod_{j=0}^{N-1} D(\gamma_j, \gamma_{j+1}),
     \end{equation*}
@@ -1015,11 +1015,11 @@ Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mat
 \end{definition}
  
 \begin{definition}[Susceptibility]
-    The susceptibility $\chi^D(\beta)$ of self-avoiding walks is the sum of the two-point correlation function over all endpoints
+    The \textit{susceptibility} $\chi^D(\beta)$ of self-avoiding walks is the sum of the two-point correlation function over all endpoints
     \begin{equation*}
         \chi^D(\beta) \coloneqq \sum_{x \in \mathbb{Z}^d} C_\beta^D(x) = \sum_{N =0}^{\infty} \beta^N c_N^{D}.
     \end{equation*}
-    The series converges uniformly and absolutely if and only if $\beta < R_{\chi^D}$, where $R_{\chi^D}$ is the critical radius of convergence. It is defined by
+    The series converges uniformly and absolutely if and only if $\beta < R_{\chi^D}$, where $R_{\chi^D}$ is the \textit{critical radius of convergence}. It is defined by
         \[
         R_{\chi^D} := \frac{1}{\lim_{N \to \infty} (c_N^D)^{1/N}}.
         \]
@@ -1027,12 +1027,12 @@ Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mat
 \end{definition}
 
 
-\begin{claim}\label{claim:radius}
+\begin{lemma}\label{claim:radius}
      Let $R_{\chi^D}$ be the radius of convergence of self-avoiding walks on $\mathbb{Z}^d$ generated by $D$. Then
     \begin{equation*}
     R_{\chi^D} \ge \frac{1}{\sum_{w \neq 0} D(0,w)} > 0.
     \end{equation*}
-\end{claim}
+\end{lemma}
 \begin{proof}[Proof based on \cite{disertori2024}]
     Consider the sum of all possible jumps weighted by $D$. For paths of length $N=2$, we can bound the sum of these two-step jumps as follows:
     \begin{equation*}
@@ -1046,15 +1046,15 @@ Let $\Lambda \subseteq \mathbb{Z}^d$. For any $x, y \in \Lambda$ and $N \in \mat
 \end{proof}
 
 \begin{remark}
-    For $\alpha=1$, we define the inverse of the radius of convergence as the \textit{connective constant}, denoted by $R_{\chi^D}^{-1} \eqcolon \mu_d$. We can get a slightly better estimate for $\mu_d$, namely $\mu_d \le 2d-1$ (see Claim \ref{claim:mud}), instead of $\mu_d \le 2d$ (implied by Claim \ref{claim:radius}). The factor of $2d - 1$ comes from the self-avoiding property, which stops the walk from immediately returning to the previously visited site.
+    For $\alpha=1$, we define the inverse of the radius of convergence as the \textit{connective constant}, denoted by $R_{\chi^D}^{-1} \eqcolon \mu_d$. We can get a slightly better estimate for $\mu_d$, namely $\mu_d \le 2d-1$ (see Lemma \ref{claim:mud}), instead of $\mu_d \le 2d$ (implied by Lemma \ref{claim:radius}). The factor of $2d - 1$ comes from the self-avoiding property, which stops the walk from immediately returning to the previously visited site.
 \end{remark}
 
-\begin{claim}\label{claim:mud}
+\begin{lemma}\label{claim:mud}
 Let $\mu_d$ be the connective constant (or growth rate) of self-avoiding walks on $\mathbb{Z}^d$. Then:
 \[
 \mu_d \le 2d - 1.
 \]
-\end{claim}
+\end{lemma}
 
 \begin{proof}
 Let $c_N$ denote the number of self-avoiding walks (SAWs) of length $N$ starting from the origin $0 \in \mathbb{Z}^d$ for $\alpha=1$, and let $S_N(0, x)$ denote the set of such walks ending at $x \in \mathbb{Z}^d$. Since $D(x,y)= \delta_{|x-y|=1}$ for $x \ne y$,
@@ -1347,7 +1347,7 @@ The disorder parameter $\lambda>0$ plays a key role in the Anderson model, as it
 
 In this thesis, we focused on bounding the fractional moments of the Green function for any complex energy $z \in \mathbb{C} \setminus \mathbb{R}$. By combining a priori bounds with the self-avoiding walk (SAW) method, we demonstrated that once the disorder exceeds a threshold of $\lambda_0(s)$, the spectrum is almost surely pure point for all $\alpha \in (0,1]$. However, it is not known whether $\lambda_0(s)$ is the smallest value of the disorder parameter for which localization holds.\\
 
-Using self-avoiding walks (SAW) helps us obtain better estimates on the disorder strength required to prove localization. For the standard model ($\alpha = 1$), Aizenman and Graf originally found that localization holds when $\lambda > \lambda_{AG}$, where $\lambda_{AG}$ satisfies
+Using self-avoiding walks (SAW) helps us obtain better estimates on the disorder strength required to prove localization. For the standard model ($\alpha = 1$), Aizenman and Graf \cite{Aizenman_1998} originally found that localization holds when $\lambda > \lambda_{AG}$, where $\lambda_{AG}$ satisfies
 \[
 \lambda_{AG}=4de\ln \lambda_{AG}.
 \]
@@ -1356,8 +1356,6 @@ Later, J. Schenker \cite{schenker2015} used SAW methods to obtain a better thres
 \lambda_{And}=\mu_d e\ln \lambda_{And},
 \]
 as we proved in the last chapter. Since the connectivity constant $\mu_d$ is smaller than or equal to $2d-1$, $\lambda_{And}< \lambda_{AG}$. Moreover, this result is consistent with the early estimate proposed by Anderson in 1958 \cite{anderson1958}.\\
-
-Following a similar idea, Disertori, Escobar, and Rojas-Molina used SAW methods for the Green function in \cite{disertori2024} to obtain a new threshold $\lambda_0(s)$ for the fractional model. When considering the standard case ($\alpha=1$), their method gives the same value as Schenker's. For the fractional case ($\alpha \in (0,1)$), it gives a tighter bound than the previous estimates.\\
 
 The following values are given by J. Schenker in \cite{schenker2015}.
 \begin{table}[htpb]
@@ -1374,6 +1372,10 @@ Dimension & $\mu_d^*$ & $\lambda_{And}^*$ & $\lambda_{AG}$ \\
 \caption{The value $\mu_d^*$ represents the upper bound for the connectivity constant. The threshold $\lambda_{And}^*$ is the corresponding root for Anderson's critical disorder, and $\lambda_{AG}$ represents the Aizenman-Graf critical disorder threshold.}
 \label{tab:lambda_comparison}
 \end{table}
+
+Following a similar idea, Disertori, Escobar, and Rojas-Molina used SAW methods for the Green function in \cite{disertori2024} to obtain a new threshold $\lambda_0(s)$ for the fractional model. When considering the standard case ($\alpha=1$), their method gives the same value as Schenker's. For the fractional case ($\alpha \in (0,1)$), it gives a tighter bound than the previous estimates.\\
+
+
 
 \section{Final conclusions}
 Nevertheless, finding the exact values of $\lambda$ at which the transition between localized and delocalized regimes occurs is still an open problem and depends strongly on the dimension $d$. In fact, we conclude this thesis with a brief overview of the known results concerning the disorder threshold for different dimensions.

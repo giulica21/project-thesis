@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  27 SEP 2026 19:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.11)  28 SEP 2026 08:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -588,7 +588,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 \clearpage
+l.88 \clearpage
                 [1
 
 
@@ -601,22 +601,27 @@ l.87 \clearpage
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89 \newpage
+l.90 \newpage
               [2
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
@@ -624,39 +629,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--108
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
-
- []
-
-[5]
+[4] [5]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
@@ -664,12 +664,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
 
-Overfull \hbox (26.64447pt too wide) in paragraph at lines 169--170
+Overfull \hbox (26.64447pt too wide) in paragraph at lines 168--169
 \T1/cmr/m/n/10.95 The dis-crete Lapla-cian is the dis-crete ana-logue of the usual Lapla-cian ($[][] \OML/cmm/m/it/10.95 @[]=@x[]$\T1/cmr/m/n/10.95 ).
  []
 
@@ -764,12 +764,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 613--615
  []
 
 [23] [24] [25] [26] [27]
-Overfull \hbox (14.53389pt too wide) detected at line 780
+Overfull \hbox (14.53389pt too wide) detected at line 788
 [][][]\U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 ^^F)] \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 C[] [] [] [][] \U/msb/m/n/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 ] \OML/cmm/m/it/10.95 dE \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 C[] \OMS/cmsy/m/n/10.95 j\OT1/cmr/m/n/10.95 ^^F\OMS/cmsy/m/n/10.95 j  []\OML/cmm/m/it/10.95 e[];
  []
 
 [28] [29]
-Overfull \hbox (28.58528pt too wide) detected at line 836
+Overfull \hbox (28.58528pt too wide) detected at line 851
 []
  []
 
@@ -779,56 +779,56 @@ Chapter 4.
 
 
 ]
-<IMG_0282.jpeg, id=477, 1819.79875pt x 911.405pt>
+<IMG_0282.jpeg, id=481, 1819.79875pt x 911.405pt>
 File: IMG_0282.jpeg Graphic file (type jpg)
 <use IMG_0282.jpeg>
-Package pdftex.def Info: IMG_0282.jpeg  used on input line 980.
+Package pdftex.def Info: IMG_0282.jpeg  used on input line 997.
 (pdftex.def)             Requested size: 251.9989pt x 126.20514pt.
  [35 <./IMG_0282.jpeg>] [36] [37]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1090.
+(hyperref)                removing `math shift' on input line 1107.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1090.
+(hyperref)                removing `subscript' on input line 1107.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1090.
+(hyperref)                removing `math shift' on input line 1107.
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1101--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
 
  []
 
 
-Overfull \hbox (1.02287pt too wide) in paragraph at lines 1120--1121
+Overfull \hbox (1.02287pt too wide) in paragraph at lines 1137--1138
 \T1/cmr/m/n/10.95 the lat-tice, not just nearest neigh-bors. There-fore, $[]$
  []
 
 
-Overfull \hbox (41.27914pt too wide) detected at line 1128
+Overfull \hbox (41.27914pt too wide) detected at line 1145
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 0 = \OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 x; x[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^H \OML/cmm/m/it/10.95 H[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 x[]; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
 [39]
-Overfull \hbox (18.29303pt too wide) detected at line 1149
+Overfull \hbox (18.29303pt too wide) detected at line 1166
 [][][]\OML/cmm/m/it/10.95 R[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; x\OT1/cmr/m/n/10.95 ) [] [] [] \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^M[]; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
 
-Overfull \hbox (1.49217pt too wide) detected at line 1155
+Overfull \hbox (1.49217pt too wide) detected at line 1172
 \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 G[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; x\OT1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.95 :
  []
 
 [40]
-Overfull \hbox (20.34761pt too wide) detected at line 1176
+Overfull \hbox (20.34761pt too wide) detected at line 1193
 []
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1241--1242
 
  []
 
@@ -836,36 +836,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1282 \begin{equation}
+l.1300 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1282 \begin{equation}
+l.1300 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1282 \begin{equation}
+l.1300 \begin{equation}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1282 \begin{equation}
+l.1300 \begin{equation}
                         [44] [45]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1329
+Underfull \hbox (badness 10000) in paragraph at lines 1346--1347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
+Underfull \hbox (badness 10000) in paragraph at lines 1348--1349
 
  []
 
@@ -873,7 +873,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1339--1341
+Underfull \hbox (badness 10000) in paragraph at lines 1357--1359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1360--1361
 
  []
 
@@ -895,15 +900,15 @@ Package rerunfilecheck Info: File `meineArbeit.out' has not changed.
 Here is how much of TeX's memory you used:
  23975 strings out of 467501
  441151 string characters out of 5408550
- 845752 words of memory out of 5000000
+ 846752 words of memory out of 5000000
  52556 multiletter control sequences out of 15000+600000
  658548 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,19n,107p,745b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0900.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\giuli\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/giuli/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on meineArbeit.pdf (52 pages, 1067114 bytes).
+Output written on meineArbeit.pdf (52 pages, 1068779 bytes).
 PDF statistics:
- 1357 PDF objects out of 1440 (max. 8388607)
+ 1364 PDF objects out of 1440 (max. 8388607)
  244 named destinations out of 1000 (max. 500000)
  183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

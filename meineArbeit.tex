@@ -74,10 +74,11 @@ This thesis marks the conclusion of a deeply meaningful chapter in my life. Alth
 
 First and foremost, I would like to express my sincere gratitude to my advisor, Prof. Dr. Margherita Disertori, for her invaluable guidance, patience, and continuous support throughout the writing of this thesis. Her profound knowledge, curiosity and passion for mathematics have been truly inspirational, and it has been a true privilege to learn from her directly. I also want to thank Dr. Davide Macera for his support and feedback.
 
-I would also like to thank my friends in Bonn (the \textit{Piquitos}) and in Bologna ( the \textit{Interrail}) for their friendship and loyalty. In particular, I want to express my gratitude to Jorge Carrasco Coquillat, Daniel Sanchez del Pino, Diego Jimenez Tellez, and Elisabetta Romeo for their valuable advice. 
+I would also like to thank my friends in Bonn (the \textit{Piquitos}) and in Bologna (the \textit{Interrail}) for their friendship and loyalty. In particular, I want to express my gratitude to Jorge Carrasco Coquillat, Daniel Sánchez-Simón del Pino, Diego Jiménez Téllez, and Elisabetta Romeo for their valuable advice. 
 
-Al di fuori dell'ambiente matematico (e, a dire il vero, in un mondo abbastanza estraneo ad esso), voglio dedicare questo spazio finale alla mia famiglia. Ai miei nonni: grazie per avermi chiamata spesso e avermi fatto sentire pensata. Vi prometto che troverò un modo di portarvi a Bonn senza traumatizzarvi per lo sbalzo termico. \\
-Voglio ringraziare mia sorella per avermi sempre fatta ridere e per avermi fatta sentire compresa; lei lo sa già, ma saremmo state grandi amiche anche se non avessimo vissuto sotto lo stesso tetto.\\
+Al di fuori dell'ambiente matematico, voglio dedicare questo spazio finale alla mia famiglia.\\
+Ai miei nonni: grazie per avermi chiamata spesso e avermi fatto sentire pensata. Vi prometto che troverò un modo di portarvi a Bonn senza traumatizzarvi per lo sbalzo termico. \\
+Voglio ringraziare mia sorella per avermi sempre fatta ridere e sentire compresa; lei lo sa già, ma saremmo state grandi amiche in qualsiasi vita passata, futura e parallela.\\
 Infine, grazie a mio padre per la sua saggezza e il suo supporto, e a mia madre per il suo calore e la sua incrollabile fiducia. Senza il vostro amore, non avrei avuto la forza di credere in me stessa e di continuare ad andare avanti. Il vostro sostegno è la benedizione più grande di tutte.
 
 
@@ -106,15 +107,13 @@ In the last decades, the study of random operators has become an important field
 The two important methods that have helped to prove under which conditions on the disorder level Anderson localization holds are the \textit{multiscale analysis} (MSA), developed by Fr\"ohlich and Spencer \cite{frohlich1983}, and the 
 \textit{ fractional moment method} (FMM) by Aizenman and Molchanov \cite{aizenman1993}. The multiscale analysis method develops with the bound of the second moment of the operator's resolvent, whereas the fractional moment method utilizes its fractional powers. In this thesis, we are going to focus on the latter, combined with the self-avoiding-walks method.\\
 
-As stated before, we are working with a random operator. Moreover, the decay of its resolvent's fractional moments can be used to prove localization.
-
-Studies in this field also differentiate between two variations of the Anderson model. The \textit{standard model} considers nearest-neighbour hopping, while the \textit{fractional model} allows particles to make jumps over arbitrarily long distances. As a result, they have different types of decay: in the standard model, the resolvent operator has exponential decay, while in the fractional model, the decay is polynomial.\\
+Studies in this field also differentiate between two variations of the Anderson model. The \textit{standard model} considers nearest-neighbour hopping, while the \textit{fractional model} allows particles to make jumps over arbitrarily long distances. As a result, the farctional moments of the resolvent operator decay exponentially or polynomially, respectively.\\
 
 Although the two models are different, the proof structures are similar. In both cases, the fractional moment method can be combined with self-avoiding walks (SAW). The self-avoiding-walk approach organizes the expansion of the resolvent in terms of paths that do not visit the same site more than once. This gives a better way of counting the possible paths and can therefore improve the disorder threshold above which localization can be proved. This approach was used by J. Schenker \cite{schenker2015} for the standard Anderson model and was later adapted to the fractional model by M. Disertori, R. Escobar, and C. Rojas-Molina \cite{disertori2024}.\\
 
 In fact, this thesis considers a generalized operator that allows us to study both types of models within the same framework. The goal is to show how the use of self-avoiding-walk (SAW) iterations on fractional moments of the resolvent can improve the disorder threshold above which localization can be proved.
 \subsection*{Structure of the thesis}
-In Chapter 1, we introduce the Anderson model, more specifically, we clarify the distinction between the nearest-sites model and the long-range model, focusing on the properties of its components and its spectrum. At the end of the Chapter, we discuss the main results of this thesis.\\
+In Chapter 1, we introduce the Anderson model, more specifically, we clarify the distinction between the nearest-sites and the long-range operator, focusing on the properties of its components and its spectrum. At the end of the Chapter, we discuss the main results of this thesis.\\
 
 \noindent
 In Chapter 2, we define spectral and dynamical localization. We also define exponential dynamical localization and show how it implies that all moments of the position operator remain bounded in time.\\
@@ -130,7 +129,7 @@ In Chapter 5 we focus on the values of the disorder parameter that are proven in
 
 \clearpage
 \chapter{The Anderson Model}
-In this chapter, the random Schr\"odinger operator is the center of our attention. First, we define it as the \textit{Hamiltonian} and discuss the physical meaning of its time-evolving solutions. We are going to define two variations of this model: the standard Anderson model, with near-neighbors jumps, and the fractional Anderson model, with long-range jumps. Right after, we focus on the properties of each of their components and their spectra. Finally, we discuss the main results of this thesis.\\
+In this chapter, the random Schr\"odinger operator is the center of our attention. First, we define it as the \textit{Hamiltonian} and discuss the physical meaning of its time-evolving solutions. At the same time, we are going to define the two variations of this model. Right after, we focus on the properties of each of their components and their spectra. Finally, we discuss the main results of this thesis.\\
 \section{The Hamiltonian}
 \label{sec:The_Hamiltonian}
 Transport phenomena in disordered materials are often described via discrete random Schr\"odinger operators. In quantum-mechanics, the \textit{Hamiltonian} represents the total energy of the system, decomposing naturally into kinetic and potential energy. It takes the form of an infinite random matrix on the lattice $\mathbb{Z}^d$, 
@@ -146,7 +145,7 @@ This operator acts on the Hilbert space of square summable sequences
 \]
 with the inner product defined by $\langle u, v \rangle = \sum_{x \in \mathbb{Z}^d} \overline{u(x)} v(x)$.\\
 
-The space $\ell^2(\mathbb{Z}^d)$ is exactly where the physical reality of the electron is recorded. In quantum-mechanics, the state of the system is described by a normalized wave function $\psi \in \ell^2(\mathbb{Z}^d)$, namely
+The space $\ell^2(\mathbb{Z}^d)$ is exactly where the physical reality of the electron is recorded. In quantum-mechanics, the state of the system is described by a normalized wave function $\psi \in \ell^2(\mathbb{Z}^d)$, 
 \[
 \|\psi\|_{\ell^2}^2 = \sum_{x \in \mathbb{Z}^d} |\psi(x)|^2 = 1.
 \]
@@ -205,6 +204,7 @@ To prove \textbf{self-adjointness} for a bounded operator, we only need to show 
 &= \sum_{x \in \mathbb{Z}^d} v(x) \left( \sum_{|x - y| = 1} (\overline{u(x)} - \overline{u(y)}) \right)\\
  &= \sum_{x \in \mathbb{Z}^d} v(x) \overline{(-\Delta u(x))} = \langle - \Delta u, v \rangle.
 \end{align*}
+Here we used the Cauchy--Schwarz inequality and Fubini, justified by the absolute convergence of the double sum.
 \vspace{1em}
 
 The spectrum of a bounded, self-adjoint operator is a compact subset of $\mathbb{R}$, which in this case is exactly the closed interval $[0,4d]$. This range represents the allowed kinetic energy levels an electron can possess. 
@@ -233,7 +233,7 @@ Thus, the Laplacian acts as a  multiplication operator in Fourier space
 \begin{equation}\label{eq:1.1.5}
     \mathcal{F} (-\Delta) \mathcal{F}^{-1} =  2 \sum_{j=1}^d (1-\cos(k_j))
 \end{equation} 
-on $L^2([0,2\pi)^d)$ in the momentum variable $k= (k_1,\dots, k_d)$. Since $\cos(k_j)$ oscillates between $-1$ and $1$, the spectrum of the discrete Laplacian is purely continuous and strictly bounded within the interval $[0,4d]$.
+on $L^2([0,2\pi)^d)$ in the momentum variable $k= (k_1,\dots, k_d)$. Since $\cos(k_j)$ oscillates between $-1$ and $1$, the spectrum of the discrete Laplacian is purely continuous and bounded within the interval $[0,4d]$.
 
 \begin{remark}
     The discrete Laplacian has no true eigenvalues in $\ell^2(\mathbb{Z}^d)$. However, similar to the continuous Laplacian, it possesses plane waves as generalized eigenfunctions. For a fixed momentum $k \in [0,2\pi)^d$, we define:
@@ -363,7 +363,7 @@ where $\mathcal{B}([-1,1])$ is the Borel $\sigma$-algebra and $ d\mu(\omega_x)= 
 As a diagonal operator, the spectrum of $V_\omega$ consists of the random entries $\omega_x$, each corresponding to an eigenvector given by the Dirac delta $\delta_x \in \ell^2(\mathbb{Z}^d)$.\\
 
 
-As for the  discrete Laplacian, the random term is almost surely summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Indeed, self-adjointness of the maximal multiplication operator is a real-valued function. By definition $V_\omega$ is almost surely bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and thus, $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$ it is also summable in $ \ell^2(\mathbb{Z}^d)$.
+As for the  discrete Laplacian, the random term is almost surely summable in $\ell^2(\mathbb{Z}^d)$, bounded and self-adjoint. Indeed, self-adjointness of the maximal multiplication operator is a real-valued function. By definition $V_\omega$ is almost surely bounded in the closed interval $[-1,1] \subset \mathbb{R}$, and $ \| V_\omega u\|_{\ell^2}^2 \le \|u\|_{\ell^2}^2$, which proves that it is also summable in $ \ell^2(\mathbb{Z}^d)$.
 \subsection*{The Disorder Parameter} 
 The disorder parameter is represented by $ \lambda >0$. The value of $\lambda$ is a great indicator for localization, which makes it one of the central objects of interest of this thesis. It allows us to adjust the strength of the random disorder with respect
 to the deterministic part.\\
@@ -371,7 +371,7 @@ Let's consider the two extreme cases:
 \begin{itemize}
     \item For $\boldsymbol{\lambda=0}$ the Hamiltonian loses the random term and only considers the Laplacian. Without disorder, the material behaves like a perfect crystal without localization. 
     The state functions are continuous plane waves and the spectrum is also continuous between $[0,4d]$.
-    \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_{\omega, \alpha} \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits trivial localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the almost sure spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
+    \item For $\boldsymbol{\lambda \gg 1}$ the kinetic hopping term becomes negligible compared to the random potential, so that $H_{\omega, \alpha} \approx \lambda V_\omega$. In this scenario electrons are unable to hop between adjacent sites, and the material behaves as an insulator. In this limit, the system exhibits localization: the eigenfunctions are localized Dirac deltas $\delta_x$, and the almost sure spectrum is confined to the compact interval $[-\lambda, \lambda]$\\      
 \end{itemize}
 
 
@@ -391,7 +391,7 @@ Recall from Section~\ref{sec:The_Hamiltonian} that the spectrum of the discrete 
 \begin{equation}
     \sigma(H_{\omega,\alpha}) = [0, (4d)^\alpha] + [-\lambda, \lambda] = [-\lambda, (4d)^\alpha + \lambda].
 \end{equation}
-This confirms that the spectrum is a strictly bounded subset of $\mathbb{R}$.
+This confirms that the spectrum is a bounded subset of $\mathbb{R}$.
 
 \subsubsection*{Preliminaries on Spectral Measures}
 
@@ -428,7 +428,7 @@ where $\sigma_{\mathrm{pp}}(H_{\omega, \alpha}) = \overline{\{ \lambda \in \math
 \end{remark}
 
 \subsubsection*{Physical Interpretation and the RAGE Theorem}
-From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to bound states that remain confined to finite regions for all time, while states in the continuous subspace $\mathcal{H}_{\mathrm{c}}$ represent scattering states associated with transport and wave-packet spreading. The meaning of this heuristics is made rigorous by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
+From a physical perspective, states in $\mathcal{H}_{\mathrm{pp}}$ correspond to states that remain confined to finite regions for all time, while in the continuous subspace $\mathcal{H}_{\mathrm{c}}$, states are associated with transport and wave-packet spreading. The meaning of this heuristics is made rigorous by the RAGE theorem (named after Ruelle, Amrein, Georgescu, and Enss):
 
 \begin{theorem}[RAGE Theorem]\label{thm:RAGE}
     Let $A$ be a self-adjoint Schrödinger operator on $\ell^2(\mathbb{Z}^d)$. Then:
@@ -477,7 +477,7 @@ where $\Sigma \subset \mathbb{R}$ is a closed interval containing the origin.\\
 
 \clearpage
 \chapter{Localization properties}
-We have understood what localization means from a heuristic point of view. In the previous chapter, it was presented as a spectral property of the Hamiltonian. In this section, we also introduce dynamical properties for localization and discuss the implications between them. The definitions follow those found in A. Klein \cite{klein2007}.
+We have understood what localization means from a heuristic point of view. In the previous chapter, it was presented as a spectral property of the Hamiltonian. In this section, we also introduce dynamical properties for localization and discuss the implications between them, as shown in \cite{stolz2011} and \cite{hundertmark2007}. The definitions follow those found in A. Klein \cite{klein2007}.
 
 \section{Types of localization}
 
@@ -514,7 +514,7 @@ Dynamical localization implies that all spatial moments of the distance are boun
     Let $H_{\omega, \alpha}$ be an Hamiltonian as defined in Section \ref{sec:The_Hamiltonian}. If \eqref{eq:dynloc} holds, then $$\sum_{x \in \mathbb{Z}^d} |x|^{2p} | e^{-itH_{\omega,\alpha}}(0,x)|^2 < \infty$$ for every $p > 0$.
 \end{proposition}
 \begin{proof}
-    Assume that $\psi(k) = 0$ for $|k| > R$ (i.e., $\psi$ has finite support). Then
+    Assume that $\psi(y) = 0$ for $|y| > R$ (i.e., $\psi$ has finite support). Then
 \begin{align*}
     \||X|^p e^{-itH_{\omega,\alpha}} \psi\|^2 &= \sum_{x \in \mathbb{Z}^d} |\langle \delta_x, |X|^p e^{-itH_{\omega,\alpha}} \psi \rangle|^2\\
     &= \sum_{x \in \mathbb{Z}^d} |x|^{2p} \left|\sum_{|y|\le R}  e^{-itH_{\omega,\alpha}}(y,x) \psi(y)\right|^2.\\
@@ -751,23 +751,31 @@ Proof can be found in \cite[Chapter 5]{aizenman2015}.
 \subsection*{Dynamical localization}
 In order to prove the next theorems, we need the following definition.
 \begin{definition}\label{def:Q}
-    Let $\Sigma$ be the almost sure spectrum of $H_{\omega,\alpha}$. Then we call
+    Let $\Sigma$ be the almost sure spectrum of $H_{\omega,\alpha}$. The
+    \textit{eigenfunction correlator} is the random variable
     \begin{equation}
-        Q(x,y,\Sigma) \coloneqq \sup_{\substack{g \in C_c(\Sigma) \\ |g| \le 1}} | g(H_{\omega,\alpha})(x,y)|
+        Q_\omega(x,y,\Sigma) \coloneqq \sup_{\substack{g \in C_c(\Sigma) \\ |g| \le 1}}
+        \bigl| g(H_{\omega,\alpha})(x,y) \bigr|, \qquad x,y \in \mathbb{Z}^d.
     \end{equation}
-    the \textit{eigenfunction correlator}, for all $x,y \in \mathbb{Z}^d$.
 \end{definition}
 \begin{remark}
-    Note that, since $|e^{-itH_{\omega,\alpha}}|= 1$, $$\sup_{t\in\mathbb{R}}|e^{-itH_{\omega,\alpha}}(0,x)|^2 \le \sup_{\substack{g \in C_c(\Sigma) \\ |g| \le 1}} | g(H_{\omega,\alpha})(0,x)| =: Q(x,0,\Sigma)$$
-    Thus, controlling the eigenfunction correlator yields a direct bound on the transition probabilities, which is the key to proving dynamical localization.
+    Since $\|e^{-itH_{\omega,\alpha}}\|=1$, all matrix entries have modulus at most $1$, hence
+    \[
+        \sup_{t\in\mathbb{R}} \bigl|e^{-itH_{\omega,\alpha}}(0,x)\bigr|^2
+        \le \sup_{t\in\mathbb{R}} \bigl|e^{-itH_{\omega,\alpha}}(0,x)\bigr|
+        \le Q_\omega(0,x,\Sigma),
+    \]
+    Thus a bound on
+    $\mathbb{E}[\,Q_\omega(0,x,\Sigma)]$ controls the expected transition probabilities, which is
+    the key to dynamical localization.
 \end{remark}
 The following Proposition is the main step for the proofs of Theorem \ref{thm:explocproof} and Theorem \ref{thm:almostdynloc}.
 \begin{proposition}\label{prop:almostloc}
     Let $\Sigma$ be the almost sure spectrum of $H_{\omega,\alpha}$. Then,
     \begin{equation}
-        \mathbb{E}[Q(x,y;\Sigma)] \le C_s \lim_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G(x,y;E+i\eta)|^s] \, dE
+        \mathbb{E}[Q_\omega(x,y;\Sigma)] \le C_s \lim_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G(x,y;E+i\eta)|^s] \, dE
     \end{equation}
-    with a finite constant $C_s \coloneqq C(s,\rho) < \infty$.
+    with a finite constant $C_s < \infty$.
 \end{proposition}
 
 \begin{theorem}\label{thm:explocproof}
@@ -795,13 +803,13 @@ The following Proposition is the main step for the proofs of Theorem \ref{thm:ex
     \end{align*}
     which converges for all $\beta < s(d+2\alpha)-d$. Since $0 \le Q(x,0,\Sigma) \le 1$, we can conclude that for almost every $\omega \in \Omega$, 
     \begin{align*}
-        \sup_{t \in \mathbb{R}} \sum_{x \ne 0} |x|^\beta |e^{-itH_{\alpha,\omega}}(0,x)|^2 \le \sum_{x \ne 0} |x|^\beta Q_\omega(x,0)^2 \le \sum_{x \ne 0} |x|^\beta Q_\omega(x,0) < \infty,
+        \sup_{t \in \mathbb{R}} \sum_{x \ne 0} |x|^\beta |e^{-itH_{\alpha,\omega}}(0,x)|^2 \le \sum_{x \ne 0} |x|^\beta Q(x,0)^2 \le \sum_{x \ne 0} |x|^\beta Q(x,0) < \infty,
     \end{align*}
     holds, and yields the required dynamical bounds .
 \end{proof}
 The following proof follows the steps of the one in \cite{aizenman2015}.
 \begin{proof}[Proof of Proposition \ref{prop:almostloc}]
-    As we mentioned in Definition \ref{def:Q}, for bounded sets $\Sigma \subset \mathbb{R}$ $$Q(x,y,\Sigma) \coloneqq \sup_{\substack{g \in C_c(\Sigma) \\ |g| \le 1}} | g(H_{\omega,\alpha})(x,y)|.$$ For $g \in C_c(\Sigma)$ and $\xi \in \mathbb{R}$, it holds
+    As we mentioned in Definition \ref{def:Q}, for bounded sets $\Sigma \subset \mathbb{R}$ $$Q_\omega(x,y,\Sigma) \coloneqq \sup_{\substack{g \in C_c(\Sigma) \\ |g| \le 1}} | g(H_{\omega,\alpha})(x,y)|.$$ For $g \in C_c(\Sigma)$ and $\xi \in \mathbb{R}$, it holds
     \begin{equation*}
     g(\xi) = \lim_{\eta \downarrow 0} \frac{\eta}{\pi} \int \frac{g(E)}{(\xi - E)^2 + \eta^2} \, dE.
     \end{equation*}
@@ -816,12 +824,19 @@ The following proof follows the steps of the one in \cite{aizenman2015}.
         &\le \liminf_{\eta \downarrow 0} \frac{1}{\pi} \int_I \mathbb{E}[|\mathrm{Im}(G_{E + i\eta,\alpha})(x,y)|] \, dE.
     \end{align}
     using Fatou and Fubini.
-    Since $\mathrm{Im} G_z(x,x) = \frac{\mathrm{Im}(z)}{(H_{\omega,\alpha}-\mathrm{Re}(z))^2 + \mathrm{Im}(z)^2}(x,x)$, it is positive definite and self-adjoint, and it admits a unique positive square root. We can therefore apply the Cauchy-Schwarz inequality and obtain 
-        \begin{align} \label{eq:7.30}
-        |\mathrm{Im}(G_{E + i\eta,\alpha})(x,y)| &= |\langle\sqrt{\mathrm{Im}(G_{E + i\eta,\alpha})}\delta_x, \sqrt{\mathrm{Im}(G_{E + i\eta,\alpha})}\delta_y \rangle| \\
-        &\le \left\| \sqrt{\mathrm{Im}(G_{E + i\eta,\alpha})}\delta_x\right\| \left\|\sqrt{\mathrm{Im}(G_{E + i\eta,\alpha})}\delta_y \right\| \nonumber \\
-        &= \sqrt{|\mathrm{Im}(G_{E + i\eta,\alpha})(x,x)| |\mathrm{Im}(G_{E + i\eta,\alpha})(y,y)|}. \nonumber
-    \end{align} 
+    For $z=E+i\eta$ with $\eta>0$, the operator
+    \[
+    \mathrm{Im}\,G_{z,\alpha}= \eta\bigl((H_{\omega,\alpha}-E)^2+\eta^2\bigr)^{-1}
+    \]
+    is bounded, self-adjoint and strictly positive, so it has a unique positive square root
+    $\sqrt{\mathrm{Im}\,G_{z,\alpha}}$.
+    We can therefore apply the Cauchy-Schwarz inequality and obtain 
+    \begin{align}\label{eq:7.30}
+    |\mathrm{Im}\,G_{E+i\eta,\alpha}(x,y)|
+    &= \bigl|\langle\sqrt{\mathrm{Im}\,G_{E+i\eta,\alpha}}\,\delta_x,\sqrt{\mathrm{Im}\,G_{E+i\eta,\alpha}}\,\delta_y\rangle\bigr| \\
+    &\le \bigl\|\sqrt{\mathrm{Im}\,G_{E+i\eta,\alpha}}\,\delta_x\bigr\|\,\bigl\|\sqrt{\mathrm{Im}\,G_{E+i\eta,\alpha}}\,\delta_y\bigr\| \nonumber\\
+    &= \sqrt{\mathrm{Im}\,G_{E+i\eta,\alpha}(x,x)\,\mathrm{Im}\,G_{E+i\eta,\alpha}(y,y)}. \nonumber
+    \end{align}
     Splitting the integrand in \eqref{eq:7.29} into powers $(1-s)$ and $s$ and applying \eqref{eq:7.30} to just the $1-s$ power we get
     \begin{equation} \label{eq:7.31}
         \begin{split}
@@ -851,8 +866,10 @@ The following proof follows the steps of the one in \cite{aizenman2015}.
     \[
         \frac{G_z^{(\nu)}(x,y)}{G_z^{(\nu)}(x,x)} = \frac{\frac{G_{z,\alpha}(x,y)}{1 + \nu G_{z,\alpha}(x,x)}}{\frac{G_{z,\alpha}(x,x)}{1 + \nu G_{z,\alpha}(x,x)}} =\frac{G_{z,\alpha}(x,y)}{G_{z,\alpha}(x,x)}.
     \]
-    For $\nu = \zeta -\lambda\omega_x$, we obtain the operator $H_\zeta \coloneqq H_{\omega,\alpha} + (\zeta - \lambda\omega_x)\chi_{\{x\}}$, where the random potential in $x$ is replaced with $\nu \in \mathbb{R}$.\\
+    For $\nu = \zeta -\lambda\omega_x$, we obtain the operator $H_\zeta \coloneqq H_{\omega,\alpha} + (\zeta - \lambda\omega_x)\chi_{\{x\}}$, where the random potential in $x$ is replaced with $\zeta \in \mathbb{R}$.\\
     We recall from   the \textit{a priori bound} (Lemma \ref{lemma:aprioribound}) $$\hat{H}_{\omega,\alpha} \coloneqq H - \lambda\omega_x\,\chi_{\{x\}} \qquad \text{ and }\qquad G_{z,\alpha}(x,x) =\frac{1}{{\hat{G}_{z,\alpha}(x,x)}^{-1} + \lambda\omega_x}.$$
+    From Proposition \ref{prop:useofresolventidentity}, we get
+    $$ H_\zeta = \hat{H}_{\omega,\alpha} + \zeta\,\chi_{\{x\}} \qquad \text{and } \qquad G_{z,\alpha}^{(\zeta)}(x,x) =\frac{1}{{\hat{G}_{z,\alpha}(x,x)}^{-1} + \zeta}.$$
     This implies for \eqref{eq:3.2.15} that
     \begin{align*}
         &|\mathrm{Im}(G_{z,\alpha}(x,x))|^{1-s}|G_{z,\alpha}(x,y)|^s \\
@@ -909,7 +926,7 @@ The following proof follows the steps of the one in \cite{aizenman2015}.
 
     Taking the square root of both sides and substituting this result back into \eqref{eq:7.29}, we can take the limit $|\eta| \downarrow 0$
     \begin{equation}
-        \mathbb{E}[Q(x,y;\Sigma)] \le C_s \liminf_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE.
+        \mathbb{E}[Q_\omega(x,y;\Sigma)] \le C_s \liminf_{|\eta| \downarrow 0} \int_\Sigma \mathbb{E}[|G_{E+i\eta,\alpha}(x,y)|^s] \, dE.
     \end{equation}
     This concludes the proof.
 \end{proof}
@@ -929,7 +946,7 @@ Let $\rho \ge 0$ be a measurable function such that $\sup_{v \in \mathbb{R}} (1+
 \end{proof}
 
 \begin{remark}
-    For Proposition \ref{prop:almostloc},we use $\rho_\lambda(v) = \frac{1}{2\lambda} \chi_{[-\lambda, \lambda]}(v)$. Since
+    For Proposition \ref{prop:almostloc}, we use $\rho_\lambda(v) = \frac{1}{2\lambda} \chi_{[-\lambda, \lambda]}(v)$. Since
     \[
     \sup_{v \in \mathbb{R}} (1+|v|^s)\rho_\lambda(v) = \frac{1+\lambda^s}{2\lambda} < \infty.
     \]
@@ -1049,17 +1066,17 @@ Consider the generating function (\textit{susceptibility}) with parameter $\beta
 \sum_{N=0}^{\infty} |\beta|^N c_N = \sum_{N=0}^{\infty} |\beta|^N \sum_{x \in \mathbb{Z}^d} |S_N(0, x)|.
 \]
 
-For $N = 0$, $c_0 = 0$. For $N \ge 1$, a walk cannot immediately step back onto the previous vertex (non-reversing condition). Thus:
+For $N = 0$, $c_0 = 0$. For $N \ge 1$, a walk cannot immediately step back onto the previous vertex. Thus,
 \begin{itemize}
     \item The first step has at most $2d$ choices.
     \item Each of the subsequent $N-1$ steps has at most $2d - 1$ choices.
 \end{itemize}
-This gives the upper bound:
+This gives the following upper bound,
 \[
 c_N \le 2d (2d - 1)^{N-1}, \quad \text{for } N \ge 1.
 \]
 
-Using this upper bound, we can bound the series from above:
+and use it, such that
 \begin{align*}
 \sum_{N=0}^{\infty} |\beta|^N c_N
 &\le \sum_{N=1}^{\infty} |\beta|^N (2d)(2d-1)^{N-1} \\
@@ -1189,14 +1206,14 @@ and, utilizing the deterministic bound $|G_z| \le |\mathrm{Im}(z)|^{-1}$ (Lemma 
 
 Inserting these estimates into the sums above, we get
 \begin{equation}
-\mathbb{E}\left( |G_z^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=1}^N \beta(s)^{n+1} c_n^D(x,y) + R(N) \frac{1}{|\mathrm{Im}(z)|^s},\label{eq:semifinalboundSAW}
+\mathbb{E}\left( |G_z^{(\Lambda)}(x,y)|^s \right) \le \sum_{n=1}^N \beta(s)^{n+1} c_n^D(x,y) + R_N \frac{1}{|\mathrm{Im}(z)|^s},\label{eq:semifinalboundSAW}
 \end{equation}
 where we set $\beta(s) \coloneqq \frac{1}{1-s} \frac{1}{\lambda^s}$. \\
 For $R_N$ holds,
 \begin{equation*}
 \begin{split}
     R(N) &:= \left( \frac{1}{(1-s)\lambda^s} \right)^N \sum_{\gamma \in \mathcal{S}_{N+1}(x,y)} \prod_{j=0}^{N-1} D(\gamma_j, \gamma_{j+1}) \\
-    &\le \left( \frac{1}{(1-s)\lambda^s} \right)^N \sum_{w \in \mathbb{Z}^d} \sum_{\gamma \in \mathcal{S}_N(0, w)} \prod_{j=0}^{N-1} D(\gamma_j, \gamma_{j+1})^s.
+    &\le \left( \frac{1}{(1-s)\lambda^s} \right)^N \sum_{w \in \mathbb{Z}^d} \sum_{\gamma \in \mathcal{S}_N(0, w)} \prod_{j=0}^{N-1} D(\gamma_j, \gamma_{j+1}).
 \end{split}
 \end{equation*}
 
@@ -1221,8 +1238,9 @@ Taking the supremum over all finite volumes $\Lambda \subset \mathbb{Z}^d$ now y
 \end{proof}
 
 \begin{remark}
-    The value of $\lambda_0$ is given by $R_{\chi^D}= \frac{1}{(1-s)\lambda_0}$ which gives $\lambda_0 = \left(\frac{1}{(1-s)R_{\chi^D}}\right)^{1/s}$. \\
+    The value of $\lambda_0$ is given by $R_{\chi^D}= \frac{1}{(1-s){\lambda_0}^s}$ which gives $\lambda_0 = \left(\frac{1}{(1-s)R_{\chi^D}}\right)^{1/s}$. \\
 \end{remark}
+For $\alpha =1$ we can obtain a $\lambda_0$ not depending on $s$, and substituting $R_{\chi^D}$ with $1/\mu_d$.
 \begin{lemma}\label{lemma:lambda0equation}
 Let $\alpha = 1$. The threshold $\lambda_0$, i.e.\ the smallest value of $\lambda$ for which some $s \in (0,1)$ satisfies $\beta(s) < 1/\mu_d$, satisfies the implicit equation
 \begin{equation*}
@@ -1260,7 +1278,7 @@ For the self-avoiding walk series to converge, this minimum value must be strict
 Therefore $\lambda_0 = \mu_d e \ln (\lambda_0)$, as claimed.
 \end{proof}
 
-The final results regarding the decay of the fractional moments of the Green function, depends on the estimated decay of the two point function. In fact we can prove the following Propositions.
+The final results regarding the decay of the fractional moments of the Green function, depend on the estimated decay of the two point function. In fact we can use the following Propositions.
 \begin{proposition}[Polynomial Decay of the Correlation Function]
 Let $\alpha \in (0,1)$, $s \in (\frac{d}{d+2\alpha},1)$ and $\beta \ge 0$ such that $\beta < R_{\chi^D}$. Then there exists a constant $K_0 < \infty$, independent of $x$, such that
 \[
@@ -1278,7 +1296,7 @@ C_\beta^D(x) \;\le\; K_\varepsilon \big( (\mu_d+\varepsilon)\beta \big)^{|x|} \q
 \end{proposition}
 
 \begin{proof}
-We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining $C_\beta^D(x)$ may be restricted to $N \ge |x|$, and considering that $D(x,y)=\delta_{|x-y|=1}$,
+We know that $|\mathcal S_N(0,x)| = 0$ whenever $N < |x|$, and the sum defining $C_\beta^D(x)$ may be restricted to $N \ge |x|$. Considering that $D(x,y)=\delta_{|x-y|=1}$,
 \begin{equation}
     C_\beta^D(x) = \sum_{N=|x|}^{\infty} \beta^N \, |\mathcal S_N(x,0)| \;\le\; \sum_{N=|x|}^{\infty} \beta^N c_N. \label{eq:4.1.1}
 \end{equation}
@@ -1333,13 +1351,14 @@ Using self-avoiding walks (SAW) helps us obtain better estimates on the disorder
 \[
 \lambda_{AG}=4de\ln \lambda_{AG}.
 \]
-Later, J. Schenker used SAW methods in \cite{schenker2015} to obtain a better threshold, $\lambda_{And}$, which satisfies
+Later, J. Schenker \cite{schenker2015} used SAW methods to obtain a better threshold, $\lambda_{And}$, which satisfies
 \[
 \lambda_{And}=\mu_d e\ln \lambda_{And},
 \]
-as we proved in the last chapter. Since the connectivity constant $\mu_d$ is smaller than or equal to $2d-1$, Schenker's threshold is smaller than the Aizenman-Graf threshold. Moreover, this result is consistent with the early estimate proposed by Anderson in 1958 \cite{anderson1958}.\\
+as we proved in the last chapter. Since the connectivity constant $\mu_d$ is smaller than or equal to $2d-1$, $\lambda_{And}< \lambda_{AG}$. Moreover, this result is consistent with the early estimate proposed by Anderson in 1958 \cite{anderson1958}.\\
 
-Following a similar idea, Disertori, Escobar, and Rojas-Molina used SAW methods for the Green function in \cite{disertori2024} to obtain a new threshold $\lambda_0(s)$ for the fractional model. When considering the standard case ($\alpha=1$), their method gives the same threshold as Schenker's. For the fractional case ($\alpha \in (0,1)$), their new threshold gives a tighter bound than the previous Aizenman-Graf and Aizenman-Molchanov estimates.\\
+Following a similar idea, Disertori, Escobar, and Rojas-Molina used SAW methods for the Green function in \cite{disertori2024} to obtain a new threshold $\lambda_0(s)$ for the fractional model. When considering the standard case ($\alpha=1$), their method gives the same value as Schenker's. For the fractional case ($\alpha \in (0,1)$), it gives a tighter bound than the previous estimates.\\
+
 The following values are given by J. Schenker in \cite{schenker2015}.
 \begin{table}[htpb]
 \centering
@@ -1361,7 +1380,7 @@ Nevertheless, finding the exact values of $\lambda$ at which the transition betw
 
 \begin{itemize}
     \item For $d=1$, mathematicians have completely proven that localization happens for any $\lambda>0$.
-    \item For $d=2$, it is numerically expected that localization persists for arbitrarily small disorder, but a proof remains an open problem.
+    \item For $d=2$, it is numerically expected that localization persists for arbitrarily small disorder and in some intervals of the spectrum, but a proof remains an open problem.
     \item For $d \ge 3$, we still do not know the exact $\lambda$ where the transition from conductor to insulator happens. Right now, localization has only been proved for large $\lambda$, starting from our threshold $\lambda_0$. In this higher-dimensional case, it is strongly believed there is a true Anderson transition. At small disorder, the spectrum should be absolutely continuous. As the disorder $\lambda$ gets larger, the localized states are expected to expand until they cover the whole spectrum. 
 \end{itemize}
 
